@@ -9,7 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Mantle.xcscheme</key>
+		<key>Pods-ARCoreData.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>082A54E6C8ADC1E2014B51E2</key>
+		<key>2B2A6B1F1F7103672F5FD5FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2E48373F061D55CB011D0F62</key>
+		<key>51272BECF5689BDA0D00E505</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>80CF36342B8BEB655A23C293</key>
+		<key>B68CD494AF770F54001E0033</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E18EDC3CB66B48DC75B4D58A</key>
+		<key>B90CDFB5C110B759384D92B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E28E782F3D898D78EA6344C8</key>
+		<key>E0027800E072E3E9EDA6C23C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E639ABF202E15F3E1602E3F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

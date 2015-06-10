@@ -20,9 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Mantle (2.0.2):
-    - Mantle/extobjc (= 2.0.2)
-  - Mantle/extobjc (2.0.2)
+  - ARCoreData (1.02):
+    - ARCoreData/Category (= 1.02)
+    - ARCoreData/Core (= 1.02)
+    - ARCoreData/FetchController (= 1.02)
+  - ARCoreData/Category (1.02)
+  - ARCoreData/Core (1.02)
+  - ARCoreData/FetchController (1.02)
+  - Masonry (0.6.1)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -36,13 +41,24 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - Mantle
+  - ARCoreData (from `https://github.com/AugustRush/ARCoreData.git`)
+  - Masonry
   - ReactiveCocoa
   - SDWebImage
 
+EXTERNAL SOURCES:
+  ARCoreData:
+    :git: https://github.com/AugustRush/ARCoreData.git
+
+CHECKOUT OPTIONS:
+  ARCoreData:
+    :commit: 81499a67d18579d16f932c8c41df5310ca1aa919
+    :git: https://github.com/AugustRush/ARCoreData.git
+
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
+  ARCoreData: f1f7316cfbdd34a05b938ab1f9efaa7df4200f21
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 

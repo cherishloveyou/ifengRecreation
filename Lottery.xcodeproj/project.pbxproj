@@ -18,6 +18,7 @@
 		974E85C11B1163BF00B57C9E /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85C01B1163BF00B57C9E /* ChannelViewController.m */; };
 		974E85C41B1163EF00B57C9E /* TrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85C31B1163EF00B57C9E /* TrendViewController.m */; };
 		974E85C71B11642E00B57C9E /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85C61B11642E00B57C9E /* MyProfileViewController.m */; };
+		979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 979BC4EC1B26F6CB00070B0B /* HTTPClient.m */; };
 		F0997D21EEE09A40B4846F6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C01377733245E06688A8F6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		974E85C31B1163EF00B57C9E /* TrendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendViewController.m; sourceTree = "<group>"; };
 		974E85C51B11642E00B57C9E /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		974E85C61B11642E00B57C9E /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		979BC4EB1B26F6CB00070B0B /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		979BC4EC1B26F6CB00070B0B /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D007C86A7ABE68F0E5D2E609 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +112,7 @@
 		974E85941B11610E00B57C9E /* Lottery */ = {
 			isa = PBXGroup;
 			children = (
+				979BC4E91B26F67F00070B0B /* Utils */,
 				974E85991B11610E00B57C9E /* AppDelegate.h */,
 				974E859A1B11610E00B57C9E /* AppDelegate.m */,
 				974E859C1B11610E00B57C9E /* RootViewController.h */,
@@ -161,6 +165,23 @@
 				974E85C61B11642E00B57C9E /* MyProfileViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		979BC4E91B26F67F00070B0B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				979BC4EA1B26F6CB00070B0B /* HTTP */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		979BC4EA1B26F6CB00070B0B /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				979BC4EB1B26F6CB00070B0B /* HTTPClient.h */,
+				979BC4EC1B26F6CB00070B0B /* HTTPClient.m */,
+			);
+			path = HTTP;
 			sourceTree = "<group>";
 		};
 		C0F223D62BEDF1D78E103630 /* Frameworks */ = {
@@ -312,6 +333,7 @@
 				974E85BE1B11637B00B57C9E /* RecommendViewController.m in Sources */,
 				974E85C71B11642E00B57C9E /* MyProfileViewController.m in Sources */,
 				974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */,
+				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
 				974E85981B11610E00B57C9E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

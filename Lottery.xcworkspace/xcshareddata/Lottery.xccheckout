@@ -10,14 +10,14 @@
 	<string>Lottery</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>61ABD54E977F9C771B901F5A0C33194A2442C678</key>
+		<key>463B9B4F5872B33855FCE38463D2D354FB746FC2</key>
 		<string>https://github.com/liujiyang/ifengRecreation.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Lottery.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>61ABD54E977F9C771B901F5A0C33194A2442C678</key>
+		<key>463B9B4F5872B33855FCE38463D2D354FB746FC2</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>61ABD54E977F9C771B901F5A0C33194A2442C678</string>
+	<string>463B9B4F5872B33855FCE38463D2D354FB746FC2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>61ABD54E977F9C771B901F5A0C33194A2442C678</string>
+			<string>463B9B4F5872B33855FCE38463D2D354FB746FC2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ifengRecreation</string>
 		</dict>

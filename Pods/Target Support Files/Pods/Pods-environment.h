@@ -48,17 +48,35 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 4
 
-// Mantle
-#define COCOAPODS_POD_AVAILABLE_Mantle
-#define COCOAPODS_VERSION_MAJOR_Mantle 2
-#define COCOAPODS_VERSION_MINOR_Mantle 0
-#define COCOAPODS_VERSION_PATCH_Mantle 2
+// ARCoreData
+#define COCOAPODS_POD_AVAILABLE_ARCoreData
+#define COCOAPODS_VERSION_MAJOR_ARCoreData 1
+#define COCOAPODS_VERSION_MINOR_ARCoreData 2
+#define COCOAPODS_VERSION_PATCH_ARCoreData 0
 
-// Mantle/extobjc
-#define COCOAPODS_POD_AVAILABLE_Mantle_extobjc
-#define COCOAPODS_VERSION_MAJOR_Mantle_extobjc 2
-#define COCOAPODS_VERSION_MINOR_Mantle_extobjc 0
-#define COCOAPODS_VERSION_PATCH_Mantle_extobjc 2
+// ARCoreData/Category
+#define COCOAPODS_POD_AVAILABLE_ARCoreData_Category
+#define COCOAPODS_VERSION_MAJOR_ARCoreData_Category 1
+#define COCOAPODS_VERSION_MINOR_ARCoreData_Category 2
+#define COCOAPODS_VERSION_PATCH_ARCoreData_Category 0
+
+// ARCoreData/Core
+#define COCOAPODS_POD_AVAILABLE_ARCoreData_Core
+#define COCOAPODS_VERSION_MAJOR_ARCoreData_Core 1
+#define COCOAPODS_VERSION_MINOR_ARCoreData_Core 2
+#define COCOAPODS_VERSION_PATCH_ARCoreData_Core 0
+
+// ARCoreData/FetchController
+#define COCOAPODS_POD_AVAILABLE_ARCoreData_FetchController
+#define COCOAPODS_VERSION_MAJOR_ARCoreData_FetchController 1
+#define COCOAPODS_VERSION_MINOR_ARCoreData_FetchController 2
+#define COCOAPODS_VERSION_PATCH_ARCoreData_FetchController 0
+
+// Masonry
+#define COCOAPODS_POD_AVAILABLE_Masonry
+#define COCOAPODS_VERSION_MAJOR_Masonry 0
+#define COCOAPODS_VERSION_MINOR_Masonry 6
+#define COCOAPODS_VERSION_PATCH_Masonry 1
 
 // ReactiveCocoa
 #define COCOAPODS_POD_AVAILABLE_ReactiveCocoa
