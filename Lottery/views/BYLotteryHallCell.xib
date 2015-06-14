@@ -23,7 +23,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edu-tq-gNy">
                         <rect key="frame" x="80" y="43" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V83-Tg-uIG">
@@ -54,6 +54,12 @@
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Edu-tq-gNy" secondAttribute="trailing" constant="7" id="v4r-eD-cHh"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lotteryHeaderImage" destination="V83-Tg-uIG" id="3XF-qc-j4W"/>
+                <outlet property="lotteryNameLabel" destination="zl1-jS-sGj" id="a2W-KR-O3Z"/>
+                <outlet property="lotterySnippetLabel" destination="Edu-tq-gNy" id="4cw-iq-o5R"/>
+                <outlet property="lotteryTypeImageView" destination="dSK-bC-mxF" id="5AD-Ep-SDH"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
