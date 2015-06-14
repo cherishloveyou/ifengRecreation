@@ -7,7 +7,26 @@
 //
 
 #import "RecommendViewController.h"
+#import "HTTPClient+User.h"
 
 @implementation RecommendViewController
+
+#pragma lifecycle methods
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [HTTPClient userHandleWithAction:UserHandlerActionLoginValidate
+                          paramaters:@{@"uname":@"yulin005",
+                                       @"pwd":@"123456"}
+                             success:^(id task, id response) {
+                                 
+                             } failed:^(id task, NSError *error) {
+                                 
+                             }];
+}
+
+#pragma mark - private methods
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 970E4C4F1B2BF431004544EA /* HTTPClient+User.m */; };
 		974E85981B11610E00B57C9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85971B11610E00B57C9E /* main.m */; };
 		974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E859A1B11610E00B57C9E /* AppDelegate.m */; };
 		974E859E1B11610E00B57C9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E859D1B11610E00B57C9E /* RootViewController.m */; };
@@ -34,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		8C01377733245E06688A8F6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		970E4C4E1B2BF431004544EA /* HTTPClient+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPClient+User.h"; sourceTree = "<group>"; };
+		970E4C4F1B2BF431004544EA /* HTTPClient+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPClient+User.m"; sourceTree = "<group>"; };
+		970E4C521B2BF4C8004544EA /* HTTPConfigs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConfigs.h; sourceTree = "<group>"; };
 		974E85921B11610E00B57C9E /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		974E85961B11610E00B57C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		974E85971B11610E00B57C9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -180,6 +184,9 @@
 			children = (
 				979BC4EB1B26F6CB00070B0B /* HTTPClient.h */,
 				979BC4EC1B26F6CB00070B0B /* HTTPClient.m */,
+				970E4C521B2BF4C8004544EA /* HTTPConfigs.h */,
+				970E4C4E1B2BF431004544EA /* HTTPClient+User.h */,
+				970E4C4F1B2BF431004544EA /* HTTPClient+User.m */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -335,6 +342,7 @@
 				974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */,
 				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
 				974E85981B11610E00B57C9E /* main.m in Sources */,
+				970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

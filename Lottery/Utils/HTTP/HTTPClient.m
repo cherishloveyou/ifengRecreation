@@ -25,9 +25,11 @@ static AFHTTPSessionManager *__sessionManager = nil;
     dispatch_once(&onceToken, ^{
         if (_SYSTERMVERSION_GREATER_7_0) {
             __sessionManager = [AFHTTPSessionManager manager];
+            __sessionManager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
             __sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain", nil];
         }else{
             __operationManager = [AFHTTPRequestOperationManager manager];
+            __operationManager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
             __operationManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain", nil];
         }
         AFNetworkReachabilityManager *reachablityManegetr = [AFNetworkReachabilityManager sharedManager];
