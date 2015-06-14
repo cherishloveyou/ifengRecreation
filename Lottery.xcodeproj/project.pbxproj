@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00F579791B2D5A7300C5AD45 /* BYLotteryHallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F579771B2D5A7300C5AD45 /* BYLotteryHallCell.m */; };
+		00F5797A1B2D5A7300C5AD45 /* BYLotteryHallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F579781B2D5A7300C5AD45 /* BYLotteryHallCell.xib */; };
+		00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5797D1B2D608A00C5AD45 /* ChannelViewController.m */; };
+		00F579881B2D608A00C5AD45 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F579801B2D608A00C5AD45 /* MyProfileViewController.m */; };
+		00F579891B2D608A00C5AD45 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F579831B2D608A00C5AD45 /* RecommendViewController.m */; };
+		00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F579861B2D608A00C5AD45 /* TrendViewController.m */; };
+		00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5798D1B2D60FD00C5AD45 /* LoginViewController.m */; };
 		974E85981B11610E00B57C9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85971B11610E00B57C9E /* main.m */; };
 		974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E859A1B11610E00B57C9E /* AppDelegate.m */; };
 		974E859E1B11610E00B57C9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E859D1B11610E00B57C9E /* RootViewController.m */; };
@@ -14,10 +21,6 @@
 		974E85A31B11610E00B57C9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 974E85A21B11610E00B57C9E /* Images.xcassets */; };
 		974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974E85A41B11610E00B57C9E /* LaunchScreen.xib */; };
 		974E85B21B11610E00B57C9E /* LotteryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85B11B11610E00B57C9E /* LotteryTests.m */; };
-		974E85BE1B11637B00B57C9E /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85BD1B11637B00B57C9E /* RecommendViewController.m */; };
-		974E85C11B1163BF00B57C9E /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85C01B1163BF00B57C9E /* ChannelViewController.m */; };
-		974E85C41B1163EF00B57C9E /* TrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85C31B1163EF00B57C9E /* TrendViewController.m */; };
-		974E85C71B11642E00B57C9E /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85C61B11642E00B57C9E /* MyProfileViewController.m */; };
 		979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 979BC4EC1B26F6CB00070B0B /* HTTPClient.m */; };
 		F0997D21EEE09A40B4846F6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C01377733245E06688A8F6B /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -33,6 +36,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00F579761B2D5A7300C5AD45 /* BYLotteryHallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYLotteryHallCell.h; sourceTree = "<group>"; };
+		00F579771B2D5A7300C5AD45 /* BYLotteryHallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYLotteryHallCell.m; sourceTree = "<group>"; };
+		00F579781B2D5A7300C5AD45 /* BYLotteryHallCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BYLotteryHallCell.xib; sourceTree = "<group>"; };
+		00F5797C1B2D608A00C5AD45 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelViewController.h; sourceTree = "<group>"; };
+		00F5797D1B2D608A00C5AD45 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
+		00F5797F1B2D608A00C5AD45 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		00F579801B2D608A00C5AD45 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		00F579821B2D608A00C5AD45 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		00F579831B2D608A00C5AD45 /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		00F579851B2D608A00C5AD45 /* TrendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendViewController.h; sourceTree = "<group>"; };
+		00F579861B2D608A00C5AD45 /* TrendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendViewController.m; sourceTree = "<group>"; };
+		00F5798C1B2D60FD00C5AD45 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		00F5798D1B2D60FD00C5AD45 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8C01377733245E06688A8F6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		974E85921B11610E00B57C9E /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		974E85961B11610E00B57C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,14 +63,6 @@
 		974E85AB1B11610E00B57C9E /* LotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		974E85B01B11610E00B57C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		974E85B11B11610E00B57C9E /* LotteryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryTests.m; sourceTree = "<group>"; };
-		974E85BC1B11637B00B57C9E /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
-		974E85BD1B11637B00B57C9E /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
-		974E85BF1B1163BF00B57C9E /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelViewController.h; sourceTree = "<group>"; };
-		974E85C01B1163BF00B57C9E /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
-		974E85C21B1163EF00B57C9E /* TrendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendViewController.h; sourceTree = "<group>"; };
-		974E85C31B1163EF00B57C9E /* TrendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendViewController.m; sourceTree = "<group>"; };
-		974E85C51B11642E00B57C9E /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
-		974E85C61B11642E00B57C9E /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
 		979BC4EB1B26F6CB00070B0B /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		979BC4EC1B26F6CB00070B0B /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +88,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00F579751B2D5A0800C5AD45 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				00F579761B2D5A7300C5AD45 /* BYLotteryHallCell.h */,
+				00F579771B2D5A7300C5AD45 /* BYLotteryHallCell.m */,
+				00F579781B2D5A7300C5AD45 /* BYLotteryHallCell.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		00F5797B1B2D608A00C5AD45 /* BYLotteryHall */ = {
+			isa = PBXGroup;
+			children = (
+				00F5797C1B2D608A00C5AD45 /* ChannelViewController.h */,
+				00F5797D1B2D608A00C5AD45 /* ChannelViewController.m */,
+			);
+			path = BYLotteryHall;
+			sourceTree = "<group>";
+		};
+		00F5797E1B2D608A00C5AD45 /* MYIfeng */ = {
+			isa = PBXGroup;
+			children = (
+				00F5797F1B2D608A00C5AD45 /* MyProfileViewController.h */,
+				00F579801B2D608A00C5AD45 /* MyProfileViewController.m */,
+			);
+			path = MYIfeng;
+			sourceTree = "<group>";
+		};
+		00F579811B2D608A00C5AD45 /* Recommendation */ = {
+			isa = PBXGroup;
+			children = (
+				00F579821B2D608A00C5AD45 /* RecommendViewController.h */,
+				00F579831B2D608A00C5AD45 /* RecommendViewController.m */,
+			);
+			path = Recommendation;
+			sourceTree = "<group>";
+		};
+		00F579841B2D608A00C5AD45 /* Trend */ = {
+			isa = PBXGroup;
+			children = (
+				00F579851B2D608A00C5AD45 /* TrendViewController.h */,
+				00F579861B2D608A00C5AD45 /* TrendViewController.m */,
+			);
+			path = Trend;
+			sourceTree = "<group>";
+		};
+		00F5798B1B2D60CC00C5AD45 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				00F5798C1B2D60FD00C5AD45 /* LoginViewController.h */,
+				00F5798D1B2D60FD00C5AD45 /* LoginViewController.m */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
 		3B51F866A0ADCD53E7333C86 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,10 +180,11 @@
 				974E859A1B11610E00B57C9E /* AppDelegate.m */,
 				974E859C1B11610E00B57C9E /* RootViewController.h */,
 				974E859D1B11610E00B57C9E /* RootViewController.m */,
-				974E85BB1B1162E100B57C9E /* Controllers */,
-				974E859F1B11610E00B57C9E /* Main.storyboard */,
 				974E85A21B11610E00B57C9E /* Images.xcassets */,
+				974E859F1B11610E00B57C9E /* Main.storyboard */,
 				974E85A41B11610E00B57C9E /* LaunchScreen.xib */,
+				974E85BB1B1162E100B57C9E /* Controllers */,
+				00F579751B2D5A0800C5AD45 /* views */,
 				974E85951B11610E00B57C9E /* Supporting Files */,
 			);
 			path = Lottery;
@@ -155,14 +219,11 @@
 		974E85BB1B1162E100B57C9E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				974E85BC1B11637B00B57C9E /* RecommendViewController.h */,
-				974E85BD1B11637B00B57C9E /* RecommendViewController.m */,
-				974E85BF1B1163BF00B57C9E /* ChannelViewController.h */,
-				974E85C01B1163BF00B57C9E /* ChannelViewController.m */,
-				974E85C21B1163EF00B57C9E /* TrendViewController.h */,
-				974E85C31B1163EF00B57C9E /* TrendViewController.m */,
-				974E85C51B11642E00B57C9E /* MyProfileViewController.h */,
-				974E85C61B11642E00B57C9E /* MyProfileViewController.m */,
+				00F5798B1B2D60CC00C5AD45 /* LoginViewController */,
+				00F5797B1B2D608A00C5AD45 /* BYLotteryHall */,
+				00F5797E1B2D608A00C5AD45 /* MYIfeng */,
+				00F579811B2D608A00C5AD45 /* Recommendation */,
+				00F579841B2D608A00C5AD45 /* Trend */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -275,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				974E85A11B11610E00B57C9E /* Main.storyboard in Resources */,
+				00F5797A1B2D5A7300C5AD45 /* BYLotteryHallCell.xib in Resources */,
 				974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */,
 				974E85A31B11610E00B57C9E /* Images.xcassets in Resources */,
 			);
@@ -327,12 +389,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				974E85C41B1163EF00B57C9E /* TrendViewController.m in Sources */,
+				00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */,
 				974E859E1B11610E00B57C9E /* RootViewController.m in Sources */,
-				974E85C11B1163BF00B57C9E /* ChannelViewController.m in Sources */,
-				974E85BE1B11637B00B57C9E /* RecommendViewController.m in Sources */,
-				974E85C71B11642E00B57C9E /* MyProfileViewController.m in Sources */,
+				00F579791B2D5A7300C5AD45 /* BYLotteryHallCell.m in Sources */,
+				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,
+				00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */,
 				974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */,
+				00F579881B2D608A00C5AD45 /* MyProfileViewController.m in Sources */,
+				00F579891B2D608A00C5AD45 /* RecommendViewController.m in Sources */,
 				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
 				974E85981B11610E00B57C9E /* main.m in Sources */,
 			);
