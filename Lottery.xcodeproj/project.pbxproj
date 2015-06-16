@@ -26,6 +26,11 @@
 		974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974E85A41B11610E00B57C9E /* LaunchScreen.xib */; };
 		974E85B21B11610E00B57C9E /* LotteryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85B11B11610E00B57C9E /* LotteryTests.m */; };
 		979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 979BC4EC1B26F6CB00070B0B /* HTTPClient.m */; };
+		97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F571B2FDCE9001FB2C4 /* SelectNumbersCell.m */; };
+		97D03F5A1B2FDCE9001FB2C4 /* SelectNumbersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D03F581B2FDCE9001FB2C4 /* SelectNumbersCell.xib */; };
+		97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F5C1B2FDE88001FB2C4 /* BuyingViewController.m */; };
+		97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D03F5D1B2FDE88001FB2C4 /* BuyingViewController.xib */; };
+		97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F611B2FE1D6001FB2C4 /* NumberButton.m */; };
 		F0997D21EEE09A40B4846F6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C01377733245E06688A8F6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +82,14 @@
 		974E85B11B11610E00B57C9E /* LotteryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryTests.m; sourceTree = "<group>"; };
 		979BC4EB1B26F6CB00070B0B /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		979BC4EC1B26F6CB00070B0B /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
+		97D03F561B2FDCE9001FB2C4 /* SelectNumbersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectNumbersCell.h; sourceTree = "<group>"; };
+		97D03F571B2FDCE9001FB2C4 /* SelectNumbersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectNumbersCell.m; sourceTree = "<group>"; };
+		97D03F581B2FDCE9001FB2C4 /* SelectNumbersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectNumbersCell.xib; sourceTree = "<group>"; };
+		97D03F5B1B2FDE88001FB2C4 /* BuyingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyingViewController.h; sourceTree = "<group>"; };
+		97D03F5C1B2FDE88001FB2C4 /* BuyingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyingViewController.m; sourceTree = "<group>"; };
+		97D03F5D1B2FDE88001FB2C4 /* BuyingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyingViewController.xib; sourceTree = "<group>"; };
+		97D03F601B2FE1D6001FB2C4 /* NumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberButton.h; sourceTree = "<group>"; };
+		97D03F611B2FE1D6001FB2C4 /* NumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberButton.m; sourceTree = "<group>"; };
 		B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D007C86A7ABE68F0E5D2E609 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,6 +273,7 @@
 		974E85BB1B1162E100B57C9E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				97D03F4D1B2FDBD5001FB2C4 /* Buying */,
 				00F5798B1B2D60CC00C5AD45 /* LoginViewController */,
 				00F5797B1B2D608A00C5AD45 /* BYLotteryHall */,
 				00F5797E1B2D608A00C5AD45 /* MYIfeng */,
@@ -287,6 +301,29 @@
 				970E4C4F1B2BF431004544EA /* HTTPClient+User.m */,
 			);
 			path = HTTP;
+			sourceTree = "<group>";
+		};
+		97D03F4D1B2FDBD5001FB2C4 /* Buying */ = {
+			isa = PBXGroup;
+			children = (
+				97D03F551B2FDC99001FB2C4 /* Views */,
+				97D03F5B1B2FDE88001FB2C4 /* BuyingViewController.h */,
+				97D03F5C1B2FDE88001FB2C4 /* BuyingViewController.m */,
+				97D03F5D1B2FDE88001FB2C4 /* BuyingViewController.xib */,
+			);
+			path = Buying;
+			sourceTree = "<group>";
+		};
+		97D03F551B2FDC99001FB2C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97D03F561B2FDCE9001FB2C4 /* SelectNumbersCell.h */,
+				97D03F571B2FDCE9001FB2C4 /* SelectNumbersCell.m */,
+				97D03F581B2FDCE9001FB2C4 /* SelectNumbersCell.xib */,
+				97D03F601B2FE1D6001FB2C4 /* NumberButton.h */,
+				97D03F611B2FE1D6001FB2C4 /* NumberButton.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C0F223D62BEDF1D78E103630 /* Frameworks */ = {
@@ -381,7 +418,9 @@
 			files = (
 				00D5CD4B1B2F0CEE007D8E81 /* LotteryResultsCell.xib in Resources */,
 				974E85A11B11610E00B57C9E /* Main.storyboard in Resources */,
+				97D03F5A1B2FDCE9001FB2C4 /* SelectNumbersCell.xib in Resources */,
 				00D5CD451B2F0C4C007D8E81 /* BYLotteryHallCell.xib in Resources */,
+				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
 				974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */,
 				974E85A31B11610E00B57C9E /* Images.xcassets in Resources */,
 			);
@@ -438,14 +477,17 @@
 				974E859E1B11610E00B57C9E /* RootViewController.m in Sources */,
 				00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */,
 				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,
+				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,
 				00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */,
 				974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */,
 				00F579881B2D608A00C5AD45 /* MyProfileViewController.m in Sources */,
 				00F579891B2D608A00C5AD45 /* RecommendViewController.m in Sources */,
 				00D5CD4A1B2F0CEE007D8E81 /* LotteryResultsCell.m in Sources */,
 				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
+				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
 				00D5CD3F1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m in Sources */,
 				974E85981B11610E00B57C9E /* main.m in Sources */,
+				97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */,
 				970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
