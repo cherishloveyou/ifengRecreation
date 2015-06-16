@@ -10,7 +10,7 @@
 
 @interface RootViewController : UITabBarController
 
-//测试
+
 
 @end
 
