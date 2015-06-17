@@ -10,6 +10,8 @@
 #import "CustomDropDownView.h"
 #import "UIAlertView+DisMiss.h"
 #import "HTTPClient+User.h"
+#define USERINFOARRAY @"userInfomationArray"
+#define useInfoArray [NSArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:USERINFOARRAY]]
 
 @interface LoginViewController ()<UITextFieldDelegate>
 /**
@@ -24,7 +26,7 @@
 
 - (CustomDropDownView *)dropView{
     
-    NSArray *array = @[@{@"jkdjfal":@"1243"},@{@"uiyiyad":@"kjdfjksd"},@{@"lujia":@"834787"}];
+    NSArray *array = useInfoArray;
     
     if (!_dropView) {
         _dropView = [[CustomDropDownView alloc] initWithFrame:CGRectMake(0, 150, CGRectGetWidth(self.view.bounds), 200) andDataArray:array];
@@ -47,6 +49,11 @@
     
     [super viewDidLoad];
 
+    NSDictionary *adiction = [useInfoArray firstObject];
+    self.userNameField.text = [adiction allKeys][0];
+    
+    self.passwordField.text = [adiction allValues][0];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,16 +133,74 @@
                  passWord:(NSString*)passWord{
     
     NSDictionary *paramaters = @{@"uname":userName,@"pwd":passWord};
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
  [HTTPClient userHandleWithAction:UserHandlerActionLoginValidate paramaters:paramaters success:^(id task, id response) {
-    
+     
+     if (response) {
+       NSInteger  code = [[response objectForKey:@"code"] integerValue];
+         
+         switch (code) {
+             case 0:
+                 [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+                 [self saveUserInfo];
+                 break;
+             case -2:
+                 [SVProgressHUD showSuccessWithStatus:@"账号不存在"];
+                 [self.userNameField becomeFirstResponder];
+                 
+                 break;
+             case -3:
+                 [SVProgressHUD showSuccessWithStatus:@"密码错误"];
+                 [self.passwordField becomeFirstResponder];
+                 break;
+             case -4:
+                 [SVProgressHUD showSuccessWithStatus:@"该账号被禁用,换一个试试!"];
+                 
+                 break;
+
+             default:
+                 break;
+         }
+     }
+     
      
  } failed:^(id task, NSError *error) {
      
-     
+     [SVProgressHUD showErrorWithStatus:error.localizedDescription];
      
  }];
     
+}
+/**
+ *  保存用户名密码
+ */
+- (void)saveUserInfo{
+    
+    NSMutableArray *array = [NSMutableArray arrayWithArray:useInfoArray];
+    
+    if (array) {
+        
+        for (int i = 0 ;i< array.count;i++) {
+            
+            NSMutableDictionary *userdic = [NSMutableDictionary dictionaryWithDictionary:array[i]];
+            
+            if ([[[userdic allKeys] lastObject] isEqualToString:self.userNameField.text]) {
+                [userdic setObject:self.passwordField.text forKey:self.userNameField.text];
+                [array replaceObjectAtIndex:i withObject:userdic];
+            }else{
+                NSDictionary *userinfo = @{self.userNameField.text:self.passwordField.text};
+                
+                [array addObject:userinfo];
+            }
+        }
+    } else{
+        NSDictionary *userinfo = @{self.userNameField.text:self.passwordField.text};
+        
+        [array addObject:userinfo];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:array forKey:USERINFOARRAY];
     
 }
 
