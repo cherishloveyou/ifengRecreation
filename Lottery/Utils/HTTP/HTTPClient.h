@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 #import <ReactiveCocoa.h>
+#import <SVProgressHUD.h>
+
+#define WEBREQUSTURL @"http://58.96.185.182:8004/iphone/UserHandler.ashx"
 
 FOUNDATION_EXTERN NSString * const netWorkReachabilityDidChangedNotification;
 

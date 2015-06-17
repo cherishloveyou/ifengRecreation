@@ -98,11 +98,12 @@
             }else{
                 
                 //create a compumd predicate
+                NSString *entityName = [self AR_entityName];
                 NSMutableArray *subPredicates = [NSMutableArray array];
                 for (NSString *primaryKey in primaryKeys) {
                     NSString *mappingKey = [mapping valueForKey:primaryKey];
                     
-                    NSAttributeDescription *attributeDes = [[[NSEntityDescription entityForName:[self AR_entityName] inManagedObjectContext:context] attributesByName] objectForKey:primaryKey];
+                    NSAttributeDescription *attributeDes = [[[NSEntityDescription entityForName:entityName inManagedObjectContext:context] attributesByName] objectForKey:primaryKey];
                     id remoteValue = [JSON valueForKeyPath:mappingKey];
                     if (attributeDes.attributeType == NSStringAttributeType) {
                         remoteValue = [remoteValue description];
@@ -115,7 +116,8 @@
                 }
                 
                 NSCompoundPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicates];
-                NSManagedObjectID *objectID = [[self objectIDStore] objectForKey:compoundPredicate.predicateFormat];
+                NSString *objectIDStoreKey = [entityName stringByAppendingString:compoundPredicate.predicateFormat];
+                NSManagedObjectID *objectID = [[self objectIDStore] objectForKey:objectIDStoreKey];
                 if (objectID != nil) {
                     entity = [context existingObjectWithID:objectID error:nil];
                 }
@@ -130,7 +132,7 @@
                     
                     if (entity == nil) {
                         entity = [self AR_newInContext:context];
-                        [[self objectIDStore] setObject:[entity.objectID copy] forKey:compoundPredicate.predicateFormat];
+                        [[self objectIDStore] setObject:[entity.objectID copy] forKey:objectIDStoreKey];
                     }
                 }
             }
@@ -140,25 +142,29 @@
             
             [mapping enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
                 
-                NSString *methodName = [NSString stringWithFormat:@"%@Transformer:",key];
-                SEL selector = NSSelectorFromString(methodName);
-                
-                if ([self respondsToSelector:selector]) {
+                id remoteValue = [JSON valueForKeyPath:obj];
+                if (remoteValue != nil) {
+                    
+                    NSString *methodName = [NSString stringWithFormat:@"%@Transformer:",key];
+                    SEL selector = NSSelectorFromString(methodName);
+                    if ([self respondsToSelector:selector]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                    id value = [self performSelector:selector withObject:JSON[obj]];
+                        id value = [self performSelector:selector withObject:remoteValue];
 #pragma clang diagnostic pop
-                    if (value != nil) {
-                        [entity setValue:value forKey:key];
-                    }
-                    
-                }else{
-                    if ([attributes containsObject:key]) {
-                        [entity mergeAttributeForKey:key withValue:[JSON valueForKeyPath:obj]];
+                        if (value != nil) {
+                            [entity setValue:value forKey:key];
+                        }
                         
+                    }else{
+                        if ([attributes containsObject:key]) {
+                            [entity mergeAttributeForKey:key withValue:remoteValue];
+                            
+                            
+                        }else if ([relationships containsObject:key]){
+                            [entity mergeRelationshipForKey:key withValue:remoteValue mergePolicy:policy];
+                        }
                         
-                    }else if ([relationships containsObject:key]){
-                        [entity mergeRelationshipForKey:key withValue:[JSON valueForKeyPath:obj] mergePolicy:policy];
                     }
                     
                 }
