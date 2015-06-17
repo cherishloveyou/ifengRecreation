@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIAlertView+DisMiss.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

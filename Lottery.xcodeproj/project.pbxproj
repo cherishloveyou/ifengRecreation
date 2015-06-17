@@ -12,6 +12,10 @@
 		00D5CD451B2F0C4C007D8E81 /* BYLotteryHallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D5CD431B2F0C4C007D8E81 /* BYLotteryHallCell.xib */; };
 		00D5CD4A1B2F0CEE007D8E81 /* LotteryResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D5CD481B2F0CEE007D8E81 /* LotteryResultsCell.m */; };
 		00D5CD4B1B2F0CEE007D8E81 /* LotteryResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D5CD491B2F0CEE007D8E81 /* LotteryResultsCell.xib */; };
+		00EDDD6E1B304ED1001F4CB8 /* UIAlertView+DisMiss.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDDD6D1B304ED1001F4CB8 /* UIAlertView+DisMiss.m */; };
+		00EDDD721B305C94001F4CB8 /* CustomDropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDDD711B305C94001F4CB8 /* CustomDropDownView.m */; };
+		00EDDD811B3070CB001F4CB8 /* DropDownViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDDD7F1B3070CB001F4CB8 /* DropDownViewCell.m */; };
+		00EDDD821B3070CB001F4CB8 /* DropDownViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EDDD801B3070CB001F4CB8 /* DropDownViewCell.xib */; };
 		00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5797D1B2D608A00C5AD45 /* ChannelViewController.m */; };
 		00F579881B2D608A00C5AD45 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F579801B2D608A00C5AD45 /* MyProfileViewController.m */; };
 		00F579891B2D608A00C5AD45 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F579831B2D608A00C5AD45 /* RecommendViewController.m */; };
@@ -53,6 +57,13 @@
 		00D5CD471B2F0CEE007D8E81 /* LotteryResultsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryResultsCell.h; sourceTree = "<group>"; };
 		00D5CD481B2F0CEE007D8E81 /* LotteryResultsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryResultsCell.m; sourceTree = "<group>"; };
 		00D5CD491B2F0CEE007D8E81 /* LotteryResultsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryResultsCell.xib; sourceTree = "<group>"; };
+		00EDDD6C1B304ED1001F4CB8 /* UIAlertView+DisMiss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+DisMiss.h"; sourceTree = "<group>"; };
+		00EDDD6D1B304ED1001F4CB8 /* UIAlertView+DisMiss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+DisMiss.m"; sourceTree = "<group>"; };
+		00EDDD701B305C94001F4CB8 /* CustomDropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDropDownView.h; sourceTree = "<group>"; };
+		00EDDD711B305C94001F4CB8 /* CustomDropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDropDownView.m; sourceTree = "<group>"; };
+		00EDDD7E1B3070CB001F4CB8 /* DropDownViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownViewCell.h; sourceTree = "<group>"; };
+		00EDDD7F1B3070CB001F4CB8 /* DropDownViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownViewCell.m; sourceTree = "<group>"; };
+		00EDDD801B3070CB001F4CB8 /* DropDownViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownViewCell.xib; sourceTree = "<group>"; };
 		00F5797C1B2D608A00C5AD45 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelViewController.h; sourceTree = "<group>"; };
 		00F5797D1B2D608A00C5AD45 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
 		00F5797F1B2D608A00C5AD45 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
@@ -142,9 +153,39 @@
 			path = lotteryResultsCell;
 			sourceTree = "<group>";
 		};
+		00EDDD6B1B304EB8001F4CB8 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				00EDDD6C1B304ED1001F4CB8 /* UIAlertView+DisMiss.h */,
+				00EDDD6D1B304ED1001F4CB8 /* UIAlertView+DisMiss.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		00EDDD6F1B305C57001F4CB8 /* customDropDownView */ = {
+			isa = PBXGroup;
+			children = (
+				00EDDD701B305C94001F4CB8 /* CustomDropDownView.h */,
+				00EDDD711B305C94001F4CB8 /* CustomDropDownView.m */,
+			);
+			path = customDropDownView;
+			sourceTree = "<group>";
+		};
+		00EDDD7D1B3070CB001F4CB8 /* customDropDownViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				00EDDD7E1B3070CB001F4CB8 /* DropDownViewCell.h */,
+				00EDDD7F1B3070CB001F4CB8 /* DropDownViewCell.m */,
+				00EDDD801B3070CB001F4CB8 /* DropDownViewCell.xib */,
+			);
+			path = customDropDownViewCell;
+			sourceTree = "<group>";
+		};
 		00F579751B2D5A0800C5AD45 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				00EDDD7D1B3070CB001F4CB8 /* customDropDownViewCell */,
+				00EDDD6F1B305C57001F4CB8 /* customDropDownView */,
 				00D5CD461B2F0CB0007D8E81 /* lotteryResultsCell */,
 				00D5CD401B2F0C4C007D8E81 /* BuylotteryHallCell */,
 			);
@@ -237,6 +278,7 @@
 				974E85A21B11610E00B57C9E /* Images.xcassets */,
 				974E859F1B11610E00B57C9E /* Main.storyboard */,
 				974E85A41B11610E00B57C9E /* LaunchScreen.xib */,
+				00EDDD6B1B304EB8001F4CB8 /* category */,
 				974E85BB1B1162E100B57C9E /* Controllers */,
 				00F579751B2D5A0800C5AD45 /* views */,
 				974E85951B11610E00B57C9E /* Supporting Files */,
@@ -421,6 +463,8 @@
 				97D03F5A1B2FDCE9001FB2C4 /* SelectNumbersCell.xib in Resources */,
 				00D5CD451B2F0C4C007D8E81 /* BYLotteryHallCell.xib in Resources */,
 				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
+				00EDDD821B3070CB001F4CB8 /* DropDownViewCell.xib in Resources */,
+				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
 				974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */,
 				974E85A31B11610E00B57C9E /* Images.xcassets in Resources */,
 			);
@@ -474,8 +518,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */,
+				00EDDD811B3070CB001F4CB8 /* DropDownViewCell.m in Sources */,
 				974E859E1B11610E00B57C9E /* RootViewController.m in Sources */,
 				00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */,
+				00EDDD6E1B304ED1001F4CB8 /* UIAlertView+DisMiss.m in Sources */,
 				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,
 				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,
 				00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */,
@@ -486,6 +532,7 @@
 				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
 				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
 				00D5CD3F1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m in Sources */,
+				00EDDD721B305C94001F4CB8 /* CustomDropDownView.m in Sources */,
 				974E85981B11610E00B57C9E /* main.m in Sources */,
 				97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */,
 				970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */,

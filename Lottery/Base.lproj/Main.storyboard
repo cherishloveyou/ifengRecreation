@@ -102,7 +102,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="btN-dG-wep"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="bDf-zM-mFB" id="ANQ-BY-Cbv"/>
                                                     </connections>
@@ -153,7 +153,7 @@
                             <outlet property="delegate" destination="bDf-zM-mFB" id="odM-2j-LeV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="CgD-Y8-Vv5"/>
+                    <navigationItem key="navigationItem" title="登录" id="CgD-Y8-Vv5"/>
                     <connections>
                         <outlet property="dropDownButton" destination="vge-wE-rql" id="efL-GV-f1J"/>
                         <outlet property="loginButton" destination="Bb0-Dp-bYl" id="MMl-E8-nyO"/>
