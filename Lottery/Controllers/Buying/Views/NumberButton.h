@@ -10,4 +10,6 @@
 
 @interface NumberButton : UIButton
 
+@property (nonatomic, assign) NSInteger index;
+
 @end

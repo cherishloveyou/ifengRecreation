@@ -8,6 +8,7 @@
 
 #import "NumberButton.h"
 #import <Masonry.h>
+#import "Colours.h"
 
 @interface NumberButton ()
 
@@ -26,21 +27,31 @@
 
 -(void)setUp
 {
-
+    [self setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    self.layer.cornerRadius = CGRectGetHeight(self.bounds)/2.0;
+    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.layer.backgroundColor = [UIColor lightGrayColor].CGColor;
+    ;
 }
 
--(void)drawRect:(CGRect)rect
+-(void)selectedSetUp
 {
-    [super drawRect:rect];
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.layer.cornerRadius = CGRectGetHeight(self.bounds)/2.0;
+    self.layer.borderColor = [UIColor tealColor].CGColor;
+    self.layer.backgroundColor = [UIColor tealColor].CGColor;
+    ;
+}
+
+-(void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
     
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    UIBezierPath *circle = [UIBezierPath bezierPathWithOvalInRect:rect];
-    CGContextSetLineWidth(context, 1);
-    CGContextAddPath(context, circle.CGPath);
-    CGFloat lengths[] = {2,1};
-    CGContextSetLineDash(context, 10, lengths, 2);
-    CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
-    CGContextStrokePath(context);
+    if (self.isSelected) {
+        [self selectedSetUp];
+    }else{
+        [self setUp];
+    }
 }
 
 @end

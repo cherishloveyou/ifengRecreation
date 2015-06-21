@@ -9,9 +9,10 @@
 #import "BuyingViewController.h"
 #import "SelectNumbersCell.h"
 
-@interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *datas;
 @end
 
 @implementation BuyingViewController
@@ -30,6 +31,11 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 -(void)baseConfigs
 {
+    self.datas = [NSMutableArray array];
+    //5 行
+    for (int i = 0; i < 15; i++) {
+        [self.datas addObject:[NSMutableOrderedSet orderedSet]];
+    }
     [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
 }
 
@@ -37,13 +43,14 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return self.datas.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SelectNumbersCell *numberCell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-        
+    numberCell.delegate = self;
+    [numberCell fillCellWithNumbersSet:self.datas[indexPath.row]];
     return numberCell;
 }
 
@@ -56,7 +63,21 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 106;
+    return 136;
+}
+
+#pragma mark - SelectNumbersCellDelegate methods
+
+-(void)numbersCell:(SelectNumbersCell *)numbersCell seletedNumber:(NSInteger)selectedNumber isSelected:(BOOL)isSelected
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:numbersCell];
+    NSString *indexString = [NSString stringWithFormat:@"%ld",selectedNumber];
+    NSMutableOrderedSet *orderSet = self.datas[indexPath.row];
+    if (isSelected) {
+        [orderSet addObject:indexString];
+    }else{
+        [orderSet removeObject:indexString];
+    }
 }
 
 #pragma mark - manage memory methods

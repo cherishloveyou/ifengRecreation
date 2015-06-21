@@ -22,6 +22,7 @@
 		00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F579861B2D608A00C5AD45 /* TrendViewController.m */; };
 		00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5798D1B2D60FD00C5AD45 /* LoginViewController.m */; };
 		970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 970E4C4F1B2BF431004544EA /* HTTPClient+User.m */; };
+		973C15B81B36BD8600BE608E /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C15B71B36BD8600BE608E /* Colours.m */; };
 		974E85981B11610E00B57C9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85971B11610E00B57C9E /* main.m */; };
 		974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E859A1B11610E00B57C9E /* AppDelegate.m */; };
 		974E859E1B11610E00B57C9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E859D1B11610E00B57C9E /* RootViewController.m */; };
@@ -78,6 +79,8 @@
 		970E4C4E1B2BF431004544EA /* HTTPClient+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPClient+User.h"; sourceTree = "<group>"; };
 		970E4C4F1B2BF431004544EA /* HTTPClient+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPClient+User.m"; sourceTree = "<group>"; };
 		970E4C521B2BF4C8004544EA /* HTTPConfigs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConfigs.h; sourceTree = "<group>"; };
+		973C15B61B36BD8600BE608E /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		973C15B71B36BD8600BE608E /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		974E85921B11610E00B57C9E /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		974E85961B11610E00B57C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		974E85971B11610E00B57C9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -247,6 +250,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		973C15B51B36BD8600BE608E /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				973C15B61B36BD8600BE608E /* Colours.h */,
+				973C15B71B36BD8600BE608E /* Colours.m */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		974E85891B11610E00B57C9E = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +340,7 @@
 		979BC4E91B26F67F00070B0B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				973C15B51B36BD8600BE608E /* Colors */,
 				979BC4EA1B26F6CB00070B0B /* HTTP */,
 			);
 			path = Utils;
@@ -532,6 +545,7 @@
 				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
 				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
 				00D5CD3F1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m in Sources */,
+				973C15B81B36BD8600BE608E /* Colours.m in Sources */,
 				00EDDD721B305C94001F4CB8 /* CustomDropDownView.m in Sources */,
 				974E85981B11610E00B57C9E /* main.m in Sources */,
 				97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */,
