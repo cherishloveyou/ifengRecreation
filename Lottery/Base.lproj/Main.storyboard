@@ -130,7 +130,7 @@
                                                         <constraint firstAttribute="height" constant="40" id="sbY-MQ-M7E"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="立即登录" backgroundImage="button_Back">
+                                                    <state key="normal" title="立即登录" backgroundImage="loginButton">
                                                         <color key="titleColor" red="0.23921568630000001" green="0.61960784310000006" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -354,9 +354,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button_Back" width="320" height="44"/>
         <image name="drop_button" width="12" height="7"/>
         <image name="drop_button_up" width="12" height="7"/>
+        <image name="loginButton" width="300" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

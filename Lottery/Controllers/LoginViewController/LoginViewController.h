@@ -30,5 +30,14 @@
  *  下拉按钮
  */
 @property (weak, nonatomic) IBOutlet UIButton *dropDownButton;
+/**
+ *  用户信息
+ */
+@property (nonatomic,strong) NSDictionary *userInfoDictionary;
+
+/**
+ *  便利构造器（单例模式）
+ */
++ (instancetype)defaultLoginViewController;
 
 @end

@@ -12,6 +12,8 @@
 #import "HTTPClient+User.h"
 #define USERINFOARRAY @"userInfomationArray"
 #define useInfoArray [NSArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:USERINFOARRAY]]
+#define USERINFODIC @"userInformationDictionary"
+#define uerdictionary [[NSUserDefaults standardUserDefaults] dictionaryForKey:USERINFODIC]
 
 @interface LoginViewController ()<UITextFieldDelegate>
 /**
@@ -23,6 +25,20 @@
 
 @implementation LoginViewController
 
+
+
+/**
+ *  便利构造器（单例模式）
+ */
++ (instancetype)defaultLoginViewController{
+    static LoginViewController *sharedAccountManagerInstance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        
+        sharedAccountManagerInstance = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    });
+    return sharedAccountManagerInstance;
+}
 
 - (CustomDropDownView *)dropView{
     
@@ -137,13 +153,22 @@
     
  [HTTPClient userHandleWithAction:UserHandlerActionLoginValidate paramaters:paramaters success:^(id task, id response) {
      
-     if (response) {
+     if ([response isKindOfClass:[NSDictionary class]]) {
        NSInteger  code = [[response objectForKey:@"code"] integerValue];
          
          switch (code) {
              case 0:
                  [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                  [self saveUserInfo];
+                 
+                 self.userInfoDictionary = [NSDictionary dictionaryWithDictionary:response];
+                 [[NSUserDefaults standardUserDefaults] setObject:self.userInfoDictionary forKey:USERINFODIC];
+                 if (!self.navigationController) {
+                     [self dismissViewControllerAnimated:YES completion:nil];
+                 }else{
+                     [self.navigationController popViewControllerAnimated:YES];
+                 }
+                 
                  break;
              case -2:
                  [SVProgressHUD showSuccessWithStatus:@"账号不存在"];
@@ -201,7 +226,6 @@
     }
     
     [[NSUserDefaults standardUserDefaults] setObject:array forKey:USERINFOARRAY];
-    
 }
 
 
