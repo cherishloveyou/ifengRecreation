@@ -11,7 +11,7 @@
 #import "UIAlertView+DisMiss.h"
 #import "HTTPClient+User.h"
 #define USERINFOARRAY @"userInfomationArray"
-#define useInfoArray [NSArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:USERINFOARRAY]]
+#define useInfoArray [NSArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:USERINFOARRAY]]
 
 @interface LoginViewController ()<UITextFieldDelegate>
 /**
