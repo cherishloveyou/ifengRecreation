@@ -84,6 +84,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         self.selectedData(self.dataArray[indexPath.row]);
     }
     [self dismiss];
+
 }
 
 - (void)dismiss{

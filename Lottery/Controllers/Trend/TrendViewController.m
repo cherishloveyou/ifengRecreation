@@ -10,4 +10,11 @@
 
 @implementation TrendViewController
 
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    
+    
+}
+
 @end
