@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B90CDFB5C110B759384D92B0"
+               BlueprintIdentifier = "EE4F9BE6DF793191EB5F20D7"
                BuildableName = "libPods-ARCoreData.a"
                BlueprintName = "Pods-ARCoreData"
                ReferencedContainer = "container:Pods.xcodeproj">

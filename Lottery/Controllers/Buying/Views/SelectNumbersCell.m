@@ -8,6 +8,7 @@
 
 #import "SelectNumbersCell.h"
 #import "NumberButton.h"
+#import "SegmentButton.h"
 
 @interface SelectNumbersCell ()
 @property (weak, nonatomic) IBOutlet NumberButton *numberButton0;
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (nonatomic, strong) CALayer *backLayer;
+@property (weak, nonatomic) IBOutlet OAStackView *stackView;
 
 @end
 
@@ -48,7 +50,8 @@
     self.numberButton7.index = 7;
     self.numberButton8.index = 8;
     self.numberButton9.index = 9;
-
+    
+    self.stackView.distribution = OAStackViewDistributionFillEqually;
 }
 
 -(void)prepareForReuse
@@ -65,6 +68,9 @@
     self.numberButton7.selected = NO;
     self.numberButton8.selected = NO;
     self.numberButton9.selected = NO;
+    for (SegmentButton *button in self.stackView.subviews) {
+        button.selected = NO;
+    }
 }
 
 -(void)layoutSubviews
@@ -73,20 +79,40 @@
     self.backLayer.frame = CGRectMake(10, 5, CGRectGetWidth(self.bounds)-20, CGRectGetHeight(self.bounds)-10);
 }
 
--(void)fillCellWithNumbersSet:(NSMutableOrderedSet *)numbersSet title:(NSString *)title
+-(void)fillCellWithNode:(NumberCellNode *)node
 {
-    self.titleLabel.text = title;
-    [numbersSet enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    self.titleLabel.text = node.title;
+    [node.numbersSet enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString *key = [NSString stringWithFormat:@"numberButton%@",obj];
         NumberButton *button = [self valueForKey:key];
         [button setSelected:YES];
     }];
+    
+    if (node.segmentSelectIndex != NSNotFound) {
+        for (SegmentButton *button in self.stackView.subviews) {
+            button.selected = button.index == node.segmentSelectIndex?YES:NO;
+        }
+    }
 }
+
+#pragma mark - event methods
 
 - (IBAction)bumberButtonClicked:(NumberButton *)sender {
     [sender setSelected:!sender.isSelected];
     if ([self.delegate respondsToSelector:@selector(numbersCell:seletedNumber:isSelected:)]) {
         [self.delegate numbersCell:self seletedNumber:sender.index isSelected:sender.isSelected];
+    }
+}
+
+
+- (IBAction)segmentButtonClicked:(SegmentButton *)sender {
+    for (SegmentButton *button in self.stackView.subviews) {
+        button.selected = NO;
+    }
+    sender.selected = YES;
+    
+    if ([self.delegate respondsToSelector:@selector(numbersCell:segmentTitle:selectIndex:)]) {
+        [self.delegate numbersCell:self segmentTitle:self.stackView selectIndex:sender.index];
     }
 }
 

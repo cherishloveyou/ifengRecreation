@@ -22,6 +22,14 @@
 		00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F579861B2D608A00C5AD45 /* TrendViewController.m */; };
 		00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5798D1B2D60FD00C5AD45 /* LoginViewController.m */; };
 		970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 970E4C4F1B2BF431004544EA /* HTTPClient+User.m */; };
+		971DF3F21B3E54BA005CF819 /* OAStackView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3E61B3E54BA005CF819 /* OAStackView+Constraint.m */; };
+		971DF3F31B3E54BA005CF819 /* OAStackView+Hiding.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3E81B3E54BA005CF819 /* OAStackView+Hiding.m */; };
+		971DF3F41B3E54BA005CF819 /* OAStackView+Traversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3EA1B3E54BA005CF819 /* OAStackView+Traversal.m */; };
+		971DF3F51B3E54BA005CF819 /* OAStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3EC1B3E54BA005CF819 /* OAStackView.m */; };
+		971DF3F61B3E54BA005CF819 /* OAStackViewAlignmentStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3EE1B3E54BA005CF819 /* OAStackViewAlignmentStrategy.m */; };
+		971DF3F71B3E54BA005CF819 /* OAStackViewDistributionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3F01B3E54BA005CF819 /* OAStackViewDistributionStrategy.m */; };
+		971DF3FD1B3E735C005CF819 /* SegmentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3FC1B3E735C005CF819 /* SegmentButton.m */; };
+		971DF4011B3E81D1005CF819 /* NumberCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF4001B3E81D1005CF819 /* NumberCellNode.m */; };
 		973C15B81B36BD8600BE608E /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C15B71B36BD8600BE608E /* Colours.m */; };
 		974E85981B11610E00B57C9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85971B11610E00B57C9E /* main.m */; };
 		974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E859A1B11610E00B57C9E /* AppDelegate.m */; };
@@ -79,6 +87,22 @@
 		970E4C4E1B2BF431004544EA /* HTTPClient+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPClient+User.h"; sourceTree = "<group>"; };
 		970E4C4F1B2BF431004544EA /* HTTPClient+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPClient+User.m"; sourceTree = "<group>"; };
 		970E4C521B2BF4C8004544EA /* HTTPConfigs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConfigs.h; sourceTree = "<group>"; };
+		971DF3E51B3E54BA005CF819 /* OAStackView+Constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAStackView+Constraint.h"; sourceTree = "<group>"; };
+		971DF3E61B3E54BA005CF819 /* OAStackView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAStackView+Constraint.m"; sourceTree = "<group>"; };
+		971DF3E71B3E54BA005CF819 /* OAStackView+Hiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAStackView+Hiding.h"; sourceTree = "<group>"; };
+		971DF3E81B3E54BA005CF819 /* OAStackView+Hiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAStackView+Hiding.m"; sourceTree = "<group>"; };
+		971DF3E91B3E54BA005CF819 /* OAStackView+Traversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAStackView+Traversal.h"; sourceTree = "<group>"; };
+		971DF3EA1B3E54BA005CF819 /* OAStackView+Traversal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAStackView+Traversal.m"; sourceTree = "<group>"; };
+		971DF3EB1B3E54BA005CF819 /* OAStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStackView.h; sourceTree = "<group>"; };
+		971DF3EC1B3E54BA005CF819 /* OAStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAStackView.m; sourceTree = "<group>"; };
+		971DF3ED1B3E54BA005CF819 /* OAStackViewAlignmentStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStackViewAlignmentStrategy.h; sourceTree = "<group>"; };
+		971DF3EE1B3E54BA005CF819 /* OAStackViewAlignmentStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAStackViewAlignmentStrategy.m; sourceTree = "<group>"; };
+		971DF3EF1B3E54BA005CF819 /* OAStackViewDistributionStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStackViewDistributionStrategy.h; sourceTree = "<group>"; };
+		971DF3F01B3E54BA005CF819 /* OAStackViewDistributionStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAStackViewDistributionStrategy.m; sourceTree = "<group>"; };
+		971DF3FB1B3E735C005CF819 /* SegmentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentButton.h; sourceTree = "<group>"; };
+		971DF3FC1B3E735C005CF819 /* SegmentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentButton.m; sourceTree = "<group>"; };
+		971DF3FF1B3E81D1005CF819 /* NumberCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberCellNode.h; sourceTree = "<group>"; };
+		971DF4001B3E81D1005CF819 /* NumberCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberCellNode.m; sourceTree = "<group>"; };
 		973C15B61B36BD8600BE608E /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		973C15B71B36BD8600BE608E /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		974E85921B11610E00B57C9E /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +274,42 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		971DF3E31B3E54BA005CF819 /* OAStackView */ = {
+			isa = PBXGroup;
+			children = (
+				971DF3E51B3E54BA005CF819 /* OAStackView+Constraint.h */,
+				971DF3E61B3E54BA005CF819 /* OAStackView+Constraint.m */,
+				971DF3E71B3E54BA005CF819 /* OAStackView+Hiding.h */,
+				971DF3E81B3E54BA005CF819 /* OAStackView+Hiding.m */,
+				971DF3E91B3E54BA005CF819 /* OAStackView+Traversal.h */,
+				971DF3EA1B3E54BA005CF819 /* OAStackView+Traversal.m */,
+				971DF3EB1B3E54BA005CF819 /* OAStackView.h */,
+				971DF3EC1B3E54BA005CF819 /* OAStackView.m */,
+				971DF3ED1B3E54BA005CF819 /* OAStackViewAlignmentStrategy.h */,
+				971DF3EE1B3E54BA005CF819 /* OAStackViewAlignmentStrategy.m */,
+				971DF3EF1B3E54BA005CF819 /* OAStackViewDistributionStrategy.h */,
+				971DF3F01B3E54BA005CF819 /* OAStackViewDistributionStrategy.m */,
+			);
+			path = OAStackView;
+			sourceTree = "<group>";
+		};
+		971DF3FE1B3E81B4005CF819 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				971DF3FF1B3E81D1005CF819 /* NumberCellNode.h */,
+				971DF4001B3E81D1005CF819 /* NumberCellNode.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9720B2401B3E4D4300648ABE /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				971DF3E31B3E54BA005CF819 /* OAStackView */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
 		973C15B51B36BD8600BE608E /* Colors */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +342,7 @@
 		974E85941B11610E00B57C9E /* Lottery */ = {
 			isa = PBXGroup;
 			children = (
+				9720B2401B3E4D4300648ABE /* Vendors */,
 				979BC4E91B26F67F00070B0B /* Utils */,
 				974E85991B11610E00B57C9E /* AppDelegate.h */,
 				974E859A1B11610E00B57C9E /* AppDelegate.m */,
@@ -361,6 +422,7 @@
 		97D03F4D1B2FDBD5001FB2C4 /* Buying */ = {
 			isa = PBXGroup;
 			children = (
+				971DF3FE1B3E81B4005CF819 /* Model */,
 				97D03F551B2FDC99001FB2C4 /* Views */,
 				97D03F5B1B2FDE88001FB2C4 /* BuyingViewController.h */,
 				97D03F5C1B2FDE88001FB2C4 /* BuyingViewController.m */,
@@ -377,6 +439,8 @@
 				97D03F581B2FDCE9001FB2C4 /* SelectNumbersCell.xib */,
 				97D03F601B2FE1D6001FB2C4 /* NumberButton.h */,
 				97D03F611B2FE1D6001FB2C4 /* NumberButton.m */,
+				971DF3FB1B3E735C005CF819 /* SegmentButton.h */,
+				971DF3FC1B3E735C005CF819 /* SegmentButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -531,13 +595,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */,
+				971DF3F51B3E54BA005CF819 /* OAStackView.m in Sources */,
 				00EDDD811B3070CB001F4CB8 /* DropDownViewCell.m in Sources */,
 				974E859E1B11610E00B57C9E /* RootViewController.m in Sources */,
+				971DF3FD1B3E735C005CF819 /* SegmentButton.m in Sources */,
 				00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */,
 				00EDDD6E1B304ED1001F4CB8 /* UIAlertView+DisMiss.m in Sources */,
 				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,
 				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,
 				00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */,
+				971DF4011B3E81D1005CF819 /* NumberCellNode.m in Sources */,
 				974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */,
 				00F579881B2D608A00C5AD45 /* MyProfileViewController.m in Sources */,
 				00F579891B2D608A00C5AD45 /* RecommendViewController.m in Sources */,
@@ -546,10 +613,15 @@
 				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
 				00D5CD3F1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m in Sources */,
 				973C15B81B36BD8600BE608E /* Colours.m in Sources */,
+				971DF3F61B3E54BA005CF819 /* OAStackViewAlignmentStrategy.m in Sources */,
 				00EDDD721B305C94001F4CB8 /* CustomDropDownView.m in Sources */,
 				974E85981B11610E00B57C9E /* main.m in Sources */,
 				97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */,
 				970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */,
+				971DF3F31B3E54BA005CF819 /* OAStackView+Hiding.m in Sources */,
+				971DF3F21B3E54BA005CF819 /* OAStackView+Constraint.m in Sources */,
+				971DF3F71B3E54BA005CF819 /* OAStackViewDistributionStrategy.m in Sources */,
+				971DF3F41B3E54BA005CF819 /* OAStackView+Traversal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

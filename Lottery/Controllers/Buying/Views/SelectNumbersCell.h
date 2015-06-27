@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OAStackView.h"
+#import "NumberCellNode.h"
 
 @class SelectNumbersCell;
 @protocol SelectNumbersCellDelegate <NSObject>
 
 -(void)numbersCell:(SelectNumbersCell *)numbersCell seletedNumber:(NSInteger)selectedNumber isSelected:(BOOL)isSelected;
+-(void)numbersCell:(SelectNumbersCell *)numbersCell segmentTitle:(OAStackView *)segmentTitle selectIndex:(NSUInteger)selectIndex;
 
 @end
 
@@ -19,6 +22,8 @@
 
 @property (nonatomic, weak) id<SelectNumbersCellDelegate> delegate;
 
--(void)fillCellWithNumbersSet:(NSMutableOrderedSet *)numbersSet title:(NSString *)title;
+//-(void)fillCellWithNumbersSet:(NSMutableOrderedSet *)numbersSet title:(NSString *)title;
+
+-(void)fillCellWithNode:(NumberCellNode *)node;
 
 @end

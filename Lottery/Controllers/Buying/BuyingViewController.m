@@ -10,12 +10,12 @@
 #import "SelectNumbersCell.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "Colours.h"
+#import "NumberCellNode.h"
 
 @interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
-@property (nonatomic, strong) NSMutableArray *titles;
 
 @end
 
@@ -49,10 +49,12 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     [self.navigationItem setRightBarButtonItem:infoItem];
     
     self.datas = [NSMutableArray array];
-    self.titles = [NSMutableArray arrayWithObjects:@"万",@"千",@"百",@"十",@"个", nil];
+    NSArray *titles = @[@"万",@"千",@"百",@"十",@"个"];
     //5 行
-    for (int i = 0; i < 5; i++) {
-        [self.datas addObject:[NSMutableOrderedSet orderedSet]];
+    for (int i = 0; i < titles.count; i++) {
+        NumberCellNode *node = [[NumberCellNode alloc] init];
+        node.title = titles[i];
+        [self.datas addObject:node];
     }
     [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
 }
@@ -87,7 +89,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 {
     SelectNumbersCell *numberCell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     numberCell.delegate = self;
-    [numberCell fillCellWithNumbersSet:self.datas[indexPath.row] title:self.titles[indexPath.row]];
+    [numberCell fillCellWithNode:self.datas[indexPath.row]];
 
     return numberCell;
 }
@@ -101,7 +103,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 146;
+    return 156;
 }
 
 #pragma mark - SelectNumbersCellDelegate methods
@@ -116,6 +118,49 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     }else{
         [orderSet removeObject:indexString];
     }
+}
+
+-(void)numbersCell:(SelectNumbersCell *)numbersCell segmentTitle:(OAStackView *)segmentTitle selectIndex:(NSUInteger)selectIndex
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:numbersCell];
+    NSUInteger row = indexPath.row;
+    NSMutableOrderedSet *numberSet = [NSMutableOrderedSet orderedSet];
+    switch (selectIndex) {
+        case 0:{
+            [numberSet addObjectsFromArray:@[@(5),@(6),@(7),@(8),@(9)]];
+            break;
+        }
+        case 1:{
+            [numberSet addObjectsFromArray:@[@(0),@(1),@(2),@(3),@(4)]];
+            break;
+        }
+        case 2:{
+            NSArray *numbers = @[@(0),@(1),@(2),@(3),@(4),@(5),@(6),@(7),@(8),@(9)];
+            [numberSet addObjectsFromArray:numbers];
+            break;
+        }
+        case 3:{
+            NSArray *numbers = @[@(1),@(3),@(5),@(7),@(9)];
+            [numberSet addObjectsFromArray:numbers];
+            break;
+        }
+        case 4:{
+            NSArray *numbers = @[@(0),@(2),@(4),@(6),@(8)];
+            [numberSet addObjectsFromArray:numbers];
+
+            break;
+        }
+        case 5:{
+            break;
+        }
+            
+        default:
+            break;
+    }
+    NumberCellNode *node = self.datas[row];
+    node.numbersSet = numberSet;
+    node.segmentSelectIndex = selectIndex;
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - motion delegate methods
