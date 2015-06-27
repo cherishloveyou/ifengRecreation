@@ -58,11 +58,13 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
+
     RecommendationVC *recommVC = [[RecommendationVC alloc] initWithNibName:@"RecommendationVC" bundle:[NSBundle mainBundle]];
     
     [self.navigationController pushViewController:recommVC animated:YES];
-    
+
+//    BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
+//    buyingViewControlelr.hidesBottomBarWhenPushed = YES;
 //    [self.navigationController pushViewController:buyingViewControlelr animated:YES];
 }
 

@@ -8,11 +8,15 @@
 
 #import "BuyingViewController.h"
 #import "SelectNumbersCell.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import "Colours.h"
 
 @interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
+@property (nonatomic, strong) NSMutableArray *titles;
+
 @end
 
 @implementation BuyingViewController
@@ -31,12 +35,45 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 -(void)baseConfigs
 {
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
+    [self becomeFirstResponder];
+    
+    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self action:@selector(infoButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *infoItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    [self.navigationItem setRightBarButtonItem:infoItem];
+    
     self.datas = [NSMutableArray array];
+    self.titles = [NSMutableArray arrayWithObjects:@"万",@"千",@"百",@"十",@"个", nil];
     //5 行
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 5; i++) {
         [self.datas addObject:[NSMutableOrderedSet orderedSet]];
     }
     [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+}
+
+-(void)randomSelectNumbers
+{
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    [self.datas enumerateObjectsUsingBlock:^(NSMutableOrderedSet *set, NSUInteger idx, BOOL *stop) {
+        [set removeAllObjects];
+        NSUInteger randomNumber = arc4random()%10;
+        [set addObject:@(randomNumber)];
+    }];
+    
+    [self.tableView reloadData];
+}
+
+#pragma mark - custom event methods
+
+-(void)infoButtonClicked:(id)sender
+{
+
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -50,7 +87,8 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 {
     SelectNumbersCell *numberCell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     numberCell.delegate = self;
-    [numberCell fillCellWithNumbersSet:self.datas[indexPath.row]];
+    [numberCell fillCellWithNumbersSet:self.datas[indexPath.row] title:self.titles[indexPath.row]];
+
     return numberCell;
 }
 
@@ -63,7 +101,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 136;
+    return 146;
 }
 
 #pragma mark - SelectNumbersCellDelegate methods
@@ -79,6 +117,19 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
         [orderSet removeObject:indexString];
     }
 }
+
+#pragma mark - motion delegate methods
+
+-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    [self randomSelectNumbers];
+}
+
+-(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{}
+
+-(void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{}
 
 #pragma mark - manage memory methods
 
