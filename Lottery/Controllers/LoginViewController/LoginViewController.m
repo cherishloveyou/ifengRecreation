@@ -11,9 +11,14 @@
 #import "UIAlertView+DisMiss.h"
 #import "HTTPClient+User.h"
 #define USERINFOARRAY @"userInfomationArray"
-#define useInfoArray [NSArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:USERINFOARRAY]]
+#define useInfoArray [[NSUserDefaults standardUserDefaults] arrayForKey:USERINFOARRAY]
+
 #define USERINFODIC @"userInformationDictionary"
 #define uerdictionary [[NSUserDefaults standardUserDefaults] dictionaryForKey:USERINFODIC]
+
+#define currentFlag @"currentFlag"
+
+#define CURRENTLOGINFLAG [[NSUserDefaults standardUserDefaults] stringForKey:currentFlag]
 
 @interface LoginViewController ()<UITextFieldDelegate>
 /**
@@ -66,6 +71,8 @@
     [super viewDidLoad];
 
     NSDictionary *adiction = [useInfoArray firstObject];
+
+    
     self.userNameField.text = [adiction allKeys][0];
     
     self.passwordField.text = [adiction allValues][0];
@@ -95,6 +102,10 @@
 
     
     [textField resignFirstResponder];
+    
+    if (self.userNameField.text.length && self.passwordField.text.length) {
+        [self loginButtonPressed:nil];
+    }
     
     return YES;
 }
@@ -127,6 +138,7 @@
  */
 - (IBAction)loginButtonPressed:(id)sender {
     if (!self.userNameField.text.length) {
+        
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"用户名不能为空" delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
         [alertView showOntime:2];
         return;
@@ -136,6 +148,8 @@
         [self.passwordField becomeFirstResponder];
         return;
     }
+    [self.userNameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
     [self loginWithUserName:self.userNameField.text passWord:self.passwordField.text];
     
 }
@@ -157,18 +171,23 @@
        NSInteger  code = [[response objectForKey:@"code"] integerValue];
          
          switch (code) {
-             case 0:
+             case 0:{
                  [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-                 [self saveUserInfo];
                  
                  self.userInfoDictionary = [NSDictionary dictionaryWithDictionary:response];
-                 [[NSUserDefaults standardUserDefaults] setObject:self.userInfoDictionary forKey:USERINFODIC];
+//                 保存用户信息
+                 
+                 [self saveUserInfo];
+
+                 
                  if (!self.navigationController) {
+                     
                      [self dismissViewControllerAnimated:YES completion:nil];
                  }else{
+                     
                      [self.navigationController popViewControllerAnimated:YES];
                  }
-                 
+             }
                  break;
              case -2:
                  [SVProgressHUD showSuccessWithStatus:@"账号不存在"];
@@ -198,13 +217,18 @@
     
 }
 /**
- *  保存用户名密码
+ *  保存用户名密码 等用户信息
  */
 - (void)saveUserInfo{
     
+    [[NSUserDefaults standardUserDefaults] setObject:self.userInfoDictionary forKey:USERINFODIC];
+    
+    self.loginFlag = [self.userInfoDictionary objectForKey:@"flag"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.loginFlag forKey:currentFlag];
+    
     NSMutableArray *array = [NSMutableArray arrayWithArray:useInfoArray];
     
-    if (array) {
+    if (array.count) {
         
         for (int i = 0 ;i< array.count;i++) {
             

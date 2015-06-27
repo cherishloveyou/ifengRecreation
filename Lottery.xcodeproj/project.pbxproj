@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070B4081B3C2F6700DF17AC /* RecommendationVC.m */; };
+		0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */; };
 		00D5CD3F1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D5CD3E1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m */; };
 		00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D5CD421B2F0C4C007D8E81 /* BYLotteryHallCell.m */; };
 		00D5CD451B2F0C4C007D8E81 /* BYLotteryHallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D5CD431B2F0C4C007D8E81 /* BYLotteryHallCell.xib */; };
@@ -50,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0070B4071B3C2F6700DF17AC /* RecommendationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendationVC.h; sourceTree = "<group>"; };
+		0070B4081B3C2F6700DF17AC /* RecommendationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendationVC.m; sourceTree = "<group>"; };
+		0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendationVC.xib; sourceTree = "<group>"; };
 		00D5CD3D1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buyLotteryDetailVCViewController.h; sourceTree = "<group>"; };
 		00D5CD3E1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buyLotteryDetailVCViewController.m; sourceTree = "<group>"; };
 		00D5CD411B2F0C4C007D8E81 /* BYLotteryHallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYLotteryHallCell.h; sourceTree = "<group>"; };
@@ -219,6 +224,9 @@
 			children = (
 				00F579821B2D608A00C5AD45 /* RecommendViewController.h */,
 				00F579831B2D608A00C5AD45 /* RecommendViewController.m */,
+				0070B4071B3C2F6700DF17AC /* RecommendationVC.h */,
+				0070B4081B3C2F6700DF17AC /* RecommendationVC.m */,
+				0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */,
 			);
 			path = Recommendation;
 			sourceTree = "<group>";
@@ -478,6 +486,7 @@
 				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
 				00EDDD821B3070CB001F4CB8 /* DropDownViewCell.xib in Resources */,
 				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
+				0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */,
 				974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */,
 				974E85A31B11610E00B57C9E /* Images.xcassets in Resources */,
 			);
@@ -536,6 +545,7 @@
 				00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */,
 				00EDDD6E1B304ED1001F4CB8 /* UIAlertView+DisMiss.m in Sources */,
 				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,
+				0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */,
 				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,
 				00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */,
 				974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */,

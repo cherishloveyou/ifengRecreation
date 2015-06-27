@@ -10,6 +10,7 @@
 #import "HTTPClient+User.h"
 #import "BuyingViewController.h"
 #import "LoginViewController.h"
+#import "RecommendationVC.h"
 
 @interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -57,9 +58,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
+//    BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
+    RecommendationVC *recommVC = [[RecommendationVC alloc] initWithNibName:@"RecommendationVC" bundle:[NSBundle mainBundle]];
     
-    [self.navigationController pushViewController:buyingViewControlelr animated:YES];
+    [self.navigationController pushViewController:recommVC animated:YES];
+    
+//    [self.navigationController pushViewController:buyingViewControlelr animated:YES];
 }
 
 @end
