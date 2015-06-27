@@ -34,6 +34,10 @@
  *  用户信息
  */
 @property (nonatomic,strong) NSDictionary *userInfoDictionary;
+/**
+ *  登录标识 用于判定 是否重复登录
+ */
+@property (nonatomic,strong) NSString *loginFlag;
 
 /**
  *  便利构造器（单例模式）
