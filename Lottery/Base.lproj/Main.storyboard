@@ -239,27 +239,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnO-8M-bhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1736" y="-548"/>
-        </scene>
-        <!--Recommend-->
-        <scene sceneID="LSF-Ef-Rgs">
-            <objects>
-                <tableViewController id="3Ck-jK-2E2" customClass="RecommendViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="y6k-Kc-RYg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="3Ck-jK-2E2" id="a24-Mb-D8q"/>
-                            <outlet property="delegate" destination="3Ck-jK-2E2" id="qFM-QD-nRZ"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Recommend" id="hqk-ZS-RtS"/>
-                    <navigationItem key="navigationItem" title="Recommend" id="VJ5-OJ-8Tj"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a5N-Ng-j0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1736" y="-1242"/>
+            <point key="canvasLocation" x="-1780" y="-548"/>
         </scene>
         <!--Trend-->
         <scene sceneID="x9t-6J-SdY">
@@ -345,12 +325,32 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="3Ck-jK-2E2" kind="relationship" relationship="rootViewController" id="aeM-wX-Agb"/>
+                        <segue destination="6I9-k8-zSz" kind="relationship" relationship="rootViewController" id="mDP-YO-Qaa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJt-Zl-WNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2133" y="-1242"/>
+        </scene>
+        <!--Recommend View Controller-->
+        <scene sceneID="Mnz-5H-26F">
+            <objects>
+                <viewController id="6I9-k8-zSz" customClass="RecommendViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oor-ov-7kC"/>
+                        <viewControllerLayoutGuide type="bottom" id="FF4-xH-abg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tXM-4g-vgG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="swG-tH-O3W"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMF-fe-rR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1719" y="-1235"/>
         </scene>
     </scenes>
     <resources>

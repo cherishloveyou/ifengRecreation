@@ -10,6 +10,16 @@
 
 
 @interface LoginViewController : UITableViewController
+
+#define USERINFOARRAY @"userInfomationArray"
+#define useInfoArray [[NSUserDefaults standardUserDefaults] arrayForKey:USERINFOARRAY]
+
+#define USERINFODIC @"userInformationDictionary"
+#define uerdictionary [[NSUserDefaults standardUserDefaults] dictionaryForKey:USERINFODIC]
+
+#define currentFlag @"currentFlag"
+
+#define CURRENTLOGINFLAG [[NSUserDefaults standardUserDefaults] stringForKey:currentFlag]
 /**
  *  用户头像
  */

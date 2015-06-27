@@ -7,12 +7,10 @@
 //
 
 #import "RecommendViewController.h"
-#import "HTTPClient+User.h"
-#import "BuyingViewController.h"
 #import "LoginViewController.h"
 #import "RecommendationVC.h"
 
-@interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface RecommendViewController ()
 
 @end
 
@@ -23,37 +21,36 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    RecommendationVC *recmment = [[RecommendationVC alloc] initWithNibName:@"RecommendationVC" bundle:[NSBundle mainBundle]];
+    [self addChildViewController:recmment];
+    recmment.view.frame = self.view.bounds;
+    [self.view addSubview:recmment.view];
     
+<<<<<<< Updated upstream
 //    LoginViewController *loginVC = [LoginViewController defaultLoginViewController];
 //    
 //    [self presentViewController:loginVC animated:YES completion:nil];
     
     [self baseConfigs];
 }
+=======
+    if (CURRENTLOGINFLAG.length < 10) {
+        LoginViewController *loginVC = [LoginViewController defaultLoginViewController];
+        
+//        [self presentViewController:loginVC animated:YES completion:nil];
+>>>>>>> Stashed changes
 
-#pragma mark - private methods
-
--(void)baseConfigs
-{
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    }
     
-
 }
 
-#pragma mark - UITableViewDataSource methods
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 3;
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = YES;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = @"test";
-    return cell;
-}
-
+<<<<<<< Updated upstream
 #pragma mark - UITableViewDelegate methods
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,6 +63,13 @@
     BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
     buyingViewControlelr.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:buyingViewControlelr animated:YES];
+=======
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    self.navigationController.navigationBarHidden = NO;
+>>>>>>> Stashed changes
 }
+
 
 @end

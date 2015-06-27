@@ -10,15 +10,7 @@
 #import "CustomDropDownView.h"
 #import "UIAlertView+DisMiss.h"
 #import "HTTPClient+User.h"
-#define USERINFOARRAY @"userInfomationArray"
-#define useInfoArray [[NSUserDefaults standardUserDefaults] arrayForKey:USERINFOARRAY]
 
-#define USERINFODIC @"userInformationDictionary"
-#define uerdictionary [[NSUserDefaults standardUserDefaults] dictionaryForKey:USERINFODIC]
-
-#define currentFlag @"currentFlag"
-
-#define CURRENTLOGINFLAG [[NSUserDefaults standardUserDefaults] stringForKey:currentFlag]
 
 @interface LoginViewController ()<UITextFieldDelegate>
 /**

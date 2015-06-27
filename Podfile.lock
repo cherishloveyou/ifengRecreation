@@ -28,6 +28,7 @@ PODS:
   - ARCoreData/Core (1.02)
   - ARCoreData/FetchController (1.02)
   - Masonry (0.6.1)
+  - MJRefresh (2.0.4)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - AFNetworking
   - ARCoreData (from `https://github.com/AugustRush/ARCoreData.git`)
   - Masonry
+  - MJRefresh (~> 2.0.1)
   - ReactiveCocoa
   - SDWebImage
   - SVProgressHUD
@@ -61,6 +63,7 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   ARCoreData: f1f7316cfbdd34a05b938ab1f9efaa7df4200f21
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  MJRefresh: ea153717001d3c02444bd22b75c111d2937d2104
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1

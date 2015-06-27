@@ -72,6 +72,12 @@
 #define COCOAPODS_VERSION_MINOR_ARCoreData_FetchController 2
 #define COCOAPODS_VERSION_PATCH_ARCoreData_FetchController 0
 
+// MJRefresh
+#define COCOAPODS_POD_AVAILABLE_MJRefresh
+#define COCOAPODS_VERSION_MAJOR_MJRefresh 2
+#define COCOAPODS_VERSION_MINOR_MJRefresh 0
+#define COCOAPODS_VERSION_PATCH_MJRefresh 4
+
 // Masonry
 #define COCOAPODS_POD_AVAILABLE_Masonry
 #define COCOAPODS_VERSION_MAJOR_Masonry 0
