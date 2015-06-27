@@ -29,7 +29,7 @@
 {
     [self setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     self.layer.cornerRadius = CGRectGetHeight(self.bounds)/2.0;
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
     self.layer.backgroundColor = [UIColor lightGrayColor].CGColor;
     ;
 }
@@ -38,8 +38,8 @@
 {
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.layer.cornerRadius = CGRectGetHeight(self.bounds)/2.0;
-    self.layer.borderColor = [UIColor tealColor].CGColor;
-    self.layer.backgroundColor = [UIColor tealColor].CGColor;
+
+    self.layer.backgroundColor = [UIColor fadedBlueColor].CGColor;
     ;
 }
 

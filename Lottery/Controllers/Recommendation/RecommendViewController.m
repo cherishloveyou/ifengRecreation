@@ -23,9 +23,9 @@
 {
     [super viewDidLoad];
     
-    LoginViewController *loginVC = [LoginViewController defaultLoginViewController];
-    
-    [self presentViewController:loginVC animated:YES completion:nil];
+//    LoginViewController *loginVC = [LoginViewController defaultLoginViewController];
+//    
+//    [self presentViewController:loginVC animated:YES completion:nil];
     
     [self baseConfigs];
 }
@@ -58,7 +58,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
-    
+    buyingViewControlelr.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:buyingViewControlelr animated:YES];
 }
 

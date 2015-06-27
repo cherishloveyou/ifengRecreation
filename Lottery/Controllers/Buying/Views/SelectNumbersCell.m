@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet NumberButton *numberButton7;
 @property (weak, nonatomic) IBOutlet NumberButton *numberButton8;
 @property (weak, nonatomic) IBOutlet NumberButton *numberButton9;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (nonatomic, strong) CALayer *backLayer;
 
 @end
 
@@ -28,6 +31,12 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.backgroundColor = [UIColor clearColor];
+    
+    self.backLayer = [CALayer layer];
+    self.backLayer.cornerRadius = 2;
+    self.backLayer.backgroundColor = [UIColor whiteColor].CGColor;
+    [self.layer insertSublayer:self.backLayer atIndex:0];
     
     self.numberButton0.index = 0;
     self.numberButton1.index = 1;
@@ -40,15 +49,6 @@
     self.numberButton8.index = 8;
     self.numberButton9.index = 9;
 
-}
-
--(void)fillCellWithNumbersSet:(NSMutableOrderedSet *)numbersSet
-{
-    [numbersSet enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSString *key = [NSString stringWithFormat:@"numberButton%@",obj];
-        NumberButton *button = [self valueForKey:key];
-        [button setSelected:YES];
-    }];
 }
 
 -(void)prepareForReuse
@@ -65,6 +65,22 @@
     self.numberButton7.selected = NO;
     self.numberButton8.selected = NO;
     self.numberButton9.selected = NO;
+}
+
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.backLayer.frame = CGRectMake(10, 5, CGRectGetWidth(self.bounds)-20, CGRectGetHeight(self.bounds)-10);
+}
+
+-(void)fillCellWithNumbersSet:(NSMutableOrderedSet *)numbersSet title:(NSString *)title
+{
+    self.titleLabel.text = title;
+    [numbersSet enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSString *key = [NSString stringWithFormat:@"numberButton%@",obj];
+        NumberButton *button = [self valueForKey:key];
+        [button setSelected:YES];
+    }];
 }
 
 - (IBAction)bumberButtonClicked:(NumberButton *)sender {

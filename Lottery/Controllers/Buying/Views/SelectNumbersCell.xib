@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbE-vO-U8i" customClass="NumberButton">
-                        <rect key="frame" x="18" y="30" width="40" height="40"/>
+                        <rect key="frame" x="20" y="44" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="2wF-lS-V0o"/>
                             <constraint firstAttribute="width" constant="40" id="MC9-mB-7U2"/>
@@ -28,7 +28,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2U4-ZA-d4W" customClass="NumberButton">
-                        <rect key="frame" x="18" y="78" width="40" height="40"/>
+                        <rect key="frame" x="20" y="92" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="TvX-d5-Bhk"/>
                             <constraint firstAttribute="height" constant="40" id="wdT-aR-JN7"/>
@@ -41,7 +41,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRM-R5-g3H" customClass="NumberButton">
-                        <rect key="frame" x="66" y="30" width="40" height="40"/>
+                        <rect key="frame" x="68" y="44" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="M7y-rI-RWW"/>
                             <constraint firstAttribute="height" constant="40" id="stV-Pw-e8k"/>
@@ -54,7 +54,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYw-ws-tr2" customClass="NumberButton">
-                        <rect key="frame" x="114" y="30" width="40" height="40"/>
+                        <rect key="frame" x="116" y="44" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="Fd3-7y-Nl6"/>
                             <constraint firstAttribute="height" constant="40" id="wbX-OC-GW8"/>
@@ -67,7 +67,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5r-gC-SVM" customClass="NumberButton">
-                        <rect key="frame" x="162" y="30" width="40" height="40"/>
+                        <rect key="frame" x="164" y="44" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="H7K-Ps-wG2"/>
                             <constraint firstAttribute="width" constant="40" id="wbr-n7-0YO"/>
@@ -80,7 +80,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bu-S7-CHD" customClass="NumberButton">
-                        <rect key="frame" x="210" y="30" width="40" height="40"/>
+                        <rect key="frame" x="212" y="44" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="0ox-6f-hA5"/>
                             <constraint firstAttribute="width" constant="40" id="ddY-RL-rNH"/>
@@ -93,7 +93,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibT-gt-qWC" customClass="NumberButton">
-                        <rect key="frame" x="258" y="30" width="40" height="40"/>
+                        <rect key="frame" x="260" y="44" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="FYY-K7-VCi"/>
                             <constraint firstAttribute="height" constant="40" id="oqs-kl-Iq1"/>
@@ -106,7 +106,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJy-Yh-tjb" customClass="NumberButton">
-                        <rect key="frame" x="66" y="78" width="40" height="40"/>
+                        <rect key="frame" x="68" y="92" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="5rn-iB-Ypg"/>
                             <constraint firstAttribute="height" constant="40" id="YfJ-l3-GU3"/>
@@ -119,7 +119,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ2-Kz-7t9" customClass="NumberButton">
-                        <rect key="frame" x="114" y="78" width="40" height="40"/>
+                        <rect key="frame" x="116" y="92" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="1mG-Cv-RLN"/>
                             <constraint firstAttribute="height" constant="40" id="NrG-vs-kzj"/>
@@ -132,7 +132,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ost-cS-x0j" customClass="NumberButton">
-                        <rect key="frame" x="162" y="78" width="40" height="40"/>
+                        <rect key="frame" x="164" y="92" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="M5d-Xa-FdJ"/>
                             <constraint firstAttribute="height" constant="40" id="jlD-Xv-Gc8"/>
@@ -144,14 +144,22 @@
                             <action selector="bumberButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iMb-5y-BCQ"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoS-Sw-3Pe">
+                        <rect key="frame" x="20" y="15" width="41" height="20"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="zbE-vO-U8i" firstAttribute="leading" secondItem="2U4-ZA-d4W" secondAttribute="leading" id="22M-2g-hFY"/>
                     <constraint firstItem="3bu-S7-CHD" firstAttribute="top" secondItem="A5r-gC-SVM" secondAttribute="top" id="9xe-Kv-A95"/>
+                    <constraint firstItem="zbE-vO-U8i" firstAttribute="top" secondItem="YoS-Sw-3Pe" secondAttribute="bottom" constant="9" id="Cru-JW-SOW"/>
                     <constraint firstItem="qYw-ws-tr2" firstAttribute="top" secondItem="pRM-R5-g3H" secondAttribute="top" id="EEA-cg-1zI"/>
                     <constraint firstItem="pRM-R5-g3H" firstAttribute="leading" secondItem="zbE-vO-U8i" secondAttribute="trailing" constant="8" id="JHD-JG-PPC"/>
                     <constraint firstItem="qYw-ws-tr2" firstAttribute="leading" secondItem="pRM-R5-g3H" secondAttribute="trailing" constant="8" id="PIn-mg-YnJ"/>
                     <constraint firstItem="A5r-gC-SVM" firstAttribute="leading" secondItem="qYw-ws-tr2" secondAttribute="trailing" constant="8" id="QgJ-Zd-Uox"/>
+                    <constraint firstItem="YoS-Sw-3Pe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="W0f-vO-WQn"/>
                     <constraint firstItem="zbE-vO-U8i" firstAttribute="top" secondItem="pRM-R5-g3H" secondAttribute="top" id="YlY-8g-X33"/>
                     <constraint firstItem="Ost-cS-x0j" firstAttribute="top" secondItem="oJ2-Kz-7t9" secondAttribute="top" id="Zh2-iW-ho2"/>
                     <constraint firstItem="Ost-cS-x0j" firstAttribute="leading" secondItem="oJ2-Kz-7t9" secondAttribute="trailing" constant="8" id="bMQ-Ey-Dby"/>
@@ -160,10 +168,10 @@
                     <constraint firstItem="3bu-S7-CHD" firstAttribute="top" secondItem="ibT-gt-qWC" secondAttribute="top" id="gA1-Yx-Jig"/>
                     <constraint firstItem="ibT-gt-qWC" firstAttribute="leading" secondItem="3bu-S7-CHD" secondAttribute="trailing" constant="8" id="mQX-PC-mt4"/>
                     <constraint firstItem="2U4-ZA-d4W" firstAttribute="top" secondItem="zbE-vO-U8i" secondAttribute="bottom" constant="8" id="n5w-cU-dAh"/>
-                    <constraint firstItem="zbE-vO-U8i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="nzy-Ob-mYN"/>
+                    <constraint firstItem="YoS-Sw-3Pe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="nD4-Jf-pIu"/>
+                    <constraint firstItem="zbE-vO-U8i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="nzy-Ob-mYN"/>
                     <constraint firstItem="A5r-gC-SVM" firstAttribute="top" secondItem="qYw-ws-tr2" secondAttribute="top" id="oJh-Im-CD8"/>
                     <constraint firstItem="yJy-Yh-tjb" firstAttribute="top" secondItem="2U4-ZA-d4W" secondAttribute="top" id="oVy-GY-ZYA"/>
-                    <constraint firstItem="zbE-vO-U8i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="sVz-eS-FeZ"/>
                     <constraint firstItem="oJ2-Kz-7t9" firstAttribute="leading" secondItem="yJy-Yh-tjb" secondAttribute="trailing" constant="8" id="tgP-ag-GMz"/>
                     <constraint firstItem="yJy-Yh-tjb" firstAttribute="leading" secondItem="2U4-ZA-d4W" secondAttribute="trailing" constant="8" id="wdb-0Z-ka4"/>
                 </constraints>
@@ -180,6 +188,7 @@
                 <outlet property="numberButton7" destination="yJy-Yh-tjb" id="lgG-2y-E6E"/>
                 <outlet property="numberButton8" destination="oJ2-Kz-7t9" id="pqs-Yt-HaG"/>
                 <outlet property="numberButton9" destination="Ost-cS-x0j" id="juK-U7-4AQ"/>
+                <outlet property="titleLabel" destination="YoS-Sw-3Pe" id="EUZ-SW-tZD"/>
             </connections>
             <point key="canvasLocation" x="590" y="165.5"/>
         </tableViewCell>
