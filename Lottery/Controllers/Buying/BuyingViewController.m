@@ -111,7 +111,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 -(void)numbersCell:(SelectNumbersCell *)numbersCell seletedNumber:(NSInteger)selectedNumber isSelected:(BOOL)isSelected
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:numbersCell];
-    NSString *indexString = [NSString stringWithFormat:@"%ld",selectedNumber];
+    NSString *indexString = [NSString stringWithFormat:@"%d",selectedNumber];
     NSMutableOrderedSet *orderSet = self.datas[indexPath.row];
     if (isSelected) {
         [orderSet addObject:indexString];
