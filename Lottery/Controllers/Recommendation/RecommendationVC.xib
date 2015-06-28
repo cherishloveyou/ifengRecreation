@@ -41,47 +41,28 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-<<<<<<< Updated upstream
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-Fs-OY3">
-=======
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-Fs-OY3">
->>>>>>> Stashed changes
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57p-re-Fev">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
-<<<<<<< Updated upstream
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-=======
                             <color key="backgroundColor" red="0.35123364909999999" green="0.4023837119" blue="1" alpha="1" colorSpace="calibratedRGB"/>
->>>>>>> Stashed changes
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="57p-re-Fev" secondAttribute="height" multiplier="2:1" id="FJu-vF-SYb"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztW-ty-Ht6">
-<<<<<<< Updated upstream
-                            <rect key="frame" x="0.0" y="160" width="320" height="156.5"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1R-77-oZ1">
-                                    <rect key="frame" x="0.0" y="126.5" width="320" height="30"/>
-=======
                             <rect key="frame" x="0.0" y="160" width="320" height="157"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1R-77-oZ1">
                                     <rect key="frame" x="0.0" y="127" width="320" height="30"/>
->>>>>>> Stashed changes
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="0.20000000000000001" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="Vht-SZ-xh3"/>
                                     </constraints>
                                 </view>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="numberBox" translatesAutoresizingMaskIntoConstraints="NO" id="OOR-A3-Gtn">
-<<<<<<< Updated upstream
-                                    <rect key="frame" x="10" y="40" width="300" height="106.5"/>
-=======
                                     <rect key="frame" x="10" y="48" width="300" height="90"/>
->>>>>>> Stashed changes
                                     <constraints>
                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="106" id="MpW-Za-xdI"/>
                                         <constraint firstAttribute="width" secondItem="OOR-A3-Gtn" secondAttribute="height" multiplier="355:106" id="Qjl-mS-SVM"/>
@@ -94,11 +75,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rms-vk-HfX">
-<<<<<<< Updated upstream
-                                    <rect key="frame" x="245" y="36.5" width="50" height="106.5"/>
-=======
                                     <rect key="frame" x="253" y="44" width="42" height="90"/>
->>>>>>> Stashed changes
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="rms-vk-HfX" secondAttribute="height" multiplier="47:100" id="OCk-cG-CKa"/>
                                     </constraints>
@@ -106,106 +83,61 @@
                                     <state key="normal" image="car">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-<<<<<<< Updated upstream
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="去投注" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsY-7j-kk3">
-                                    <rect key="frame" x="249" y="92" width="42" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="14"/>
-                                    <color key="textColor" red="0.9882352941176471" green="0.40392156862745099" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKJ-ov-8UE">
-                                    <rect key="frame" x="30" y="68" width="202" height="1"/>
-=======
                                     <connections>
                                         <action selector="goToBet:" destination="-1" eventType="touchUpInside" id="Bau-v4-Jak"/>
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKJ-ov-8UE">
                                     <rect key="frame" x="30" y="68" width="210" height="1"/>
->>>>>>> Stashed changes
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="pUI-Rj-VZC"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新开奖" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndh-em-Yqa">
-<<<<<<< Updated upstream
-                                    <rect key="frame" x="10" y="8" width="68" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-=======
                                     <rect key="frame" x="10" y="8" width="60" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
->>>>>>> Stashed changes
                                     <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重庆时时彩" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM4-iL-Ly7">
-<<<<<<< Updated upstream
-                                    <rect key="frame" x="30" y="47" width="65" height="16"/>
-=======
                                     <rect key="frame" x="30" y="52" width="65" height="16"/>
->>>>>>> Stashed changes
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第20150609-088期" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv2-9K-uKJ">
-<<<<<<< Updated upstream
-                                    <rect key="frame" x="105" y="47" width="113.5" height="16"/>
-=======
                                     <rect key="frame" x="105" y="52" width="113.5" height="16"/>
->>>>>>> Stashed changes
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="h0a-8s-aTW">
-<<<<<<< Updated upstream
-                                    <rect key="frame" x="76" y="85.5" width="36" height="36"/>
-=======
                                     <rect key="frame" x="67" y="86" width="36" height="36"/>
->>>>>>> Stashed changes
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="h0a-8s-aTW" secondAttribute="height" multiplier="1:1" id="48B-1N-cHz"/>
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fsx-hY-Xcc">
-<<<<<<< Updated upstream
-                                    <rect key="frame" x="122" y="85.5" width="36" height="36"/>
-=======
                                     <rect key="frame" x="113" y="86" width="36" height="36"/>
->>>>>>> Stashed changes
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Fsx-hY-Xcc" secondAttribute="height" multiplier="1:1" id="9ue-sM-yk8"/>
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="SSb-iY-dIq">
-<<<<<<< Updated upstream
-                                    <rect key="frame" x="168" y="85.5" width="36" height="36"/>
-=======
                                     <rect key="frame" x="159" y="86" width="36" height="36"/>
->>>>>>> Stashed changes
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="SSb-iY-dIq" secondAttribute="height" multiplier="1:1" id="5Do-Yx-7RK"/>
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9" translatesAutoresizingMaskIntoConstraints="NO" id="XAK-KE-gjR">
-<<<<<<< Updated upstream
-                                    <rect key="frame" x="214" y="85.5" width="36" height="36"/>
-=======
                                     <rect key="frame" x="205" y="86" width="36" height="36"/>
->>>>>>> Stashed changes
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="XAK-KE-gjR" secondAttribute="height" multiplier="1:1" id="cUU-d4-6YX"/>
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="Q1Y-zz-mYN">
-<<<<<<< Updated upstream
-                                    <rect key="frame" x="30" y="85.5" width="36" height="36"/>
-=======
                                     <rect key="frame" x="20" y="85" width="37" height="37"/>
->>>>>>> Stashed changes
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Q1Y-zz-mYN" secondAttribute="height" multiplier="1:1" id="SD7-Ri-Ylz"/>
                                     </constraints>
@@ -247,26 +179,11 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYB-Od-fin">
-<<<<<<< Updated upstream
-                            <rect key="frame" x="0.0" y="316.5" width="320" height="205"/>
-                            <subviews>
-                                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnR-E0-3ml">
-                                    <rect key="frame" x="0.0" y="35" width="320" height="1"/>
-                                    <color key="backgroundColor" red="0.8666666666666667" green="0.92941176470588238" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="jmQ-HQ-edA"/>
-                                    </constraints>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门彩种" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yft-f4-hGo">
-                                    <rect key="frame" x="10" y="10" width="68" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-=======
                             <rect key="frame" x="0.0" y="317" width="320" height="205"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门彩种" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yft-f4-hGo">
                                     <rect key="frame" x="10" y="10" width="60" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
->>>>>>> Stashed changes
                                     <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -281,12 +198,9 @@
                                         <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-<<<<<<< Updated upstream
-=======
                                     <connections>
                                         <action selector="tapOnImage:" destination="-1" eventType="touchUpInside" id="9rj-T0-w8D"/>
                                     </connections>
->>>>>>> Stashed changes
                                 </button>
                                 <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnR-E0-3ml">
                                     <rect key="frame" x="0.0" y="35" width="320" height="1"/>
@@ -468,12 +382,8 @@
                 <constraint firstItem="gv9-Fs-OY3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="p9T-oh-aQF"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-<<<<<<< Updated upstream
-            <point key="canvasLocation" x="200" y="261"/>
-=======
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="245" y="443.5"/>
->>>>>>> Stashed changes
         </view>
         <view contentMode="scaleToFill" id="1Ws-fs-5eD">
             <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
