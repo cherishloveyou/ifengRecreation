@@ -9,7 +9,6 @@
 #import "RecommendationVC.h"
 #import "LoginViewController.h"
 #import "ChooseLotteryVC.h"
-#import "DropView.h"
 
 @interface RecommendationVC ()
 {
@@ -31,16 +30,9 @@
     
 }
 
-
-
-
 @end
 
-
-
-
 @implementation RecommendationVC
-
 
 - (NSArray *)lotteryArray{
     if (!_lotteryArray) {
@@ -62,20 +54,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationController.navigationBarHidden = YES;
 //    NSLog(@"advertisementView frame == %@",self.advertisementView);
-    
-    if (sCREENWIDTH == 320) {
-        self.constraint1.constant = 5;
-        self.constraint2.constant = 5;
-        self.constraint3.constant = 5;
-        self.constraint4.constant = 5;
-    }else if(sCREENWIDTH > 320){
-        self.constraint1.constant = 10;
-        self.constraint2.constant = 10;
-        self.constraint3.constant = 10;
-        self.constraint4.constant = 10;
-        
-        self.rightFirstConstraint.constant = 40;
-    }
+ 
     
 }
 /**

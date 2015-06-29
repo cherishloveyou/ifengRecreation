@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChooseLotteryCell" id="gTV-IL-0wX" customClass="ChooseLotteryCell">
+            <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zsy-RK-vlX">
+                        <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Zsy-RK-vlX" secondAttribute="height" multiplier="1:1" id="IKC-K4-432"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new" translatesAutoresizingMaskIntoConstraints="NO" id="ZkC-mH-Loo">
+                        <rect key="frame" x="0.0" y="0.0" width="45" height="47"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ZkC-mH-Loo" secondAttribute="height" multiplier="45:47" id="BOp-6I-x1d"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_Button" translatesAutoresizingMaskIntoConstraints="NO" id="1XB-rr-eQy">
+                        <rect key="frame" x="85" y="5" width="16" height="16"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="1XB-rr-eQy" secondAttribute="height" multiplier="1:1" id="AZa-jm-QuC"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1XB-rr-eQy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="1Ve-jj-wvc"/>
+                <constraint firstItem="ZkC-mH-Loo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TSK-lF-clY"/>
+                <constraint firstAttribute="trailing" secondItem="1XB-rr-eQy" secondAttribute="trailing" constant="5" id="bOG-85-61Z"/>
+                <constraint firstItem="Zsy-RK-vlX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cjV-br-gDL"/>
+                <constraint firstAttribute="trailing" secondItem="ZkC-mH-Loo" secondAttribute="trailing" constant="61" id="ePk-2H-Khq"/>
+                <constraint firstItem="ZkC-mH-Loo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fPv-ZO-bND"/>
+                <constraint firstAttribute="trailing" secondItem="Zsy-RK-vlX" secondAttribute="trailing" id="xZZ-FP-ccl"/>
+                <constraint firstItem="Zsy-RK-vlX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yd2-a3-0Dp"/>
+            </constraints>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="add_Button" width="16" height="16"/>
+        <image name="new" width="45" height="47"/>
+    </resources>
+</document>

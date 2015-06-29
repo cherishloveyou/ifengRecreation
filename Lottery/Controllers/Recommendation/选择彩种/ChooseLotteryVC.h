@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ChooseLotteryVC : UIViewController
+/**
+ *  彩种列表
+ */
+@property(weak,nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

@@ -11,8 +11,9 @@
 		0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */; };
 		00AEE77D1B3EDB1F00577380 /* ChooseLotteryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE77B1B3EDB1F00577380 /* ChooseLotteryVC.m */; };
 		00AEE77E1B3EDB1F00577380 /* ChooseLotteryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AEE77C1B3EDB1F00577380 /* ChooseLotteryVC.xib */; };
-		00AEE7821B3F022500577380 /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE7811B3F022500577380 /* DropView.m */; };
 		00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE7841B3F05B400577380 /* RecommendViewController.m */; };
+		00D277AD1B417B6D0004D35B /* ChooseLotteryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D277AB1B417B6D0004D35B /* ChooseLotteryCell.m */; };
+		00D277AE1B417B6D0004D35B /* ChooseLotteryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D277AC1B417B6D0004D35B /* ChooseLotteryCell.xib */; };
 		00D5CD3F1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D5CD3E1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m */; };
 		00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D5CD421B2F0C4C007D8E81 /* BYLotteryHallCell.m */; };
 		00D5CD451B2F0C4C007D8E81 /* BYLotteryHallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D5CD431B2F0C4C007D8E81 /* BYLotteryHallCell.xib */; };
@@ -70,10 +71,11 @@
 		00AEE77A1B3EDB1F00577380 /* ChooseLotteryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLotteryVC.h; sourceTree = "<group>"; };
 		00AEE77B1B3EDB1F00577380 /* ChooseLotteryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLotteryVC.m; sourceTree = "<group>"; };
 		00AEE77C1B3EDB1F00577380 /* ChooseLotteryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLotteryVC.xib; sourceTree = "<group>"; };
-		00AEE7801B3F022500577380 /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
-		00AEE7811B3F022500577380 /* DropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropView.m; sourceTree = "<group>"; };
 		00AEE7831B3F05B400577380 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		00AEE7841B3F05B400577380 /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		00D277AA1B417B6D0004D35B /* ChooseLotteryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLotteryCell.h; sourceTree = "<group>"; };
+		00D277AB1B417B6D0004D35B /* ChooseLotteryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLotteryCell.m; sourceTree = "<group>"; };
+		00D277AC1B417B6D0004D35B /* ChooseLotteryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLotteryCell.xib; sourceTree = "<group>"; };
 		00D5CD3D1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buyLotteryDetailVCViewController.h; sourceTree = "<group>"; };
 		00D5CD3E1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buyLotteryDetailVCViewController.m; sourceTree = "<group>"; };
 		00D5CD411B2F0C4C007D8E81 /* BYLotteryHallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYLotteryHallCell.h; sourceTree = "<group>"; };
@@ -171,8 +173,6 @@
 				0070B4071B3C2F6700DF17AC /* RecommendationVC.h */,
 				0070B4081B3C2F6700DF17AC /* RecommendationVC.m */,
 				0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */,
-				00AEE7801B3F022500577380 /* DropView.h */,
-				00AEE7811B3F022500577380 /* DropView.m */,
 			);
 			name = childController;
 			sourceTree = "<group>";
@@ -180,11 +180,22 @@
 		00AEE7791B3EDAB500577380 /* 选择彩种 */ = {
 			isa = PBXGroup;
 			children = (
+				00D277A91B417B3F0004D35B /* 彩种选择cell */,
 				00AEE77A1B3EDB1F00577380 /* ChooseLotteryVC.h */,
 				00AEE77B1B3EDB1F00577380 /* ChooseLotteryVC.m */,
 				00AEE77C1B3EDB1F00577380 /* ChooseLotteryVC.xib */,
 			);
 			path = "选择彩种";
+			sourceTree = "<group>";
+		};
+		00D277A91B417B3F0004D35B /* 彩种选择cell */ = {
+			isa = PBXGroup;
+			children = (
+				00D277AA1B417B6D0004D35B /* ChooseLotteryCell.h */,
+				00D277AB1B417B6D0004D35B /* ChooseLotteryCell.m */,
+				00D277AC1B417B6D0004D35B /* ChooseLotteryCell.xib */,
+			);
+			path = "彩种选择cell";
 			sourceTree = "<group>";
 		};
 		00D5CD3C1B2EF71C007D8E81 /* lotteryDetail */ = {
@@ -580,6 +591,7 @@
 				00D5CD451B2F0C4C007D8E81 /* BYLotteryHallCell.xib in Resources */,
 				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
 				00EDDD821B3070CB001F4CB8 /* DropDownViewCell.xib in Resources */,
+				00D277AE1B417B6D0004D35B /* ChooseLotteryCell.xib in Resources */,
 				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
 				0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */,
 				974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */,
@@ -654,11 +666,11 @@
 				00AEE77D1B3EDB1F00577380 /* ChooseLotteryVC.m in Sources */,
 				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
 				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
+				00D277AD1B417B6D0004D35B /* ChooseLotteryCell.m in Sources */,
 				00D5CD3F1B2EF77E007D8E81 /* buyLotteryDetailVCViewController.m in Sources */,
 				973C15B81B36BD8600BE608E /* Colours.m in Sources */,
 				971DF3F61B3E54BA005CF819 /* OAStackViewAlignmentStrategy.m in Sources */,
 				00EDDD721B305C94001F4CB8 /* CustomDropDownView.m in Sources */,
-				00AEE7821B3F022500577380 /* DropView.m in Sources */,
 				974E85981B11610E00B57C9E /* main.m in Sources */,
 				97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */,
 				970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */,
