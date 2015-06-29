@@ -124,26 +124,24 @@
     if (!grayBackViewf) {
         grayBackViewf = [[UIView alloc] initWithFrame:self.backScrollView.bounds];
     }
-    
     if (!sender.selected) {
+        self.usetinfoView.hidden = NO;
+        
         sender.selected = YES;
-        
-        self.usetinfoView.frame = CGRectMake(0, -uSERINFOVIEWHEIGHT, sCREENWIDTH, uSERINFOVIEWHEIGHT);
-        
         grayBackViewf.backgroundColor = [UIColor grayColor];
         grayBackViewf.alpha = 0.000001;
-        [self.backScrollView insertSubview:grayBackViewf belowSubview:self.dropDownButton];
-        [self.backScrollView insertSubview:self.usetinfoView belowSubview:self.dropDownButton];
-        
+        [self.backScrollView insertSubview:grayBackViewf belowSubview:self.usetinfoView];
         [UIView animateWithDuration:.5 animations:^{
-            self.usetinfoView.frame = CGRectMake(0, 0, sCREENWIDTH, uSERINFOVIEWHEIGHT);
-            grayBackViewf.alpha = 0.5;
+            self.infoViewConstraint.constant = 0;
+            grayBackViewf.alpha = 0.8;
         }];
         
         
     }else{
         sender.selected = NO;
         [grayBackViewf removeFromSuperview];
+        self.infoViewConstraint.constant = -190;
+        self.usetinfoView.hidden = YES;
         grayBackViewf = nil;
     }
 }

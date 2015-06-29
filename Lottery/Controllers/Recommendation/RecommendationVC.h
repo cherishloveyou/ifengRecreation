@@ -76,7 +76,10 @@
  *  账户余额
  */
 @property (weak, nonatomic) IBOutlet UILabel *balance;
-
+/**
+ *  用户信息View的上约束
+ */
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoViewConstraint;
 
 #define sCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define uSERINFOVIEWHEIGHT sCREENWIDTH*0.63
