@@ -43,11 +43,14 @@
                 <constraint firstItem="ZkC-mH-Loo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TSK-lF-clY"/>
                 <constraint firstAttribute="trailing" secondItem="1XB-rr-eQy" secondAttribute="trailing" constant="5" id="bOG-85-61Z"/>
                 <constraint firstItem="Zsy-RK-vlX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cjV-br-gDL"/>
-                <constraint firstAttribute="trailing" secondItem="ZkC-mH-Loo" secondAttribute="trailing" constant="61" id="ePk-2H-Khq"/>
                 <constraint firstItem="ZkC-mH-Loo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fPv-ZO-bND"/>
                 <constraint firstAttribute="trailing" secondItem="Zsy-RK-vlX" secondAttribute="trailing" id="xZZ-FP-ccl"/>
                 <constraint firstItem="Zsy-RK-vlX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yd2-a3-0Dp"/>
             </constraints>
+            <connections>
+                <outlet property="isNewLottery" destination="ZkC-mH-Loo" id="XSl-Bc-ftU"/>
+                <outlet property="lotteryImageView" destination="Zsy-RK-vlX" id="jpg-KX-n6V"/>
+            </connections>
         </collectionViewCell>
     </objects>
     <resources>

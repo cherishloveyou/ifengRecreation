@@ -25,14 +25,13 @@
     [self addChildViewController:recmment];
     recmment.view.frame = self.view.bounds;
     [self.view addSubview:recmment.view];
-    
     if (CURRENTLOGINFLAG.length < 10) {
         LoginViewController *loginVC = [LoginViewController defaultLoginViewController];
         
-//        [self presentViewController:loginVC animated:YES completion:nil];
+        [self presentViewController:loginVC animated:YES completion:nil];
 
     }
-    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{

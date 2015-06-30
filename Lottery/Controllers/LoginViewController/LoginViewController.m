@@ -165,12 +165,23 @@
          switch (code) {
              case 0:{
                  [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+                 logInBlock block = self.block;
+                 if (block) {
+                     block(YES);
+                 }
                  
                  self.userInfoDictionary = [NSDictionary dictionaryWithDictionary:response];
 //                 保存用户信息
                  
                  [self saveUserInfo];
-
+                 /**
+                  *  开始监听用户心跳
+                  *
+                  *  @param startUserHart 用户心跳发送
+                  *
+                  *  @return
+                  */
+                 [NSTimer scheduledTimerWithTimeInterval:30. target:self selector:@selector(startUserHart) userInfo:nil repeats:YES];
                  
                  if (!self.navigationController) {
                      
@@ -209,6 +220,17 @@
     
 }
 /**
+ *  用户心跳 用于反馈用户在线
+ */
+- (void)startUserHart{
+#warning 接口修改 需要上传loginflag
+    [HTTPClient userHandleWithAction:12 paramaters:nil success:^(id task, id response) {
+        
+    } failed:^(id task, NSError *error) {
+        
+    }];
+}
+/**
  *  保存用户名密码 等用户信息
  */
 - (void)saveUserInfo{
@@ -242,6 +264,21 @@
     }
     
     [[NSUserDefaults standardUserDefaults] setObject:array forKey:USERINFOARRAY];
+}
+
+/**
+ *  登录界面show
+ *
+ *  @param controller 父controller
+ */
++ (void)showFromController:(UIViewController*)controller{
+    
+  LoginViewController *loginVC = [self defaultLoginViewController];
+    
+    if (controller) {
+        [controller presentViewController:loginVC animated:YES completion:nil];
+    }
+    
 }
 
 

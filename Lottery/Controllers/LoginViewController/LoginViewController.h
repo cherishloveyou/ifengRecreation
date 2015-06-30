@@ -20,6 +20,7 @@
 #define currentFlag @"currentFlag"
 
 #define CURRENTLOGINFLAG [[NSUserDefaults standardUserDefaults] stringForKey:currentFlag]
+typedef void (^logInBlock)(BOOL);
 /**
  *  用户头像
  */
@@ -49,9 +50,17 @@
  */
 @property (nonatomic,strong) NSString *loginFlag;
 
+@property (copy) logInBlock block;
+
 /**
  *  便利构造器（单例模式）
  */
 + (instancetype)defaultLoginViewController;
+/**
+ *  登录界面show
+ *
+ *  @param controller 父controller
+ */
++ (void)showFromController:(UIViewController*)controller;
 
 @end

@@ -9,6 +9,8 @@
 #import "ChannelViewController.h"
 #import "HTTPClient+User.h"
 #import "BuyingViewController.h"
+#import "HTTPClient+User.h"
+#import "LoginViewController.h"
 
 @implementation ChannelViewController
 
@@ -18,13 +20,46 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //    LoginViewController *loginVC = [LoginViewController defaultLoginViewController];
-    //
-    //    [self presentViewController:loginVC animated:YES completion:nil];
-    
+    [self getDataFromNetWorkin];
     [self baseConfigs];
 }
+
+
+- (void)getDataFromNetWorkin{
+    
+    [SVProgressHUD show];
+    [HTTPClient userHandleWithAction:22 paramaters:nil success:^(id task, id response) {
+        
+        NSInteger code = [[response objectForKey:@"code"] integerValue];
+        
+        switch (code) {
+            case 0:
+                [self.dataSourceArray addObjectsFromArray:[response objectForKey:@"games"]];
+                
+                [SVProgressHUD showSuccessWithStatus:nil];
+                break;
+            case -100:
+                [LoginViewController showFromController:self];
+                [SVProgressHUD showErrorWithStatus:@"您当前登录已过期请重新登录！"];
+                break;
+                
+            default:
+                break;
+        }
+        
+    } failed:^(id task, NSError *error) {
+        
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+    }];
+}
+
+- (NSMutableArray *)dataSourceArray{
+    if (!_dataSourceArray) {
+        _dataSourceArray = [NSMutableArray array];
+    }
+    return _dataSourceArray;
+}
+
 
 #pragma mark - private methods
 

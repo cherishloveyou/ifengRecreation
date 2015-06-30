@@ -10,4 +10,6 @@
 
 @interface ChannelViewController : UITableViewController
 
+@property (nonatomic,strong) NSMutableArray *dataSourceArray;
+
 @end

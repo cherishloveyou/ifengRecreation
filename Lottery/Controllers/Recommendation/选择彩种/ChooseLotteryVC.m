@@ -57,6 +57,10 @@
 
 - (UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ChooseLotteryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ChooseLotteryCell" forIndexPath:indexPath];
+    if (indexPath.section == 0&& indexPath.row ==  0) {
+        cell.isNewLottery.hidden = NO;
+    }
+    
     return cell;
 }
 

@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    self.isNewLottery.hidden = YES;
 }
 
 @end
