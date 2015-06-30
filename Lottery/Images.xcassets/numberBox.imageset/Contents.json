@@ -12,9 +12,9 @@
           "height" : 5
         },
         "capInsets" : {
-          "left" : 67,
-          "top" : 34,
           "right" : 123,
+          "top" : 34,
+          "left" : 67,
           "bottom" : 43
         }
       }
@@ -31,9 +31,9 @@
           "height" : 1
         },
         "capInsets" : {
-          "left" : 77,
-          "top" : 57,
           "right" : 193,
+          "top" : 57,
+          "left" : 77,
           "bottom" : 82
         }
       }
@@ -50,9 +50,9 @@
           "height" : 4
         },
         "capInsets" : {
-          "left" : 127,
-          "top" : 91,
           "right" : 333,
+          "top" : 91,
+          "left" : 127,
           "bottom" : 133
         }
       }

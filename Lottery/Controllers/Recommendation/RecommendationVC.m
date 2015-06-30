@@ -153,7 +153,7 @@
 /**
  *  信息中心
  *
- *  @param sender <#sender description#>
+ *  @param sender 
  */
 - (IBAction)myMessage:(id)sender{
     
