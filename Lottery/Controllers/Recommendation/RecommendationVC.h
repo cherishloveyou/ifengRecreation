@@ -77,6 +77,10 @@
  */
 @property (weak, nonatomic) IBOutlet UILabel *balance;
 /**
+ *  存放 热门彩种的购买链接或者id
+ */
+@property (strong, nonatomic)  NSMutableArray *hotLotteryIds;
+/**
  *  用户信息View的上约束
  */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoViewConstraint;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -205,7 +205,7 @@
                                         <outletCollection property="gestureRecognizers" destination="k3p-hn-BQe" appends="YES" id="QqP-3i-w8j"/>
                                     </connections>
                                 </imageView>
-                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Llu-5E-eWN">
+                                <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Llu-5E-eWN">
                                     <rect key="frame" x="107" y="36" width="106" height="83"/>
                                     <gestureRecognizers/>
                                     <constraints>
@@ -215,7 +215,7 @@
                                         <outletCollection property="gestureRecognizers" destination="pAB-KT-8R9" appends="YES" id="yzV-YH-rfP"/>
                                     </connections>
                                 </imageView>
-                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mod-VD-cdq">
+                                <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mod-VD-cdq">
                                     <rect key="frame" x="214" y="36" width="106" height="83"/>
                                     <gestureRecognizers/>
                                     <constraints>
@@ -232,7 +232,7 @@
                                         <constraint firstAttribute="height" constant="1" id="XBv-aR-lDo"/>
                                     </constraints>
                                 </view>
-                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DKM-mu-EXz">
+                                <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DKM-mu-EXz">
                                     <rect key="frame" x="0.0" y="120" width="106" height="83"/>
                                     <gestureRecognizers/>
                                     <constraints>
@@ -242,7 +242,7 @@
                                         <outletCollection property="gestureRecognizers" destination="cCl-4w-8cD" appends="YES" id="rqy-nu-muI"/>
                                     </connections>
                                 </imageView>
-                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vtb-Fd-qI6">
+                                <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vtb-Fd-qI6">
                                     <rect key="frame" x="107" y="120" width="106" height="83"/>
                                     <gestureRecognizers/>
                                     <constraints>
@@ -252,7 +252,7 @@
                                         <outletCollection property="gestureRecognizers" destination="Ulk-yN-U4j" appends="YES" id="dAn-h6-8sc"/>
                                     </connections>
                                 </imageView>
-                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hx5-CB-eO5">
+                                <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hx5-CB-eO5">
                                     <rect key="frame" x="214" y="120" width="106" height="83"/>
                                     <gestureRecognizers/>
                                     <constraints>

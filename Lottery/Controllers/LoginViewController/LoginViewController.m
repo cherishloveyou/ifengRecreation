@@ -224,6 +224,7 @@
 /**
  *  用户心跳 用于反馈用户在线
  */
+
 - (void)startUserHart{
 #warning 接口修改 需要上传loginflag
     [HTTPClient userHandleWithAction:12 paramaters:nil success:^(id task, id response) {
@@ -237,8 +238,9 @@
  */
 - (void)saveUserInfo{
     
-//    [[NSUserDefaults standardUserDefaults] setObject:self.userInfoDictionary forKey:USERINFODIC];
+    [[NSUserDefaults standardUserDefaults] setObject:self.userInfoDictionary forKey:USERINFODIC];
     NSArray *imagearray = [NSArray arrayWithArray:[self.userInfoDictionary objectForKey:@"adPictures"]];
+    
     ImageUrlsBlock imageBlock = self.imageBlock;
     
     if (imageBlock) {

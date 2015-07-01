@@ -15,6 +15,13 @@
 
 @implementation ChooseLotteryVC
 
+- (NSArray *)hotLotteryIds{
+    if (!_hotLotteryIds) {
+        _hotLotteryIds = [NSMutableArray array];
+    }
+    return _hotLotteryIds;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -44,6 +51,31 @@
 
 - (IBAction)choosedLotteryDone:(id)sender{
     
+    selectLotterysBlock selectBlock = self.selectLotteryBlock;
+    
+    if (selectBlock) {
+        selectBlock(self.hotLotteryIds);
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+/**
+ *  选择添加或者移除热门彩票
+ *
+ *  @param sender
+ */
+- (IBAction)tapOnLotterysImage:(UITapGestureRecognizer*)sender{
+    
+    UIImageView *tapImageView = (UIImageView*)sender.view;
+    if (!tapImageView.image) {
+        return;
+    }else if (![tapImageView.image isEqual:[UIImage imageNamed:@"IMG_1294"]]){
+        //跳转至购买彩票页面
+        NSInteger imageTag = tapImageView.tag;
+        NSLog(@"%d",imageTag);
+        
+        return;
+    }
 }
 
 #pragma mark -- UICollectionViewDataSource

@@ -27,8 +27,10 @@
     __weak IBOutlet UIImageView *third;
     __weak IBOutlet UIImageView *fourth;
     __weak IBOutlet UIImageView *fifth;
-    
+    //灰色背景
     UIView *grayBackViewf;
+    //广告栏
+    FFScrollView *scrollView;
     
 }
 
@@ -41,6 +43,15 @@
         _lotteryArray = @[firstImage,secondImage,thirdImage,fourthImage,fifthImage,sixthImage];
     }
     return _lotteryArray;
+}
+
+- (NSMutableArray *)hotLotteryIds{
+    if (!_hotLotteryIds) {
+        
+        _hotLotteryIds = [NSMutableArray array];
+        [_hotLotteryIds addObjectsFromArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"hotLotteryIds"]];
+    }
+    return _hotLotteryIds;
 }
 
 - (NSArray *)numbers{
@@ -57,14 +68,36 @@
     self.navigationController.navigationBarHidden = YES;
 //    NSLog(@"advertisementView frame == %@",self.advertisementView);
     
-    LoginViewController *login = [LoginViewController showFromController:self];
-    __weak typeof(self) weakself = self;
-    login.imageBlock = ^(NSArray *imageurls){
-        //添加广告栏
-        FFScrollView *scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
-        [weakself.advertisementView addSubview:scrollView];
-    };
- 
+//    LoginViewController *login = [LoginViewController showFromController:self];
+//    __weak typeof(self) weakself = self;
+//    login.imageBlock = ^(NSArray *imageurls){
+//        //添加广告栏
+//        if (scrollView) {
+//            [scrollView removeFromSuperview];
+//        }
+//        scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
+//        [weakself.advertisementView addSubview:scrollView];
+//    };
+    NSLog(@"%@",uerdictionary);
+    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
+    if (scrollView) {
+        [scrollView removeFromSuperview];
+    }
+    
+    self.userName.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
+    self.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
+    //添加广告栏
+    scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageUrlArray];
+    
+    [self.advertisementView addSubview:scrollView];
+    
+    [self refreshHotLotteryImages:self.hotLotteryIds];
+    
+}
+/**
+ *  获取重庆时时彩 最近一期号码
+ */
+- (void)getTheLastLotteryNumber{
     
 }
 /**
@@ -80,16 +113,44 @@
         UIImageView *tapImageView = (UIImageView*)tap.view;
         if (!tapImageView.image) {
             return;
-        }else if ([tapImageView.image isEqual:[UIImage imageNamed:@""]]){
+        }else if (![tapImageView.image isEqual:[UIImage imageNamed:@"IMG_1294"]]){
             //跳转至购买彩票页面
 #warning 跳转至对应彩票购买页
+            NSInteger imageTag = tapImageView.tag;
+            NSLog(@"%d",imageTag);
+            
             return;
         }
     }
     
     ChooseLotteryVC *chooseLottery = [[ChooseLotteryVC alloc] initWithNibName:@"ChooseLotteryVC" bundle:[NSBundle mainBundle]];
     
+    chooseLottery.hotLotteryIds = self.hotLotteryIds;
+    
+    __weak typeof(self) weakSelf = self;
+    
+    chooseLottery.selectLotteryBlock = ^(NSMutableArray *lotteryArray){
+        weakSelf.hotLotteryIds = [NSMutableArray arrayWithArray:lotteryArray];
+        
+        [weakSelf refreshHotLotteryImages:weakSelf.hotLotteryIds];
+    };
+    
     [self presentViewController:chooseLottery animated:YES completion:nil];
+    
+}
+
+/**
+ *  刷新
+ */
+- (void)refreshHotLotteryImages:(NSArray*)hotlottery{
+    
+    if (hotlottery.count < 6) {
+        for (int i = 0; i < hotlottery.count; i++) {
+            
+        }
+    }else{
+        
+    }
     
 }
 

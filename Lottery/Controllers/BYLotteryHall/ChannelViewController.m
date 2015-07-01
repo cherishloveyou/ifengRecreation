@@ -44,6 +44,7 @@
     
     [SVProgressHUD show];
     __weak typeof(self) weakself = self;
+    [self.dataSourceArray removeAllObjects];
     
     [HTTPClient userHandleWithAction:22 paramaters:nil success:^(id task, id response) {
         
@@ -108,8 +109,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BYLotteryHallCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BYLotteryHallCell"];
-    [cell loadDataWithDataDictionary:self.dataSourceArray[indexPath.row]];
-    
+    if (indexPath.row < self.dataSourceArray.count) {
+        [cell loadDataWithDataDictionary:self.dataSourceArray[indexPath.row]];
+    }
     return cell;
 }
 

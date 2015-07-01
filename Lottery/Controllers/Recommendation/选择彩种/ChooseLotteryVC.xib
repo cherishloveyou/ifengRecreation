@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -82,20 +82,29 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="9xe-ZR-gKe" secondAttribute="height" multiplier="106:83" id="You-6F-UsH"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="qHk-Wb-rv7" appends="YES" id="2t9-Xb-9N5"/>
+                            </connections>
                         </imageView>
-                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5e3-xe-tYW">
+                        <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5e3-xe-tYW">
                             <rect key="frame" x="107" y="1" width="106" height="83"/>
                             <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="5e3-xe-tYW" secondAttribute="height" multiplier="106:83" id="483-sJ-btp"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="Bh5-Ux-Ru0" appends="YES" id="mOA-mV-oJD"/>
+                            </connections>
                         </imageView>
-                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pLX-ZS-epi">
+                        <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pLX-ZS-epi">
                             <rect key="frame" x="214" y="1" width="106" height="83"/>
                             <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="pLX-ZS-epi" secondAttribute="height" multiplier="106:83" id="VuM-iQ-rXL"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="w7r-XB-WO9" appends="YES" id="Vgg-ae-TYK"/>
+                            </connections>
                         </imageView>
                         <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJ6-cc-Esi">
                             <rect key="frame" x="0.0" y="84" width="320" height="1"/>
@@ -104,26 +113,35 @@
                                 <constraint firstAttribute="height" constant="1" id="Pfg-yn-bj4"/>
                             </constraints>
                         </view>
-                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uIa-va-O1U">
+                        <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uIa-va-O1U">
                             <rect key="frame" x="0.0" y="85" width="106" height="83"/>
                             <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="uIa-va-O1U" secondAttribute="height" multiplier="106:83" id="A4R-en-39f"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="mQ4-tl-Yzy" appends="YES" id="BYf-ra-d4S"/>
+                            </connections>
                         </imageView>
-                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-Re-vL9">
+                        <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-Re-vL9">
                             <rect key="frame" x="107" y="85" width="106" height="83"/>
                             <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="A5i-Re-vL9" secondAttribute="height" multiplier="106:83" id="NM6-qG-MKL"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="xH2-CF-ZiF" appends="YES" id="PVj-47-694"/>
+                            </connections>
                         </imageView>
-                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRS-L0-XUH">
+                        <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRS-L0-XUH">
                             <rect key="frame" x="214" y="85" width="106" height="83"/>
                             <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="nRS-L0-XUH" secondAttribute="height" multiplier="106:83" id="0oo-Fd-0GK"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="V4v-s1-vsF" appends="YES" id="yTm-P1-jHz"/>
+                            </connections>
                         </imageView>
                         <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1I-oL-bR1">
                             <rect key="frame" x="0.0" y="168" width="320" height="1"/>
@@ -237,6 +255,36 @@
             </constraints>
             <point key="canvasLocation" x="275" y="197"/>
         </view>
+        <tapGestureRecognizer id="qHk-Wb-rv7">
+            <connections>
+                <action selector="tapOnLotterysImage:" destination="-1" id="Lnh-0a-KFg"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="Bh5-Ux-Ru0">
+            <connections>
+                <action selector="tapOnLotterysImage:" destination="-1" id="XcB-eh-bhB"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="w7r-XB-WO9">
+            <connections>
+                <action selector="tapOnLotterysImage:" destination="-1" id="Svr-E4-Dfz"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="mQ4-tl-Yzy">
+            <connections>
+                <action selector="tapOnLotterysImage:" destination="-1" id="aks-9m-A16"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="xH2-CF-ZiF">
+            <connections>
+                <action selector="tapOnLotterysImage:" destination="-1" id="HcR-fm-Fgf"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="V4v-s1-vsF">
+            <connections>
+                <action selector="tapOnLotterysImage:" destination="-1" id="RHR-tW-UYz"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="IMG_1294" width="106" height="84"/>
