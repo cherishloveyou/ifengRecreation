@@ -271,14 +271,14 @@
  *
  *  @param controller 父controller
  */
-+ (void)showFromController:(UIViewController*)controller{
++ (instancetype)showFromController:(UIViewController*)controller{
     
   LoginViewController *loginVC = [self defaultLoginViewController];
     
     if (controller) {
         [controller presentViewController:loginVC animated:YES completion:nil];
     }
-    
+    return loginVC;
 }
 
 

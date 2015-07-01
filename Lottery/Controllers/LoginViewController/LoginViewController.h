@@ -61,6 +61,6 @@ typedef void (^logInBlock)(BOOL);
  *
  *  @param controller 父controller
  */
-+ (void)showFromController:(UIViewController*)controller;
++ (instancetype)showFromController:(UIViewController*)controller;
 
 @end
