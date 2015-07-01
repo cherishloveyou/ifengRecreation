@@ -7,6 +7,7 @@
 //
 
 #import "BYLotteryHallCell.h"
+#import <UIImageView+WebCache.h>
 
 @implementation BYLotteryHallCell
 
@@ -18,6 +19,19 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+/**
+ *  装载数据
+ *
+ *  @param dataDic 数据源
+ */
+- (void)loadDataWithDataDictionary:(NSDictionary *)dataDic{
+    
+    self.lotteryNameLabel.text = [dataDic objectForKey:@"_gameName"];
+    self.lotterySnippetLabel.text = [dataDic objectForKey:@"_gameName"];
+    [self.lotteryHeaderImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"header"]];
+    self.lotteryTypeLabel.text = @"我的自主彩种";
 }
 
 @end

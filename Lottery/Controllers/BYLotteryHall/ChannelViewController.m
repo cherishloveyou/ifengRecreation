@@ -12,6 +12,7 @@
 #import "HTTPClient+User.h"
 #import "LoginViewController.h"
 #import <MJRefresh.h>
+#import "BYLotteryHallCell.h"
 
 @implementation ChannelViewController
 
@@ -32,7 +33,9 @@
     
     // 设置header
     self.tableView.header = header;
-
+    [self.tableView.header beginRefreshing];
+    
+    
     [self baseConfigs];
 }
 
@@ -53,7 +56,7 @@
         switch (code) {
             case 0:
                 [weakself.dataSourceArray addObjectsFromArray:[response objectForKey:@"games"]];
-                
+                [weakself.tableView reloadData];
                 [SVProgressHUD showSuccessWithStatus:nil];
                 break;
             case -100:{
@@ -90,8 +93,8 @@
 
 -(void)baseConfigs
 {
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"BYLotteryHallCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BYLotteryHallCell"];
     
 }
 
@@ -99,17 +102,21 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return self.dataSourceArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = @"test";
+    BYLotteryHallCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BYLotteryHallCell"];
+    [cell loadDataWithDataDictionary:self.dataSourceArray[indexPath.row]];
+    
     return cell;
 }
 
 #pragma mark - UITableViewDelegate methods
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80.;
+}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

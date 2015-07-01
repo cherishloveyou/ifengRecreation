@@ -25,12 +25,17 @@
     [self addChildViewController:recmment];
     recmment.view.frame = self.view.bounds;
     [self.view addSubview:recmment.view];
-    if (CURRENTLOGINFLAG.length < 10) {
-        LoginViewController *loginVC = [LoginViewController defaultLoginViewController];
-        
-        [self presentViewController:loginVC animated:YES completion:nil];
+    
+//    if (CURRENTLOGINFLAG.length < 10) {
+//    LoginViewController *loginVC = [LoginViewController defaultLoginViewController];
+//    
+//    loginVC.imageBlock = ^(NSArray *urlsArray){
+//        
+//        
+//    };
+//    [self presentViewController:loginVC animated:YES completion:nil];
 
-    }
+//    }
 
 }
 

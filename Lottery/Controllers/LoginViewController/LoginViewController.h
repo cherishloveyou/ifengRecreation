@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^logInBlock)(BOOL success);
+
+typedef void (^ImageUrlsBlock)(NSArray* imagesUrls);
 
 @interface LoginViewController : UITableViewController
 
@@ -20,7 +23,8 @@
 #define currentFlag @"currentFlag"
 
 #define CURRENTLOGINFLAG [[NSUserDefaults standardUserDefaults] stringForKey:currentFlag]
-typedef void (^logInBlock)(BOOL);
+
+
 /**
  *  用户头像
  */
@@ -46,11 +50,22 @@ typedef void (^logInBlock)(BOOL);
  */
 @property (nonatomic,strong) NSDictionary *userInfoDictionary;
 /**
+ *  广告栏图片数组
+ */
+@property (nonatomic,copy) NSArray *imageUrlsArray;
+/**
  *  登录标识 用于判定 是否重复登录
  */
 @property (nonatomic,strong) NSString *loginFlag;
-
+/**
+ *  登录成功
+ */
 @property (copy) logInBlock block;
+/**
+ *  登录成功 返回的广告栏图片链接
+ */
+@property (copy) ImageUrlsBlock imageBlock;
+
 
 /**
  *  便利构造器（单例模式）

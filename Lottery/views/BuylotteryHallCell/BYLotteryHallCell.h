@@ -22,9 +22,17 @@
  */
 @property (weak, nonatomic) IBOutlet UILabel *lotterySnippetLabel;
 /**
- *  彩票类型（自主彩票、）
+ *  彩票类型（自主彩票、新彩票）
  */
 @property (weak, nonatomic) IBOutlet UIImageView *lotteryTypeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *lotteryTypeLabel;
+
+/**
+ *  装载数据
+ *
+ *  @param dataDic 数据源
+ */
+- (void)loadDataWithDataDictionary:(NSDictionary *)dataDic;
 
 
 

@@ -156,6 +156,8 @@
     
     NSDictionary *paramaters = @{@"uname":userName,@"pwd":passWord};
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+//    弱引用
+    __weak typeof(self)weakSelf = self;
     
  [HTTPClient userHandleWithAction:UserHandlerActionLoginValidate paramaters:paramaters success:^(id task, id response) {
      
@@ -170,10 +172,10 @@
                      block(YES);
                  }
                  
-                 self.userInfoDictionary = [NSDictionary dictionaryWithDictionary:response];
+                 weakSelf.userInfoDictionary = [NSDictionary dictionaryWithDictionary:response];
 //                 保存用户信息
                  
-                 [self saveUserInfo];
+                 [weakSelf saveUserInfo];
                  /**
                   *  开始监听用户心跳
                   *
@@ -181,14 +183,14 @@
                   *
                   *  @return
                   */
-                 [NSTimer scheduledTimerWithTimeInterval:30. target:self selector:@selector(startUserHart) userInfo:nil repeats:YES];
+//                 [NSTimer scheduledTimerWithTimeInterval:30. target:weakSelf selector:@selector(startUserHart) userInfo:nil repeats:YES];
                  
-                 if (!self.navigationController) {
+                 if (!weakSelf.navigationController) {
                      
-                     [self dismissViewControllerAnimated:YES completion:nil];
+                     [weakSelf dismissViewControllerAnimated:YES completion:nil];
                  }else{
                      
-                     [self.navigationController popViewControllerAnimated:YES];
+                     [weakSelf.navigationController popViewControllerAnimated:YES];
                  }
              }
                  break;
@@ -235,8 +237,14 @@
  */
 - (void)saveUserInfo{
     
-    [[NSUserDefaults standardUserDefaults] setObject:self.userInfoDictionary forKey:USERINFODIC];
+//    [[NSUserDefaults standardUserDefaults] setObject:self.userInfoDictionary forKey:USERINFODIC];
+    NSArray *imagearray = [NSArray arrayWithArray:[self.userInfoDictionary objectForKey:@"adPictures"]];
+    ImageUrlsBlock imageBlock = self.imageBlock;
     
+    if (imageBlock) {
+        imageBlock(imagearray);
+    }
+
     self.loginFlag = [self.userInfoDictionary objectForKey:@"flag"];
     [[NSUserDefaults standardUserDefaults] setObject:self.loginFlag forKey:currentFlag];
     

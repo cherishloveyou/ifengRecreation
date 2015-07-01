@@ -9,6 +9,8 @@
 #import "RecommendationVC.h"
 #import "LoginViewController.h"
 #import "ChooseLotteryVC.h"
+#import "FFScrollView.h"
+#import "LoginViewController.h"
 
 @interface RecommendationVC ()
 {
@@ -54,6 +56,14 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationController.navigationBarHidden = YES;
 //    NSLog(@"advertisementView frame == %@",self.advertisementView);
+    
+    LoginViewController *login = [LoginViewController showFromController:self];
+    __weak typeof(self) weakself = self;
+    login.imageBlock = ^(NSArray *imageurls){
+        //添加广告栏
+        FFScrollView *scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
+        [weakself.advertisementView addSubview:scrollView];
+    };
  
     
 }

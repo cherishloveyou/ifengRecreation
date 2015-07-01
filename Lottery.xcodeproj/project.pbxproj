@@ -12,6 +12,7 @@
 		00AEE77D1B3EDB1F00577380 /* ChooseLotteryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE77B1B3EDB1F00577380 /* ChooseLotteryVC.m */; };
 		00AEE77E1B3EDB1F00577380 /* ChooseLotteryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AEE77C1B3EDB1F00577380 /* ChooseLotteryVC.xib */; };
 		00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE7841B3F05B400577380 /* RecommendViewController.m */; };
+		00CCEA921B43C39100FB6853 /* FFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCEA911B43C39100FB6853 /* FFScrollView.m */; };
 		00D277AD1B417B6D0004D35B /* ChooseLotteryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D277AB1B417B6D0004D35B /* ChooseLotteryCell.m */; };
 		00D277AE1B417B6D0004D35B /* ChooseLotteryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D277AC1B417B6D0004D35B /* ChooseLotteryCell.xib */; };
 		00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D5CD421B2F0C4C007D8E81 /* BYLotteryHallCell.m */; };
@@ -72,6 +73,8 @@
 		00AEE77C1B3EDB1F00577380 /* ChooseLotteryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLotteryVC.xib; sourceTree = "<group>"; };
 		00AEE7831B3F05B400577380 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		00AEE7841B3F05B400577380 /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		00CCEA901B43C39100FB6853 /* FFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFScrollView.h; sourceTree = "<group>"; };
+		00CCEA911B43C39100FB6853 /* FFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFScrollView.m; sourceTree = "<group>"; };
 		00D277AA1B417B6D0004D35B /* ChooseLotteryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLotteryCell.h; sourceTree = "<group>"; };
 		00D277AB1B417B6D0004D35B /* ChooseLotteryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLotteryCell.m; sourceTree = "<group>"; };
 		00D277AC1B417B6D0004D35B /* ChooseLotteryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLotteryCell.xib; sourceTree = "<group>"; };
@@ -216,12 +219,15 @@
 			path = lotteryResultsCell;
 			sourceTree = "<group>";
 		};
-		00EDDD6B1B304EB8001F4CB8 /* category */ = {
+		00EDDD6B1B304EB8001F4CB8 /* categoryAndTools */ = {
 			isa = PBXGroup;
 			children = (
+				00CCEA901B43C39100FB6853 /* FFScrollView.h */,
+				00CCEA911B43C39100FB6853 /* FFScrollView.m */,
 				00EDDD6C1B304ED1001F4CB8 /* UIAlertView+DisMiss.h */,
 				00EDDD6D1B304ED1001F4CB8 /* UIAlertView+DisMiss.m */,
 			);
+			name = categoryAndTools;
 			path = category;
 			sourceTree = "<group>";
 		};
@@ -388,7 +394,7 @@
 				974E85A21B11610E00B57C9E /* Images.xcassets */,
 				974E859F1B11610E00B57C9E /* Main.storyboard */,
 				974E85A41B11610E00B57C9E /* LaunchScreen.xib */,
-				00EDDD6B1B304EB8001F4CB8 /* category */,
+				00EDDD6B1B304EB8001F4CB8 /* categoryAndTools */,
 				974E85BB1B1162E100B57C9E /* Controllers */,
 				00F579751B2D5A0800C5AD45 /* views */,
 				974E85951B11610E00B57C9E /* Supporting Files */,
@@ -644,6 +650,7 @@
 				00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */,
 				00EDDD6E1B304ED1001F4CB8 /* UIAlertView+DisMiss.m in Sources */,
 				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,
+				00CCEA921B43C39100FB6853 /* FFScrollView.m in Sources */,
 				0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */,
 				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,
 				00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */,
