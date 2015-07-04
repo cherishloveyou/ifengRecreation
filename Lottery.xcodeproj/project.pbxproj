@@ -37,6 +37,7 @@
 		971DF3FD1B3E735C005CF819 /* SegmentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3FC1B3E735C005CF819 /* SegmentButton.m */; };
 		971DF4011B3E81D1005CF819 /* NumberCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF4001B3E81D1005CF819 /* NumberCellNode.m */; };
 		973C15B81B36BD8600BE608E /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C15B71B36BD8600BE608E /* Colours.m */; };
+		974563A71B47C41900DDA8A1 /* UINavigationController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 974563A61B47C41900DDA8A1 /* UINavigationController+JZExtension.m */; };
 		974E85981B11610E00B57C9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85971B11610E00B57C9E /* main.m */; };
 		974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E859A1B11610E00B57C9E /* AppDelegate.m */; };
 		974E859E1B11610E00B57C9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E859D1B11610E00B57C9E /* RootViewController.m */; };
@@ -121,6 +122,9 @@
 		971DF4001B3E81D1005CF819 /* NumberCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberCellNode.m; sourceTree = "<group>"; };
 		973C15B61B36BD8600BE608E /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		973C15B71B36BD8600BE608E /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		974563A31B47B86C00DDA8A1 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		974563A51B47C41900DDA8A1 /* UINavigationController+JZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JZExtension.h"; sourceTree = "<group>"; };
+		974563A61B47C41900DDA8A1 /* UINavigationController+JZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JZExtension.m"; sourceTree = "<group>"; };
 		974E85921B11610E00B57C9E /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		974E85961B11610E00B57C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		974E85971B11610E00B57C9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -348,6 +352,7 @@
 		9720B2401B3E4D4300648ABE /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				974563A41B47C41900DDA8A1 /* JZNavigationExtension */,
 				971DF3E31B3E54BA005CF819 /* OAStackView */,
 			);
 			path = Vendors;
@@ -360,6 +365,30 @@
 				973C15B71B36BD8600BE608E /* Colours.m */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		9745639B1B47B2A800DDA8A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		974563A21B47B85E00DDA8A1 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				974563A31B47B86C00DDA8A1 /* Macros.h */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		974563A41B47C41900DDA8A1 /* JZNavigationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				974563A51B47C41900DDA8A1 /* UINavigationController+JZExtension.h */,
+				974563A61B47C41900DDA8A1 /* UINavigationController+JZExtension.m */,
+			);
+			path = JZNavigationExtension;
 			sourceTree = "<group>";
 		};
 		974E85891B11610E00B57C9E = {
@@ -385,6 +414,8 @@
 		974E85941B11610E00B57C9E /* Lottery */ = {
 			isa = PBXGroup;
 			children = (
+				974563A21B47B85E00DDA8A1 /* Global */,
+				9745639B1B47B2A800DDA8A1 /* Model */,
 				9720B2401B3E4D4300648ABE /* Vendors */,
 				979BC4E91B26F67F00070B0B /* Utils */,
 				974E85991B11610E00B57C9E /* AppDelegate.h */,
@@ -654,6 +685,7 @@
 				0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */,
 				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,
 				00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */,
+				974563A71B47C41900DDA8A1 /* UINavigationController+JZExtension.m in Sources */,
 				971DF4011B3E81D1005CF819 /* NumberCellNode.m in Sources */,
 				974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */,
 				00F579881B2D608A00C5AD45 /* MyProfileViewController.m in Sources */,
