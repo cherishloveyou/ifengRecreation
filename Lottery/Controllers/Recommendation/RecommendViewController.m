@@ -9,6 +9,7 @@
 #import "RecommendViewController.h"
 #import "LoginViewController.h"
 #import "RecommendationVC.h"
+#import "Macros.h"
 
 @interface RecommendViewController ()
 
@@ -25,6 +26,12 @@
     [self addChildViewController:recmment];
     recmment.view.frame = self.view.bounds;
     [self.view addSubview:recmment.view];
+    
+    [LogInUserIonfoModel userName];
+    
+    [LogInUserIonfoModel userId];
+    
+    [LogInUserIonfoModel userType];
     
 //    if (CURRENTLOGINFLAG.length < 10) {
 //    LoginViewController *loginVC = [LoginViewController defaultLoginViewController];

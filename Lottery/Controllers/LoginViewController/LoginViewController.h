@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Macros.h"
+#import "LogInUserIonfoModel.h"
 
 typedef void (^logInBlock)(BOOL success);
 
@@ -56,6 +57,8 @@ typedef void (^ImageUrlsBlock)(NSArray* imagesUrls);
  *  登录成功 返回的广告栏图片链接
  */
 @property (copy) ImageUrlsBlock imageBlock;
+
+@property (nonatomic,strong) LogInUserIonfoModel *userInfoModel;
 
 
 /**

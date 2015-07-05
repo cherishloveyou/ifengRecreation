@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070B4081B3C2F6700DF17AC /* RecommendationVC.m */; };
 		0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */; };
+		00929D5F1B48C1A0001CFB4D /* LogInUserIonfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00929D5E1B48C1A0001CFB4D /* LogInUserIonfoModel.m */; };
 		00AEE77D1B3EDB1F00577380 /* ChooseLotteryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE77B1B3EDB1F00577380 /* ChooseLotteryVC.m */; };
 		00AEE77E1B3EDB1F00577380 /* ChooseLotteryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AEE77C1B3EDB1F00577380 /* ChooseLotteryVC.xib */; };
 		00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE7841B3F05B400577380 /* RecommendViewController.m */; };
@@ -68,6 +69,8 @@
 		0070B4071B3C2F6700DF17AC /* RecommendationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendationVC.h; sourceTree = "<group>"; };
 		0070B4081B3C2F6700DF17AC /* RecommendationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendationVC.m; sourceTree = "<group>"; };
 		0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendationVC.xib; sourceTree = "<group>"; };
+		00929D5D1B48C1A0001CFB4D /* LogInUserIonfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogInUserIonfoModel.h; path = "Lottery/Controllers/Recommendation/选择彩种/彩种选择cell/LogInUserIonfoModel.h"; sourceTree = SOURCE_ROOT; };
+		00929D5E1B48C1A0001CFB4D /* LogInUserIonfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogInUserIonfoModel.m; path = "Lottery/Controllers/Recommendation/选择彩种/彩种选择cell/LogInUserIonfoModel.m"; sourceTree = SOURCE_ROOT; };
 		00AEE7771B3E805300577380 /* Lottery.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lottery.pch; sourceTree = "<group>"; };
 		00AEE77A1B3EDB1F00577380 /* ChooseLotteryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLotteryVC.h; sourceTree = "<group>"; };
 		00AEE77B1B3EDB1F00577380 /* ChooseLotteryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLotteryVC.m; sourceTree = "<group>"; };
@@ -370,6 +373,8 @@
 		9745639B1B47B2A800DDA8A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00929D5D1B48C1A0001CFB4D /* LogInUserIonfoModel.h */,
+				00929D5E1B48C1A0001CFB4D /* LogInUserIonfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -681,6 +686,7 @@
 				00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */,
 				00EDDD6E1B304ED1001F4CB8 /* UIAlertView+DisMiss.m in Sources */,
 				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,
+				00929D5F1B48C1A0001CFB4D /* LogInUserIonfoModel.m in Sources */,
 				00CCEA921B43C39100FB6853 /* FFScrollView.m in Sources */,
 				0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */,
 				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,

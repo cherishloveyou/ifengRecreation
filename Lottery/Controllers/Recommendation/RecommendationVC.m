@@ -11,6 +11,7 @@
 #import "ChooseLotteryVC.h"
 #import "FFScrollView.h"
 #import "LoginViewController.h"
+#import "HTTPClient+User.h"
 
 @interface RecommendationVC ()
 {
@@ -68,30 +69,36 @@
     self.navigationController.navigationBarHidden = YES;
 //    NSLog(@"advertisementView frame == %@",self.advertisementView);
     
-//    LoginViewController *login = [LoginViewController showFromController:self];
-//    __weak typeof(self) weakself = self;
-//    login.imageBlock = ^(NSArray *imageurls){
-//        //添加广告栏
-//        if (scrollView) {
-//            [scrollView removeFromSuperview];
-//        }
-//        scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
-//        [weakself.advertisementView addSubview:scrollView];
-//    };
-    NSLog(@"%@",uerdictionary);
-    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
-    if (scrollView) {
-        [scrollView removeFromSuperview];
-    }
+   /* LoginViewController *login = [LoginViewController showFromController:self];
+    __weak typeof(self) weakself = self;
+    login.imageBlock = ^(NSArray *imageurls){
+        //添加广告栏
+        if (scrollView) {
+            [scrollView removeFromSuperview];
+        }
+        scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
+        [weakself.advertisementView addSubview:scrollView];
+        
+        weakself.userName.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
+        weakself.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
+        weakself.yesterdayMony.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"yesterDayRewards"]];
+        
+        [weakself getTheLastLotteryNumber];
+    };
+    */
+//    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
+//    if (scrollView) {
+//        [scrollView removeFromSuperview];
+//    }
     
-    self.userName.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
-    self.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
+    
     //添加广告栏
-    scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageUrlArray];
+//    scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageUrlArray];
     
-    [self.advertisementView addSubview:scrollView];
+//    [self.advertisementView addSubview:scrollView];
     
     [self refreshHotLotteryImages:self.hotLotteryIds];
+    
     
 }
 /**
@@ -99,6 +106,11 @@
  */
 - (void)getTheLastLotteryNumber{
     
+    [HTTPClient userHandleWithAction:14 paramaters:@{@"lotteryType":@(1)} success:^(id task, id response) {
+        
+    } failed:^(id task, NSError *error) {
+        
+    }];
 }
 /**
  *  彩票图片点击(跳转至选择彩票)

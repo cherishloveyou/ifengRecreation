@@ -163,6 +163,10 @@
      
      if ([response isKindOfClass:[NSDictionary class]]) {
        NSInteger  code = [[response objectForKey:@"code"] integerValue];
+         /**
+          *  创建用户信息数据对象
+          */
+         weakSelf.userInfoModel = [LogInUserIonfoModel defaultUserInfoWithUserInfo:response];
          
          switch (code) {
              case 0:{
