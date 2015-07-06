@@ -37,6 +37,8 @@
 		971DF3F71B3E54BA005CF819 /* OAStackViewDistributionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3F01B3E54BA005CF819 /* OAStackViewDistributionStrategy.m */; };
 		971DF3FD1B3E735C005CF819 /* SegmentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3FC1B3E735C005CF819 /* SegmentButton.m */; };
 		971DF4011B3E81D1005CF819 /* NumberCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF4001B3E81D1005CF819 /* NumberCellNode.m */; };
+		9739E81E1B4A7EFF007AF273 /* RecordPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9739E81C1B4A7EFF007AF273 /* RecordPageViewController.m */; };
+		9739E8261B4A91B8007AF273 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9739E8251B4A91B8007AF273 /* HMSegmentedControl.m */; };
 		973C15B81B36BD8600BE608E /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C15B71B36BD8600BE608E /* Colours.m */; };
 		974563A71B47C41900DDA8A1 /* UINavigationController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 974563A61B47C41900DDA8A1 /* UINavigationController+JZExtension.m */; };
 		974E85981B11610E00B57C9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85971B11610E00B57C9E /* main.m */; };
@@ -123,6 +125,10 @@
 		971DF3FC1B3E735C005CF819 /* SegmentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentButton.m; sourceTree = "<group>"; };
 		971DF3FF1B3E81D1005CF819 /* NumberCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberCellNode.h; sourceTree = "<group>"; };
 		971DF4001B3E81D1005CF819 /* NumberCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberCellNode.m; sourceTree = "<group>"; };
+		9739E81B1B4A7EFF007AF273 /* RecordPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordPageViewController.h; sourceTree = "<group>"; };
+		9739E81C1B4A7EFF007AF273 /* RecordPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordPageViewController.m; sourceTree = "<group>"; };
+		9739E8241B4A91B8007AF273 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		9739E8251B4A91B8007AF273 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		973C15B61B36BD8600BE608E /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		973C15B71B36BD8600BE608E /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		974563A31B47B86C00DDA8A1 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
@@ -282,6 +288,8 @@
 			children = (
 				00F5797F1B2D608A00C5AD45 /* MyProfileViewController.h */,
 				00F579801B2D608A00C5AD45 /* MyProfileViewController.m */,
+				9739E81B1B4A7EFF007AF273 /* RecordPageViewController.h */,
+				9739E81C1B4A7EFF007AF273 /* RecordPageViewController.m */,
 			);
 			path = MYIfeng;
 			sourceTree = "<group>";
@@ -355,10 +363,20 @@
 		9720B2401B3E4D4300648ABE /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				9739E8231B4A91B8007AF273 /* HMSegmentedControl */,
 				974563A41B47C41900DDA8A1 /* JZNavigationExtension */,
 				971DF3E31B3E54BA005CF819 /* OAStackView */,
 			);
 			path = Vendors;
+			sourceTree = "<group>";
+		};
+		9739E8231B4A91B8007AF273 /* HMSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				9739E8241B4A91B8007AF273 /* HMSegmentedControl.h */,
+				9739E8251B4A91B8007AF273 /* HMSegmentedControl.m */,
+			);
+			path = HMSegmentedControl;
 			sourceTree = "<group>";
 		};
 		973C15B51B36BD8600BE608E /* Colors */ = {
@@ -677,6 +695,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9739E81E1B4A7EFF007AF273 /* RecordPageViewController.m in Sources */,
 				00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */,
 				971DF3F51B3E54BA005CF819 /* OAStackView.m in Sources */,
 				00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */,
@@ -700,6 +719,7 @@
 				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
 				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
 				00D277AD1B417B6D0004D35B /* ChooseLotteryCell.m in Sources */,
+				9739E8261B4A91B8007AF273 /* HMSegmentedControl.m in Sources */,
 				973C15B81B36BD8600BE608E /* Colours.m in Sources */,
 				971DF3F61B3E54BA005CF819 /* OAStackViewAlignmentStrategy.m in Sources */,
 				00EDDD721B305C94001F4CB8 /* CustomDropDownView.m in Sources */,

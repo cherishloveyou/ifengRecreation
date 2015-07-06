@@ -8,6 +8,8 @@
 
 #import "MyProfileViewController.h"
 #import "UINavigationController+JZExtension.h"
+#import "RecordPageViewController.h"
+#import <Masonry.h>
 
 @interface MyProfileViewController ()
 
@@ -16,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *accountButton;
 @property (weak, nonatomic) IBOutlet UIButton *PayButton;
 @property (weak, nonatomic) IBOutlet UIButton *kitingButton;
+@property (weak, nonatomic) IBOutlet UIView *topContainerView;
 
 
 @end
@@ -50,6 +53,17 @@
 //    [settingButton addTarget:self action:@selector(settingButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
 //    [settingButton setImage:[UIImage imageNamed:@"info"] forState:UIControlStateNormal];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
+    
+    RecordPageViewController *recordViewController = [[RecordPageViewController alloc] init];
+    [recordViewController willMoveToParentViewController:self];
+    [self addChildViewController:recordViewController];
+    [self.view addSubview:recordViewController.view];
+    [recordViewController didMoveToParentViewController:self];
+    
+    [recordViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.bottom.equalTo(@0);
+        make.top.equalTo(self.topContainerView.mas_bottom);
+    }];
 }
 
 #pragma mark - event methods

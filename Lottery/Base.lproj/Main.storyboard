@@ -305,7 +305,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLt-6w-crt">
-                                        <rect key="frame" x="139" y="70" width="42" height="20.5"/>
+                                        <rect key="frame" x="139" y="70" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -340,7 +340,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhN-jP-qSw">
-                                        <rect key="frame" x="159.5" y="100" width="1" height="45"/>
+                                        <rect key="frame" x="160" y="100" width="1" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="YO8-tp-nrh"/>
@@ -392,6 +392,7 @@
                         <outlet property="kitingButton" destination="5FA-SM-lU8" id="Yvb-95-x6e"/>
                         <outlet property="potraitImage" destination="QBP-Z5-g4S" id="F0U-gm-0ZX"/>
                         <outlet property="remainLabel" destination="oLt-6w-crt" id="XMf-Qd-xkV"/>
+                        <outlet property="topContainerView" destination="Zvc-Uz-Mx0" id="l5M-ue-gwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWe-IM-RRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
