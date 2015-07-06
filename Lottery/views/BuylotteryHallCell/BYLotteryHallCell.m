@@ -31,7 +31,6 @@
     self.lotteryNameLabel.text = [dataDic objectForKey:@"_gameName"];
     self.lotterySnippetLabel.text = [dataDic objectForKey:@"_gameName"];
     [self.lotteryHeaderImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"header"]];
-    self.lotteryTypeLabel.text = @"我的自主彩种";
 }
 
 @end

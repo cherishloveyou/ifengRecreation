@@ -26,5 +26,11 @@
  *  最近第二期开奖时间
  */
 @property (weak, nonatomic) IBOutlet UILabel *thirdDateLabel;
+/**
+ *  装载数据
+ *
+ *  @param dataArray 数据源
+ */
+- (void)loadDataWithArray:(NSArray*)dataArray;
 
 @end

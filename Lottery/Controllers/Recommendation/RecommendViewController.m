@@ -32,17 +32,6 @@
     [LogInUserIonfoModel userId];
     
     [LogInUserIonfoModel userType];
-    
-//    if (CURRENTLOGINFLAG.length < 10) {
-//    LoginViewController *loginVC = [LoginViewController defaultLoginViewController];
-//    
-//    loginVC.imageBlock = ^(NSArray *urlsArray){
-//        
-//        
-//    };
-//    [self presentViewController:loginVC animated:YES completion:nil];
-
-//    }
 
 }
 

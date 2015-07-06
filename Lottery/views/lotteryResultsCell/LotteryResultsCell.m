@@ -65,5 +65,13 @@
 
     // Configure the view for the selected state
 }
+/**
+ *  装载数据
+ *
+ *  @param dataArray 数据源
+ */
+- (void)loadDataWithArray:(NSArray*)dataArray{
+    
+}
 
 @end

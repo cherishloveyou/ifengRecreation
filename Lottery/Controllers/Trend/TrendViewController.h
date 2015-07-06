@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TrendViewController : UITableViewController
+/**
+ *  数据源
+ */
+@property (nonatomic,strong) NSMutableArray *dataSourceArray;
 
 @end

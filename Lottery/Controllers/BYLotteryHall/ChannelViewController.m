@@ -61,12 +61,12 @@
                 [SVProgressHUD showSuccessWithStatus:nil];
                 break;
             case -100:{
-               LoginViewController *logInVc = [LoginViewController showFromController:self];
-                
-                [SVProgressHUD showErrorWithStatus:@"您当前登录已过期请重新登录！"];
-                logInVc.block = ^(BOOL success){
-                    [weakself getDataFromNetWorkin];
-                };
+//               LoginViewController *logInVc = [LoginViewController showFromController:self];
+//                
+//                [SVProgressHUD showErrorWithStatus:@"您当前登录已过期请重新登录！"];
+//                logInVc.block = ^(BOOL success){
+//                    [weakself getDataFromNetWorkin];
+//                };
             }
                 break;
                 

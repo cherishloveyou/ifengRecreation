@@ -69,7 +69,7 @@
     self.navigationController.navigationBarHidden = YES;
 //    NSLog(@"advertisementView frame == %@",self.advertisementView);
     
-   /* LoginViewController *login = [LoginViewController showFromController:self];
+ LoginViewController *login = [LoginViewController showFromController:self];
     __weak typeof(self) weakself = self;
     login.imageBlock = ^(NSArray *imageurls){
         //添加广告栏
@@ -85,7 +85,7 @@
         
         [weakself getTheLastLotteryNumber];
     };
-    */
+
 //    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
 //    if (scrollView) {
 //        [scrollView removeFromSuperview];
@@ -106,12 +106,36 @@
  */
 - (void)getTheLastLotteryNumber{
     
-    [HTTPClient userHandleWithAction:14 paramaters:@{@"lotteryType":@(1)} success:^(id task, id response) {
+    [HTTPClient userHandleWithAction:14 paramaters:@{@"lotteryType":@"1"} success:^(id task, id response) {
+        NSInteger code = [[response objectForKey:@"code"] integerValue];
+        if (!code) {
+            [self loadRatherNumbersWithdic:response];
+        }
         
     } failed:^(id task, NSError *error) {
         
     }];
 }
+/**
+ *  显示开奖号码
+ *
+ *  @param datadic 开奖结果
+ */
+- (void)loadRatherNumbersWithdic:(NSDictionary*)datadic{
+    NSString *termNum = [NSString stringWithFormat:@"第%@期",[datadic objectForKey:@"termNum"]];
+    self.lotteryStage.text = termNum;
+    NSString *ratherNum = [datadic objectForKey:@"ratherNum"];
+    
+    for (int i = 0; i<ratherNum.length; i++) {
+        NSString *subString = [ratherNum substringWithRange:NSMakeRange(i, 1)];
+        if (i<self.numbers.count) {
+            UIImageView *numberimage =  self.numbers[i];
+            numberimage.image = [UIImage imageNamed:subString];
+        }
+    }
+    
+}
+
 /**
  *  彩票图片点击(跳转至选择彩票)
  *
