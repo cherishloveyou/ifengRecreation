@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *kitingButton;
 @property (weak, nonatomic) IBOutlet UIView *topContainerView;
 
+@property (nonatomic, weak) UIView *pageView;
+
 
 @end
 
@@ -53,8 +55,8 @@
 //    [settingButton addTarget:self action:@selector(settingButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
 //    [settingButton setImage:[UIImage imageNamed:@"info"] forState:UIControlStateNormal];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
-    
-    RecordPageViewController *recordViewController = [[RecordPageViewController alloc] init];
+#warning 还没有添加controller
+    RecordPageViewController *recordViewController = [[RecordPageViewController alloc] initWithControllers:nil];
     [recordViewController willMoveToParentViewController:self];
     [self addChildViewController:recordViewController];
     [self.view addSubview:recordViewController.view];
@@ -64,6 +66,40 @@
         make.left.and.right.bottom.equalTo(@0);
         make.top.equalTo(self.topContainerView.mas_bottom);
     }];
+    
+    self.pageView = recordViewController.view;
+    
+    UISwipeGestureRecognizer *swipDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    swipDown.direction = UISwipeGestureRecognizerDirectionDown;
+    [recordViewController.view addGestureRecognizer:swipDown];
+    
+    UISwipeGestureRecognizer *swipUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    swipUp.direction = UISwipeGestureRecognizerDirectionUp;
+    [recordViewController.view addGestureRecognizer:swipUp];
+}
+
+#pragma mark - event methods
+
+-(void)handleSwipe:(UISwipeGestureRecognizer *)swipe
+{
+    UISwipeGestureRecognizerDirection direction = swipe.direction;
+    if (direction == UISwipeGestureRecognizerDirectionDown) {
+        [self.pageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.right.and.bottom.equalTo(@0);
+            make.top.equalTo(self.topContainerView.mas_bottom);
+        }];
+    }else{
+        [self.pageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.right.and.bottom.equalTo(@0);
+            make.top.equalTo(@64);
+        }];
+    }
+    
+    [self.view setNeedsLayout];
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }];
 }
 
 #pragma mark - event methods

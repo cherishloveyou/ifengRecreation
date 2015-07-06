@@ -10,8 +10,6 @@
 
 @interface RecordPageViewController : UIViewController
 
-@property (nonatomic, strong, readwrite) NSMutableArray *controllers;
-
 -(instancetype)initWithControllers:(NSArray *)controllers;
 
 @end
