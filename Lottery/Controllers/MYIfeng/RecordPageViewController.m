@@ -10,12 +10,13 @@
 #import <Masonry.h>
 #import "Colours.h"
 #import "HMSegmentedControl.h"
+#import "RecordViewController.h"
 
-@interface RecordPageViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface RecordPageViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIButton *topLeftButton;
 @property (nonatomic,strong) HMSegmentedControl *topSegmentView;
-@property (nonatomic, strong, readwrite) NSArray *controllers;
+@property (nonatomic, strong) NSArray *controllers;
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
@@ -24,25 +25,18 @@
 
 #pragma mark - life cycle methods
 
--(instancetype)initWithControllers:(NSArray *)controllers
-{
-    self = [super init];
-    if (self) {
-        self.controllers = controllers;
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setUp];
+    [self addSubViewControllers];
 }
 
 #pragma mark - private methods
 
 -(void)setUp
 {
+    self.view.backgroundColor = [UIColor antiqueWhiteColor];
     
     self.topLeftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.topLeftButton setTitle:@"投注纪录" forState:UIControlStateNormal];
@@ -57,13 +51,14 @@
                                                 NSForegroundColorAttributeName:[UIColor grayColor]};
     __weak typeof(self) wself = self;
     [self.topSegmentView setIndexChangeBlock:^(NSInteger index) {
-        NSLog(@"test");
+        [wself.scrollView setContentOffset:CGPointMake(CGRectGetWidth(self.view.bounds)*index, 0) animated:YES];
     }];
     [self.view addSubview:self.topSegmentView];
     
     
     self.scrollView = [[UIScrollView alloc] init];
-    self.scrollView.backgroundColor = [UIColor redColor];
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView];
     
     
@@ -86,8 +81,72 @@
     
 }
 
+-(void)addSubViewControllers
+{
+    RecordViewController *all = [[RecordViewController alloc] initWithNibName:@"RecordViewController" bundle:nil];
+    [all willMoveToParentViewController:self];
+    [self addChildViewController:all];
+    [self.scrollView addSubview:all.view];
+    [all didMoveToParentViewController:self];
+    
+    RecordViewController *notOpen = [[RecordViewController alloc] initWithNibName:@"RecordViewController" bundle:nil];
+    [notOpen willMoveToParentViewController:self];
+    [self addChildViewController:notOpen];
+    [self.scrollView addSubview:notOpen.view];
+    [notOpen didMoveToParentViewController:self];
+
+    RecordViewController *hasGot = [[RecordViewController alloc] initWithNibName:@"RecordViewController" bundle:nil];
+    [hasGot willMoveToParentViewController:self];
+    [self addChildViewController:hasGot];
+    [self.scrollView addSubview:hasGot.view];
+    [hasGot didMoveToParentViewController:self];
+
+    RecordViewController *notGot = [[RecordViewController alloc] initWithNibName:@"RecordViewController" bundle:nil];
+    [notGot willMoveToParentViewController:self];
+    [self addChildViewController:notGot];
+    [self.scrollView addSubview:notGot.view];
+    [notGot didMoveToParentViewController:self];
+
+    self.controllers = @[all,notOpen,hasGot,notGot];
+    
+    [all.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.bottom.and.top.equalTo(@0);
+        make.height.equalTo(self.scrollView);
+        make.width.equalTo(self.view);
+    }];
+    
+    [notOpen.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(all.view.mas_right);
+        make.top.and.bottom.equalTo(@0);
+        make.height.equalTo(self.scrollView);
+        make.width.equalTo(self.view);
+    }];
+    
+    [hasGot.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(notOpen.view.mas_right);
+        make.top.and.bottom.equalTo(@0);
+        make.height.equalTo(self.scrollView);
+        make.width.equalTo(self.view);
+    }];
+    
+    [notGot.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(hasGot.view.mas_right);
+        make.top.and.bottom.and.right.equalTo(@0);
+        make.height.equalTo(self.scrollView);
+        make.width.equalTo(self.view);
+    }];
+
+}
+
 #pragma mark - event methods
 
+#pragma mark - UIScrollViewDelegate methods
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    CGPoint offset = self.scrollView.contentOffset;
+    [self.topSegmentView setSelectedSegmentIndex:offset.x/CGRectGetWidth(self.view.bounds) animated:YES];
+}
 
 #pragma mark - memory methods
 

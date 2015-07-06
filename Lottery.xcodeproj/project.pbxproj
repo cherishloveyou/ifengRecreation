@@ -39,6 +39,8 @@
 		971DF4011B3E81D1005CF819 /* NumberCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF4001B3E81D1005CF819 /* NumberCellNode.m */; };
 		9739E81E1B4A7EFF007AF273 /* RecordPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9739E81C1B4A7EFF007AF273 /* RecordPageViewController.m */; };
 		9739E8261B4A91B8007AF273 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9739E8251B4A91B8007AF273 /* HMSegmentedControl.m */; };
+		9739E82A1B4ABA64007AF273 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9739E8281B4ABA64007AF273 /* RecordViewController.m */; };
+		9739E82B1B4ABA64007AF273 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9739E8291B4ABA64007AF273 /* RecordViewController.xib */; };
 		973C15B81B36BD8600BE608E /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C15B71B36BD8600BE608E /* Colours.m */; };
 		974563A71B47C41900DDA8A1 /* UINavigationController+JZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 974563A61B47C41900DDA8A1 /* UINavigationController+JZExtension.m */; };
 		974E85981B11610E00B57C9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85971B11610E00B57C9E /* main.m */; };
@@ -129,6 +131,9 @@
 		9739E81C1B4A7EFF007AF273 /* RecordPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordPageViewController.m; sourceTree = "<group>"; };
 		9739E8241B4A91B8007AF273 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		9739E8251B4A91B8007AF273 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		9739E8271B4ABA64007AF273 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		9739E8281B4ABA64007AF273 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		9739E8291B4ABA64007AF273 /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		973C15B61B36BD8600BE608E /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		973C15B71B36BD8600BE608E /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		974563A31B47B86C00DDA8A1 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
@@ -290,6 +295,9 @@
 				00F579801B2D608A00C5AD45 /* MyProfileViewController.m */,
 				9739E81B1B4A7EFF007AF273 /* RecordPageViewController.h */,
 				9739E81C1B4A7EFF007AF273 /* RecordPageViewController.m */,
+				9739E8271B4ABA64007AF273 /* RecordViewController.h */,
+				9739E8281B4ABA64007AF273 /* RecordViewController.m */,
+				9739E8291B4ABA64007AF273 /* RecordViewController.xib */,
 			);
 			path = MYIfeng;
 			sourceTree = "<group>";
@@ -641,6 +649,7 @@
 				00EDDD821B3070CB001F4CB8 /* DropDownViewCell.xib in Resources */,
 				00D277AE1B417B6D0004D35B /* ChooseLotteryCell.xib in Resources */,
 				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
+				9739E82B1B4ABA64007AF273 /* RecordViewController.xib in Resources */,
 				0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */,
 				974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */,
 				974E85A31B11610E00B57C9E /* Images.xcassets in Resources */,
@@ -710,6 +719,7 @@
 				0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */,
 				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,
 				00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */,
+				9739E82A1B4ABA64007AF273 /* RecordViewController.m in Sources */,
 				974563A71B47C41900DDA8A1 /* UINavigationController+JZExtension.m in Sources */,
 				971DF4011B3E81D1005CF819 /* NumberCellNode.m in Sources */,
 				974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */,

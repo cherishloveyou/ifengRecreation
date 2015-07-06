@@ -56,7 +56,7 @@
 //    [settingButton setImage:[UIImage imageNamed:@"info"] forState:UIControlStateNormal];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
 #warning 还没有添加controller
-    RecordPageViewController *recordViewController = [[RecordPageViewController alloc] initWithControllers:nil];
+    RecordPageViewController *recordViewController = [[RecordPageViewController alloc] init];
     [recordViewController willMoveToParentViewController:self];
     [self addChildViewController:recordViewController];
     [self.view addSubview:recordViewController.view];

@@ -10,6 +10,6 @@
 
 @interface RecordPageViewController : UIViewController
 
--(instancetype)initWithControllers:(NSArray *)controllers;
+@property (nonatomic, strong, readonly) NSArray *controllers;
 
 @end
