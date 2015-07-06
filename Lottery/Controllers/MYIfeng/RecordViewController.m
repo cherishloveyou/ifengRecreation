@@ -7,6 +7,7 @@
 //
 
 #import "RecordViewController.h"
+#import <MJRefresh.h>
 
 @interface RecordViewController ()
 
@@ -32,7 +33,25 @@ NSString *const reuseIdentifier = @"RecordCell";
 
 -(void)setUp
 {
+    __weak typeof(self) weakSelf = self;
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf getDataFromNetWorkin];
+    }];
+    
+    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    header.autoChangeAlpha = YES;
+    // 设置header
+    self.tableView.header = header;
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
+}
+
+#pragma mark - private methods
+
+-(void)getDataFromNetWorkin
+{
+
 }
 
 #pragma mark - Table view data source

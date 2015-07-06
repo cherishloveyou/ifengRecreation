@@ -36,7 +36,7 @@
 
 -(void)setUp
 {
-    self.view.backgroundColor = [UIColor antiqueWhiteColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.topLeftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.topLeftButton setTitle:@"投注纪录" forState:UIControlStateNormal];
@@ -46,6 +46,8 @@
     self.topSegmentView = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"全部",@"未开奖",@"已中奖",@"未中奖"]];
     self.topSegmentView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.topSegmentView.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    self.topSegmentView.selectedTitleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:13],
+                                                        NSForegroundColorAttributeName:[UIColor black25PercentColor]};
     self.topSegmentView.selectionIndicatorHeight = 2;
     self.topSegmentView.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:13],
                                                 NSForegroundColorAttributeName:[UIColor grayColor]};
