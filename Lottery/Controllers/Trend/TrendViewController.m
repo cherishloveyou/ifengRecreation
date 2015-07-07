@@ -43,13 +43,13 @@
     [SVProgressHUD show];
     [HTTPClient userHandleWithAction:21 paramaters:nil success:^(id task, id response) {
         NSInteger code = [[response objectForKey:@"code"] integerValue];
-        
+        [SVProgressHUD showSuccessWithStatus:nil];
         if ([self.tableView.header isRefreshing]) {
             [self.tableView.header endRefreshing];
         }
         switch (code) {
             case 0:{
-                [SVProgressHUD showSuccessWithStatus:nil];
+                
                 self.dataSourceArray = [NSMutableArray arrayWithArray:[response objectForKey:@"lotteryRatherInfos"]];
                 [self.tableView reloadData];
             }
