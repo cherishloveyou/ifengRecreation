@@ -87,6 +87,12 @@
     if (indexPath.row < self.dataSourceArray.count) {
         [cell loadDataWithArray:self.dataSourceArray[indexPath.row]];
     }
+//    点击cell的@"立即投注"跳转至相应的购彩页面
+//    __weak typeof(self) weakSelf = self;
+    cell.buyBlock = ^(NSString *lotteryId){
+        NSLog(@"%@",lotteryId);
+    };
+    
     return cell;
 }
 
