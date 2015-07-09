@@ -115,7 +115,7 @@
         NSString *thirdNu = [thirdDic objectForKey:@"RatherNum"];
         [self loadFirstNumbersWithString:firstNu];
         [self loadSecondNumbersWithString:secondNu];
-        [self loadSecondNumbersWithString:thirdNu];
+        [self loadThirdNumbersWithString:thirdNu];
     }
 }
 /**
