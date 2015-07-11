@@ -58,6 +58,7 @@
 		97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F611B2FE1D6001FB2C4 /* NumberButton.m */; };
 		97D9E5161B50EA2100048878 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E5141B50EA2100048878 /* SettingViewController.m */; };
 		97D9E51B1B51028500048878 /* ModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E51A1B51028500048878 /* ModifyPasswordViewController.m */; };
+		97D9E51F1B510D9400048878 /* VertifyQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E51E1B510D9400048878 /* VertifyQuestionViewController.m */; };
 		F0997D21EEE09A40B4846F6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C01377733245E06688A8F6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +169,8 @@
 		97D9E5141B50EA2100048878 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		97D9E5191B51028500048878 /* ModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyPasswordViewController.h; sourceTree = "<group>"; };
 		97D9E51A1B51028500048878 /* ModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyPasswordViewController.m; sourceTree = "<group>"; };
+		97D9E51D1B510D9400048878 /* VertifyQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertifyQuestionViewController.h; sourceTree = "<group>"; };
+		97D9E51E1B510D9400048878 /* VertifyQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertifyQuestionViewController.m; sourceTree = "<group>"; };
 		B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D007C86A7ABE68F0E5D2E609 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -581,6 +584,8 @@
 		97D9E51C1B510D5A00048878 /* Vertify */ = {
 			isa = PBXGroup;
 			children = (
+				97D9E51D1B510D9400048878 /* VertifyQuestionViewController.h */,
+				97D9E51E1B510D9400048878 /* VertifyQuestionViewController.m */,
 			);
 			path = Vertify;
 			sourceTree = "<group>";
@@ -775,6 +780,7 @@
 				971DF3F21B3E54BA005CF819 /* OAStackView+Constraint.m in Sources */,
 				971DF3F71B3E54BA005CF819 /* OAStackViewDistributionStrategy.m in Sources */,
 				97D9E5161B50EA2100048878 /* SettingViewController.m in Sources */,
+				97D9E51F1B510D9400048878 /* VertifyQuestionViewController.m in Sources */,
 				971DF3F41B3E54BA005CF819 /* OAStackView+Traversal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
