@@ -63,6 +63,7 @@
 		97D9E5161B50EA2100048878 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E5141B50EA2100048878 /* SettingViewController.m */; };
 		97D9E51B1B51028500048878 /* ModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E51A1B51028500048878 /* ModifyPasswordViewController.m */; };
 		97D9E51F1B510D9400048878 /* VertifyQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E51E1B510D9400048878 /* VertifyQuestionViewController.m */; };
+		97D9E5231B51152E00048878 /* BankCardManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E5221B51152E00048878 /* BankCardManageViewController.m */; };
 		F0997D21EEE09A40B4846F6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C01377733245E06688A8F6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +182,8 @@
 		97D9E51A1B51028500048878 /* ModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyPasswordViewController.m; sourceTree = "<group>"; };
 		97D9E51D1B510D9400048878 /* VertifyQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertifyQuestionViewController.h; sourceTree = "<group>"; };
 		97D9E51E1B510D9400048878 /* VertifyQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertifyQuestionViewController.m; sourceTree = "<group>"; };
+		97D9E5211B51152E00048878 /* BankCardManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardManageViewController.h; sourceTree = "<group>"; };
+		97D9E5221B51152E00048878 /* BankCardManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardManageViewController.m; sourceTree = "<group>"; };
 		B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D007C86A7ABE68F0E5D2E609 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -536,6 +539,7 @@
 		974E85BB1B1162E100B57C9E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				97D9E5201B51151B00048878 /* BankCard */,
 				97D9E51C1B510D5A00048878 /* Vertify */,
 				97D9E5181B51026600048878 /* Modify Password */,
 				97D9E5121B50EA0400048878 /* Setting */,
@@ -621,6 +625,15 @@
 				97D9E51E1B510D9400048878 /* VertifyQuestionViewController.m */,
 			);
 			path = Vertify;
+			sourceTree = "<group>";
+		};
+		97D9E5201B51151B00048878 /* BankCard */ = {
+			isa = PBXGroup;
+			children = (
+				97D9E5211B51152E00048878 /* BankCardManageViewController.h */,
+				97D9E5221B51152E00048878 /* BankCardManageViewController.m */,
+			);
+			path = BankCard;
 			sourceTree = "<group>";
 		};
 		C0F223D62BEDF1D78E103630 /* Frameworks */ = {
@@ -802,6 +815,7 @@
 				00F579881B2D608A00C5AD45 /* MyProfileViewController.m in Sources */,
 				00D5CD4A1B2F0CEE007D8E81 /* LotteryResultsCell.m in Sources */,
 				00AEE77D1B3EDB1F00577380 /* ChooseLotteryVC.m in Sources */,
+				97D9E5231B51152E00048878 /* BankCardManageViewController.m in Sources */,
 				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
 				00929D6A1B50FAE1001CFB4D /* LotteryDetailCell.m in Sources */,
 				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
