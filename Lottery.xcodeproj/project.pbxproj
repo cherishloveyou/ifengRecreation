@@ -57,6 +57,7 @@
 		97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D03F5D1B2FDE88001FB2C4 /* BuyingViewController.xib */; };
 		97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F611B2FE1D6001FB2C4 /* NumberButton.m */; };
 		97D9E5161B50EA2100048878 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E5141B50EA2100048878 /* SettingViewController.m */; };
+		97D9E51B1B51028500048878 /* ModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E51A1B51028500048878 /* ModifyPasswordViewController.m */; };
 		F0997D21EEE09A40B4846F6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C01377733245E06688A8F6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +166,8 @@
 		97D03F611B2FE1D6001FB2C4 /* NumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberButton.m; sourceTree = "<group>"; };
 		97D9E5131B50EA2100048878 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		97D9E5141B50EA2100048878 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		97D9E5191B51028500048878 /* ModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyPasswordViewController.h; sourceTree = "<group>"; };
+		97D9E51A1B51028500048878 /* ModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyPasswordViewController.m; sourceTree = "<group>"; };
 		B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D007C86A7ABE68F0E5D2E609 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -497,6 +500,8 @@
 		974E85BB1B1162E100B57C9E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				97D9E51C1B510D5A00048878 /* Vertify */,
+				97D9E5181B51026600048878 /* Modify Password */,
 				97D9E5121B50EA0400048878 /* Setting */,
 				97D03F4D1B2FDBD5001FB2C4 /* Buying */,
 				00F5798B1B2D60CC00C5AD45 /* LoginViewController */,
@@ -562,6 +567,22 @@
 				97D9E5141B50EA2100048878 /* SettingViewController.m */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		97D9E5181B51026600048878 /* Modify Password */ = {
+			isa = PBXGroup;
+			children = (
+				97D9E5191B51028500048878 /* ModifyPasswordViewController.h */,
+				97D9E51A1B51028500048878 /* ModifyPasswordViewController.m */,
+			);
+			path = "Modify Password";
+			sourceTree = "<group>";
+		};
+		97D9E51C1B510D5A00048878 /* Vertify */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vertify;
 			sourceTree = "<group>";
 		};
 		C0F223D62BEDF1D78E103630 /* Frameworks */ = {
@@ -718,6 +739,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9739E81E1B4A7EFF007AF273 /* RecordPageViewController.m in Sources */,
+				97D9E51B1B51028500048878 /* ModifyPasswordViewController.m in Sources */,
 				00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */,
 				971DF3F51B3E54BA005CF819 /* OAStackView.m in Sources */,
 				00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */,
