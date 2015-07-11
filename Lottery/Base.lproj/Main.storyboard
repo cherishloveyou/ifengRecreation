@@ -348,6 +348,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="3BJ-KL-feq"/>
                                     <constraint firstItem="lhN-jP-qSw" firstAttribute="top" secondItem="WRo-8i-QpZ" secondAttribute="bottom" constant="1" id="774-Hz-1rR"/>
                                     <constraint firstAttribute="centerX" secondItem="lhN-jP-qSw" secondAttribute="centerX" id="8bA-7Y-2Rq"/>
                                     <constraint firstItem="WRo-8i-QpZ" firstAttribute="leading" secondItem="Zvc-Uz-Mx0" secondAttribute="leading" id="9ED-1K-gvB"/>
@@ -374,7 +375,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Iyv-hu-FUO" firstAttribute="top" secondItem="Zvc-Uz-Mx0" secondAttribute="bottom" constant="310" id="AiI-Bg-J7O"/>
                             <constraint firstItem="Zvc-Uz-Mx0" firstAttribute="leading" secondItem="aPB-Hd-FCj" secondAttribute="leading" id="NAL-xl-9xn"/>
                             <constraint firstItem="XRK-J9-ZYl" firstAttribute="width" secondItem="aPB-Hd-FCj" secondAttribute="width" multiplier="0.5" id="XA9-JW-Ti2"/>
                             <constraint firstItem="Zvc-Uz-Mx0" firstAttribute="top" secondItem="OAS-AY-xoi" secondAttribute="bottom" id="nHM-ux-JxQ"/>
@@ -405,7 +405,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWe-IM-RRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1736" y="815"/>
+            <point key="canvasLocation" x="-1744" y="815"/>
         </scene>
         <!--设置-->
         <scene sceneID="V1A-2Y-KnF">
