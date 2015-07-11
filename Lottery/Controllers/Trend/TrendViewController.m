@@ -10,7 +10,7 @@
 #import "HTTPClient+User.h"
 #import "LotteryResultsCell.h"
 #import <MJRefresh.h>
-
+#import "LotteryDetailVC.h"
 @implementation TrendViewController
 
 - (NSMutableArray *)dataSourceArray{
@@ -62,6 +62,9 @@
         
         
     } failed:^(id task, NSError *error) {
+        if ([self.tableView.header isRefreshing]) {
+            [self.tableView.header endRefreshing];
+        }
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
 }
@@ -105,6 +108,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    LotteryDetailVC *detailVC = [[LotteryDetailVC alloc] initWithNibName:@"LotteryDetailVC" bundle:[NSBundle mainBundle]];
+    detailVC.dataSourceArray = self.dataSourceArray[indexPath.row];
+    
+    [self.navigationController pushViewController:detailVC animated:YES];
     
 }
 

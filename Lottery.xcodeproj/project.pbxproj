@@ -10,6 +10,10 @@
 		0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070B4081B3C2F6700DF17AC /* RecommendationVC.m */; };
 		0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */; };
 		00929D5F1B48C1A0001CFB4D /* LogInUserIonfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00929D5E1B48C1A0001CFB4D /* LogInUserIonfoModel.m */; };
+		00929D641B50F542001CFB4D /* LotteryDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00929D621B50F542001CFB4D /* LotteryDetailVC.m */; };
+		00929D651B50F542001CFB4D /* LotteryDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00929D631B50F542001CFB4D /* LotteryDetailVC.xib */; };
+		00929D6A1B50FAE1001CFB4D /* LotteryDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00929D681B50FAE1001CFB4D /* LotteryDetailCell.m */; };
+		00929D6B1B50FAE1001CFB4D /* LotteryDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00929D691B50FAE1001CFB4D /* LotteryDetailCell.xib */; };
 		00AEE77D1B3EDB1F00577380 /* ChooseLotteryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE77B1B3EDB1F00577380 /* ChooseLotteryVC.m */; };
 		00AEE77E1B3EDB1F00577380 /* ChooseLotteryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AEE77C1B3EDB1F00577380 /* ChooseLotteryVC.xib */; };
 		00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE7841B3F05B400577380 /* RecommendViewController.m */; };
@@ -78,6 +82,12 @@
 		0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendationVC.xib; sourceTree = "<group>"; };
 		00929D5D1B48C1A0001CFB4D /* LogInUserIonfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogInUserIonfoModel.h; path = "Lottery/Controllers/Recommendation/选择彩种/彩种选择cell/LogInUserIonfoModel.h"; sourceTree = SOURCE_ROOT; };
 		00929D5E1B48C1A0001CFB4D /* LogInUserIonfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogInUserIonfoModel.m; path = "Lottery/Controllers/Recommendation/选择彩种/彩种选择cell/LogInUserIonfoModel.m"; sourceTree = SOURCE_ROOT; };
+		00929D611B50F542001CFB4D /* LotteryDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryDetailVC.h; sourceTree = "<group>"; };
+		00929D621B50F542001CFB4D /* LotteryDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryDetailVC.m; sourceTree = "<group>"; };
+		00929D631B50F542001CFB4D /* LotteryDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryDetailVC.xib; sourceTree = "<group>"; };
+		00929D671B50FAE1001CFB4D /* LotteryDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryDetailCell.h; sourceTree = "<group>"; };
+		00929D681B50FAE1001CFB4D /* LotteryDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryDetailCell.m; sourceTree = "<group>"; };
+		00929D691B50FAE1001CFB4D /* LotteryDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryDetailCell.xib; sourceTree = "<group>"; };
 		00AEE7771B3E805300577380 /* Lottery.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lottery.pch; sourceTree = "<group>"; };
 		00AEE77A1B3EDB1F00577380 /* ChooseLotteryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLotteryVC.h; sourceTree = "<group>"; };
 		00AEE77B1B3EDB1F00577380 /* ChooseLotteryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLotteryVC.m; sourceTree = "<group>"; };
@@ -194,6 +204,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00929D601B50F383001CFB4D /* detailOfLotteryResult */ = {
+			isa = PBXGroup;
+			children = (
+				00929D661B50FAC1001CFB4D /* lotteryDetailCell */,
+				00929D611B50F542001CFB4D /* LotteryDetailVC.h */,
+				00929D621B50F542001CFB4D /* LotteryDetailVC.m */,
+				00929D631B50F542001CFB4D /* LotteryDetailVC.xib */,
+			);
+			path = detailOfLotteryResult;
+			sourceTree = "<group>";
+		};
+		00929D661B50FAC1001CFB4D /* lotteryDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				00929D671B50FAE1001CFB4D /* LotteryDetailCell.h */,
+				00929D681B50FAE1001CFB4D /* LotteryDetailCell.m */,
+				00929D691B50FAE1001CFB4D /* LotteryDetailCell.xib */,
+			);
+			path = lotteryDetailCell;
+			sourceTree = "<group>";
+		};
 		00AEE7781B3E93FE00577380 /* childController */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +274,8 @@
 				00D5CD481B2F0CEE007D8E81 /* LotteryResultsCell.m */,
 				00D5CD491B2F0CEE007D8E81 /* LotteryResultsCell.xib */,
 			);
-			path = lotteryResultsCell;
+			name = lotteryResultsCell;
+			path = ../../views/lotteryResultsCell;
 			sourceTree = "<group>";
 		};
 		00EDDD6B1B304EB8001F4CB8 /* categoryAndTools */ = {
@@ -282,7 +314,6 @@
 			children = (
 				00EDDD7D1B3070CB001F4CB8 /* customDropDownViewCell */,
 				00EDDD6F1B305C57001F4CB8 /* customDropDownView */,
-				00D5CD461B2F0CB0007D8E81 /* lotteryResultsCell */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -325,8 +356,10 @@
 		00F579841B2D608A00C5AD45 /* Trend */ = {
 			isa = PBXGroup;
 			children = (
+				00929D601B50F383001CFB4D /* detailOfLotteryResult */,
 				00F579851B2D608A00C5AD45 /* TrendViewController.h */,
 				00F579861B2D608A00C5AD45 /* TrendViewController.m */,
+				00D5CD461B2F0CB0007D8E81 /* lotteryResultsCell */,
 			);
 			path = Trend;
 			sourceTree = "<group>";
@@ -688,11 +721,13 @@
 				00EDDD821B3070CB001F4CB8 /* DropDownViewCell.xib in Resources */,
 				00D277AE1B417B6D0004D35B /* ChooseLotteryCell.xib in Resources */,
 				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
+				00929D6B1B50FAE1001CFB4D /* LotteryDetailCell.xib in Resources */,
 				9739E82B1B4ABA64007AF273 /* RecordViewController.xib in Resources */,
 				0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */,
 				974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */,
 				974E85A31B11610E00B57C9E /* Images.xcassets in Resources */,
 				00AEE77E1B3EDB1F00577380 /* ChooseLotteryVC.xib in Resources */,
+				00929D651B50F542001CFB4D /* LotteryDetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,6 +780,7 @@
 			files = (
 				9739E81E1B4A7EFF007AF273 /* RecordPageViewController.m in Sources */,
 				97D9E51B1B51028500048878 /* ModifyPasswordViewController.m in Sources */,
+				00929D641B50F542001CFB4D /* LotteryDetailVC.m in Sources */,
 				00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */,
 				971DF3F51B3E54BA005CF819 /* OAStackView.m in Sources */,
 				00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */,
@@ -767,6 +803,7 @@
 				00D5CD4A1B2F0CEE007D8E81 /* LotteryResultsCell.m in Sources */,
 				00AEE77D1B3EDB1F00577380 /* ChooseLotteryVC.m in Sources */,
 				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
+				00929D6A1B50FAE1001CFB4D /* LotteryDetailCell.m in Sources */,
 				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
 				00D277AD1B417B6D0004D35B /* ChooseLotteryCell.m in Sources */,
 				9739E8261B4A91B8007AF273 /* HMSegmentedControl.m in Sources */,
