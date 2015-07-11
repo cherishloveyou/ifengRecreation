@@ -64,6 +64,7 @@
 		97D9E51B1B51028500048878 /* ModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E51A1B51028500048878 /* ModifyPasswordViewController.m */; };
 		97D9E51F1B510D9400048878 /* VertifyQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E51E1B510D9400048878 /* VertifyQuestionViewController.m */; };
 		97D9E5231B51152E00048878 /* BankCardManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E5221B51152E00048878 /* BankCardManageViewController.m */; };
+		97D9E52B1B51519400048878 /* DropButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E52A1B51519400048878 /* DropButton.m */; };
 		F0997D21EEE09A40B4846F6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C01377733245E06688A8F6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +185,8 @@
 		97D9E51E1B510D9400048878 /* VertifyQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertifyQuestionViewController.m; sourceTree = "<group>"; };
 		97D9E5211B51152E00048878 /* BankCardManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardManageViewController.h; sourceTree = "<group>"; };
 		97D9E5221B51152E00048878 /* BankCardManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardManageViewController.m; sourceTree = "<group>"; };
+		97D9E5291B51519400048878 /* DropButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropButton.h; sourceTree = "<group>"; };
+		97D9E52A1B51519400048878 /* DropButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropButton.m; sourceTree = "<group>"; };
 		B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D007C86A7ABE68F0E5D2E609 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -334,6 +337,7 @@
 		00F5797E1B2D608A00C5AD45 /* MYIfeng */ = {
 			isa = PBXGroup;
 			children = (
+				97D9E5281B51514D00048878 /* Views */,
 				00F5797F1B2D608A00C5AD45 /* MyProfileViewController.h */,
 				00F579801B2D608A00C5AD45 /* MyProfileViewController.m */,
 				9739E81B1B4A7EFF007AF273 /* RecordPageViewController.h */,
@@ -636,6 +640,15 @@
 			path = BankCard;
 			sourceTree = "<group>";
 		};
+		97D9E5281B51514D00048878 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97D9E5291B51519400048878 /* DropButton.h */,
+				97D9E52A1B51519400048878 /* DropButton.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C0F223D62BEDF1D78E103630 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,6 +841,7 @@
 				97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */,
 				970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */,
 				971DF3F31B3E54BA005CF819 /* OAStackView+Hiding.m in Sources */,
+				97D9E52B1B51519400048878 /* DropButton.m in Sources */,
 				971DF3F21B3E54BA005CF819 /* OAStackView+Constraint.m in Sources */,
 				971DF3F71B3E54BA005CF819 /* OAStackViewDistributionStrategy.m in Sources */,
 				97D9E5161B50EA2100048878 /* SettingViewController.m in Sources */,

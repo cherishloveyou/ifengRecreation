@@ -11,10 +11,11 @@
 #import "Colours.h"
 #import "HMSegmentedControl.h"
 #import "RecordViewController.h"
+#import "DropButton.h"
 
 @interface RecordPageViewController ()<UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIButton *topLeftButton;
+@property (nonatomic, strong) DropButton *topLeftButton;
 @property (nonatomic,strong) HMSegmentedControl *topSegmentView;
 @property (nonatomic, strong) NSArray *controllers;
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -38,9 +39,7 @@
 {
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.topLeftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.topLeftButton setTitle:@"投注纪录" forState:UIControlStateNormal];
-    [self.topLeftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.topLeftButton = [[DropButton alloc] initWithTitles:@[@"投注纪录",@"追号纪录"]];
     [self.view addSubview:self.topLeftButton];
     
     self.topSegmentView = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"全部",@"未开奖",@"已中奖",@"未中奖"]];
@@ -63,6 +62,7 @@
     self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView];
     
+    [self.view bringSubviewToFront:self.topLeftButton];
     
     [self.topLeftButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.top.equalTo(@0);
@@ -80,7 +80,6 @@
         make.left.and.right.and.bottom.equalTo(@0);
         make.top.equalTo(self.topSegmentView.mas_bottom);
     }];
-    
 }
 
 -(void)addSubViewControllers

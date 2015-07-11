@@ -47,16 +47,6 @@
     self.potraitImage.layer.borderColor = [UIColor whiteColor].CGColor;
     self.potraitImage.layer.borderWidth = 1;
     
-//    UIButton *mailButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [mailButton setImage:[UIImage imageNamed:@"message"] forState:UIControlStateNormal];
-//    [mailButton addTarget:self action:@selector(mailButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:mailButton];
-//    
-//    UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [settingButton addTarget:self action:@selector(settingButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-//    [settingButton setImage:[UIImage imageNamed:@"info"] forState:UIControlStateNormal];
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
-#warning 还没有添加controller
     RecordPageViewController *recordViewController = [[RecordPageViewController alloc] init];
     [recordViewController willMoveToParentViewController:self];
     [self addChildViewController:recordViewController];

@@ -410,7 +410,7 @@
         <!--设置-->
         <scene sceneID="V1A-2Y-KnF">
             <objects>
-                <tableViewController id="ZTV-um-TJe" customClass="SettingViewController" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="ZTV-um-TJe" customClass="SettingViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="n17-P9-QMO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -600,7 +600,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jiy-jw-O1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1400" y="815"/>
+            <point key="canvasLocation" x="-1348" y="815"/>
         </scene>
         <!--修改密码-->
         <scene sceneID="sKZ-Sl-1gL">
@@ -941,7 +941,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8e-qM-4A0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-994" y="1232"/>
+            <point key="canvasLocation" x="-802" y="1256"/>
         </scene>
         <!--Profile-->
         <scene sceneID="8Y4-Go-i9o">
@@ -1015,6 +1015,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="y8L-a8-AAW"/>
+        <segue reference="CX7-Ab-jQI"/>
     </inferredMetricsTieBreakers>
 </document>
