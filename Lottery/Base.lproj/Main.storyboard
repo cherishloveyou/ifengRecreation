@@ -415,6 +415,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="chB-Ns-ZY4">
+                            <rect key="frame" x="0.0" y="477" width="320" height="48"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p76-9y-2rm">
+                                    <rect key="frame" x="10" y="7" width="300" height="44"/>
+                                    <state key="normal" title="登出" backgroundImage="button_Back">
+                                        <color key="titleColor" red="0.20784315466880798" green="0.57254904508590698" blue="0.13333334028720856" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="p76-9y-2rm" secondAttribute="trailing" constant="10" id="ZjS-4I-kHD"/>
+                                <constraint firstItem="p76-9y-2rm" firstAttribute="leading" secondItem="chB-Ns-ZY4" secondAttribute="leading" constant="10" id="oxp-nN-yoQ"/>
+                                <constraint firstItem="p76-9y-2rm" firstAttribute="top" secondItem="chB-Ns-ZY4" secondAttribute="top" constant="7" id="rFq-7U-wq0"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="ZlS-TD-Ghz">
                                 <cells>
@@ -560,35 +584,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="mih-ca-qVw">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="48" id="jiP-1P-UEF">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jiP-1P-UEF" id="hhh-lA-llb">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehw-bb-zNg">
-                                                    <rect key="frame" x="10" y="8" width="300" height="32"/>
-                                                    <color key="backgroundColor" red="0.16470588743686676" green="0.90588241815567017" blue="0.67058825492858887" alpha="1" colorSpace="deviceRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <state key="normal" title="登出">
-                                                        <color key="titleColor" red="0.14117647707462311" green="0.64705884456634521" blue="0.37254902720451355" alpha="1" colorSpace="deviceRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="logOutButtonClicked:" destination="ZTV-um-TJe" eventType="touchUpInside" id="pJm-aE-rDD"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ehw-bb-zNg" firstAttribute="leading" secondItem="hhh-lA-llb" secondAttribute="leading" constant="10" id="5My-4h-5Uf"/>
-                                                <constraint firstAttribute="centerY" secondItem="ehw-bb-zNg" secondAttribute="centerY" id="DfK-i0-0gd"/>
-                                                <constraint firstAttribute="trailing" secondItem="ehw-bb-zNg" secondAttribute="trailing" constant="10" id="Qyk-sp-9Ti"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="ZTV-um-TJe" id="2yJ-ZF-mXb"/>
@@ -596,9 +591,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="I6q-T5-G9f"/>
-                    <connections>
-                        <outlet property="logoutButton" destination="ehw-bb-zNg" id="hxc-qk-Ulo"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jiy-jw-O1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -661,6 +653,7 @@
     </scenes>
     <resources>
         <image name="back" width="320" height="191"/>
+        <image name="button_Back" width="320" height="44"/>
         <image name="drop_button" width="12" height="7"/>
         <image name="drop_button_up" width="12" height="7"/>
         <image name="header" width="60" height="60"/>
