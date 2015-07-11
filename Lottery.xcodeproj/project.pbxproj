@@ -56,6 +56,7 @@
 		97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F5C1B2FDE88001FB2C4 /* BuyingViewController.m */; };
 		97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D03F5D1B2FDE88001FB2C4 /* BuyingViewController.xib */; };
 		97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F611B2FE1D6001FB2C4 /* NumberButton.m */; };
+		97D9E5161B50EA2100048878 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E5141B50EA2100048878 /* SettingViewController.m */; };
 		F0997D21EEE09A40B4846F6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C01377733245E06688A8F6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +163,8 @@
 		97D03F5D1B2FDE88001FB2C4 /* BuyingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyingViewController.xib; sourceTree = "<group>"; };
 		97D03F601B2FE1D6001FB2C4 /* NumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberButton.h; sourceTree = "<group>"; };
 		97D03F611B2FE1D6001FB2C4 /* NumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberButton.m; sourceTree = "<group>"; };
+		97D9E5131B50EA2100048878 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		97D9E5141B50EA2100048878 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D007C86A7ABE68F0E5D2E609 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -494,6 +497,7 @@
 		974E85BB1B1162E100B57C9E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				97D9E5121B50EA0400048878 /* Setting */,
 				97D03F4D1B2FDBD5001FB2C4 /* Buying */,
 				00F5798B1B2D60CC00C5AD45 /* LoginViewController */,
 				00F5797B1B2D608A00C5AD45 /* BYLotteryHall */,
@@ -549,6 +553,15 @@
 				971DF3FC1B3E735C005CF819 /* SegmentButton.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		97D9E5121B50EA0400048878 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				97D9E5131B50EA2100048878 /* SettingViewController.h */,
+				97D9E5141B50EA2100048878 /* SettingViewController.m */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		C0F223D62BEDF1D78E103630 /* Frameworks */ = {
@@ -739,6 +752,7 @@
 				971DF3F31B3E54BA005CF819 /* OAStackView+Hiding.m in Sources */,
 				971DF3F21B3E54BA005CF819 /* OAStackView+Constraint.m in Sources */,
 				971DF3F71B3E54BA005CF819 /* OAStackViewDistributionStrategy.m in Sources */,
+				97D9E5161B50EA2100048878 /* SettingViewController.m in Sources */,
 				971DF3F41B3E54BA005CF819 /* OAStackView+Traversal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

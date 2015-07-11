@@ -10,6 +10,7 @@
 #import "UINavigationController+JZExtension.h"
 #import "RecordPageViewController.h"
 #import <Masonry.h>
+#import "SettingViewController.h"
 
 @interface MyProfileViewController ()
 
@@ -104,14 +105,9 @@
 
 #pragma mark - event methods
 
--(void)mailButtonClicked:(id)sender
+-(IBAction)mailButtonClicked:(id)sender
 {
     NSLog(@"mail");
-}
-
--(void)settingButtonClicked:(id)sender
-{
-    NSLog(@"setting");
 }
 
 @end
