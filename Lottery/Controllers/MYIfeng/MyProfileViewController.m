@@ -12,6 +12,7 @@
 #import <Masonry.h>
 #import "SettingViewController.h"
 
+
 @interface MyProfileViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *potraitImage;
@@ -97,7 +98,7 @@
 
 -(IBAction)mailButtonClicked:(id)sender
 {
-    NSLog(@"mail");
+    
 }
 
 @end

@@ -47,6 +47,7 @@
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor fadedBlueColor]];
+    
 }
 
 @end
