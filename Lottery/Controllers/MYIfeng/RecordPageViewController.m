@@ -40,6 +40,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.topLeftButton = [[DropButton alloc] initWithTitles:@[@"投注纪录",@"追号纪录"]];
+    __weak typeof(self) wself = self;
+    [self.topLeftButton setValueChangedBlock:^(NSUInteger index) {
+        NSLog(@"selected changed");
+    }];
     [self.view addSubview:self.topLeftButton];
     
     self.topSegmentView = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"全部",@"未开奖",@"已中奖",@"未中奖"]];
@@ -50,7 +54,6 @@
     self.topSegmentView.selectionIndicatorHeight = 2;
     self.topSegmentView.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:13],
                                                 NSForegroundColorAttributeName:[UIColor grayColor]};
-    __weak typeof(self) wself = self;
     [self.topSegmentView setIndexChangeBlock:^(NSInteger index) {
         [wself.scrollView setContentOffset:CGPointMake(CGRectGetWidth(self.view.bounds)*index, 0) animated:YES];
     }];
@@ -72,7 +75,7 @@
     [self.topSegmentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topLeftButton);
         make.left.equalTo(self.topLeftButton.mas_right);
-        make.height.equalTo(self.topLeftButton);
+        make.height.equalTo(@44);
         make.right.equalTo(@0);
     }];
     

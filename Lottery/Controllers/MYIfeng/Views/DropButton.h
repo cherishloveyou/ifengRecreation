@@ -14,6 +14,8 @@
 
 -(instancetype)initWithTitles:(NSArray *)titles;
 
+@property (nonatomic, copy) void(^valueChangedBlock)(NSUInteger index);
+
 @end
 
 @interface DropButtonItem : UIControl
