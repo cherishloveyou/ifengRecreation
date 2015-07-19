@@ -91,16 +91,16 @@
     
     
 
-    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
-    if (scrollView) {
-        [scrollView removeFromSuperview];
-    }
+//    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
+//    if (scrollView) {
+//        [scrollView removeFromSuperview];
+//    }
     
     
     //添加广告栏
-    scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageUrlArray];
-    
-    [self.advertisementView addSubview:scrollView];
+//    scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageUrlArray];
+//    
+//    [self.advertisementView addSubview:scrollView];
     
     [self refreshHotLotteryImages:self.hotLotteryIds];
     
