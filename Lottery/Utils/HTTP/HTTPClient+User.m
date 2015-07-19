@@ -21,13 +21,9 @@
     [HTTPClient post_requestWithPath:path
                           paramaters:params
                              success:^(id task, id response) {
-                                 
                                  success(task,response);
-                                 NSLog(@"response is %@",response);
                              } failed:^(id task, NSError *error) {
                                  failed(task,error);
-                                 
-                                 NSLog(@"error is %@%@",error,task);
                              }];
 }
 

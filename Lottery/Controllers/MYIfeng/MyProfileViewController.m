@@ -12,7 +12,7 @@
 #import <Masonry.h>
 #import "SettingViewController.h"
 #import "HTTPClient+User.h"
-
+#import "LogInUserIonfoModel.h"
 
 @interface MyProfileViewController ()
 
@@ -36,6 +36,7 @@
     
     [self setUp];
     [self fetchData];
+    [self fillSubViews];
 }
 
 #pragma mark - private methods
@@ -77,10 +78,22 @@
     [HTTPClient userHandleWithAction:UserHandlerActionBalance
                           paramaters:@{}
                              success:^(id task, id response) {
-                                 NSLog(@"response is %@",response);
+                                 NSUInteger code = [response[@"code"] integerValue];
+                                 NSNumber *userMoney = response[@"userMoney"];
+                                 if (code == 0) {
+                                     self.remainLabel.text = [NSString stringWithFormat:@"￥%@",userMoney];
+                                 }
+                                 
                              } failed:^(id task, NSError *error) {
                                  NSLog(@"error is %@",error);
                              }];
+}
+
+-(void)fillSubViews
+{
+    LogInUserIonfoModel *user = [LogInUserIonfoModel defaultUserInfo];
+    
+    self.title = user.userName;
 }
 
 #pragma mark - event methods

@@ -66,6 +66,9 @@
 		97D9E51F1B510D9400048878 /* VertifyQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E51E1B510D9400048878 /* VertifyQuestionViewController.m */; };
 		97D9E5231B51152E00048878 /* BankCardManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E5221B51152E00048878 /* BankCardManageViewController.m */; };
 		97D9E52B1B51519400048878 /* DropButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E52A1B51519400048878 /* DropButton.m */; };
+		97EF65051B5B793E0087C2AE /* LotteryRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EF65041B5B793E0087C2AE /* LotteryRecord.m */; };
+		97EF65091B5B7F760087C2AE /* LotteryRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EF65071B5B7F760087C2AE /* LotteryRecordCell.m */; };
+		97EF650A1B5B7F760087C2AE /* LotteryRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97EF65081B5B7F760087C2AE /* LotteryRecordCell.xib */; };
 		F0997D21EEE09A40B4846F6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C01377733245E06688A8F6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +193,11 @@
 		97D9E5221B51152E00048878 /* BankCardManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardManageViewController.m; sourceTree = "<group>"; };
 		97D9E5291B51519400048878 /* DropButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropButton.h; sourceTree = "<group>"; };
 		97D9E52A1B51519400048878 /* DropButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropButton.m; sourceTree = "<group>"; };
+		97EF65031B5B793E0087C2AE /* LotteryRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LotteryRecord.h; path = Lottery/views/LotteryRecord.h; sourceTree = SOURCE_ROOT; };
+		97EF65041B5B793E0087C2AE /* LotteryRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LotteryRecord.m; path = Lottery/views/LotteryRecord.m; sourceTree = SOURCE_ROOT; };
+		97EF65061B5B7F760087C2AE /* LotteryRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryRecordCell.h; sourceTree = "<group>"; };
+		97EF65071B5B7F760087C2AE /* LotteryRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryRecordCell.m; sourceTree = "<group>"; };
+		97EF65081B5B7F760087C2AE /* LotteryRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryRecordCell.xib; sourceTree = "<group>"; };
 		B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D007C86A7ABE68F0E5D2E609 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -358,6 +366,9 @@
 				9739E8271B4ABA64007AF273 /* RecordViewController.h */,
 				9739E8281B4ABA64007AF273 /* RecordViewController.m */,
 				9739E8291B4ABA64007AF273 /* RecordViewController.xib */,
+				97EF65061B5B7F760087C2AE /* LotteryRecordCell.h */,
+				97EF65071B5B7F760087C2AE /* LotteryRecordCell.m */,
+				97EF65081B5B7F760087C2AE /* LotteryRecordCell.xib */,
 			);
 			path = MYIfeng;
 			sourceTree = "<group>";
@@ -463,6 +474,8 @@
 			children = (
 				00929D5D1B48C1A0001CFB4D /* LogInUserIonfoModel.h */,
 				00929D5E1B48C1A0001CFB4D /* LogInUserIonfoModel.m */,
+				97EF65031B5B793E0087C2AE /* LotteryRecord.h */,
+				97EF65041B5B793E0087C2AE /* LotteryRecord.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -760,6 +773,7 @@
 				00EDDD821B3070CB001F4CB8 /* DropDownViewCell.xib in Resources */,
 				00D277AE1B417B6D0004D35B /* ChooseLotteryCell.xib in Resources */,
 				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
+				97EF650A1B5B7F760087C2AE /* LotteryRecordCell.xib in Resources */,
 				00929D6B1B50FAE1001CFB4D /* LotteryDetailCell.xib in Resources */,
 				9739E82B1B4ABA64007AF273 /* RecordViewController.xib in Resources */,
 				0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */,
@@ -831,6 +845,7 @@
 				00EDDD6E1B304ED1001F4CB8 /* UIAlertView+DisMiss.m in Sources */,
 				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,
 				00929D5F1B48C1A0001CFB4D /* LogInUserIonfoModel.m in Sources */,
+				97EF65051B5B793E0087C2AE /* LotteryRecord.m in Sources */,
 				00CCEA921B43C39100FB6853 /* FFScrollView.m in Sources */,
 				0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */,
 				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,
@@ -848,6 +863,7 @@
 				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
 				00D277AD1B417B6D0004D35B /* ChooseLotteryCell.m in Sources */,
 				9739E8261B4A91B8007AF273 /* HMSegmentedControl.m in Sources */,
+				97EF65091B5B7F760087C2AE /* LotteryRecordCell.m in Sources */,
 				973C15B81B36BD8600BE608E /* Colours.m in Sources */,
 				971DF3F61B3E54BA005CF819 /* OAStackViewAlignmentStrategy.m in Sources */,
 				00EDDD721B305C94001F4CB8 /* CustomDropDownView.m in Sources */,

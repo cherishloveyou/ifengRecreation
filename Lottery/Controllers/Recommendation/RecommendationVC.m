@@ -74,17 +74,17 @@
     __weak typeof(self) weakself = self;
     login.imageBlock = ^(NSArray *imageurls){
         //添加广告栏
-        if (scrollView) {
-            [scrollView removeFromSuperview];
-        }
-        scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
-        [weakself.advertisementView addSubview:scrollView];
-        
-        weakself.userName.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
-        weakself.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
-        weakself.yesterdayMony.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"yesterDayRewards"]];
-        
-        [weakself getTheLastLotteryNumber];
+//        if (scrollView) {
+//            [scrollView removeFromSuperview];
+//        }
+//        scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
+//        [weakself.advertisementView addSubview:scrollView];
+//        
+//        weakself.userName.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
+//        weakself.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
+//        weakself.yesterdayMony.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"yesterDayRewards"]];
+//        
+//        [weakself getTheLastLotteryNumber];
     };
     
     
@@ -97,8 +97,8 @@
 //    }
     
         
-    [self refreshHotLotteryImages:self.hotLotteryIds];
-//    
+//    [self refreshHotLotteryImages:self.hotLotteryIds];
+//
 //    
 //    //添加广告栏
 //    scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageUrlArray];

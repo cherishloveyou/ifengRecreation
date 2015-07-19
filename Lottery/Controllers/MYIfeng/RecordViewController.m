@@ -8,8 +8,13 @@
 
 #import "RecordViewController.h"
 #import <MJRefresh.h>
+#import "HTTPClient+User.h"
+#import "LotteryRecord.h"
+#import "LotteryRecordCell.h"
 
 @interface RecordViewController ()
+
+@property (nonatomic, strong) NSMutableArray *records;
 
 @end
 
@@ -33,10 +38,13 @@ NSString *const reuseIdentifier = @"RecordCell";
 
 -(void)setUp
 {
+    self.records = [NSMutableArray array];
+    
     __weak typeof(self) weakSelf = self;
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf getDataFromNetWorkin];
+        [self.records removeAllObjects];
+        [weakSelf getLotteryRecords];
     }];
     
     // 设置自动切换透明度(在导航栏下面自动隐藏)
@@ -44,14 +52,24 @@ NSString *const reuseIdentifier = @"RecordCell";
     // 设置header
     self.tableView.header = header;
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"LotteryRecordCell" bundle:nil] forCellReuseIdentifier:reuseIdentifier];
 }
 
 #pragma mark - private methods
 
--(void)getDataFromNetWorkin
+-(void)getLotteryRecords
 {
-
+    [HTTPClient userHandleWithAction:UserHandlerActionLooteryRecord
+                          paramaters:@{@"lotteryType" :@1,
+                                       @"betType":@1} success:^(id task, id response) {
+                                           NSArray *recordInfos = response[@"betRecordInfos"];
+                                           NSArray *records = [LotteryRecord recordWithInfos:recordInfos];
+                                           [self.records addObjectsFromArray:records];
+                                           [self.tableView reloadData];
+                                           [self.tableView.header endRefreshing];
+                                       } failed:^(id task, NSError *error) {
+                                           [self.tableView.header endRefreshing];
+                                       }];
 }
 
 #pragma mark - Table view data source
@@ -61,13 +79,14 @@ NSString *const reuseIdentifier = @"RecordCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    return self.records.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    LotteryRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = @"test";
+    LotteryRecord *record = self.records[indexPath.row];
+    [cell fillWithRecord:record];
     
     return cell;
 }
@@ -76,6 +95,11 @@ NSString *const reuseIdentifier = @"RecordCell";
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
 }
 
 @end
