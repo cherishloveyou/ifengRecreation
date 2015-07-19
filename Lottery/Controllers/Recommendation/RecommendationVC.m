@@ -70,37 +70,37 @@
 //    NSLog(@"advertisementView frame == %@",self.advertisementView);
 #warning 暂时屏蔽掉
     
-// LoginViewController *login = [LoginViewController showFromController:self];
-//    __weak typeof(self) weakself = self;
-//    login.imageBlock = ^(NSArray *imageurls){
-//        //添加广告栏
-//        if (scrollView) {
-//            [scrollView removeFromSuperview];
-//        }
-//        scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
-//        [weakself.advertisementView addSubview:scrollView];
-//        
-//        weakself.userName.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
-//        weakself.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
-//        weakself.yesterdayMony.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"yesterDayRewards"]];
-//        
-//        [weakself getTheLastLotteryNumber];
-//    };
+ LoginViewController *login = [LoginViewController showFromController:self];
+    __weak typeof(self) weakself = self;
+    login.imageBlock = ^(NSArray *imageurls){
+        //添加广告栏
+        if (scrollView) {
+            [scrollView removeFromSuperview];
+        }
+        scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
+        [weakself.advertisementView addSubview:scrollView];
+        
+        weakself.userName.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
+        weakself.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
+        weakself.yesterdayMony.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"yesterDayRewards"]];
+        
+        [weakself getTheLastLotteryNumber];
+    };
     
     
     
     
 
-//    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
-//    if (scrollView) {
-//        [scrollView removeFromSuperview];
-//    }
+    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
+    if (scrollView) {
+        [scrollView removeFromSuperview];
+    }
     
     
     //添加广告栏
-//    scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageUrlArray];
+    scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageUrlArray];
     
-//    [self.advertisementView addSubview:scrollView];
+    [self.advertisementView addSubview:scrollView];
     
     [self refreshHotLotteryImages:self.hotLotteryIds];
     

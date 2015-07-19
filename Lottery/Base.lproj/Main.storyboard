@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Vw-fm-u46">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Vw-fm-u46">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -210,7 +210,7 @@
         <scene sceneID="hzz-Cb-C9Q">
             <objects>
                 <navigationController id="c7a-8P-wzl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Channel" id="v4c-Oy-KQe"/>
+                    <tabBarItem key="tabBarItem" title="Channel" image="bag_gray" id="v4c-Oy-KQe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEC-L7-XS7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -267,7 +267,7 @@
         <scene sceneID="ZJW-v6-JaD">
             <objects>
                 <navigationController id="bD0-No-9gz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trend" id="2jf-tQ-Hu3"/>
+                    <tabBarItem key="tabBarItem" title="Trend" image="compass" id="2jf-tQ-Hu3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AEI-hn-qCx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1031,7 +1031,7 @@
         <scene sceneID="8Y4-Go-i9o">
             <objects>
                 <navigationController id="2lA-oT-8TH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="mBA-7r-ITh"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="head_gray" id="mBA-7r-ITh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yhZ-4u-oGp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1048,7 +1048,7 @@
         <scene sceneID="Fui-Mq-T6K">
             <objects>
                 <navigationController id="z71-dQ-pv7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recommend" id="XpQ-1Z-mjF"/>
+                    <tabBarItem key="tabBarItem" title="Recommend" image="agree_gray" id="XpQ-1Z-mjF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EG1-NO-zD7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1083,10 +1083,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="agree_gray" width="26" height="25"/>
         <image name="back" width="320" height="191"/>
+        <image name="bag_gray" width="23" height="25"/>
         <image name="button_Back" width="320" height="44"/>
+        <image name="compass" width="24" height="24"/>
         <image name="drop_button" width="12" height="7"/>
         <image name="drop_button_up" width="12" height="7"/>
+        <image name="head_gray" width="25" height="25"/>
         <image name="header" width="60" height="60"/>
         <image name="loginButton" width="300" height="40"/>
         <image name="message" width="66" height="66"/>

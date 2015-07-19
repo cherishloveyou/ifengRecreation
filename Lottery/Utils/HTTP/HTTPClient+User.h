@@ -12,7 +12,8 @@
 typedef NS_ENUM(NSUInteger, UserHandlerAction) {
     UserHandlerActionLoginValidate = 1,
     UserHandlerActionCheckUsername,
-    UserHandlerActionLogOut
+    UserHandlerActionLogOut,
+    UserHandlerActionBalance = 5 // 余额
 };
 
 @interface HTTPClient (User)

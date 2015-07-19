@@ -11,6 +11,7 @@
 #import "RecordPageViewController.h"
 #import <Masonry.h>
 #import "SettingViewController.h"
+#import "HTTPClient+User.h"
 
 
 @interface MyProfileViewController ()
@@ -34,6 +35,7 @@
     [super viewDidLoad];
     
     [self setUp];
+    [self fetchData];
 }
 
 #pragma mark - private methods
@@ -68,6 +70,17 @@
     UISwipeGestureRecognizer *swipUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
     swipUp.direction = UISwipeGestureRecognizerDirectionUp;
     [recordViewController.view addGestureRecognizer:swipUp];
+}
+
+-(void)fetchData
+{
+    [HTTPClient userHandleWithAction:UserHandlerActionBalance
+                          paramaters:@{}
+                             success:^(id task, id response) {
+                                 NSLog(@"response is %@",response);
+                             } failed:^(id task, NSError *error) {
+                                 NSLog(@"error is %@",error);
+                             }];
 }
 
 #pragma mark - event methods
