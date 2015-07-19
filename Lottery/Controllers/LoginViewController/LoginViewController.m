@@ -247,7 +247,7 @@
     
     ImageUrlsBlock imageBlock = self.imageBlock;
     
-    if (imageBlock) {
+    if (imageBlock && imagearray.count) {
         imageBlock(imagearray);
     }
 
