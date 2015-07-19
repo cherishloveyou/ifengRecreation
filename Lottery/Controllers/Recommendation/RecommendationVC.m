@@ -96,14 +96,16 @@
 //        [scrollView removeFromSuperview];
 //    }
     
-    
-    //添加广告栏
+        
+    [self refreshHotLotteryImages:self.hotLotteryIds];
+//    
+//    
+//    //添加广告栏
 //    scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageUrlArray];
 //    
 //    [self.advertisementView addSubview:scrollView];
-    
-    [self refreshHotLotteryImages:self.hotLotteryIds];
-    
+//    
+//    [self refreshHotLotteryImages:self.hotLotteryIds];
     
 }
 /**
