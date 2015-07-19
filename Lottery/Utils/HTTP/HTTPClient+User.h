@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, UserHandlerAction) {
     UserHandlerActionCheckUsername,
     UserHandlerActionLogOut,
     UserHandlerActionBalance = 5, // 余额
+    UserHandlerActionModifySafePassword = 7,
     UserHandlerActionLooteryRecord = 16
 };
 

@@ -39,7 +39,9 @@
 #pragma mark - event methods
 
 - (IBAction)yuanJiaoSwichValueChanged:(id)sender {
+    
 }
+
 - (IBAction)notificationSwitchValueChanged:(id)sender {
 }
 

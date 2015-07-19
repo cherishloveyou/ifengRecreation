@@ -7,6 +7,7 @@
 //
 
 #import "LotteryRecordCell.h"
+#import "Colours.h"
 
 @implementation LotteryRecordCell
 
@@ -19,9 +20,13 @@
     self.LotteryName.text = @"重庆时时彩";
     self.costLabel.text = record.totalMoney.description;
     if (record.orderState == LotteryOrderStateWinning) {
+        self.statusLabel.textColor = [UIColor greenColor];
+        self.rightBottomLabel.textColor = [UIColor greenColor];
         self.statusLabel.text = @"已中奖";
         self.rightBottomLabel.text = record.bonusSumMoney.description;
     }else{
+        self.statusLabel.textColor = [UIColor black50PercentColor];
+        self.rightBottomLabel.textColor = [UIColor black50PercentColor];
         self.statusLabel.text = nil;
         self.rightBottomLabel.text = @"未中奖";
     }

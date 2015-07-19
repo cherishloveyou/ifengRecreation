@@ -711,7 +711,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入当前新密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mwz-8x-6O9">
                                                     <rect key="frame" x="100" y="5" width="207" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -742,7 +742,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcF-TD-nxv">
                                                     <rect key="frame" x="102" y="5" width="210" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -769,7 +769,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zU5-Ti-XeU">
                                                     <rect key="frame" x="102" y="5" width="210" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -790,10 +790,17 @@
                             <outlet property="delegate" destination="enm-uH-kV4" id="M2Z-1i-ySw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="修改密码" id="Py4-Hk-gIB"/>
+                    <navigationItem key="navigationItem" title="修改密码" id="Py4-Hk-gIB">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="Rm0-YA-7RD">
+                            <connections>
+                                <action selector="doneItemClicked:" destination="enm-uH-kV4" id="KnD-pP-mIy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="confirmTextField" destination="zU5-Ti-XeU" id="29F-Sj-gR2"/>
                         <outlet property="currentTextField" destination="Mwz-8x-6O9" id="NsR-88-SqN"/>
+                        <outlet property="doneItem" destination="Rm0-YA-7RD" id="292-ni-kex"/>
                         <outlet property="theNewTextField" destination="AcF-TD-nxv" id="aNe-Ay-TsE"/>
                     </connections>
                 </tableViewController>

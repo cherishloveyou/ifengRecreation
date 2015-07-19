@@ -7,11 +7,14 @@
 //
 
 #import "ModifyPasswordViewController.h"
+#import <ReactiveCocoa.h>
+#import "HTTPClient+User.h"
 
 @interface ModifyPasswordViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *currentTextField;
 @property (weak, nonatomic) IBOutlet UITextField *theNewTextField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmTextField;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneItem;
 
 @end
 
@@ -21,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setUp];
 }
 
 -(void)dealloc
@@ -34,7 +39,24 @@
 
 #pragma mark - private methods
 
+-(void)setUp
+{
+    RAC(self.doneItem,enabled) = [RACSignal combineLatest:@[self.currentTextField.rac_textSignal,self.theNewTextField.rac_textSignal,self.confirmTextField.rac_textSignal] reduce:^(NSString *old,NSString *new, NSString *confirm){
+        return @(old.length > 0 && new.length > 0 && confirm.length > 0);
+    }];
+}
+
 #pragma mark -  event methdos
 
+- (IBAction)doneItemClicked:(id)sender {
+    [HTTPClient userHandleWithAction:UserHandlerActionModifySafePassword
+                          paramaters:@{@"currentPwd":self.currentTextField.text,
+                                       @"newPwd":self.theNewTextField.text,@"confrimPwd":self.confirmTextField.text}
+                             success:^(id task, id response) {
+                                 [self.navigationController popViewControllerAnimated:YES];
+                             } failed:^(id task, NSError *error) {
+                                 
+                             }];
+}
 
 @end
