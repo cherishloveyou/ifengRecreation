@@ -9,9 +9,17 @@
 #import "AnnouncementVC.h"
 
 @interface AnnouncementVC ()<UITableViewDataSource,UITableViewDelegate>
-
+/**
+ *  列表容器
+ */
+@property (weak, nonatomic) IBOutlet UIScrollView *backScrollView;
+/**
+ *  公告
+ */
 @property (weak, nonatomic) IBOutlet UITableView *announcementTable;
-
+/**
+ *  站内信
+ */
 @property (weak, nonatomic) IBOutlet UITableView *insideLetterTable;
 
 @end
@@ -23,7 +31,7 @@
     // Do any additional setup after loading the view from its nib.
     
     [self.announcementTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [self.insideLetterTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.insideLetterTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"lcell"];
 
 
 }
@@ -40,7 +48,12 @@
  */
 - (IBAction)selectedControl:(UISegmentedControl *)sender {
     
-    
+    NSInteger index = sender.selectedSegmentIndex;
+    if (index == 0) {
+        [self.backScrollView scrollRectToVisible:self.view.frame animated:YES];
+    }else{
+        [self.backScrollView scrollRectToVisible:CGRectMake(self.view.frame.size.width  , 200, self.view.frame.size.width, 200) animated:YES];
+    }
 }
 
 
@@ -48,14 +61,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section{
+    
     return 3;
+    
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
-    
+    if (tableView == self.insideLetterTable) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"lcell"];
+    }
+    cell.textLabel.text = @"test";
     return cell;
 }
 
@@ -66,15 +83,5 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50.;
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
