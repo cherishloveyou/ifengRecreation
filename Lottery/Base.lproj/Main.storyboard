@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -425,6 +426,9 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QGc-ur-iaq">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="QGc-ur-iaq" secondAttribute="height" multiplier="40:63" id="0AC-nA-yuq"/>
+                                        </constraints>
                                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -432,25 +436,23 @@
                                             <outlet property="delegate" destination="1Zz-e4-sY4" id="2ej-OD-iMB"/>
                                         </connections>
                                     </tableView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OoM-30-9h1">
+                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OoM-30-9h1">
                                         <rect key="frame" x="320" y="0.0" width="320" height="504"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="dataSource" destination="1Zz-e4-sY4" id="cbQ-kO-LNk"/>
-                                            <outlet property="delegate" destination="1Zz-e4-sY4" id="oSi-HB-h8G"/>
+                                            <outlet property="dataSource" destination="1Zz-e4-sY4" id="nfs-Ig-l1N"/>
+                                            <outlet property="delegate" destination="1Zz-e4-sY4" id="Ycj-M6-Omt"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="OoM-30-9h1" secondAttribute="trailing" id="4Yu-fh-Tme"/>
-                                    <constraint firstItem="QGc-ur-iaq" firstAttribute="height" secondItem="XEZ-iS-YZ8" secondAttribute="height" id="GC4-FW-vTx"/>
+                                    <constraint firstAttribute="trailing" secondItem="QGc-ur-iaq" secondAttribute="trailing" id="IEb-Xe-w0Y"/>
                                     <constraint firstItem="QGc-ur-iaq" firstAttribute="height" secondItem="OoM-30-9h1" secondAttribute="height" id="Mj1-NI-Btn"/>
                                     <constraint firstItem="QGc-ur-iaq" firstAttribute="top" secondItem="XEZ-iS-YZ8" secondAttribute="top" id="OG2-1C-zcT"/>
-                                    <constraint firstItem="QGc-ur-iaq" firstAttribute="width" secondItem="XEZ-iS-YZ8" secondAttribute="width" id="OLB-BS-lRx"/>
                                     <constraint firstItem="QGc-ur-iaq" firstAttribute="trailing" secondItem="OoM-30-9h1" secondAttribute="leading" id="Qsd-DK-U3S"/>
                                     <constraint firstItem="QGc-ur-iaq" firstAttribute="width" secondItem="OoM-30-9h1" secondAttribute="width" id="bdj-S9-Ljx"/>
                                     <constraint firstItem="OoM-30-9h1" firstAttribute="top" secondItem="XEZ-iS-YZ8" secondAttribute="top" id="c0u-xz-Gpy"/>
-                                    <constraint firstAttribute="bottom" secondItem="QGc-ur-iaq" secondAttribute="bottom" constant="-70" id="gvm-OR-8xQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="QGc-ur-iaq" secondAttribute="bottom" constant="192" id="gvm-OR-8xQ"/>
                                     <constraint firstItem="QGc-ur-iaq" firstAttribute="leading" secondItem="XEZ-iS-YZ8" secondAttribute="leading" id="k5H-zZ-BhA"/>
                                 </constraints>
                             </scrollView>
@@ -460,7 +462,7 @@
                             <constraint firstItem="QGc-ur-iaq" firstAttribute="width" secondItem="AZC-I8-9uy" secondAttribute="width" id="EoU-dZ-8pd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XEZ-iS-YZ8" secondAttribute="trailing" constant="-16" id="UCH-Ht-sks"/>
                             <constraint firstItem="XEZ-iS-YZ8" firstAttribute="leading" secondItem="AZC-I8-9uy" secondAttribute="leadingMargin" constant="-16" id="jLF-KA-hYV"/>
-                            <constraint firstItem="XEZ-iS-YZ8" firstAttribute="top" secondItem="hg0-yJ-CaS" secondAttribute="top" id="ouJ-fy-p8X"/>
+                            <constraint firstItem="XEZ-iS-YZ8" firstAttribute="top" secondItem="hg0-yJ-CaS" secondAttribute="bottom" id="ouJ-fy-p8X"/>
                             <constraint firstItem="gYu-Sh-pf4" firstAttribute="top" secondItem="XEZ-iS-YZ8" secondAttribute="bottom" id="tdd-Eo-dQe"/>
                         </constraints>
                     </view>
@@ -482,7 +484,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="announcementTable" destination="QGc-ur-iaq" id="Nsk-rN-cYy"/>
-                        <outlet property="backScrollView" destination="XEZ-iS-YZ8" id="ODt-gQ-bCT"/>
                         <outlet property="insideLetterTable" destination="OoM-30-9h1" id="gHc-Ap-5cE"/>
                     </connections>
                 </viewController>
