@@ -14,7 +14,6 @@
 		00929D651B50F542001CFB4D /* LotteryDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00929D631B50F542001CFB4D /* LotteryDetailVC.xib */; };
 		00929D6A1B50FAE1001CFB4D /* LotteryDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00929D681B50FAE1001CFB4D /* LotteryDetailCell.m */; };
 		00929D6B1B50FAE1001CFB4D /* LotteryDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00929D691B50FAE1001CFB4D /* LotteryDetailCell.xib */; };
-		00929D701B53EEA5001CFB4D /* AnnouncementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00929D6E1B53EEA5001CFB4D /* AnnouncementVC.m */; };
 		00AEE77D1B3EDB1F00577380 /* ChooseLotteryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE77B1B3EDB1F00577380 /* ChooseLotteryVC.m */; };
 		00AEE77E1B3EDB1F00577380 /* ChooseLotteryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AEE77C1B3EDB1F00577380 /* ChooseLotteryVC.xib */; };
 		00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AEE7841B3F05B400577380 /* RecommendViewController.m */; };
@@ -94,8 +93,6 @@
 		00929D671B50FAE1001CFB4D /* LotteryDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryDetailCell.h; sourceTree = "<group>"; };
 		00929D681B50FAE1001CFB4D /* LotteryDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryDetailCell.m; sourceTree = "<group>"; };
 		00929D691B50FAE1001CFB4D /* LotteryDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryDetailCell.xib; sourceTree = "<group>"; };
-		00929D6D1B53EEA5001CFB4D /* AnnouncementVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementVC.h; sourceTree = "<group>"; };
-		00929D6E1B53EEA5001CFB4D /* AnnouncementVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementVC.m; sourceTree = "<group>"; };
 		00AEE7771B3E805300577380 /* Lottery.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lottery.pch; sourceTree = "<group>"; };
 		00AEE77A1B3EDB1F00577380 /* ChooseLotteryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLotteryVC.h; sourceTree = "<group>"; };
 		00AEE77B1B3EDB1F00577380 /* ChooseLotteryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLotteryVC.m; sourceTree = "<group>"; };
@@ -245,8 +242,6 @@
 		00929D6C1B53EE12001CFB4D /* 系统公告 */ = {
 			isa = PBXGroup;
 			children = (
-				00929D6D1B53EEA5001CFB4D /* AnnouncementVC.h */,
-				00929D6E1B53EEA5001CFB4D /* AnnouncementVC.m */,
 			);
 			path = "系统公告";
 			sourceTree = "<group>";
@@ -834,7 +829,6 @@
 				9739E81E1B4A7EFF007AF273 /* RecordPageViewController.m in Sources */,
 				97D9E51B1B51028500048878 /* ModifyPasswordViewController.m in Sources */,
 				00929D641B50F542001CFB4D /* LotteryDetailVC.m in Sources */,
-				00929D701B53EEA5001CFB4D /* AnnouncementVC.m in Sources */,
 				00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */,
 				971DF3F51B3E54BA005CF819 /* OAStackView.m in Sources */,
 				00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */,
