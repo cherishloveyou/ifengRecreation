@@ -91,9 +91,7 @@
     
     
 
-//    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
-//    if (scrollView) {
-//        [scrollView removeFromSuperview];
+//    NSA  romSuperview];
 //    }
     
         
