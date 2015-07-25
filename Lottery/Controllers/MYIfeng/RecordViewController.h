@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTTPClient+User.h"
 
 @interface RecordViewController : UITableViewController
 
+@property (nonatomic, assign) LotteryBetType betType;
+
+- (void)getLotteryRecords;
 
 @end

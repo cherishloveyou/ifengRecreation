@@ -49,7 +49,12 @@
 #pragma mark -  event methdos
 
 - (IBAction)doneItemClicked:(id)sender {
-    [HTTPClient userHandleWithAction:UserHandlerActionModifySafePassword
+    UserHandlerAction action = UserHandlerActionModifySafePassword;
+    if (self.modifyType == PasswordTypeLogin) {
+        action = UserHandlerActionModifyLoginPassword;
+    }
+    
+    [HTTPClient userHandleWithAction:action
                           paramaters:@{@"currentPwd":self.currentTextField.text,
                                        @"newPwd":self.theNewTextField.text,@"confrimPwd":self.confirmTextField.text}
                              success:^(id task, id response) {

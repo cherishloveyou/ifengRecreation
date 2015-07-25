@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, PasswordType) {
+    PasswordTypeLogin,
+    PasswordTypeSafe,
+};
+
 @interface ModifyPasswordViewController : UITableViewController
+
+@property (assign, nonatomic) PasswordType modifyType;
 
 @end

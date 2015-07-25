@@ -650,7 +650,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="enm-uH-kV4" kind="push" id="y8L-a8-AAW"/>
+                                            <segue destination="enm-uH-kV4" kind="push" identifier="ModifyLoginPassword" id="y8L-a8-AAW"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="qvT-c3-AMc" style="IBUITableViewCellStyleDefault" id="2NG-5J-h7t">
@@ -667,7 +667,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="enm-uH-kV4" kind="push" id="CX7-Ab-jQI"/>
+                                            <segue destination="enm-uH-kV4" kind="push" identifier="ModifySafePassword" id="CX7-Ab-jQI"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="fV8-k2-4fB" style="IBUITableViewCellStyleDefault" id="z0d-JZ-NzF">
@@ -916,7 +916,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcE-A6-0UM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-915" y="579"/>
+            <point key="canvasLocation" x="-868" y="491"/>
         </scene>
         <!--验证安全问题-->
         <scene sceneID="Uu3-LT-6iG">
@@ -1220,6 +1220,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="CX7-Ab-jQI"/>
+        <segue reference="y8L-a8-AAW"/>
     </inferredMetricsTieBreakers>
 </document>
