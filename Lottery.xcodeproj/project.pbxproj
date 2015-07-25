@@ -56,6 +56,8 @@
 		974E85A31B11610E00B57C9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 974E85A21B11610E00B57C9E /* Images.xcassets */; };
 		974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974E85A41B11610E00B57C9E /* LaunchScreen.xib */; };
 		974E85B21B11610E00B57C9E /* LotteryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85B11B11610E00B57C9E /* LotteryTests.m */; };
+		976BF0301B63636C00F18F2C /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BF02F1B63636C00F18F2C /* RechargeViewController.m */; };
+		976BF0331B63638200F18F2C /* WithDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BF0321B63638200F18F2C /* WithDrawViewController.m */; };
 		979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 979BC4EC1B26F6CB00070B0B /* HTTPClient.m */; };
 		97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F571B2FDCE9001FB2C4 /* SelectNumbersCell.m */; };
 		97D03F5A1B2FDCE9001FB2C4 /* SelectNumbersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D03F581B2FDCE9001FB2C4 /* SelectNumbersCell.xib */; };
@@ -176,6 +178,10 @@
 		974E85AB1B11610E00B57C9E /* LotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		974E85B01B11610E00B57C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		974E85B11B11610E00B57C9E /* LotteryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryTests.m; sourceTree = "<group>"; };
+		976BF02E1B63636C00F18F2C /* RechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeViewController.h; sourceTree = "<group>"; };
+		976BF02F1B63636C00F18F2C /* RechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeViewController.m; sourceTree = "<group>"; };
+		976BF0311B63638200F18F2C /* WithDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithDrawViewController.h; sourceTree = "<group>"; };
+		976BF0321B63638200F18F2C /* WithDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithDrawViewController.m; sourceTree = "<group>"; };
 		979BC4EB1B26F6CB00070B0B /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		979BC4EC1B26F6CB00070B0B /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		97D03F561B2FDCE9001FB2C4 /* SelectNumbersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectNumbersCell.h; sourceTree = "<group>"; };
@@ -582,6 +588,8 @@
 		974E85BB1B1162E100B57C9E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				976BF02C1B63630F00F18F2C /* Recharge */,
+				976BF02D1B63630F00F18F2C /* WithDraw */,
 				97D9E5201B51151B00048878 /* BankCard */,
 				97D9E51C1B510D5A00048878 /* Vertify */,
 				97D9E5181B51026600048878 /* Modify Password */,
@@ -594,6 +602,24 @@
 				00F579841B2D608A00C5AD45 /* Trend */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		976BF02C1B63630F00F18F2C /* Recharge */ = {
+			isa = PBXGroup;
+			children = (
+				976BF02E1B63636C00F18F2C /* RechargeViewController.h */,
+				976BF02F1B63636C00F18F2C /* RechargeViewController.m */,
+			);
+			path = Recharge;
+			sourceTree = "<group>";
+		};
+		976BF02D1B63630F00F18F2C /* WithDraw */ = {
+			isa = PBXGroup;
+			children = (
+				976BF0311B63638200F18F2C /* WithDrawViewController.h */,
+				976BF0321B63638200F18F2C /* WithDrawViewController.m */,
+			);
+			path = WithDraw;
 			sourceTree = "<group>";
 		};
 		979BC4E91B26F67F00070B0B /* Utils */ = {
@@ -864,6 +890,7 @@
 				0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */,
 				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,
 				00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */,
+				976BF0301B63636C00F18F2C /* RechargeViewController.m in Sources */,
 				9739E82A1B4ABA64007AF273 /* RecordViewController.m in Sources */,
 				974563A71B47C41900DDA8A1 /* UINavigationController+JZExtension.m in Sources */,
 				971DF4011B3E81D1005CF819 /* NumberCellNode.m in Sources */,
@@ -888,6 +915,7 @@
 				971DF3F31B3E54BA005CF819 /* OAStackView+Hiding.m in Sources */,
 				97D9E52B1B51519400048878 /* DropButton.m in Sources */,
 				971DF3F21B3E54BA005CF819 /* OAStackView+Constraint.m in Sources */,
+				976BF0331B63638200F18F2C /* WithDrawViewController.m in Sources */,
 				971DF3F71B3E54BA005CF819 /* OAStackViewDistributionStrategy.m in Sources */,
 				97D9E5161B50EA2100048878 /* SettingViewController.m in Sources */,
 				97D9E51F1B510D9400048878 /* VertifyQuestionViewController.m in Sources */,
