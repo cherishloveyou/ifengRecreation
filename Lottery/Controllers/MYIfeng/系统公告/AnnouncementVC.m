@@ -37,6 +37,14 @@
  *  站内信数据源
  */
 @property (nonatomic, strong) NSMutableArray *insidelLerrerArray;
+/**
+ *  公告第几页
+ */
+@property (nonatomic, assign) NSInteger annoPageIndex;
+/**
+ *  站内信第几页
+ */
+@property (nonatomic, assign) NSInteger insidePageIndex;
 
 @end
 
@@ -63,6 +71,8 @@
     // Do any additional setup after loading the view from its nib.
     [self setUpTableHeaderViewAndFooterView];
     
+    
+    
     [self.announcementTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.insideLetterTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"lcell"];
     [self getDataFrom];
@@ -75,8 +85,9 @@
     __weak typeof(self) weakSelf = self;
     // 设置公告的下拉刷新
     MJRefreshNormalHeader *announheader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.annoPageIndex = 1;
         [weakSelf.announcementArray removeAllObjects];
-//        [weakSelf getLotteryRecords];
+        [weakSelf getAnnouncementData];
     }];
     
     // 设置自动切换透明度(在导航栏下面自动隐藏)
@@ -85,8 +96,9 @@
     self.announcementTable.header = announheader;
     //设置 站内信 下拉刷新
     MJRefreshNormalHeader *insidHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.insidePageIndex = 1;
         [weakSelf.insidelLerrerArray removeAllObjects];
-        //        [weakSelf getLotteryRecords];
+        [weakSelf getInsidelLerrerData];
     }];
     
     // 设置自动切换透明度(在导航栏下面自动隐藏)
@@ -106,13 +118,30 @@
         
     }];
 }
-
+/**
+ *  请求公告
+ */
 - (void)getAnnouncementData{
     
+    __weak typeof(self) wself = self;
+    [HTTPClient userHandleWithAction:24 paramaters:@{@"page": @"1",@"pageSize":@"20"} success:^(id task, id response) {
+        
+    } failed:^(id task, NSError *error) {
+        
+    }];
+    self.annoPageIndex++;
 }
-
+/**
+ *  请求站内信
+ */
 - (void)getInsidelLerrerData{
-    
+    __weak typeof(self) wself = self;
+    [HTTPClient userHandleWithAction:25 paramaters:@{@"page": @"1",@"pageSize":@"20"} success:^(id task, id response) {
+        [wself.announcementTable.header endRefreshing];
+    } failed:^(id task, NSError *error) {
+        
+    }];
+    self.insidePageIndex++;
 }
 
 
