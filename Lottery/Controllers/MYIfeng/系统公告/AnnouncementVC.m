@@ -9,6 +9,7 @@
 #import "AnnouncementVC.h"
 #import <MJRefresh.h>
 #import "HTTPClient+User.h"
+#import <SVProgressHUD.h>
 
 @interface AnnouncementVC ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 /**
@@ -70,12 +71,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setUpTableHeaderViewAndFooterView];
-    
-    
-    
-    [self.announcementTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [self.insideLetterTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"lcell"];
     [self getDataFrom];
+
 }
 /**
  *  添加下拉和上拉控件
@@ -108,26 +105,40 @@
     
     //添加上拉控件
     
+    MJRefreshAutoFooter *annoFooter = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        [weakSelf getAnnouncementData];
+    }];
+    self.announcementTable.footer = annoFooter;
+    
+    MJRefreshAutoFooter *insideFooter = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        [weakSelf getInsidelLerrerData];
+    }];
+    self.insideLetterTable.footer = insideFooter;
+    
+    
 }
 
 
 - (void)getDataFrom{
-    [HTTPClient userHandleWithAction:24 paramaters:@{@"page": @"1",@"pageSize":@"20"} success:^(id task, id response) {
+    [SVProgressHUD show];
+    __weak typeof(self) wself = self;
+    [HTTPClient userHandleWithAction:25 paramaters:@{@"page": @"1",@"pageSize":@"20"} success:^(id task, id response) {
         NSLog(@"%@",response);
+        [SVProgressHUD showSuccessWithStatus:nil];
     } failed:^(id task, NSError *error) {
-        
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
 }
 /**
  *  请求公告
  */
 - (void)getAnnouncementData{
-    
+    [SVProgressHUD show];
     __weak typeof(self) wself = self;
     [HTTPClient userHandleWithAction:24 paramaters:@{@"page": @"1",@"pageSize":@"20"} success:^(id task, id response) {
-        
+        [SVProgressHUD showSuccessWithStatus:nil];
     } failed:^(id task, NSError *error) {
-        
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
     self.annoPageIndex++;
 }
@@ -177,11 +188,12 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (tableView == self.insideLetterTable) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"lcell"];
+    static NSString *cellIdentifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
-    cell.textLabel.text = @"test";
+    
     return cell;
 }
 
