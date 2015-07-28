@@ -16,7 +16,8 @@ typedef NS_ENUM(NSUInteger, UserHandlerAction) {
     UserHandlerActionModifyLoginPassword = 4,
     UserHandlerActionBalance = 5, // 余额
     UserHandlerActionModifySafePassword = 7,
-    UserHandlerActionLooteryRecord = 16
+    UserHandlerActionLooteryRecord = 16,
+    UserHandlerActionBankCardRecharge,//银行卡充值
 };
 
 typedef NS_ENUM(NSUInteger, LotteryBetType) {

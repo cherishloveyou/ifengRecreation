@@ -7,6 +7,8 @@
 //
 
 #import "RechargeViewController.h"
+#import "HTTPClient+User.h"
+#import <MJRefresh.h>
 
 @interface RechargeViewController ()
 
@@ -14,10 +16,15 @@
 
 @implementation RechargeViewController
 
+static NSString *reuseIdentifier = @"bandCell";
+
 #pragma mark - life cycle methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSCalendar
+    [self setUp];
+    [self fetchBankCardsInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,6 +32,22 @@
 }
 
 #pragma mark - private methods
+
+- (void)setUp {
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
+}
+
+- (void)fetchBankCardsInfo
+{
+    [HTTPClient userHandleWithAction:UserHandlerActionBankCardRecharge
+                          paramaters:@{@"type":@1,
+                                       @"ammount":@0}
+                             success:^(id task, id response) {
+                                 NSLog(@"response is %@",response);
+                             } failed:^(id task, NSError *error) {
+                                 
+                             }];
+}
 
 #pragma mark - Table view data source
 
@@ -36,14 +59,11 @@
     return 0;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
     
     return cell;
 }
-*/
 
 @end
