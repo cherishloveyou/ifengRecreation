@@ -10,6 +10,7 @@
 #import "HMSegmentedControl.h"
 #import "Colours.h"
 #import <Masonry.h>
+#import "HTTPClient+User.h"
 
 @interface AccountViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 /**
@@ -32,6 +33,11 @@
     // Do any additional setup after loading the view.
     
     [self setUp];
+    
+    [HTTPClient userHandleWithAction:23 paramaters:@{@"page": @"1",@"pageSize":@"20",@"pageParam":@"fuddetail"} success:^(id task, id response) {
+        NSLog(@"%@",response);
+    } failed:^(id task, NSError *error) {
+    }];
 }
 
 - (void)setUp{

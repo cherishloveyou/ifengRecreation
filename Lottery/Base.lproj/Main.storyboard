@@ -408,7 +408,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLt-6w-crt">
-                                        <rect key="frame" x="139" y="70" width="42" height="21"/>
+                                        <rect key="frame" x="139" y="70" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -424,16 +424,16 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRK-J9-ZYl">
-                                        <rect key="frame" x="0.0" y="114" width="160" height="26"/>
+                                        <rect key="frame" x="0.0" y="113" width="160" height="22"/>
                                         <inset key="imageEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="充值" image="yun_up">
+                                        <state key="normal" title="充值" image="yun_white_up">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FA-SM-lU8">
-                                        <rect key="frame" x="160" y="112" width="160" height="28"/>
+                                        <rect key="frame" x="160" y="113" width="160" height="22"/>
                                         <inset key="imageEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="提现" image="yun_down">
+                                        <state key="normal" title="提现" image="yun_white_down">
                                             <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -446,7 +446,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhN-jP-qSw">
-                                        <rect key="frame" x="160" y="100" width="1" height="45"/>
+                                        <rect key="frame" x="160" y="100" width="1" height="44.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="YO8-tp-nrh"/>
@@ -461,7 +461,7 @@
                                     <constraint firstAttribute="centerX" secondItem="oLt-6w-crt" secondAttribute="centerX" id="Amv-br-BUk"/>
                                     <constraint firstAttribute="bottom" secondItem="wAd-wV-L1c" secondAttribute="bottom" id="BmY-JV-G6w"/>
                                     <constraint firstAttribute="centerX" secondItem="QBP-Z5-g4S" secondAttribute="centerX" id="FgT-Bd-VC5"/>
-                                    <constraint firstAttribute="bottom" secondItem="XRK-J9-ZYl" secondAttribute="bottom" constant="5" id="Fz9-RG-VhS"/>
+                                    <constraint firstAttribute="bottom" secondItem="XRK-J9-ZYl" secondAttribute="bottom" constant="10" id="Fz9-RG-VhS"/>
                                     <constraint firstItem="QBP-Z5-g4S" firstAttribute="top" secondItem="Zvc-Uz-Mx0" secondAttribute="top" constant="2" id="IJs-ka-jOL"/>
                                     <constraint firstAttribute="trailing" secondItem="wAd-wV-L1c" secondAttribute="trailing" id="SXC-0P-g8X"/>
                                     <constraint firstItem="oLt-6w-crt" firstAttribute="top" secondItem="QBP-Z5-g4S" secondAttribute="bottom" constant="8" id="UOB-yN-iLR"/>
@@ -489,12 +489,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="7uU-cR-AtU"/>
                     <navigationItem key="navigationItem" title="Profile" id="isW-te-TO7">
-                        <barButtonItem key="leftBarButtonItem" image="message" id="OF8-wN-e0l">
+                        <barButtonItem key="leftBarButtonItem" image="messagebag" id="OF8-wN-e0l">
                             <connections>
                                 <segue destination="1Zz-e4-sY4" kind="push" id="gDW-tB-G26"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="message" style="plain" id="6IF-WS-N0s">
+                        <barButtonItem key="rightBarButtonItem" image="setting" style="plain" id="6IF-WS-N0s">
                             <connections>
                                 <segue destination="ZTV-um-TJe" kind="push" id="kfZ-7n-Ubw"/>
                             </connections>
@@ -1210,9 +1210,10 @@
         <image name="head_gray" width="25" height="25"/>
         <image name="header" width="60" height="60"/>
         <image name="loginButton" width="300" height="40"/>
-        <image name="message" width="66" height="66"/>
-        <image name="yun_down" width="29" height="28"/>
-        <image name="yun_up" width="29" height="26"/>
+        <image name="messagebag" width="21" height="16"/>
+        <image name="setting" width="22" height="22"/>
+        <image name="yun_white_down" width="23" height="21"/>
+        <image name="yun_white_up" width="23" height="21"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

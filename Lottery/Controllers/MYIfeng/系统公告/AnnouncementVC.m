@@ -153,7 +153,6 @@
     } failed:^(id task, NSError *error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
-    self.annoPageIndex++;
 }
 /**
  *  请求站内信
@@ -172,7 +171,6 @@
     } failed:^(id task, NSError *error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
-    self.insidePageIndex++;
 }
 
 
