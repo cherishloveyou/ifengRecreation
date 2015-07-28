@@ -10,7 +10,8 @@
 #import <MJRefresh.h>
 #import "HTTPClient+User.h"
 #import <SVProgressHUD.h>
-
+#import "AnnouncementDetailVC.h"
+#import "InsidelDetailVC.h"
 @interface AnnouncementVC ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 /**
  *  头部选择器
@@ -71,7 +72,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setUpTableHeaderViewAndFooterView];
-    [self getDataFrom];
+//    [self getDataFrom];
 
 }
 /**
@@ -82,7 +83,6 @@
     __weak typeof(self) weakSelf = self;
     // 设置公告的下拉刷新
     MJRefreshNormalHeader *announheader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        self.annoPageIndex = 1;
         [weakSelf.announcementArray removeAllObjects];
         [weakSelf getAnnouncementData];
     }];
@@ -93,7 +93,6 @@
     self.announcementTable.header = announheader;
     //设置 站内信 下拉刷新
     MJRefreshNormalHeader *insidHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        self.insidePageIndex = 1;
         [weakSelf.insidelLerrerArray removeAllObjects];
         [weakSelf getInsidelLerrerData];
     }];
@@ -102,33 +101,41 @@
     announheader.autoChangeAlpha = YES;
     // 设置header
     self.insideLetterTable.header = insidHeader;
+    [self.announcementTable.header beginRefreshing];
+    [self.insideLetterTable.header beginRefreshing];
     
-    //添加上拉控件
-    
-    MJRefreshAutoFooter *annoFooter = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
-        [weakSelf getAnnouncementData];
-    }];
-    self.announcementTable.footer = annoFooter;
-    
-    MJRefreshAutoFooter *insideFooter = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
-        [weakSelf getInsidelLerrerData];
-    }];
-    self.insideLetterTable.footer = insideFooter;
+//    //添加上拉控件
+//    
+//    MJRefreshBackNormalFooter *annoFooter = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+//        [weakSelf getAnnouncementData];
+//        
+//        
+//    }];
+//    self.announcementTable.footer = annoFooter;
+//    self.announcementTable.footer.autoChangeAlpha = YES;
+//    
+//    MJRefreshBackNormalFooter *insideFooter = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+//        [weakSelf getInsidelLerrerData];
+//        
+//    }];
+//    self.insideLetterTable.footer = insideFooter;
+//    self.insideLetterTable.footer.autoChangeAlpha = YES;
     
     
 }
 
-
-- (void)getDataFrom{
-    [SVProgressHUD show];
-    __weak typeof(self) wself = self;
-    [HTTPClient userHandleWithAction:25 paramaters:@{@"page": @"1",@"pageSize":@"20"} success:^(id task, id response) {
-        NSLog(@"%@",response);
-        [SVProgressHUD showSuccessWithStatus:nil];
-    } failed:^(id task, NSError *error) {
-        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-    }];
-}
+//
+//- (void)getDataFrom{
+//    [SVProgressHUD show];
+//    __weak typeof(self) wself = self;
+//    NSString *pageindex = [NSString stringWithFormat:@"%ld",self.annoPageIndex];
+//    [HTTPClient userHandleWithAction:24 paramaters:@{@"page": @"1",@"pageSize":@"20"} success:^(id task, id response) {
+//        NSLog(@"%@",response);
+//        [SVProgressHUD showSuccessWithStatus:nil];
+//    } failed:^(id task, NSError *error) {
+//        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+//    }];
+//}
 /**
  *  请求公告
  */
@@ -136,7 +143,13 @@
     [SVProgressHUD show];
     __weak typeof(self) wself = self;
     [HTTPClient userHandleWithAction:24 paramaters:@{@"page": @"1",@"pageSize":@"20"} success:^(id task, id response) {
+        [wself.announcementTable.header endRefreshing];
+        NSLog(@"%@",response);
         [SVProgressHUD showSuccessWithStatus:nil];
+        NSArray *array = [response objectForKey:@"notices"];
+        [wself.announcementArray addObjectsFromArray:array];
+        [wself.announcementTable reloadData];
+        
     } failed:^(id task, NSError *error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
@@ -148,12 +161,20 @@
 - (void)getInsidelLerrerData{
     __weak typeof(self) wself = self;
     [HTTPClient userHandleWithAction:25 paramaters:@{@"page": @"1",@"pageSize":@"20"} success:^(id task, id response) {
-        [wself.announcementTable.header endRefreshing];
-    } failed:^(id task, NSError *error) {
+        [wself.insideLetterTable.header endRefreshing];
+        NSArray *daarray = response;
         
+        if (daarray.count) {
+            [wself.insidelLerrerArray addObjectsFromArray:response];
+            [wself.insideLetterTable reloadData];
+        }
+        NSLog(@"%@",response);
+    } failed:^(id task, NSError *error) {
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
     self.insidePageIndex++;
 }
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -182,7 +203,9 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section{
     
-    return 3;
+    if (tableView == self.announcementTable) {
+        return self.announcementArray.count;
+    }else return self.insidelLerrerArray.count;
     
 }
 
@@ -194,6 +217,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
+    if (tableView == self.announcementTable) {
+        NSDictionary *data = self.announcementArray[indexPath.row];
+        cell.textLabel.text = [data objectForKey:@"title"];
+        cell.detailTextLabel.text = [self timeTransformWithTime:[data objectForKey:@"addTime"]];
+    }else{
+        NSDictionary *data = self.insidelLerrerArray[indexPath.row];
+        cell.textLabel.text = [data objectForKey:@"title"];
+        cell.detailTextLabel.text = [self timeTransformWithTime:[data objectForKey:@"addDate"]];
+    }
+    
     return cell;
 }
 
@@ -203,12 +236,52 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     return 50.;
 }
+/**
+ *  点击cell推送至 相关controller
+ *
+ *  @param tableView
+ *  @param indexPath
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (tableView == self.announcementTable) {
+        AnnouncementDetailVC *VC = [[AnnouncementDetailVC alloc] initWithNibName:@"AnnouncementDetailVC" bundle:[NSBundle mainBundle]];
+        VC.dataDic = self.announcementArray[indexPath.row];
+        [self.navigationController pushViewController:VC animated:YES];
+    }else{
+        InsidelDetailVC *inVC = [[InsidelDetailVC alloc] initWithNibName:@"InsidelDetailVC" bundle:[NSBundle mainBundle]];
+        inVC.dataDic = self.insidelLerrerArray[indexPath.row];
+        [self.navigationController pushViewController:inVC animated:YES];
+        
+    }
+}
 
 #pragma mark -- UIScrollViewDelegate
-
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    self.segment.selectedSegmentIndex = scrollView.contentOffset.x/CGRectGetWidth(self.view.bounds);
+    if (scrollView == self.backScrollView) {
+        self.segment.selectedSegmentIndex = scrollView.contentOffset.x/(CGRectGetWidth(self.view.bounds) - 30);
+    }
+    
+}
+/**
+ *  时间转换
+ *
+ *  @param timeString 时间戳
+ *
+ *  @return 转换完成的标准时间
+ */
+- (NSString*)timeTransformWithTime:(NSString*)timeString{
+    NSString *newTime = [timeString substringWithRange:NSMakeRange(6, 10)];
+    double lastactivityInterval = [newTime  doubleValue];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init] ;
+    formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy年MM月dd日 HH：mm"];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:(lastactivityInterval)];
+    NSString* dateString = [formatter stringFromDate:date];
+    return dateString;
 }
 
 
