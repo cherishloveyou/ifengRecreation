@@ -55,7 +55,7 @@ NSString *const reuseIdentifier = @"RecordCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"LotteryRecordCell" bundle:nil] forCellReuseIdentifier:reuseIdentifier];
 }
 
-#pragma mark - private methods
+#pragma mark - public methods
 
 -(void)getLotteryRecords
 {

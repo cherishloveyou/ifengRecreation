@@ -7,6 +7,10 @@
 //
 
 #import "SettingViewController.h"
+#import "ModifyPasswordViewController.h"
+
+NSString *const ModifyLoginPasswordSegue = @"ModifyLoginPassword";
+NSString *const ModifySafePasswordSegue = @"ModifySafePassword";
 
 @interface SettingViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
@@ -31,6 +35,18 @@
 }
 
 #pragma mark - private methods
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:ModifySafePasswordSegue]) {
+        ModifyPasswordViewController *password = segue.destinationViewController;
+        password.modifyType = PasswordTypeSafe;
+    }else if ([segue.identifier isEqualToString:ModifyLoginPasswordSegue]) {
+        ModifyPasswordViewController *password = segue.destinationViewController;
+        password.modifyType = PasswordTypeLogin;
+
+    }
+}
 
 -(void)setUp
 {

@@ -43,7 +43,7 @@
 
 -(void)setUp
 {
-    self.navigationItem.title = @"test";
+//    self.navigationItem.title = @"test";
     self.navigationController.navigationBar.translucent = YES;
     [self setNavigationBarBackgroundHidden:YES];
     

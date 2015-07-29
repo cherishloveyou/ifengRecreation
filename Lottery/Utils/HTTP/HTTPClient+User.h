@@ -13,9 +13,16 @@ typedef NS_ENUM(NSUInteger, UserHandlerAction) {
     UserHandlerActionLoginValidate = 1,
     UserHandlerActionCheckUsername,
     UserHandlerActionLogOut,
+    UserHandlerActionModifyLoginPassword = 4,
     UserHandlerActionBalance = 5, // 余额
     UserHandlerActionModifySafePassword = 7,
-    UserHandlerActionLooteryRecord = 16
+    UserHandlerActionLooteryRecord = 16,
+    UserHandlerActionBankCardRecharge,//银行卡充值
+};
+
+typedef NS_ENUM(NSUInteger, LotteryBetType) {
+    LotteryBetType1 = 1, //非追期
+    LotteryBetType2 = 2, //追期
 };
 
 @interface HTTPClient (User)

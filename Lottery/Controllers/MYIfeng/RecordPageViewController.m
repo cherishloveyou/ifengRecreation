@@ -42,11 +42,14 @@
     self.topLeftButton = [[DropButton alloc] initWithTitles:@[@"投注纪录",@"追号纪录"]];
     __weak typeof(self) wself = self;
     [self.topLeftButton setValueChangedBlock:^(NSUInteger index) {
-        NSLog(@"selected changed");
+        [wself.controllers enumerateObjectsUsingBlock:^(RecordViewController *controller, NSUInteger idx, BOOL *stop) {
+            controller.betType = index+1;
+            [controller getLotteryRecords];
+        }];
     }];
     [self.view addSubview:self.topLeftButton];
     
-    self.topSegmentView = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"全部",@"未开奖",@"已中奖",@"未中奖"]];
+    self.topSegmentView = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"未开奖",@"已中奖",@"未中奖"]];
     self.topSegmentView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.topSegmentView.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     self.topSegmentView.selectedTitleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:13],

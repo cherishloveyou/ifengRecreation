@@ -26,12 +26,16 @@
 
 +(NSArray *)recordWithInfos:(NSArray *)infos
 {
-    NSMutableArray *array = [NSMutableArray array];
-    for (NSDictionary *info in  infos) {
-        LotteryRecord *record = [[LotteryRecord alloc] initWithInfo:info];
-        [array addObject:record];
+    if (![infos isEqual:[NSNull null]] && infos.count > 0) {
+        NSMutableArray *array = [NSMutableArray array];
+        for (NSDictionary *info in  infos) {
+            LotteryRecord *record = [[LotteryRecord alloc] initWithInfo:info];
+            [array addObject:record];
+        }
+        return array.copy;
     }
-    return array.copy;
+    
+    return @[];
 }
 
 @end
