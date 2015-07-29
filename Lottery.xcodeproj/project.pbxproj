@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		005FA6C41B5FCDDC0036AB89 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */; };
+		005FA6C81B67A6F90036AB89 /* AnnouncementDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6C61B67A6F90036AB89 /* AnnouncementDetailVC.m */; };
+		005FA6C91B67A6F90036AB89 /* AnnouncementDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005FA6C71B67A6F90036AB89 /* AnnouncementDetailVC.xib */; };
+		005FA6CD1B67A7180036AB89 /* InsidelDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6CB1B67A7180036AB89 /* InsidelDetailVC.m */; };
+		005FA6CE1B67A7180036AB89 /* InsidelDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005FA6CC1B67A7180036AB89 /* InsidelDetailVC.xib */; };
 		0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070B4081B3C2F6700DF17AC /* RecommendationVC.m */; };
 		0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */; };
 		00929D5F1B48C1A0001CFB4D /* LogInUserIonfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00929D5E1B48C1A0001CFB4D /* LogInUserIonfoModel.m */; };
@@ -86,6 +90,12 @@
 /* Begin PBXFileReference section */
 		005FA6C21B5FCDDC0036AB89 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		005FA6C51B67A6F90036AB89 /* AnnouncementDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementDetailVC.h; sourceTree = "<group>"; };
+		005FA6C61B67A6F90036AB89 /* AnnouncementDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementDetailVC.m; sourceTree = "<group>"; };
+		005FA6C71B67A6F90036AB89 /* AnnouncementDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnouncementDetailVC.xib; sourceTree = "<group>"; };
+		005FA6CA1B67A7180036AB89 /* InsidelDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsidelDetailVC.h; sourceTree = "<group>"; };
+		005FA6CB1B67A7180036AB89 /* InsidelDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsidelDetailVC.m; sourceTree = "<group>"; };
+		005FA6CC1B67A7180036AB89 /* InsidelDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsidelDetailVC.xib; sourceTree = "<group>"; };
 		0070B4071B3C2F6700DF17AC /* RecommendationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendationVC.h; sourceTree = "<group>"; };
 		0070B4081B3C2F6700DF17AC /* RecommendationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendationVC.m; sourceTree = "<group>"; };
 		0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendationVC.xib; sourceTree = "<group>"; };
@@ -259,6 +269,12 @@
 			children = (
 				00929D6D1B53EEA5001CFB4D /* AnnouncementVC.h */,
 				00929D6E1B53EEA5001CFB4D /* AnnouncementVC.m */,
+				005FA6C51B67A6F90036AB89 /* AnnouncementDetailVC.h */,
+				005FA6C61B67A6F90036AB89 /* AnnouncementDetailVC.m */,
+				005FA6C71B67A6F90036AB89 /* AnnouncementDetailVC.xib */,
+				005FA6CA1B67A7180036AB89 /* InsidelDetailVC.h */,
+				005FA6CB1B67A7180036AB89 /* InsidelDetailVC.m */,
+				005FA6CC1B67A7180036AB89 /* InsidelDetailVC.xib */,
 			);
 			path = "系统公告";
 			sourceTree = "<group>";
@@ -787,8 +803,10 @@
 				00EDDD821B3070CB001F4CB8 /* DropDownViewCell.xib in Resources */,
 				00D277AE1B417B6D0004D35B /* ChooseLotteryCell.xib in Resources */,
 				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
+				005FA6CE1B67A7180036AB89 /* InsidelDetailVC.xib in Resources */,
 				97EF650A1B5B7F760087C2AE /* LotteryRecordCell.xib in Resources */,
 				00929D6B1B50FAE1001CFB4D /* LotteryDetailCell.xib in Resources */,
+				005FA6C91B67A6F90036AB89 /* AnnouncementDetailVC.xib in Resources */,
 				9739E82B1B4ABA64007AF273 /* RecordViewController.xib in Resources */,
 				0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */,
 				974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */,
@@ -885,6 +903,7 @@
 				974E85981B11610E00B57C9E /* main.m in Sources */,
 				97D03F621B2FE1D6001FB2C4 /* NumberButton.m in Sources */,
 				970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */,
+				005FA6C81B67A6F90036AB89 /* AnnouncementDetailVC.m in Sources */,
 				971DF3F31B3E54BA005CF819 /* OAStackView+Hiding.m in Sources */,
 				97D9E52B1B51519400048878 /* DropButton.m in Sources */,
 				971DF3F21B3E54BA005CF819 /* OAStackView+Constraint.m in Sources */,
@@ -892,6 +911,7 @@
 				97D9E5161B50EA2100048878 /* SettingViewController.m in Sources */,
 				97D9E51F1B510D9400048878 /* VertifyQuestionViewController.m in Sources */,
 				971DF3F41B3E54BA005CF819 /* OAStackView+Traversal.m in Sources */,
+				005FA6CD1B67A7180036AB89 /* InsidelDetailVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

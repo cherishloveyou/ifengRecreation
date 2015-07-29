@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnnouncementDetailVC">
+            <connections>
+                <outlet property="contentView" destination="ahz-ZZ-E5v" id="JaH-dW-bS5"/>
+                <outlet property="timeLabel" destination="23Z-lB-ofk" id="FLJ-iS-KDO"/>
+                <outlet property="titleLabel" destination="MIx-Yb-lli" id="aLT-GP-98F"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIx-Yb-lli">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahz-ZZ-E5v">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </webView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-lB-ofk">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="MIx-Yb-lli" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="5Dx-q6-hGe"/>
+                <constraint firstAttribute="centerX" secondItem="MIx-Yb-lli" secondAttribute="centerX" id="BFx-8N-7fZ"/>
+                <constraint firstAttribute="bottom" secondItem="ahz-ZZ-E5v" secondAttribute="bottom" id="EYD-UW-BQT"/>
+                <constraint firstItem="ahz-ZZ-E5v" firstAttribute="top" secondItem="23Z-lB-ofk" secondAttribute="bottom" constant="3.5" id="HnY-dd-n0t"/>
+                <constraint firstItem="23Z-lB-ofk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="Vub-cU-Axm"/>
+                <constraint firstItem="23Z-lB-ofk" firstAttribute="top" secondItem="MIx-Yb-lli" secondAttribute="bottom" constant="-3.5" id="lFf-9s-d4F">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="ahz-ZZ-E5v" secondAttribute="trailing" id="yP5-ZC-zlY"/>
+                <constraint firstItem="ahz-ZZ-E5v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yxZ-CK-8vQ"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="MIx-Yb-lli"/>
+                    <exclude reference="ahz-ZZ-E5v"/>
+                    <exclude reference="23Z-lB-ofk"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Vub-cU-Axm"/>
+                    <exclude reference="lFf-9s-d4F"/>
+                    <exclude reference="EYD-UW-BQT"/>
+                    <exclude reference="HnY-dd-n0t"/>
+                    <exclude reference="yP5-ZC-zlY"/>
+                    <exclude reference="yxZ-CK-8vQ"/>
+                    <exclude reference="5Dx-q6-hGe"/>
+                    <exclude reference="BFx-8N-7fZ"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="MIx-Yb-lli"/>
+                    <include reference="ahz-ZZ-E5v"/>
+                    <include reference="23Z-lB-ofk"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="Vub-cU-Axm"/>
+                    <include reference="lFf-9s-d4F"/>
+                    <include reference="EYD-UW-BQT"/>
+                    <include reference="HnY-dd-n0t"/>
+                    <include reference="yP5-ZC-zlY"/>
+                    <include reference="yxZ-CK-8vQ"/>
+                    <include reference="5Dx-q6-hGe"/>
+                    <include reference="BFx-8N-7fZ"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

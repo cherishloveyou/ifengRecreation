@@ -20,6 +20,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self appearanceConfig];
+    
+    UIView *view = [[UIView alloc] init];
+    [UITableView appearance].tableFooterView = view;
+    
     return YES;
 }
 
