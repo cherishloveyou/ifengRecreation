@@ -11,11 +11,18 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "Colours.h"
 #import "NumberCellNode.h"
+#import "ARTagListView.h"
+#import <Masonry.h>
 
-@interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate>
+@interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate,ARTagListViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
+@property (weak, nonatomic) IBOutlet UIView *topContainerView;
+@property (strong, nonatomic) ARTagListView *CurrentSelectMenuList;
+@property (strong, nonatomic) UIButton *topRightArrowMenuButton;
+@property (strong, nonatomic) UILabel *countdownLabel;
+@property (strong, nonatomic) UIButton *shakeButton;
 
 @end
 
@@ -57,15 +64,67 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
         [self.datas addObject:node];
     }
     [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+    
+    //
+    self.CurrentSelectMenuList = [[ARTagListView alloc] init];
+    [self.CurrentSelectMenuList.layer setBorderWidth:0.5];
+    [self.CurrentSelectMenuList.layer setBorderColor:[UIColor fadedBlueColor].CGColor];
+    self.CurrentSelectMenuList.tagListDelegate = self;
+    [self.topContainerView addSubview:self.CurrentSelectMenuList];
+    //menu button
+    [self.CurrentSelectMenuList addTagsWithTitles:@[@"test",@"test2",@"test",@"test2",@"test",@"test2",@"test",@"test2"]];
+    
+    self.topRightArrowMenuButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.topRightArrowMenuButton setImage:[UIImage imageNamed:@"drop_button"] forState:UIControlStateNormal];
+    [self.topRightArrowMenuButton addTarget:self action:@selector(topRightArrowMenuButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.topRightArrowMenuButton.layer setBorderColor:[UIColor fadedBlueColor].CGColor];
+    [self.topRightArrowMenuButton.layer setBorderWidth:0.5];
+    [self.topContainerView addSubview:self.topRightArrowMenuButton];
+    //
+    self.countdownLabel = [[UILabel alloc] init];
+    self.countdownLabel.text = @"test";
+    self.countdownLabel.font = [UIFont systemFontOfSize:16];
+    [self.topContainerView addSubview:self.countdownLabel];
+    
+    self.shakeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.shakeButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    [self.shakeButton setTitleColor:[UIColor fadedBlueColor] forState:UIControlStateNormal];
+    [self.shakeButton setTitle:@"摇一摇机选" forState:UIControlStateNormal];
+    [self.shakeButton setImage:[UIImage imageNamed:@"closse"] forState:UIControlStateNormal];
+    [self.shakeButton addTarget:self action:@selector(shakeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.topContainerView addSubview:self.shakeButton];
+    
+    [self.topRightArrowMenuButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.right.equalTo(@0);
+        make.size.mas_equalTo(CGSizeMake(35, 35));
+    }];
+    
+    [self.CurrentSelectMenuList mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.top.equalTo(@0);
+        make.right.equalTo(self.topRightArrowMenuButton.mas_left);
+        make.bottom.equalTo(self.topRightArrowMenuButton);
+    }];
+
+    [self.countdownLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.CurrentSelectMenuList.mas_bottom);
+        make.left.equalTo(@10);
+        make.bottom.equalTo(@0);
+    }];
+    
+    [self.shakeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.topRightArrowMenuButton.mas_bottom);
+        make.right.equalTo(@-5);
+        make.bottom.equalTo(@0);
+    }];
 }
 
 -(void)randomSelectNumbers
 {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    [self.datas enumerateObjectsUsingBlock:^(NSMutableOrderedSet *set, NSUInteger idx, BOOL *stop) {
-        [set removeAllObjects];
+    [self.datas enumerateObjectsUsingBlock:^(NumberCellNode *node, NSUInteger idx, BOOL *stop) {
+        [node.numbersSet removeAllObjects];
         NSUInteger randomNumber = arc4random()%10;
-        [set addObject:@(randomNumber)];
+        [node.numbersSet addObject:@(randomNumber)];
     }];
     
     [self.tableView reloadData];
@@ -76,6 +135,20 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 -(void)infoButtonClicked:(id)sender
 {
 
+}
+
+- (void)topRightArrowMenuButtonClicked:(id)sender {
+
+}
+
+- (void)shakeButtonClicked:(id)sender {
+    [self randomSelectNumbers];
+}
+
+#pragma mark - ARTagListViewDelegate methods
+
+- (void)tagListView:(ARTagListView *)tagListView didSelectTagAtIndex:(NSUInteger)index title:(NSString *)title {
+    NSLog(@"select title is %@",title);
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -111,8 +184,9 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 -(void)numbersCell:(SelectNumbersCell *)numbersCell seletedNumber:(NSInteger)selectedNumber isSelected:(BOOL)isSelected
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:numbersCell];
-    NSString *indexString = [NSString stringWithFormat:@"%d",selectedNumber];
-    NSMutableOrderedSet *orderSet = self.datas[indexPath.row];
+    NSString *indexString = [NSString stringWithFormat:@"%ld",(long)selectedNumber];
+    NumberCellNode *node = self.datas[indexPath.row];
+    NSMutableOrderedSet *orderSet = node.numbersSet;
     if (isSelected) {
         [orderSet addObject:indexString];
     }else{

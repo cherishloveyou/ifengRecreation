@@ -47,6 +47,8 @@
 		971DF3F71B3E54BA005CF819 /* OAStackViewDistributionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3F01B3E54BA005CF819 /* OAStackViewDistributionStrategy.m */; };
 		971DF3FD1B3E735C005CF819 /* SegmentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF3FC1B3E735C005CF819 /* SegmentButton.m */; };
 		971DF4011B3E81D1005CF819 /* NumberCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 971DF4001B3E81D1005CF819 /* NumberCellNode.m */; };
+		9735402E1B6CB88A0029233C /* ARTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9735402D1B6CB88A0029233C /* ARTagListView.m */; };
+		973540311B6CBA560029233C /* LotteryGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 973540301B6CBA560029233C /* LotteryGlobal.m */; };
 		9739E81E1B4A7EFF007AF273 /* RecordPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9739E81C1B4A7EFF007AF273 /* RecordPageViewController.m */; };
 		9739E8261B4A91B8007AF273 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9739E8251B4A91B8007AF273 /* HMSegmentedControl.m */; };
 		9739E82A1B4ABA64007AF273 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9739E8281B4ABA64007AF273 /* RecordViewController.m */; };
@@ -163,6 +165,10 @@
 		971DF3FC1B3E735C005CF819 /* SegmentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentButton.m; sourceTree = "<group>"; };
 		971DF3FF1B3E81D1005CF819 /* NumberCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberCellNode.h; sourceTree = "<group>"; };
 		971DF4001B3E81D1005CF819 /* NumberCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberCellNode.m; sourceTree = "<group>"; };
+		9735402C1B6CB88A0029233C /* ARTagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARTagListView.h; sourceTree = "<group>"; };
+		9735402D1B6CB88A0029233C /* ARTagListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARTagListView.m; sourceTree = "<group>"; };
+		9735402F1B6CBA560029233C /* LotteryGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryGlobal.h; sourceTree = "<group>"; };
+		973540301B6CBA560029233C /* LotteryGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryGlobal.m; sourceTree = "<group>"; };
 		9739E81B1B4A7EFF007AF273 /* RecordPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordPageViewController.h; sourceTree = "<group>"; };
 		9739E81C1B4A7EFF007AF273 /* RecordPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordPageViewController.m; sourceTree = "<group>"; };
 		9739E8241B4A91B8007AF273 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
@@ -519,6 +525,8 @@
 			isa = PBXGroup;
 			children = (
 				974563A31B47B86C00DDA8A1 /* Macros.h */,
+				9735402F1B6CBA560029233C /* LotteryGlobal.h */,
+				973540301B6CBA560029233C /* LotteryGlobal.m */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -681,6 +689,8 @@
 				97D03F611B2FE1D6001FB2C4 /* NumberButton.m */,
 				971DF3FB1B3E735C005CF819 /* SegmentButton.h */,
 				971DF3FC1B3E735C005CF819 /* SegmentButton.m */,
+				9735402C1B6CB88A0029233C /* ARTagListView.h */,
+				9735402D1B6CB88A0029233C /* ARTagListView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -789,7 +799,7 @@
 				TargetAttributes = {
 					974E85911B11610E00B57C9E = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 44P9L4RG9U;
+						DevelopmentTeam = D6F7XA55QJ;
 					};
 					974E85AA1B11610E00B57C9E = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -893,9 +903,11 @@
 				97D9E51B1B51028500048878 /* ModifyPasswordViewController.m in Sources */,
 				00929D641B50F542001CFB4D /* LotteryDetailVC.m in Sources */,
 				00929D701B53EEA5001CFB4D /* AnnouncementVC.m in Sources */,
+				9735402E1B6CB88A0029233C /* ARTagListView.m in Sources */,
 				00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */,
 				971DF3F51B3E54BA005CF819 /* OAStackView.m in Sources */,
 				00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */,
+				973540311B6CBA560029233C /* LotteryGlobal.m in Sources */,
 				00EDDD811B3070CB001F4CB8 /* DropDownViewCell.m in Sources */,
 				974E859E1B11610E00B57C9E /* RootViewController.m in Sources */,
 				971DF3FD1B3E735C005CF819 /* SegmentButton.m in Sources */,
@@ -1068,13 +1080,15 @@
 			baseConfigurationReference = D007C86A7ABE68F0E5D2E609 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: chi xiaolan (5NJBR9KZV9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Lottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1083,13 +1097,15 @@
 			baseConfigurationReference = B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: chi xiaolan (5NJBR9KZV9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Lottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
