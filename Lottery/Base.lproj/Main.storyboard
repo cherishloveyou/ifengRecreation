@@ -337,6 +337,10 @@
                     <navigationItem key="navigationItem" id="pVC-a6-045"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="allDataTableView" destination="EsU-IA-t3a" id="hID-ho-Dr0"/>
+                        <outlet property="bonusTableView" destination="NhT-Bb-Ixu" id="R9T-YB-N1n"/>
+                        <outlet property="depositTableView" destination="Yh2-XK-psF" id="5mp-Td-SB6"/>
+                        <outlet property="rechargeTableView" destination="Gip-4b-fB4" id="XJb-TI-Q7X"/>
                         <outlet property="scrollView" destination="47U-Ix-kOe" id="HdW-Mx-fsz"/>
                         <outlet property="topSegmentView" destination="UNd-2J-DU8" id="E8r-uh-18K"/>
                     </connections>
@@ -949,7 +953,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcE-A6-0UM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="491"/>
+            <point key="canvasLocation" x="-940" y="333"/>
         </scene>
         <!--验证安全问题-->
         <scene sceneID="Uu3-LT-6iG">
