@@ -217,7 +217,10 @@
 #pragma mark - Drawing
 
 - (CGSize)measureTitleAtIndex:(NSUInteger)index {
-    id title = self.sectionTitles[index];
+    id title;
+    if (index < self.sectionTitles.count) {
+       title = self.sectionTitles[index];
+    }
     CGSize size = CGSizeZero;
     BOOL selected = (index == self.selectedSegmentIndex) ? YES : NO;
     if ([title isKindOfClass:[NSString class]] && !self.titleFormatter) {
