@@ -5,11 +5,11 @@
         "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 4
+          "width" : 5
         },
         "capInsets" : {
-          "right" : 7,
-          "left" : 14
+          "right" : 22,
+          "left" : 28
         }
       },
       "idiom" : "universal",
@@ -21,11 +21,11 @@
         "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 2
+          "width" : 1
         },
         "capInsets" : {
-          "right" : 10,
-          "left" : 49
+          "right" : 37,
+          "left" : 50
         }
       },
       "idiom" : "universal",

@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rFU-RD-M2z">
-                    <rect key="frame" x="0.0" y="130" width="320" height="438"/>
+                    <rect key="frame" x="0.0" y="130" width="320" height="388"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="KcE-gV-O0N"/>
@@ -32,16 +32,24 @@
                         <constraint firstAttribute="height" constant="66" id="rf7-bs-kcT"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffI-Fy-RbE" customClass="BuyingBottomView">
+                    <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                    <color key="backgroundColor" red="0.1647058874" green="0.90588241820000004" blue="0.67058825489999996" alpha="1" colorSpace="deviceRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="rFU-RD-M2z" secondAttribute="trailing" id="EX0-x7-dVx"/>
-                <constraint firstAttribute="bottom" secondItem="rFU-RD-M2z" secondAttribute="bottom" id="M18-L7-FMv"/>
+                <constraint firstItem="ffI-Fy-RbE" firstAttribute="top" secondItem="rFU-RD-M2z" secondAttribute="bottom" id="H3I-9y-ddD"/>
+                <constraint firstAttribute="bottom" secondItem="rFU-RD-M2z" secondAttribute="bottom" constant="50" id="M18-L7-FMv"/>
                 <constraint firstItem="FXP-Bo-44I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="O5R-Yk-Wun"/>
+                <constraint firstAttribute="bottom" secondItem="ffI-Fy-RbE" secondAttribute="bottom" id="OC9-Ew-4fo"/>
                 <constraint firstItem="FXP-Bo-44I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YIx-Wd-62V"/>
+                <constraint firstItem="ffI-Fy-RbE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jIr-4x-f3I"/>
                 <constraint firstItem="rFU-RD-M2z" firstAttribute="top" secondItem="FXP-Bo-44I" secondAttribute="bottom" id="pNR-IM-aLh"/>
                 <constraint firstItem="rFU-RD-M2z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tJt-yZ-qGF"/>
                 <constraint firstAttribute="trailing" secondItem="FXP-Bo-44I" secondAttribute="trailing" id="uB6-Fu-Nai"/>
+                <constraint firstAttribute="trailing" secondItem="ffI-Fy-RbE" secondAttribute="trailing" id="zKZ-Xh-fZr"/>
             </constraints>
             <point key="canvasLocation" x="425" y="339"/>
         </view>

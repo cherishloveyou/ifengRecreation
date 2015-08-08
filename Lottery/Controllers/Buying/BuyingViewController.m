@@ -95,8 +95,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     self.shakeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.shakeButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [self.shakeButton setTitleColor:[UIColor fadedBlueColor] forState:UIControlStateNormal];
-    [self.shakeButton setTitle:@"摇一摇机选" forState:UIControlStateNormal];
-    [self.shakeButton setImage:[UIImage imageNamed:@"closse"] forState:UIControlStateNormal];
+    [self.shakeButton setImage:[UIImage imageNamed:@"yyy_jx"] forState:UIControlStateNormal];
     [self.shakeButton addTarget:self action:@selector(shakeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.topContainerView addSubview:self.shakeButton];
     
