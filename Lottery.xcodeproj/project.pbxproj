@@ -75,6 +75,8 @@
 		97D9E51F1B510D9400048878 /* VertifyQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E51E1B510D9400048878 /* VertifyQuestionViewController.m */; };
 		97D9E5231B51152E00048878 /* BankCardManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E5221B51152E00048878 /* BankCardManageViewController.m */; };
 		97D9E52B1B51519400048878 /* DropButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E52A1B51519400048878 /* DropButton.m */; };
+		97DF97CE1B75B3B400A6413E /* BuyingDropMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DF97CC1B75B3B400A6413E /* BuyingDropMenuViewController.m */; };
+		97DF97CF1B75B3B400A6413E /* BuyingDropMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97DF97CD1B75B3B400A6413E /* BuyingDropMenuViewController.xib */; };
 		97EF65051B5B793E0087C2AE /* LotteryRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EF65041B5B793E0087C2AE /* LotteryRecord.m */; };
 		97EF65091B5B7F760087C2AE /* LotteryRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EF65071B5B7F760087C2AE /* LotteryRecordCell.m */; };
 		97EF650A1B5B7F760087C2AE /* LotteryRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97EF65081B5B7F760087C2AE /* LotteryRecordCell.xib */; };
@@ -218,6 +220,9 @@
 		97D9E5221B51152E00048878 /* BankCardManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardManageViewController.m; sourceTree = "<group>"; };
 		97D9E5291B51519400048878 /* DropButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropButton.h; sourceTree = "<group>"; };
 		97D9E52A1B51519400048878 /* DropButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropButton.m; sourceTree = "<group>"; };
+		97DF97CB1B75B3B400A6413E /* BuyingDropMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyingDropMenuViewController.h; sourceTree = "<group>"; };
+		97DF97CC1B75B3B400A6413E /* BuyingDropMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyingDropMenuViewController.m; sourceTree = "<group>"; };
+		97DF97CD1B75B3B400A6413E /* BuyingDropMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyingDropMenuViewController.xib; sourceTree = "<group>"; };
 		97EF65031B5B793E0087C2AE /* LotteryRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LotteryRecord.h; path = Lottery/views/LotteryRecord.h; sourceTree = SOURCE_ROOT; };
 		97EF65041B5B793E0087C2AE /* LotteryRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LotteryRecord.m; path = Lottery/views/LotteryRecord.m; sourceTree = SOURCE_ROOT; };
 		97EF65061B5B7F760087C2AE /* LotteryRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryRecordCell.h; sourceTree = "<group>"; };
@@ -675,6 +680,9 @@
 				97D03F5B1B2FDE88001FB2C4 /* BuyingViewController.h */,
 				97D03F5C1B2FDE88001FB2C4 /* BuyingViewController.m */,
 				97D03F5D1B2FDE88001FB2C4 /* BuyingViewController.xib */,
+				97DF97CB1B75B3B400A6413E /* BuyingDropMenuViewController.h */,
+				97DF97CC1B75B3B400A6413E /* BuyingDropMenuViewController.m */,
+				97DF97CD1B75B3B400A6413E /* BuyingDropMenuViewController.xib */,
 			);
 			path = Buying;
 			sourceTree = "<group>";
@@ -832,6 +840,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D5CD4B1B2F0CEE007D8E81 /* LotteryResultsCell.xib in Resources */,
+				97DF97CF1B75B3B400A6413E /* BuyingDropMenuViewController.xib in Resources */,
 				974E85A11B11610E00B57C9E /* Main.storyboard in Resources */,
 				97D03F5A1B2FDCE9001FB2C4 /* SelectNumbersCell.xib in Resources */,
 				00D5CD451B2F0C4C007D8E81 /* BYLotteryHallCell.xib in Resources */,
@@ -947,6 +956,7 @@
 				97D9E52B1B51519400048878 /* DropButton.m in Sources */,
 				971DF3F21B3E54BA005CF819 /* OAStackView+Constraint.m in Sources */,
 				976BF0331B63638200F18F2C /* WithDrawViewController.m in Sources */,
+				97DF97CE1B75B3B400A6413E /* BuyingDropMenuViewController.m in Sources */,
 				971DF3F71B3E54BA005CF819 /* OAStackViewDistributionStrategy.m in Sources */,
 				97D9E5161B50EA2100048878 /* SettingViewController.m in Sources */,
 				97D9E51F1B510D9400048878 /* VertifyQuestionViewController.m in Sources */,

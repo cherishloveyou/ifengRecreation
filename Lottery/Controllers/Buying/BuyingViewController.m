@@ -13,6 +13,7 @@
 #import "NumberCellNode.h"
 #import "ARTagListView.h"
 #import <Masonry.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate,ARTagListViewDelegate>
 
@@ -132,8 +133,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 #pragma mark - custom event methods
 
--(void)infoButtonClicked:(id)sender
-{
+- (void)infoButtonClicked:(id)sender {
 
 }
 
