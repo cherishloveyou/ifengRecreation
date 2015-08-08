@@ -81,6 +81,8 @@
 		97DF97DF1B75C16100A6413E /* BuyingDropMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DF97DE1B75C16100A6413E /* BuyingDropMenuViewController.m */; };
 		97DF97E21B75C7CD00A6413E /* BuyingDropMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97DF97E11B75C7CD00A6413E /* BuyingDropMenuViewController.xib */; };
 		97DF97E51B75D82F00A6413E /* DropMenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DF97E41B75D82F00A6413E /* DropMenuNode.m */; };
+		97DF97E81B76018A00A6413E /* ARGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DF97E71B76018A00A6413E /* ARGridView.m */; };
+		97DF97EE1B76155200A6413E /* ARBasicAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DF97ED1B76155200A6413E /* ARBasicAnimation.m */; };
 		97EF65051B5B793E0087C2AE /* LotteryRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EF65041B5B793E0087C2AE /* LotteryRecord.m */; };
 		97EF65091B5B7F760087C2AE /* LotteryRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EF65071B5B7F760087C2AE /* LotteryRecordCell.m */; };
 		97EF650A1B5B7F760087C2AE /* LotteryRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97EF65081B5B7F760087C2AE /* LotteryRecordCell.xib */; };
@@ -234,6 +236,10 @@
 		97DF97E11B75C7CD00A6413E /* BuyingDropMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyingDropMenuViewController.xib; sourceTree = "<group>"; };
 		97DF97E31B75D82F00A6413E /* DropMenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropMenuNode.h; sourceTree = "<group>"; };
 		97DF97E41B75D82F00A6413E /* DropMenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropMenuNode.m; sourceTree = "<group>"; };
+		97DF97E61B76018A00A6413E /* ARGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARGridView.h; sourceTree = "<group>"; };
+		97DF97E71B76018A00A6413E /* ARGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARGridView.m; sourceTree = "<group>"; };
+		97DF97EC1B76155200A6413E /* ARBasicAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARBasicAnimation.h; sourceTree = "<group>"; };
+		97DF97ED1B76155200A6413E /* ARBasicAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARBasicAnimation.m; sourceTree = "<group>"; };
 		97EF65031B5B793E0087C2AE /* LotteryRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LotteryRecord.h; path = Lottery/views/LotteryRecord.h; sourceTree = SOURCE_ROOT; };
 		97EF65041B5B793E0087C2AE /* LotteryRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LotteryRecord.m; path = Lottery/views/LotteryRecord.m; sourceTree = SOURCE_ROOT; };
 		97EF65061B5B7F760087C2AE /* LotteryRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryRecordCell.h; sourceTree = "<group>"; };
@@ -706,6 +712,10 @@
 		97D03F551B2FDC99001FB2C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				97DF97EC1B76155200A6413E /* ARBasicAnimation.h */,
+				97DF97ED1B76155200A6413E /* ARBasicAnimation.m */,
+				97DF97E61B76018A00A6413E /* ARGridView.h */,
+				97DF97E71B76018A00A6413E /* ARGridView.m */,
 				97D03F561B2FDCE9001FB2C4 /* SelectNumbersCell.h */,
 				97D03F571B2FDCE9001FB2C4 /* SelectNumbersCell.m */,
 				97D03F581B2FDCE9001FB2C4 /* SelectNumbersCell.xib */,
@@ -930,6 +940,7 @@
 				9739E81E1B4A7EFF007AF273 /* RecordPageViewController.m in Sources */,
 				97D9E51B1B51028500048878 /* ModifyPasswordViewController.m in Sources */,
 				00929D641B50F542001CFB4D /* LotteryDetailVC.m in Sources */,
+				97DF97E81B76018A00A6413E /* ARGridView.m in Sources */,
 				00929D701B53EEA5001CFB4D /* AnnouncementVC.m in Sources */,
 				9735402E1B6CB88A0029233C /* ARTagListView.m in Sources */,
 				00F579871B2D608A00C5AD45 /* ChannelViewController.m in Sources */,
@@ -965,6 +976,7 @@
 				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
 				00D277AD1B417B6D0004D35B /* ChooseLotteryCell.m in Sources */,
 				9739E8261B4A91B8007AF273 /* HMSegmentedControl.m in Sources */,
+				97DF97EE1B76155200A6413E /* ARBasicAnimation.m in Sources */,
 				005FA6C41B5FCDDC0036AB89 /* AccountViewController.m in Sources */,
 				97EF65091B5B7F760087C2AE /* LotteryRecordCell.m in Sources */,
 				973C15B81B36BD8600BE608E /* Colours.m in Sources */,

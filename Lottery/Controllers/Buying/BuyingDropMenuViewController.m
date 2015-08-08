@@ -9,6 +9,7 @@
 #import "BuyingDropMenuViewController.h"
 #import "DropMenuCell.h"
 #import "DropMenuNode.h"
+#import "ARBasicAnimation.h"
 
 NSString *const TouchBackgroundNotification = @"TouchBackgroundNotification";
 
@@ -44,7 +45,6 @@ NSString *const TouchBackgroundNotification = @"TouchBackgroundNotification";
 - (void)setUp {
     self.maskLayer = [CAShapeLayer layer];
     self.maskLayer.fillColor = [UIColor blackColor].CGColor;
-    self.tableView.layer.mask = self.maskLayer;
     
     self.menuNodes = [NSMutableArray array];
     DropMenuNode *node1 = [[DropMenuNode alloc] initWithTitle:@"五星直选" options:@[@"复式"]];
@@ -75,23 +75,33 @@ NSString *const TouchBackgroundNotification = @"TouchBackgroundNotification";
 #pragma mark - public methods
 
 - (void)expandTableView {
-    CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
+    self.tableView.layer.mask = self.maskLayer;
+    ARBasicAnimation *basicAnimation = [ARBasicAnimation animationWithKeyPath:@"path"];
     UIBezierPath *toValue = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
     basicAnimation.duration = 0.5;
     basicAnimation.removedOnCompletion = YES;
     basicAnimation.fromValue = (id)[UIBezierPath bezierPathWithRect:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 0)].CGPath;
     basicAnimation.toValue = (id)toValue.CGPath;
+    //fix UITableViewWrapperView bug, unknow reason
+    [basicAnimation setCompletion:^(BOOL finished) {
+        self.tableView.layer.mask = nil;
+    }];
     self.maskLayer.path = [toValue CGPath];
     [self.maskLayer addAnimation:basicAnimation forKey:@"path"];
 
 }
 
 - (void)closeTableView {
-    CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
-    UIBezierPath *fromValue = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
+    self.tableView.layer.mask = self.maskLayer;
+    ARBasicAnimation *basicAnimation = [ARBasicAnimation animationWithKeyPath:@"path"];
+    UIBezierPath *fromValue = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.tableView.bounds))];
     basicAnimation.duration = 0.5;
     basicAnimation.removedOnCompletion = YES;
     basicAnimation.toValue = (id)[UIBezierPath bezierPathWithRect:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 0)].CGPath;
+    //fix UITableViewWrapperView bug, unknow reason
+    [basicAnimation setCompletion:^(BOOL finished) {
+        self.tableView.layer.mask = nil;
+    }];
     basicAnimation.fromValue = (id)fromValue.CGPath;
     self.maskLayer.path = [[UIBezierPath bezierPathWithRect:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 0)] CGPath];
     [self.maskLayer addAnimation:basicAnimation forKey:@"path1"];

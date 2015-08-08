@@ -9,10 +9,11 @@
 #import "DropMenuCell.h"
 #import "LotteryGlobal.h"
 #import <Masonry.h>
+#import "ARGridView.h"
 
 @interface DropMenuCell ()
 
-@property (nonatomic, strong) NSMutableArray *buttons;
+@property (nonatomic, strong) ARGridView *gridView;
 
 @end
 
@@ -32,7 +33,6 @@
 }
 
 - (void)baseSetUp {
-    self.buttons = [NSMutableArray array];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.titleLabel = [[UILabel alloc] init];
     self.titleLabel.textAlignment = NSTextAlignmentRight;
@@ -46,24 +46,23 @@
         make.top.equalTo(@0);
         make.height.equalTo(@30);
     }];
+    
+    self.gridView = [[ARGridView alloc] init];
+    [self.contentView addSubview:self.gridView];
+    [self.gridView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@80);
+        make.top.equalTo(@2);
+        make.bottom.mas_equalTo(-2);
+    }];
+
 }
 
 - (void)setUpType1 {
 
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitleColor:ColorRGB(102, 102, 102) forState:UIControlStateNormal];
-    [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
-    [self.contentView addSubview:button];
-    [self.buttons addObject:button];
-    
-    [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@80);
-        make.height.equalTo(@30);
-        make.centerY.equalTo(self.contentView);
-    }];
 }
 
 - (void)setUpType2 {
+    
     UIButton *button = [[UIButton alloc] init];
     [self.contentView addSubview:button];
     
@@ -143,8 +142,8 @@
 - (void)fillCellWithNode:(DropMenuNode *)node {
     self.titleLabel.text = node.title;
     [node.options enumerateObjectsUsingBlock:^(NSString *option, NSUInteger idx, BOOL *stop) {
-        if (idx < self.buttons.count) {
-            UIButton *button = self.buttons[idx];
+        if (idx < self.gridView.items.count) {
+            UIButton *button = self.gridView.items[idx];
             [button setTitle:option forState:UIControlStateNormal];
         }
     }];
