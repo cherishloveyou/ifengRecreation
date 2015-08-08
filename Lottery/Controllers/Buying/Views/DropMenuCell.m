@@ -48,30 +48,71 @@
     }];
     
     self.gridView = [[ARGridView alloc] init];
+    self.gridView.itemHeight = 30;
+    self.gridView.itemInset = 20;
+    self.gridView.lineInset = 2;
+    [self.gridView setConfiguration:^UIView *(NSUInteger index) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+        [button setTitleColor:ColorRGB(102, 102, 102) forState:UIControlStateNormal];
+        [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        return button;
+
+    }];
     [self.contentView addSubview:self.gridView];
     [self.gridView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@80);
-        make.top.equalTo(@2);
-        make.bottom.mas_equalTo(-2);
+        make.top.equalTo(@1);
     }];
 
 }
 
 - (void)setUpType1 {
-
+    self.gridView.numberOfItems = 1;
+    self.gridView.numberOfColumn = 1;
+    [self.gridView reloadAllItems];
 }
 
 - (void)setUpType2 {
-    
-    UIButton *button = [[UIButton alloc] init];
-    [self.contentView addSubview:button];
-    
-    [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@80);
-        make.top.equalTo(@2);
-        make.height.mas_equalTo(30);
-        make.width.mas_equalTo(50);
-    }];
+    self.gridView.numberOfItems = 6;
+    self.gridView.numberOfColumn = 3;
+    [self.gridView reloadAllItems];
+}
+
+- (void)setUpType3 {
+    self.gridView.numberOfItems = 2;
+    self.gridView.numberOfColumn = 2;
+    [self.gridView reloadAllItems];
+}
+
+- (void)setUpType4 {
+    self.gridView.numberOfItems = 4;
+    self.gridView.numberOfColumn = 4;
+    [self.gridView reloadAllItems];
+}
+
+- (void)setUpType5 {
+    self.gridView.numberOfItems = 5;
+    self.gridView.numberOfColumn = 5;
+    [self.gridView reloadAllItems];
+}
+
+- (void)setUpType6 {
+    self.gridView.numberOfItems = 4;
+    self.gridView.numberOfColumn = 2;
+    [self.gridView reloadAllItems];
+}
+
+- (void)setUpType7 {
+    self.gridView.numberOfItems = 4;
+    self.gridView.numberOfColumn = 3;
+    [self.gridView reloadAllItems];
+}
+
+- (void)setUpType8 {
+    self.gridView.numberOfItems = 5;
+    self.gridView.numberOfColumn = 3;
+    [self.gridView reloadAllItems];
 }
 
 #pragma mark - row methods
@@ -81,7 +122,7 @@
 }
 
 - (void)setUp1 {
-    [self setUpType1];
+    [self setUpType2];
 }
 
 - (void)setUp2 {
@@ -89,7 +130,7 @@
 }
 
 - (void)setUp3 {
-    [self setUpType1];
+    [self setUpType3];
 }
 
 - (void)setUp4 {
@@ -97,23 +138,23 @@
 }
 
 - (void)setUp5 {
-    [self setUpType1];
+    [self setUpType4];
 }
 
 - (void)setUp6 {
-    [self setUpType1];
+    [self setUpType3];
 }
 
 - (void)setUp7 {
-    [self setUpType1];
+    [self setUpType4];
 }
 
 - (void)setUp8 {
-    [self setUpType1];
+    [self setUpType8];
 }
 
 - (void)setUp9 {
-    [self setUpType1];
+    [self setUpType3];
 }
 
 - (void)setUp10 {
@@ -121,7 +162,7 @@
 }
 
 - (void)setUp11 {
-    [self setUpType1];
+    [self setUpType6];
 }
 
 - (void)setUp12 {
@@ -129,11 +170,11 @@
 }
 
 - (void)setUp13 {
-    [self setUpType1];
+    [self setUpType3];
 }
 
 - (void)setUp14 {
-    [self setUpType1];
+    [self setUpType7];
 }
 
 

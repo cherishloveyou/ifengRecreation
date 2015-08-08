@@ -173,10 +173,10 @@ NSString *const TouchBackgroundNotification = @"TouchBackgroundNotification";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = indexPath.row;
-    if (row == 0 || row == 2 || row == 3 || row == 4 || row == 5 || row == 6 || row == 6 || row == 7 || row == 8 || row == 10 || row == 12 || row == 13) {
-        return 30;
+    if (row == 0 || row == 2 || row == 3 || row == 4 || row == 5 || row == 6 || row == 6 || row == 7 || row == 9 || row == 10 || row == 12 || row == 13) {
+        return 35;
     }
-    return 60;
+    return 70;
 }
 
 @end

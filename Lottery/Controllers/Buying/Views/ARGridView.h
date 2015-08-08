@@ -10,7 +10,8 @@
 
 @interface ARGridView : UIView
 
-@property (nonatomic, assign) CGSize itemSize;
+@property (nonatomic, assign) CGFloat itemWidth;
+@property (nonatomic, assign) CGFloat itemHeight;
 @property (nonatomic, assign) NSUInteger numberOfColumn;
 @property (nonatomic, assign) NSUInteger numberOfItems;
 @property (nonatomic, assign) CGFloat itemInset;

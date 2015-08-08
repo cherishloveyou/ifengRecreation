@@ -8,6 +8,8 @@
 
 #import "ARGridView.h"
 
+static CGFloat ARGridViewAbsentValue = -1;
+
 @interface ARGridView ()
 
 @property (nonatomic, strong) NSMutableArray *items;
@@ -41,7 +43,8 @@
     self.lineInset = 1;
     self.numberOfItems = 0;
     self.numberOfColumn = 0;
-    self.itemSize = CGSizeMake(50, 50);
+    self.itemWidth = ARGridViewAbsentValue;
+    self.itemHeight = ARGridViewAbsentValue;
     self.items = [NSMutableArray array];
 }
 
@@ -70,11 +73,15 @@
 }
 
 - (void)layoutItem:(UIView *)item atIndex:(NSUInteger)index column:(NSUInteger)column line:(NSUInteger)line {
-    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:self.itemSize.width];
-    [item addConstraint:widthConstraint];
+    if (self.itemWidth != ARGridViewAbsentValue) {
+        NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:self.itemWidth];
+        [item addConstraint:widthConstraint];
+    }
     
-    NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:self.itemSize.height];
-    [item addConstraint:heightConstraint];
+    if (self.itemHeight != ARGridViewAbsentValue) {
+        NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:self.itemHeight];
+        [item addConstraint:heightConstraint];
+    }
     
     if (column == 0) {
         NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:item attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
