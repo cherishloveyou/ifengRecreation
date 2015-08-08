@@ -47,6 +47,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 -(void)baseConfigs
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissDropMenu) name:TouchBackgroundNotification object:nil];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
@@ -277,9 +278,8 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 #pragma mark - manage memory methods
 
--(void)dealloc
-{
-
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

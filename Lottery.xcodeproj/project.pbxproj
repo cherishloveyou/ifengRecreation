@@ -78,9 +78,9 @@
 		97D9E5231B51152E00048878 /* BankCardManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E5221B51152E00048878 /* BankCardManageViewController.m */; };
 		97D9E52B1B51519400048878 /* DropButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E52A1B51519400048878 /* DropButton.m */; };
 		97DF97D31B75B5EA00A6413E /* DropMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DF97D11B75B5EA00A6413E /* DropMenuCell.m */; };
-		97DF97D41B75B5EA00A6413E /* DropMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97DF97D21B75B5EA00A6413E /* DropMenuCell.xib */; };
 		97DF97DF1B75C16100A6413E /* BuyingDropMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DF97DE1B75C16100A6413E /* BuyingDropMenuViewController.m */; };
 		97DF97E21B75C7CD00A6413E /* BuyingDropMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97DF97E11B75C7CD00A6413E /* BuyingDropMenuViewController.xib */; };
+		97DF97E51B75D82F00A6413E /* DropMenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DF97E41B75D82F00A6413E /* DropMenuNode.m */; };
 		97EF65051B5B793E0087C2AE /* LotteryRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EF65041B5B793E0087C2AE /* LotteryRecord.m */; };
 		97EF65091B5B7F760087C2AE /* LotteryRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EF65071B5B7F760087C2AE /* LotteryRecordCell.m */; };
 		97EF650A1B5B7F760087C2AE /* LotteryRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97EF65081B5B7F760087C2AE /* LotteryRecordCell.xib */; };
@@ -229,10 +229,11 @@
 		97D9E52A1B51519400048878 /* DropButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropButton.m; sourceTree = "<group>"; };
 		97DF97D01B75B5EA00A6413E /* DropMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropMenuCell.h; sourceTree = "<group>"; };
 		97DF97D11B75B5EA00A6413E /* DropMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropMenuCell.m; sourceTree = "<group>"; };
-		97DF97D21B75B5EA00A6413E /* DropMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropMenuCell.xib; sourceTree = "<group>"; };
 		97DF97DE1B75C16100A6413E /* BuyingDropMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyingDropMenuViewController.m; sourceTree = "<group>"; };
 		97DF97E01B75C17300A6413E /* BuyingDropMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyingDropMenuViewController.h; sourceTree = "<group>"; };
 		97DF97E11B75C7CD00A6413E /* BuyingDropMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyingDropMenuViewController.xib; sourceTree = "<group>"; };
+		97DF97E31B75D82F00A6413E /* DropMenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropMenuNode.h; sourceTree = "<group>"; };
+		97DF97E41B75D82F00A6413E /* DropMenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropMenuNode.m; sourceTree = "<group>"; };
 		97EF65031B5B793E0087C2AE /* LotteryRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LotteryRecord.h; path = Lottery/views/LotteryRecord.h; sourceTree = SOURCE_ROOT; };
 		97EF65041B5B793E0087C2AE /* LotteryRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LotteryRecord.m; path = Lottery/views/LotteryRecord.m; sourceTree = SOURCE_ROOT; };
 		97EF65061B5B7F760087C2AE /* LotteryRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryRecordCell.h; sourceTree = "<group>"; };
@@ -496,6 +497,8 @@
 			children = (
 				971DF3FF1B3E81D1005CF819 /* NumberCellNode.h */,
 				971DF4001B3E81D1005CF819 /* NumberCellNode.m */,
+				97DF97E31B75D82F00A6413E /* DropMenuNode.h */,
+				97DF97E41B75D82F00A6413E /* DropMenuNode.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -708,7 +711,6 @@
 				97D03F581B2FDCE9001FB2C4 /* SelectNumbersCell.xib */,
 				97DF97D01B75B5EA00A6413E /* DropMenuCell.h */,
 				97DF97D11B75B5EA00A6413E /* DropMenuCell.m */,
-				97DF97D21B75B5EA00A6413E /* DropMenuCell.xib */,
 				97D03F601B2FE1D6001FB2C4 /* NumberButton.h */,
 				97D03F611B2FE1D6001FB2C4 /* NumberButton.m */,
 				971DF3FB1B3E735C005CF819 /* SegmentButton.h */,
@@ -823,7 +825,7 @@
 				TargetAttributes = {
 					974E85911B11610E00B57C9E = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 44P9L4RG9U;
+						DevelopmentTeam = D6F7XA55QJ;
 					};
 					974E85AA1B11610E00B57C9E = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -855,7 +857,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97DF97D41B75B5EA00A6413E /* DropMenuCell.xib in Resources */,
 				00D5CD4B1B2F0CEE007D8E81 /* LotteryResultsCell.xib in Resources */,
 				974E85A11B11610E00B57C9E /* Main.storyboard in Resources */,
 				97D03F5A1B2FDCE9001FB2C4 /* SelectNumbersCell.xib in Resources */,
@@ -953,6 +954,7 @@
 				9739E82A1B4ABA64007AF273 /* RecordViewController.m in Sources */,
 				974563A71B47C41900DDA8A1 /* UINavigationController+JZExtension.m in Sources */,
 				971DF4011B3E81D1005CF819 /* NumberCellNode.m in Sources */,
+				97DF97E51B75D82F00A6413E /* DropMenuNode.m in Sources */,
 				974E859B1B11610E00B57C9E /* AppDelegate.m in Sources */,
 				00F579881B2D608A00C5AD45 /* MyProfileViewController.m in Sources */,
 				00D5CD4A1B2F0CEE007D8E81 /* LotteryResultsCell.m in Sources */,

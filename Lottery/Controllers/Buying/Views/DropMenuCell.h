@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DropMenuNode.h"
 
 @interface DropMenuCell : UITableViewCell
+
+@property (nonatomic, strong) UILabel *titleLabel;
+
+- (instancetype)initWithIndex:(NSUInteger)index reuseIdentifier:(NSString *)identifier;
+
+- (void)fillCellWithNode:(DropMenuNode *)node;
 
 @end

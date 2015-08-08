@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ReactiveCocoa.h>
+
+extern NSString *const TouchBackgroundNotification;
 
 @interface BuyingDropMenuViewController : UIViewController
-
-- (void)expandTableView;
-- (void)closeTableView;
 
 - (void)showDropMenuInViewController:(UIViewController *)viewController frame:(CGRect)frame completion:(void(^)(void))completion;
 - (void)dismissDropMenuCompletion:(void(^)(void))completion;
