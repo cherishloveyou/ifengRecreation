@@ -79,6 +79,8 @@
 		97D9E52B1B51519400048878 /* DropButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D9E52A1B51519400048878 /* DropButton.m */; };
 		97DF97CE1B75B3B400A6413E /* BuyingDropMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DF97CC1B75B3B400A6413E /* BuyingDropMenuViewController.m */; };
 		97DF97CF1B75B3B400A6413E /* BuyingDropMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97DF97CD1B75B3B400A6413E /* BuyingDropMenuViewController.xib */; };
+		97DF97D31B75B5EA00A6413E /* DropMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DF97D11B75B5EA00A6413E /* DropMenuCell.m */; };
+		97DF97D41B75B5EA00A6413E /* DropMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97DF97D21B75B5EA00A6413E /* DropMenuCell.xib */; };
 		97EF65051B5B793E0087C2AE /* LotteryRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EF65041B5B793E0087C2AE /* LotteryRecord.m */; };
 		97EF65091B5B7F760087C2AE /* LotteryRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EF65071B5B7F760087C2AE /* LotteryRecordCell.m */; };
 		97EF650A1B5B7F760087C2AE /* LotteryRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97EF65081B5B7F760087C2AE /* LotteryRecordCell.xib */; };
@@ -228,6 +230,9 @@
 		97DF97CB1B75B3B400A6413E /* BuyingDropMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyingDropMenuViewController.h; sourceTree = "<group>"; };
 		97DF97CC1B75B3B400A6413E /* BuyingDropMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyingDropMenuViewController.m; sourceTree = "<group>"; };
 		97DF97CD1B75B3B400A6413E /* BuyingDropMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyingDropMenuViewController.xib; sourceTree = "<group>"; };
+		97DF97D01B75B5EA00A6413E /* DropMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropMenuCell.h; sourceTree = "<group>"; };
+		97DF97D11B75B5EA00A6413E /* DropMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropMenuCell.m; sourceTree = "<group>"; };
+		97DF97D21B75B5EA00A6413E /* DropMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropMenuCell.xib; sourceTree = "<group>"; };
 		97EF65031B5B793E0087C2AE /* LotteryRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LotteryRecord.h; path = Lottery/views/LotteryRecord.h; sourceTree = SOURCE_ROOT; };
 		97EF65041B5B793E0087C2AE /* LotteryRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LotteryRecord.m; path = Lottery/views/LotteryRecord.m; sourceTree = SOURCE_ROOT; };
 		97EF65061B5B7F760087C2AE /* LotteryRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryRecordCell.h; sourceTree = "<group>"; };
@@ -701,6 +706,9 @@
 				97D03F561B2FDCE9001FB2C4 /* SelectNumbersCell.h */,
 				97D03F571B2FDCE9001FB2C4 /* SelectNumbersCell.m */,
 				97D03F581B2FDCE9001FB2C4 /* SelectNumbersCell.xib */,
+				97DF97D01B75B5EA00A6413E /* DropMenuCell.h */,
+				97DF97D11B75B5EA00A6413E /* DropMenuCell.m */,
+				97DF97D21B75B5EA00A6413E /* DropMenuCell.xib */,
 				97D03F601B2FE1D6001FB2C4 /* NumberButton.h */,
 				97D03F611B2FE1D6001FB2C4 /* NumberButton.m */,
 				971DF3FB1B3E735C005CF819 /* SegmentButton.h */,
@@ -847,6 +855,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97DF97D41B75B5EA00A6413E /* DropMenuCell.xib in Resources */,
 				00D5CD4B1B2F0CEE007D8E81 /* LotteryResultsCell.xib in Resources */,
 				97DF97CF1B75B3B400A6413E /* BuyingDropMenuViewController.xib in Resources */,
 				974E85A11B11610E00B57C9E /* Main.storyboard in Resources */,
@@ -936,6 +945,7 @@
 				00929D5F1B48C1A0001CFB4D /* LogInUserIonfoModel.m in Sources */,
 				97EF65051B5B793E0087C2AE /* LotteryRecord.m in Sources */,
 				00CCEA921B43C39100FB6853 /* FFScrollView.m in Sources */,
+				97DF97D31B75B5EA00A6413E /* DropMenuCell.m in Sources */,
 				0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */,
 				97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */,
 				00F5798E1B2D60FD00C5AD45 /* LoginViewController.m in Sources */,
