@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BuyingDropMenuViewController : UITableViewController
+@interface BuyingDropMenuViewController : UIViewController
+
+- (void)expandTableView;
+- (void)closeTableView;
+
+- (void)showDropMenuInViewController:(UIViewController *)viewController frame:(CGRect)frame completion:(void(^)(void))completion;
+- (void)dismissDropMenuCompletion:(void(^)(void))completion;
 
 @end

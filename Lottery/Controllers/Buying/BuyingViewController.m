@@ -14,6 +14,7 @@
 #import "ARTagListView.h"
 #import <Masonry.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "BuyingDropMenuViewController.h"
 
 @interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate,ARTagListViewDelegate>
 
@@ -24,6 +25,9 @@
 @property (strong, nonatomic) UIButton *topRightArrowMenuButton;
 @property (strong, nonatomic) UILabel *countdownLabel;
 @property (strong, nonatomic) UIButton *shakeButton;
+
+@property (nonatomic, assign) BOOL dropMenuIsShowed;
+@property (nonatomic, weak) BuyingDropMenuViewController *dropMenu;
 
 @end
 
@@ -131,6 +135,23 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     [self.tableView reloadData];
 }
 
+- (void)showDropMenu {
+    BuyingDropMenuViewController *dropMenu = [[BuyingDropMenuViewController alloc] initWithNibName:@"BuyingDropMenuViewController" bundle:nil];
+    self.dropMenu = dropMenu;
+    CGRect frame = CGRectMake(0, CGRectGetMaxY(self.topContainerView.frame), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)- CGRectGetMaxY(self.topContainerView.frame));
+    
+    [self.dropMenu showDropMenuInViewController:self frame:frame completion:^{
+        self.dropMenuIsShowed = YES;
+    }];
+}
+
+- (void)dismissDropMenu {
+    
+    [self.dropMenu dismissDropMenuCompletion:^{
+        self.dropMenuIsShowed = NO;
+    }];
+}
+
 #pragma mark - custom event methods
 
 - (void)infoButtonClicked:(id)sender {
@@ -138,7 +159,11 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 }
 
 - (void)topRightArrowMenuButtonClicked:(id)sender {
-
+    if (!self.dropMenuIsShowed) {
+        [self showDropMenu];
+    }else{
+        [self dismissDropMenu];
+    }
 }
 
 - (void)shakeButtonClicked:(id)sender {
