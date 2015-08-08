@@ -337,6 +337,10 @@
                     <navigationItem key="navigationItem" id="pVC-a6-045"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="allDataTableView" destination="EsU-IA-t3a" id="hID-ho-Dr0"/>
+                        <outlet property="bonusTableView" destination="NhT-Bb-Ixu" id="R9T-YB-N1n"/>
+                        <outlet property="depositTableView" destination="Yh2-XK-psF" id="5mp-Td-SB6"/>
+                        <outlet property="rechargeTableView" destination="Gip-4b-fB4" id="XJb-TI-Q7X"/>
                         <outlet property="scrollView" destination="47U-Ix-kOe" id="HdW-Mx-fsz"/>
                         <outlet property="topSegmentView" destination="UNd-2J-DU8" id="E8r-uh-18K"/>
                     </connections>
@@ -408,7 +412,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLt-6w-crt">
-                                        <rect key="frame" x="139" y="70" width="42" height="20.5"/>
+                                        <rect key="frame" x="139" y="70" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -452,7 +456,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhN-jP-qSw">
-                                        <rect key="frame" x="160" y="100" width="1" height="44.5"/>
+                                        <rect key="frame" x="160" y="100" width="1" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="YO8-tp-nrh"/>
@@ -949,7 +953,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcE-A6-0UM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="491"/>
+            <point key="canvasLocation" x="-940" y="333"/>
         </scene>
         <!--验证安全问题-->
         <scene sceneID="Uu3-LT-6iG">

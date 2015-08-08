@@ -12,6 +12,8 @@
 		005FA6C91B67A6F90036AB89 /* AnnouncementDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005FA6C71B67A6F90036AB89 /* AnnouncementDetailVC.xib */; };
 		005FA6CD1B67A7180036AB89 /* InsidelDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6CB1B67A7180036AB89 /* InsidelDetailVC.m */; };
 		005FA6CE1B67A7180036AB89 /* InsidelDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005FA6CC1B67A7180036AB89 /* InsidelDetailVC.xib */; };
+		006CE7691B737D81002F2CA2 /* accountViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CE7671B737D81002F2CA2 /* accountViewCell.m */; };
+		006CE76A1B737D81002F2CA2 /* accountViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006CE7681B737D81002F2CA2 /* accountViewCell.xib */; };
 		0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0070B4081B3C2F6700DF17AC /* RecommendationVC.m */; };
 		0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */; };
 		00929D5F1B48C1A0001CFB4D /* LogInUserIonfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00929D5E1B48C1A0001CFB4D /* LogInUserIonfoModel.m */; };
@@ -102,6 +104,9 @@
 		005FA6CA1B67A7180036AB89 /* InsidelDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsidelDetailVC.h; sourceTree = "<group>"; };
 		005FA6CB1B67A7180036AB89 /* InsidelDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsidelDetailVC.m; sourceTree = "<group>"; };
 		005FA6CC1B67A7180036AB89 /* InsidelDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsidelDetailVC.xib; sourceTree = "<group>"; };
+		006CE7661B737D81002F2CA2 /* accountViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accountViewCell.h; sourceTree = "<group>"; };
+		006CE7671B737D81002F2CA2 /* accountViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accountViewCell.m; sourceTree = "<group>"; };
+		006CE7681B737D81002F2CA2 /* accountViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = accountViewCell.xib; sourceTree = "<group>"; };
 		0070B4071B3C2F6700DF17AC /* RecommendationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendationVC.h; sourceTree = "<group>"; };
 		0070B4081B3C2F6700DF17AC /* RecommendationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendationVC.m; sourceTree = "<group>"; };
 		0070B4091B3C2F6700DF17AC /* RecommendationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendationVC.xib; sourceTree = "<group>"; };
@@ -256,6 +261,9 @@
 			children = (
 				005FA6C21B5FCDDC0036AB89 /* AccountViewController.h */,
 				005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */,
+				006CE7661B737D81002F2CA2 /* accountViewCell.h */,
+				006CE7671B737D81002F2CA2 /* accountViewCell.m */,
+				006CE7681B737D81002F2CA2 /* accountViewCell.xib */,
 			);
 			path = "账户明细";
 			sourceTree = "<group>";
@@ -807,7 +815,7 @@
 				TargetAttributes = {
 					974E85911B11610E00B57C9E = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = D6F7XA55QJ;
+						DevelopmentTeam = 44P9L4RG9U;
 					};
 					974E85AA1B11610E00B57C9E = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -855,6 +863,7 @@
 				9739E82B1B4ABA64007AF273 /* RecordViewController.xib in Resources */,
 				0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */,
 				974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */,
+				006CE76A1B737D81002F2CA2 /* accountViewCell.xib in Resources */,
 				974E85A31B11610E00B57C9E /* Images.xcassets in Resources */,
 				00AEE77E1B3EDB1F00577380 /* ChooseLotteryVC.xib in Resources */,
 				00929D651B50F542001CFB4D /* LotteryDetailVC.xib in Resources */,
@@ -918,6 +927,7 @@
 				00AEE7851B3F05B400577380 /* RecommendViewController.m in Sources */,
 				973540311B6CBA560029233C /* LotteryGlobal.m in Sources */,
 				00EDDD811B3070CB001F4CB8 /* DropDownViewCell.m in Sources */,
+				006CE7691B737D81002F2CA2 /* accountViewCell.m in Sources */,
 				974E859E1B11610E00B57C9E /* RootViewController.m in Sources */,
 				971DF3FD1B3E735C005CF819 /* SegmentButton.m in Sources */,
 				00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */,

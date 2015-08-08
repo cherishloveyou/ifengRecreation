@@ -22,7 +22,6 @@ static NSString *reuseIdentifier = @"bandCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     [self setUp];
     [self fetchBankCardsInfo];
 }
