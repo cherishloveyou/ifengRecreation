@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -18,7 +18,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zl1-jS-sGj">
                         <rect key="frame" x="90" y="28" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edu-tq-gNy">
@@ -35,14 +35,14 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowButton" translatesAutoresizingMaskIntoConstraints="NO" id="dSK-bC-mxF">
-                        <rect key="frame" x="263" y="3" width="57" height="20"/>
+                        <rect key="frame" x="260" y="3" width="60" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="57" id="PgX-By-oM5"/>
+                            <constraint firstAttribute="width" constant="60" id="PgX-By-oM5"/>
                             <constraint firstAttribute="height" constant="20" id="Tj3-fg-IOM"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自主彩种" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ka-Ld-8xF">
-                        <rect key="frame" x="271" y="5" width="49" height="15"/>
+                        <rect key="frame" x="263" y="5" width="49" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                 <constraints>
                     <constraint firstItem="V83-Tg-uIG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="5pg-y9-4db"/>
                     <constraint firstItem="Edu-tq-gNy" firstAttribute="top" secondItem="zl1-jS-sGj" secondAttribute="bottom" constant="5" id="6Ur-w1-Ueb"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="2ka-Ld-8xF" secondAttribute="trailing" constant="-8" id="6ju-jv-dlW"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="2ka-Ld-8xF" secondAttribute="trailing" id="6ju-jv-dlW"/>
                     <constraint firstItem="V83-Tg-uIG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="7Jz-7h-mLt"/>
                     <constraint firstItem="Edu-tq-gNy" firstAttribute="leading" secondItem="V83-Tg-uIG" secondAttribute="trailing" constant="20" id="8DU-Ra-YFg"/>
                     <constraint firstItem="2ka-Ld-8xF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="Dre-7U-Vlm"/>
@@ -75,6 +75,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="yellowButton" width="25" height="20"/>
+        <image name="yellowButton" width="60" height="20"/>
     </resources>
 </document>

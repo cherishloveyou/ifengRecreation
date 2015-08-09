@@ -11,6 +11,8 @@
 #import "LotteryResultsCell.h"
 #import <MJRefresh.h>
 #import "LotteryDetailVC.h"
+#import "BuyingViewController.h"
+
 @implementation TrendViewController
 
 - (NSMutableArray *)dataSourceArray{

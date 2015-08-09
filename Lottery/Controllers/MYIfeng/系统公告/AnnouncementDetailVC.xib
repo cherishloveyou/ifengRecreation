@@ -21,7 +21,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIx-Yb-lli">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahz-ZZ-E5v">
@@ -31,7 +31,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-lB-ofk">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -58,12 +58,12 @@
                 <mask key="constraints">
                     <exclude reference="Vub-cU-Axm"/>
                     <exclude reference="lFf-9s-d4F"/>
+                    <exclude reference="5Dx-q6-hGe"/>
+                    <exclude reference="BFx-8N-7fZ"/>
                     <exclude reference="EYD-UW-BQT"/>
                     <exclude reference="HnY-dd-n0t"/>
                     <exclude reference="yP5-ZC-zlY"/>
                     <exclude reference="yxZ-CK-8vQ"/>
-                    <exclude reference="5Dx-q6-hGe"/>
-                    <exclude reference="BFx-8N-7fZ"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -75,12 +75,12 @@
                 <mask key="constraints">
                     <include reference="Vub-cU-Axm"/>
                     <include reference="lFf-9s-d4F"/>
+                    <include reference="5Dx-q6-hGe"/>
+                    <include reference="BFx-8N-7fZ"/>
                     <include reference="EYD-UW-BQT"/>
                     <include reference="HnY-dd-n0t"/>
                     <include reference="yP5-ZC-zlY"/>
                     <include reference="yxZ-CK-8vQ"/>
-                    <include reference="5Dx-q6-hGe"/>
-                    <include reference="BFx-8N-7fZ"/>
                 </mask>
             </variation>
         </view>
