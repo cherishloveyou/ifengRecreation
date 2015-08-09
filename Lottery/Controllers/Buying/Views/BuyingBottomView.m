@@ -35,14 +35,11 @@
 
 - (void)setUp {
     
-    self.hasSelectedCount = 0;
-    self.totalMoney = 0.00;
-    
+    self.canBuyLottery = NO;
     self.backImageView = [[UIImageView alloc] init];
     self.backImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.backImageView.image = [UIImage imageNamed:@"numbers_Bag"];
     [self addSubview:self.backImageView];
-    
     
     self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.leftButton.backgroundColor = ColorRGB(253, 178, 48);
@@ -57,7 +54,7 @@
     
     self.topLabel = [[UILabel alloc] init];
     self.topLabel.font = [UIFont systemFontOfSize:14];
-    self.topLabel.text = [NSString stringWithFormat:@"已选%ld注，%2f元",self.hasSelectedCount,self.totalMoney];
+    self.topLabel.text = [NSString stringWithFormat:@"已选0注，0元"];
     self.topLabel.textColor = [UIColor whiteColor];
     [self addSubview:self.topLabel];
     
@@ -90,18 +87,29 @@
         make.left.equalTo(self.addImageView.mas_right).offset(5);
         make.top.equalTo(@5);
         make.height.equalTo(@20);
+        make.right.lessThanOrEqualTo(self.leftButton).offset(-10);
     }];
     
     [self.bottomLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.addImageView.mas_right).offset(5);
         make.top.equalTo(self.topLabel.mas_bottom).offset(2);
         make.height.equalTo(@20);
+        make.right.lessThanOrEqualTo(self.leftButton).offset(-10);
     }];
     
     self.maskLayer = [CAShapeLayer layer];
     self.maskLayer.fillColor = [UIColor blackColor].CGColor;
     self.leftButton.layer.mask = self.maskLayer;
     
+    @weakify(self);
+    [RACObserve(self, canBuyLottery) subscribeNext:^(id x) {
+        @strongify(self);
+        if ([x boolValue]) {
+            self.leftButton.backgroundColor = ColorRGB(253, 178, 48);
+        }else{
+            self.leftButton.backgroundColor = [UIColor clearColor];
+        }
+    }];
 }
 
 - (void)layoutSubviews {

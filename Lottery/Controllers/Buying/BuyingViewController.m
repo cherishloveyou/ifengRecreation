@@ -34,6 +34,7 @@ static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
 @property (nonatomic, assign) BOOL dropMenuIsShowed;
 @property (nonatomic, strong) BuyingDropMenuViewController *dropMenu;
 @property (weak, nonatomic) IBOutlet BuyingBottomView *bottomBar;
+@property (nonatomic, assign) BOOL canBuyLottery;
 
 @end
 
@@ -187,6 +188,31 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     }];
 }
 
+- (void)checkIsCanBuy {
+    __block BOOL canBuy = YES;
+    __block NSUInteger hasSelectLotteryCount = 1;
+    __block NSMutableString *selectNumberString = [NSMutableString string];
+    [self.datas enumerateObjectsUsingBlock:^(NumberCellNode *node, NSUInteger idx, BOOL *stop) {
+        if (node.numbersSet.count == 0) {
+            canBuy = NO;
+            *stop = YES;
+        }
+        
+        hasSelectLotteryCount = hasSelectLotteryCount*node.numbersSet.count;
+        [selectNumberString appendString:[node.numbersSet.array componentsJoinedByString:@""]];
+        [selectNumberString appendString:@","];
+    }];
+    
+    self.canBuyLottery = canBuy;
+    self.bottomBar.canBuyLottery = canBuy;
+    
+    if (canBuy) {
+        self.bottomBar.topLabel.text = [NSString stringWithFormat:@"已选%ld注，%2f元",hasSelectLotteryCount,hasSelectLotteryCount*0.2];
+        
+        self.bottomBar.bottomLabel.text = selectNumberString;
+    }
+}
+
 #pragma mark - custom event methods
 
 - (void)infoButtonClicked:(id)sender {
@@ -203,6 +229,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 - (void)shakeButtonClicked:(id)sender {
     [self randomSelectNumbers];
+    [self checkIsCanBuy];
 }
 
 #pragma mark - BuyingDropMenuViewControllerDelegate methods
@@ -259,6 +286,8 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     }else{
         [orderSet removeObject:indexString];
     }
+    
+    [self checkIsCanBuy];
 }
 
 -(void)numbersCell:(SelectNumbersCell *)numbersCell segmentTitle:(OAStackView *)segmentTitle selectIndex:(NSUInteger)selectIndex
@@ -302,6 +331,8 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     node.numbersSet = numberSet;
     node.segmentSelectIndex = selectIndex;
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    
+    [self checkIsCanBuy];
 }
 
 #pragma mark - motion delegate methods
