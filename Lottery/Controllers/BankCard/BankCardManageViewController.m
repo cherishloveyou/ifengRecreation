@@ -46,7 +46,6 @@
     self.tableView.tableFooterView = self.tableFooterView;
     
     [HTTPClient userHandleWithAction:27 paramaters:nil success:^(id task, id response) {
-        NSLog(@"%@",response);
         NSInteger code = [[response valueForKey:@"code"] integerValue];
         if (!code) {
             [self.bankCards addObjectsFromArray:[response objectForKey:@"userBanks"]];

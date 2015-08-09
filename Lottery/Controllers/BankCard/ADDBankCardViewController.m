@@ -9,7 +9,11 @@
 #import "ADDBankCardViewController.h"
 #import <SVProgressHUD.h>
 
-@interface ADDBankCardViewController ()<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
+@interface ADDBankCardViewController ()<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate>{
+    UIPickerView *pickerView;
+    
+    UIView *pickerBackView;
+}
 /**
  *  银行卡类型
  */
@@ -112,12 +116,28 @@
 #pragma mark -- UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    
-    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(40, 200, self.view.bounds.size.width, 100)];
-    [self.view addSubview:pickerView];
+    pickerBackView = [[UIView alloc] initWithFrame:self.view.bounds];
+    pickerBackView.backgroundColor = [UIColor colorWithRed:100 green:100 blue:100 alpha:0.6];
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(removePickerView)];
+    [pickerBackView addGestureRecognizer:recognizer];
+    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 124, self.view.bounds.size.width, 70)];
     pickerView.delegate = self;
     pickerView.dataSource = self;
+    pickerView.backgroundColor = [UIColor blueColor];
+    [pickerBackView addSubview:pickerView];
+    [self.view addSubview:pickerBackView];
     return NO;
+}
+
+
+- (void)removePickerView{
+    [pickerBackView removeFromSuperview];
+    pickerView = nil;
+    pickerBackView = nil;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.safePassWord resignFirstResponder];
 }
 
 #pragma  mark -- UIPickerViewDataSource
@@ -154,7 +174,24 @@
  *  @return string
  */
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return nil;
+    return @"test";
 }
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 30.;
+}
+
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    
+    self.bankCardType.text = nil;
+
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [pickerView removeFromSuperview];
+}
+
 
 @end
