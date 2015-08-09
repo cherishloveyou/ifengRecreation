@@ -21,12 +21,15 @@
 
 @property (nonatomic, weak) IBOutlet id<ARTagListViewDelegate> tagListDelegate;
 
--(void)addTagWithTitle:(NSString *)title;
--(void)addTagsWithTitles:(NSArray *)titles;
+@property (nonatomic, strong, readonly) NSMutableArray *tags;
 
--(void)removeTagAtIndex:(NSUInteger)index;
--(void)removeTagWithTitle:(NSString *)title;
--(void)removeAllTags;
+- (void)addTagWithTitle:(NSString *)title;
+- (void)addTagsWithTitles:(NSArray *)titles;
+- (void)insertTagWithTitle:(NSString *)title atIndex:(NSUInteger)index selected:(BOOL)selected;
+
+- (void)removeTagAtIndex:(NSUInteger)index;
+- (void)removeTagWithTitle:(NSString *)title;
+- (void)removeAllTags;
 
 @end
 

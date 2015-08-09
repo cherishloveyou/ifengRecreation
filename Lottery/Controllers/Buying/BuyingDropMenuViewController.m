@@ -182,10 +182,12 @@ NSString *const TouchBackgroundNotification = @"TouchBackgroundNotification";
 
 #pragma mark - DropMenuCellDelegate methods
 
-- (void)dropMenuCell:(DropMenuCell *)cell didSelectedItemAtIndex:(NSUInteger)index {
-    NSLog(@"index is %ld",index);
-    [[NSNotificationCenter defaultCenter] performSelector:@selector(postNotificationName:object:) withObject:TouchBackgroundNotification afterDelay:0.3];
-
+- (void)dropMenuCell:(DropMenuCell *)cell didSelectedItemAtIndex:(NSUInteger)index title:(NSString *)title {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:index inSection:indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(dropMenuController:didSelectMenuItemAtIndexPath:title:)]) {
+        [self.delegate dropMenuController:self didSelectMenuItemAtIndexPath:newIndexPath title:title];
+    }
 }
 
 @end

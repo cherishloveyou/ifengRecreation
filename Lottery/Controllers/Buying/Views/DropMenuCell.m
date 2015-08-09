@@ -15,6 +15,10 @@
 
 @property (nonatomic, strong) ARGridView *gridView;
 @property (nonatomic, strong) UILabel *titleLabel;
+
+@property (nonatomic, weak) DropMenuNode *node;
+@property (nonatomic, assign) NSUInteger seletedIndex;
+
 @end
 
 @implementation DropMenuCell
@@ -33,6 +37,7 @@
 }
 
 - (void)baseSetUp {
+    self.seletedIndex = NSNotFound;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.titleLabel = [[UILabel alloc] init];
     self.titleLabel.textAlignment = NSTextAlignmentRight;
@@ -123,15 +128,22 @@
 #pragma mark - event methods
 
 - (void)buttonClicked:(UIButton *)button {
-    [self.gridView.items enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
-        button.layer.borderColor = [UIColor clearColor].CGColor;
-    }];
     
-    button.layer.borderColor = ColorRGB(102, 102, 102).CGColor;
     NSUInteger index = [self.gridView.items indexOfObject:button];
+    if (index == self.seletedIndex) {
+        return;
+    }
     
-    if ([self.delegate respondsToSelector:@selector(dropMenuCell:didSelectedItemAtIndex:)]) {
-        [self.delegate dropMenuCell:self didSelectedItemAtIndex:index];
+    if (self.seletedIndex != NSNotFound) {
+        UIButton *preButton = self.gridView.items[self.seletedIndex];
+        preButton.layer.borderColor = [UIColor clearColor].CGColor;
+    }
+    button.layer.borderColor = ColorRGB(102, 102, 102).CGColor;
+    self.seletedIndex = index;
+    
+    
+    if ([self.delegate respondsToSelector:@selector(dropMenuCell:didSelectedItemAtIndex:title:)]) {
+        [self.delegate dropMenuCell:self didSelectedItemAtIndex:index title:button.titleLabel.text];
     }
 }
 
@@ -201,6 +213,7 @@
 #pragma mark - public methods
 
 - (void)fillCellWithNode:(DropMenuNode *)node {
+    self.node = node;
     self.titleLabel.text = node.title;
     [node.options enumerateObjectsUsingBlock:^(NSString *option, NSUInteger idx, BOOL *stop) {
         if (idx < self.gridView.items.count) {

@@ -16,10 +16,11 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "BuyingDropMenuViewController.h"
 #import "MZTimerLabel.h"
+#import "BuyingBottomView.h"
 
 static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
 
-@interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate,ARTagListViewDelegate>
+@interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate,ARTagListViewDelegate,BuyingDropMenuViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
@@ -31,7 +32,8 @@ static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
 @property (strong, nonatomic) UIButton *shakeButton;
 
 @property (nonatomic, assign) BOOL dropMenuIsShowed;
-@property (nonatomic, weak) BuyingDropMenuViewController *dropMenu;
+@property (nonatomic, strong) BuyingDropMenuViewController *dropMenu;
+@property (weak, nonatomic) IBOutlet BuyingBottomView *bottomBar;
 
 @end
 
@@ -56,6 +58,8 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+    self.bottomBar.bottomLabel.text = @"每位选一个号码为一注";
     
     [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
     [self becomeFirstResponder];
@@ -82,7 +86,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     self.CurrentSelectMenuList.tagListDelegate = self;
     [self.topContainerView addSubview:self.CurrentSelectMenuList];
     //menu button
-    [self.CurrentSelectMenuList addTagsWithTitles:@[@"test",@"test2",@"test",@"test2",@"test",@"test2",@"test",@"test2"]];
+    [self.CurrentSelectMenuList insertTagWithTitle:@"复式" atIndex:0 selected:YES];
     
     self.topRightArrowMenuButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.topRightArrowMenuButton setImage:[UIImage imageNamed:@"drop_button"] forState:UIControlStateNormal];
@@ -159,9 +163,16 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     [self.tableView reloadData];
 }
 
+- (BuyingDropMenuViewController *)dropMenu {
+    if (!_dropMenu) {
+        BuyingDropMenuViewController *dropMenu = [[BuyingDropMenuViewController alloc] initWithNibName:@"BuyingDropMenuViewController" bundle:nil];
+        dropMenu.delegate = self;
+        _dropMenu = dropMenu;
+    }
+    return _dropMenu;
+}
+
 - (void)showDropMenu {
-    BuyingDropMenuViewController *dropMenu = [[BuyingDropMenuViewController alloc] initWithNibName:@"BuyingDropMenuViewController" bundle:nil];
-    self.dropMenu = dropMenu;
     CGRect frame = CGRectMake(0, CGRectGetMaxY(self.topContainerView.frame), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)- CGRectGetMaxY(self.topContainerView.frame));
     
     [self.dropMenu showDropMenuInViewController:self frame:frame completion:^{
@@ -192,6 +203,13 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 - (void)shakeButtonClicked:(id)sender {
     [self randomSelectNumbers];
+}
+
+#pragma mark - BuyingDropMenuViewControllerDelegate methods
+
+- (void)dropMenuController:(BuyingDropMenuViewController *)controller didSelectMenuItemAtIndexPath:(NSIndexPath *)indexPath title:(NSString *)title {
+    [self dismissDropMenu];
+    [self.CurrentSelectMenuList insertTagWithTitle:title atIndex:0 selected:YES];
 }
 
 #pragma mark - ARTagListViewDelegate methods

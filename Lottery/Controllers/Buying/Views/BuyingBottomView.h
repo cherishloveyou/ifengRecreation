@@ -12,6 +12,6 @@
 
 @property (nonatomic, assign) NSUInteger hasSelectedCount;
 @property (nonatomic, assign) CGFloat totalMoney;
-@property (nonatomic, strong) NSArray *hasSelectedNumbers;
+@property (nonatomic, strong, readonly) UILabel *bottomLabel;
 
 @end

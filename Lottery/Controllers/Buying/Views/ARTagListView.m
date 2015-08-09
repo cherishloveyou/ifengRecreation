@@ -76,6 +76,20 @@ static NSString *reuseIdentifier = @"ARTagListItem";
     [self reloadData];
 }
 
+- (void)insertTagWithTitle:(NSString *)title atIndex:(NSUInteger)index selected:(BOOL)selected {
+    if ([self.tags containsObject:title]) {
+        NSUInteger existIndex = [self.tags indexOfObject:title];
+        [self.tags exchangeObjectAtIndex:existIndex withObjectAtIndex:index];
+    }else {
+        [self.tags insertObject:title atIndex:index];
+    }
+
+    [self reloadData];
+    if (selected) {
+        [self selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionNone];        
+    }
+}
+
 -(void)removeTagAtIndex:(NSUInteger)index
 {
     [self.tags removeObjectAtIndex:index];

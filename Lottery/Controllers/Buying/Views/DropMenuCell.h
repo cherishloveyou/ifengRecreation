@@ -12,7 +12,7 @@
 @class DropMenuCell;
 @protocol DropMenuCellDelegate <NSObject>
 
-- (void)dropMenuCell:(DropMenuCell *)cell didSelectedItemAtIndex:(NSUInteger)index;
+- (void)dropMenuCell:(DropMenuCell *)cell didSelectedItemAtIndex:(NSUInteger)index title:(NSString *)title;
 
 @end
 

@@ -58,10 +58,12 @@
     self.topLabel = [[UILabel alloc] init];
     self.topLabel.font = [UIFont systemFontOfSize:14];
     self.topLabel.text = [NSString stringWithFormat:@"已选%ld注，%2f元",self.hasSelectedCount,self.totalMoney];
+    self.topLabel.textColor = [UIColor whiteColor];
     [self addSubview:self.topLabel];
     
     self.bottomLabel = [[UILabel alloc] init];
     self.bottomLabel.font = [UIFont systemFontOfSize:12];
+    self.bottomLabel.textColor = [UIColor whiteColor];
     [self addSubview:self.bottomLabel];
     
     [self.backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
