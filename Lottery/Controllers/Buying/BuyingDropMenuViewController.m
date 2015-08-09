@@ -13,7 +13,7 @@
 
 NSString *const TouchBackgroundNotification = @"TouchBackgroundNotification";
 
-@interface BuyingDropMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface BuyingDropMenuViewController ()<UITableViewDelegate,UITableViewDataSource,DropMenuCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *menuNodes;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -161,6 +161,7 @@ NSString *const TouchBackgroundNotification = @"TouchBackgroundNotification";
     if (cell == nil) {
         cell = [[DropMenuCell alloc] initWithIndex:indexPath.row reuseIdentifier:reuseIdentifier];
     }
+    cell.delegate = self;
     [cell fillCellWithNode:self.menuNodes[indexPath.row]];
     return cell;
 }
@@ -177,6 +178,14 @@ NSString *const TouchBackgroundNotification = @"TouchBackgroundNotification";
         return 35;
     }
     return 70;
+}
+
+#pragma mark - DropMenuCellDelegate methods
+
+- (void)dropMenuCell:(DropMenuCell *)cell didSelectedItemAtIndex:(NSUInteger)index {
+    NSLog(@"index is %ld",index);
+    [[NSNotificationCenter defaultCenter] performSelector:@selector(postNotificationName:object:) withObject:TouchBackgroundNotification afterDelay:0.3];
+
 }
 
 @end

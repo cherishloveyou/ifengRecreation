@@ -10,7 +10,8 @@
 
 @interface BuyingBottomView : UIView
 
-@property (nonatomic, strong) UIButton *leftButton;
-@property (nonatomic, strong) UIButton *rightButton;
+@property (nonatomic, assign) NSUInteger hasSelectedCount;
+@property (nonatomic, assign) CGFloat totalMoney;
+@property (nonatomic, strong) NSArray *hasSelectedNumbers;
 
 @end

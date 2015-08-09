@@ -114,14 +114,4 @@ static CGFloat ARGridViewAbsentValue = -1;
     }
 }
 
-- (UIColor *)randomColor
-{
-    CGFloat r = (arc4random()%255)/255.0;
-    CGFloat g = (arc4random()%255)/255.0;
-    CGFloat b = (arc4random()%255)/255.0;
-    
-    return [UIColor colorWithRed:r green:g blue:b alpha:1];
-}
-
-
 @end

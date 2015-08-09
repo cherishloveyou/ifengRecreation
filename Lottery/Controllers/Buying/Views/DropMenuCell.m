@@ -14,7 +14,7 @@
 @interface DropMenuCell ()
 
 @property (nonatomic, strong) ARGridView *gridView;
-
+@property (nonatomic, strong) UILabel *titleLabel;
 @end
 
 @implementation DropMenuCell
@@ -51,15 +51,20 @@
     self.gridView.itemHeight = 30;
     self.gridView.itemInset = 20;
     self.gridView.lineInset = 2;
+    __weak typeof(self) wself = self;
     [self.gridView setConfiguration:^UIView *(NSUInteger index) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.layer.borderWidth = 1;
+        button.layer.borderColor = [UIColor clearColor].CGColor;
         [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
         [button setTitleColor:ColorRGB(102, 102, 102) forState:UIControlStateNormal];
         [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [button addTarget:wself action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         return button;
 
     }];
     [self.contentView addSubview:self.gridView];
+    
     [self.gridView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@80);
         make.top.equalTo(@1);
@@ -113,6 +118,21 @@
     self.gridView.numberOfItems = 5;
     self.gridView.numberOfColumn = 3;
     [self.gridView reloadAllItems];
+}
+
+#pragma mark - event methods
+
+- (void)buttonClicked:(UIButton *)button {
+    [self.gridView.items enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
+        button.layer.borderColor = [UIColor clearColor].CGColor;
+    }];
+    
+    button.layer.borderColor = ColorRGB(102, 102, 102).CGColor;
+    NSUInteger index = [self.gridView.items indexOfObject:button];
+    
+    if ([self.delegate respondsToSelector:@selector(dropMenuCell:didSelectedItemAtIndex:)]) {
+        [self.delegate dropMenuCell:self didSelectedItemAtIndex:index];
+    }
 }
 
 #pragma mark - row methods

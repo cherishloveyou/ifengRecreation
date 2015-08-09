@@ -67,6 +67,7 @@
 		976BF0301B63636C00F18F2C /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BF02F1B63636C00F18F2C /* RechargeViewController.m */; };
 		976BF0331B63638200F18F2C /* WithDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BF0321B63638200F18F2C /* WithDrawViewController.m */; };
 		979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 979BC4EC1B26F6CB00070B0B /* HTTPClient.m */; };
+		97ABF0D41B76F28900E8D87A /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97ABF0D21B76F28900E8D87A /* MZTimerLabel.m */; };
 		97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F571B2FDCE9001FB2C4 /* SelectNumbersCell.m */; };
 		97D03F5A1B2FDCE9001FB2C4 /* SelectNumbersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D03F581B2FDCE9001FB2C4 /* SelectNumbersCell.xib */; };
 		97D03F5E1B2FDE88001FB2C4 /* BuyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F5C1B2FDE88001FB2C4 /* BuyingViewController.m */; };
@@ -212,6 +213,8 @@
 		976BF0321B63638200F18F2C /* WithDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithDrawViewController.m; sourceTree = "<group>"; };
 		979BC4EB1B26F6CB00070B0B /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		979BC4EC1B26F6CB00070B0B /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
+		97ABF0D11B76F28900E8D87A /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
+		97ABF0D21B76F28900E8D87A /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		97D03F561B2FDCE9001FB2C4 /* SelectNumbersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectNumbersCell.h; sourceTree = "<group>"; };
 		97D03F571B2FDCE9001FB2C4 /* SelectNumbersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectNumbersCell.m; sourceTree = "<group>"; };
 		97D03F581B2FDCE9001FB2C4 /* SelectNumbersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectNumbersCell.xib; sourceTree = "<group>"; };
@@ -515,6 +518,7 @@
 		9720B2401B3E4D4300648ABE /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				97ABF0CF1B76F28900E8D87A /* MZTimerLabel */,
 				9739E8231B4A91B8007AF273 /* HMSegmentedControl */,
 				974563A41B47C41900DDA8A1 /* JZNavigationExtension */,
 				971DF3E31B3E54BA005CF819 /* OAStackView */,
@@ -695,6 +699,15 @@
 				970E4C4F1B2BF431004544EA /* HTTPClient+User.m */,
 			);
 			path = HTTP;
+			sourceTree = "<group>";
+		};
+		97ABF0CF1B76F28900E8D87A /* MZTimerLabel */ = {
+			isa = PBXGroup;
+			children = (
+				97ABF0D11B76F28900E8D87A /* MZTimerLabel.h */,
+				97ABF0D21B76F28900E8D87A /* MZTimerLabel.m */,
+			);
+			path = MZTimerLabel;
 			sourceTree = "<group>";
 		};
 		97D03F4D1B2FDBD5001FB2C4 /* Buying */ = {
@@ -961,6 +974,7 @@
 				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,
 				00929D5F1B48C1A0001CFB4D /* LogInUserIonfoModel.m in Sources */,
 				97EF65051B5B793E0087C2AE /* LotteryRecord.m in Sources */,
+				97ABF0D41B76F28900E8D87A /* MZTimerLabel.m in Sources */,
 				00CCEA921B43C39100FB6853 /* FFScrollView.m in Sources */,
 				97DF97D31B75B5EA00A6413E /* DropMenuCell.m in Sources */,
 				0070B40A1B3C2F6700DF17AC /* RecommendationVC.m in Sources */,

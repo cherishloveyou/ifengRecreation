@@ -15,6 +15,9 @@
 #import <Masonry.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "BuyingDropMenuViewController.h"
+#import "MZTimerLabel.h"
+
+static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
 
 @interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate,ARTagListViewDelegate>
 
@@ -23,7 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIView *topContainerView;
 @property (strong, nonatomic) ARTagListView *CurrentSelectMenuList;
 @property (strong, nonatomic) UIButton *topRightArrowMenuButton;
-@property (strong, nonatomic) UILabel *countdownLabel;
+@property (nonatomic, strong) UILabel *countDwonTitleLabel;
+@property (strong, nonatomic) MZTimerLabel *countdownLabel;
 @property (strong, nonatomic) UIButton *shakeButton;
 
 @property (nonatomic, assign) BOOL dropMenuIsShowed;
@@ -87,10 +91,24 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     [self.topRightArrowMenuButton.layer setBorderWidth:0.5];
     [self.topContainerView addSubview:self.topRightArrowMenuButton];
     //
-    self.countdownLabel = [[UILabel alloc] init];
-    self.countdownLabel.text = @"test";
-    self.countdownLabel.font = [UIFont systemFontOfSize:16];
+    self.countDwonTitleLabel = [[UILabel alloc] init];
+    self.countDwonTitleLabel.textColor = [UIColor black50PercentColor];
+    self.countDwonTitleLabel.font = [UIFont systemFontOfSize:12];
+    self.countDwonTitleLabel.text = @"投注截止";
+    [self.topContainerView addSubview:self.countDwonTitleLabel];
+    self.countdownLabel = [[MZTimerLabel alloc] init];
+    self.countdownLabel.timerType = MZTimerLabelTypeTimer;
+    [self.countdownLabel setCountDownTime:COUNTDOWN_TIMEINTERVAL];
+    self.countdownLabel.timeFormat = @"mm:ss";
+    self.countdownLabel.font = [UIFont systemFontOfSize:11];
+    @weakify(self);
+    self.countdownLabel.endedBlock = ^(NSTimeInterval interval){
+        @strongify(self);
+        [self.navigationController popViewControllerAnimated:YES];
+    };
+    self.countdownLabel.textColor = [UIColor fadedBlueColor];
     [self.topContainerView addSubview:self.countdownLabel];
+    [self.countdownLabel start];
     
     self.shakeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.shakeButton.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -109,10 +127,16 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
         make.right.equalTo(self.topRightArrowMenuButton.mas_left);
         make.bottom.equalTo(self.topRightArrowMenuButton);
     }];
+    
+    [self.countDwonTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.CurrentSelectMenuList.mas_bottom);
+        make.left.equalTo(@10);
+        make.bottom.equalTo(@0);
+    }];
 
     [self.countdownLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.CurrentSelectMenuList.mas_bottom);
-        make.left.equalTo(@10);
+        make.left.equalTo(self.countDwonTitleLabel.mas_right);
         make.bottom.equalTo(@0);
     }];
     

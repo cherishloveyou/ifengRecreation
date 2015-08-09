@@ -9,9 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "DropMenuNode.h"
 
+@class DropMenuCell;
+@protocol DropMenuCellDelegate <NSObject>
+
+- (void)dropMenuCell:(DropMenuCell *)cell didSelectedItemAtIndex:(NSUInteger)index;
+
+@end
+
 @interface DropMenuCell : UITableViewCell
 
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, weak) id<DropMenuCellDelegate> delegate;
 
 - (instancetype)initWithIndex:(NSUInteger)index reuseIdentifier:(NSString *)identifier;
 
