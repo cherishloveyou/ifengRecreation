@@ -8,6 +8,7 @@
 
 #import "LotteryDetailVC.h"
 #import "LotteryDetailCell.h"
+#import "BuyingViewController.h"
 
 @interface LotteryDetailVC ()<UITableViewDataSource,UITableViewDelegate>
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0000E7B61B77647F00633075 /* ADDBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0000E7B51B77647F00633075 /* ADDBankCardViewController.m */; };
 		005FA6C41B5FCDDC0036AB89 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */; };
 		005FA6C81B67A6F90036AB89 /* AnnouncementDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6C61B67A6F90036AB89 /* AnnouncementDetailVC.m */; };
 		005FA6C91B67A6F90036AB89 /* AnnouncementDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005FA6C71B67A6F90036AB89 /* AnnouncementDetailVC.xib */; };
@@ -102,6 +103,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0000E7B41B77647F00633075 /* ADDBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDBankCardViewController.h; sourceTree = "<group>"; };
+		0000E7B51B77647F00633075 /* ADDBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDBankCardViewController.m; sourceTree = "<group>"; };
 		005FA6C21B5FCDDC0036AB89 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		005FA6C51B67A6F90036AB89 /* AnnouncementDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementDetailVC.h; sourceTree = "<group>"; };
@@ -781,6 +784,8 @@
 			children = (
 				97D9E5211B51152E00048878 /* BankCardManageViewController.h */,
 				97D9E5221B51152E00048878 /* BankCardManageViewController.m */,
+				0000E7B41B77647F00633075 /* ADDBankCardViewController.h */,
+				0000E7B51B77647F00633075 /* ADDBankCardViewController.m */,
 			);
 			path = BankCard;
 			sourceTree = "<group>";
@@ -853,7 +858,7 @@
 				TargetAttributes = {
 					974E85911B11610E00B57C9E = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = D6F7XA55QJ;
+						DevelopmentTeam = 44P9L4RG9U;
 					};
 					974E85AA1B11610E00B57C9E = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -972,6 +977,7 @@
 				00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */,
 				00EDDD6E1B304ED1001F4CB8 /* UIAlertView+DisMiss.m in Sources */,
 				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,
+				0000E7B61B77647F00633075 /* ADDBankCardViewController.m in Sources */,
 				00929D5F1B48C1A0001CFB4D /* LogInUserIonfoModel.m in Sources */,
 				97EF65051B5B793E0087C2AE /* LotteryRecord.m in Sources */,
 				97ABF0D41B76F28900E8D87A /* MZTimerLabel.m in Sources */,
@@ -1144,15 +1150,16 @@
 			baseConfigurationReference = D007C86A7ABE68F0E5D2E609 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zhongshan Changsheng Metal Products Co., Ltd.";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Lottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "82e6dddb-46a2-4774-9a3e-8253400df6c1";
 			};
 			name = Debug;
 		};
@@ -1161,15 +1168,16 @@
 			baseConfigurationReference = B8737ABB975CB6FB974DA51D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zhongshan Changsheng Metal Products Co., Ltd.";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Lottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "82e6dddb-46a2-4774-9a3e-8253400df6c1";
 			};
 			name = Release;
 		};

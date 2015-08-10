@@ -12,6 +12,10 @@
 #import "FFScrollView.h"
 #import "LoginViewController.h"
 #import "HTTPClient+User.h"
+#import "AnnouncementVC.h"
+#import "WithDrawViewController.h"
+#import "RechargeViewController.h"
+#import "BuyingViewController.h"
 
 @interface RecommendationVC ()
 {
@@ -74,23 +78,19 @@
     __weak typeof(self) weakself = self;
     login.imageBlock = ^(NSArray *imageurls){
         //添加广告栏
-//        if (scrollView) {
-//            [scrollView removeFromSuperview];
-//        }
-//        scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
-//        [weakself.advertisementView addSubview:scrollView];
-//        
-//        weakself.userName.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
-//        weakself.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
-//        weakself.yesterdayMony.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"yesterDayRewards"]];
-//        
-//        [weakself getTheLastLotteryNumber];
+        if (scrollView) {
+            [scrollView removeFromSuperview];
+        }
+        scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageurls];
+        [weakself.advertisementView addSubview:scrollView];
+        
+        weakself.userName.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
+        weakself.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
+        weakself.yesterdayMony.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"yesterDayRewards"]];
+        
+        [weakself getTheLastLotteryNumber];
     };
     
-    
-    
-    
-
 //    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
 //    if (scrollView) {
 //        [scrollView removeFromSuperview];
@@ -171,7 +171,7 @@
     chooseLottery.hotLotteryIds = self.hotLotteryIds;
     
     __weak typeof(self) weakSelf = self;
-    
+    //选择热门彩票后回调
     chooseLottery.selectLotteryBlock = ^(NSMutableArray *lotteryArray){
         weakSelf.hotLotteryIds = [NSMutableArray arrayWithArray:lotteryArray];
         
@@ -246,6 +246,14 @@
  *  @param sender
  */
 - (IBAction)topupMoney:(id)sender{
+    self.dropDownButton.selected = NO;
+    [grayBackViewf removeFromSuperview];
+    self.infoViewConstraint.constant = -190;
+    self.usetinfoView.hidden = YES;
+    grayBackViewf = nil;
+    
+    RechargeViewController *rechargeVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"RechargeViewController"];
+    [self.navigationController pushViewController:rechargeVC animated:YES];
     
 }
 /**
@@ -254,6 +262,13 @@
  *  @param sender
  */
 - (IBAction)toWithdrawMoney:(id)sender{
+    self.dropDownButton.selected = NO;
+    [grayBackViewf removeFromSuperview];
+    self.infoViewConstraint.constant = -190;
+    self.usetinfoView.hidden = YES;
+    grayBackViewf = nil;
+    WithDrawViewController *drawVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WithDrawViewController"];
+    [self.navigationController pushViewController:drawVC animated:YES];
     
 }
 /**
@@ -262,7 +277,13 @@
  *  @param sender
  */
 - (IBAction)recordOfBuy:(id)sender{
+    self.dropDownButton.selected = NO;
+    [grayBackViewf removeFromSuperview];
+    self.infoViewConstraint.constant = -190;
+    self.usetinfoView.hidden = YES;
+    grayBackViewf = nil;
     
+    [self.tabBarController setSelectedIndex:3];
 }
 /**
  *  信息中心
@@ -270,7 +291,13 @@
  *  @param sender 
  */
 - (IBAction)myMessage:(id)sender{
-    
+    self.dropDownButton.selected = NO;
+    [grayBackViewf removeFromSuperview];
+    self.infoViewConstraint.constant = -190;
+    self.usetinfoView.hidden = YES;
+    grayBackViewf = nil;
+    AnnouncementVC *announcementVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AnnouncementVC"];
+    [self.navigationController pushViewController:announcementVC animated:YES];
 }
 
 

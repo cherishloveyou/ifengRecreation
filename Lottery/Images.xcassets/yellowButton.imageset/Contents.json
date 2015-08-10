@@ -1,52 +1,19 @@
 {
   "images" : [
     {
-      "resizing" : {
-        "mode" : "3-part-horizontal",
-        "center" : {
-          "mode" : "fill",
-          "width" : 5
-        },
-        "capInsets" : {
-          "right" : 22,
-          "left" : 28
-        }
-      },
       "idiom" : "universal",
-      "filename" : "yellowButton.png",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "yellowButton.png"
     },
     {
-      "resizing" : {
-        "mode" : "3-part-horizontal",
-        "center" : {
-          "mode" : "fill",
-          "width" : 1
-        },
-        "capInsets" : {
-          "right" : 37,
-          "left" : 50
-        }
-      },
       "idiom" : "universal",
-      "filename" : "yellowButton@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "yellowButton@2x.png"
     },
     {
-      "resizing" : {
-        "mode" : "3-part-horizontal",
-        "center" : {
-          "mode" : "fill",
-          "width" : 1
-        },
-        "capInsets" : {
-          "right" : 27,
-          "left" : 54
-        }
-      },
       "idiom" : "universal",
-      "filename" : "yellowButton@3x.png",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "yellowButton@3x.png"
     }
   ],
   "info" : {
