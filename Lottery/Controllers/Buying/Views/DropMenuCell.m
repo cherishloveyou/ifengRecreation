@@ -11,6 +11,8 @@
 #import <Masonry.h>
 #import "ARGridView.h"
 
+NSString *const kSelectPlayOptionNotification = @"kSelectPlayOptionNotification";
+
 @interface DropMenuCell ()
 
 @property (nonatomic, strong) ARGridView *gridView;
@@ -37,6 +39,8 @@
 }
 
 - (void)baseSetUp {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectPlayOptionNotification:) name:kSelectPlayOptionNotification object:nil];
+    
     self.seletedIndex = NSNotFound;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.titleLabel = [[UILabel alloc] init];
@@ -134,17 +138,24 @@
         return;
     }
     
-    if (self.seletedIndex != NSNotFound) {
-        UIButton *preButton = self.gridView.items[self.seletedIndex];
-        preButton.layer.borderColor = [UIColor clearColor].CGColor;
-    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kSelectPlayOptionNotification object:nil];
+    
     button.layer.borderColor = ColorRGB(102, 102, 102).CGColor;
     self.seletedIndex = index;
+    LotteryPlayOption *option = self.node.options[self.seletedIndex];
     
-    
-    if ([self.delegate respondsToSelector:@selector(dropMenuCell:didSelectedItemAtIndex:title:)]) {
-        [self.delegate dropMenuCell:self didSelectedItemAtIndex:index title:button.titleLabel.text];
+    if ([self.delegate respondsToSelector:@selector(dropMenuCell:didSelectedOption:)]) {
+        [self.delegate dropMenuCell:self didSelectedOption:option];
     }
+}
+
+#pragma mark - notification methods
+
+- (void)didSelectPlayOptionNotification:(NSNotification *)notification {
+    [self.gridView.items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        UIButton *preButton = self.gridView.items[idx];
+        preButton.layer.borderColor = [UIColor clearColor].CGColor;
+    }];
 }
 
 #pragma mark - row methods
@@ -215,10 +226,10 @@
 - (void)fillCellWithNode:(DropMenuNode *)node {
     self.node = node;
     self.titleLabel.text = node.title;
-    [node.options enumerateObjectsUsingBlock:^(NSString *option, NSUInteger idx, BOOL *stop) {
+    [node.options enumerateObjectsUsingBlock:^(LotteryPlayOption *option, NSUInteger idx, BOOL *stop) {
         if (idx < self.gridView.items.count) {
             UIButton *button = self.gridView.items[idx];
-            [button setTitle:option forState:UIControlStateNormal];
+            [button setTitle:option.title forState:UIControlStateNormal];
         }
     }];
 }

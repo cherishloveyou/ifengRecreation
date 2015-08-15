@@ -87,7 +87,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     self.CurrentSelectMenuList.tagListDelegate = self;
     [self.topContainerView addSubview:self.CurrentSelectMenuList];
     //menu button
-    [self.CurrentSelectMenuList insertTagWithTitle:@"复式" atIndex:0 selected:YES];
+    [self.CurrentSelectMenuList insertTagWithTitle:@"五星直选" atIndex:0 selected:YES];
     
     self.topRightArrowMenuButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.topRightArrowMenuButton setImage:[UIImage imageNamed:@"drop_button"] forState:UIControlStateNormal];
@@ -174,7 +174,9 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 }
 
 - (void)showDropMenu {
-    CGRect frame = CGRectMake(0, CGRectGetMaxY(self.topContainerView.frame), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)- CGRectGetMaxY(self.topContainerView.frame));
+    CGRect startFrame = [self.topContainerView convertRect:self.topRightArrowMenuButton.frame toView:self.view];
+    
+    CGRect frame = CGRectMake(0, CGRectGetMaxY(startFrame), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)- CGRectGetMaxY(startFrame));
     
     [self.dropMenu showDropMenuInViewController:self frame:frame completion:^{
         self.dropMenuIsShowed = YES;
@@ -234,8 +236,9 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 #pragma mark - BuyingDropMenuViewControllerDelegate methods
 
-- (void)dropMenuController:(BuyingDropMenuViewController *)controller didSelectMenuItemAtIndexPath:(NSIndexPath *)indexPath title:(NSString *)title {
+- (void)dropMenuController:(BuyingDropMenuViewController *)controller didSelectMenuItemAtIndexPath:(NSIndexPath *)indexPath option:(LotteryPlayOption *)option {
     [self dismissDropMenu];
+    NSString *title = lotteryPlayTypeString[option.type];
     [self.CurrentSelectMenuList insertTagWithTitle:title atIndex:0 selected:YES];
 }
 
@@ -263,8 +266,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 #pragma mark - UITableViewDelegate methods
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 }
 

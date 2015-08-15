@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <ReactiveCocoa.h>
+#import "LotteryPlayOption.h"
 
 extern NSString *const TouchBackgroundNotification;
 
 @class BuyingDropMenuViewController;
 @protocol BuyingDropMenuViewControllerDelegate <NSObject>
 
-- (void)dropMenuController:(BuyingDropMenuViewController *)controller didSelectMenuItemAtIndexPath:(NSIndexPath *)indexPath title:(NSString *)title;
+- (void)dropMenuController:(BuyingDropMenuViewController *)controller didSelectMenuItemAtIndexPath:(NSIndexPath *)indexPath option:(LotteryPlayOption *)option;
 
 @end
 
