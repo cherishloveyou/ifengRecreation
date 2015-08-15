@@ -17,6 +17,7 @@
 #import "BuyingDropMenuViewController.h"
 #import "MZTimerLabel.h"
 #import "BuyingBottomView.h"
+#import "LotteryPlayOption.h"
 
 static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
 
@@ -35,6 +36,8 @@ static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
 @property (nonatomic, strong) BuyingDropMenuViewController *dropMenu;
 @property (weak, nonatomic) IBOutlet BuyingBottomView *bottomBar;
 @property (nonatomic, assign) BOOL canBuyLottery;
+
+@property (nonatomic, strong) LotteryPlayOption *selectedOption;
 
 @end
 
@@ -55,6 +58,8 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 -(void)baseConfigs
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissDropMenu) name:TouchBackgroundNotification object:nil];
+    
+    self.selectedOption = [LotteryPlayOption optionWithType:LotteryPlayType5zhi];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
@@ -71,13 +76,8 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     [self.navigationItem setRightBarButtonItem:infoItem];
     
     self.datas = [NSMutableArray array];
-    NSArray *titles = @[@"万",@"千",@"百",@"十",@"个"];
-    //5 行
-    for (int i = 0; i < titles.count; i++) {
-        NumberCellNode *node = [[NumberCellNode alloc] init];
-        node.title = titles[i];
-        [self.datas addObject:node];
-    }
+    [self buildDataWithOption:self.selectedOption];
+    
     [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
     
     //
@@ -150,6 +150,171 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
         make.right.equalTo(@-5);
         make.bottom.equalTo(@0);
     }];
+}
+
+- (void)buildDataWithOption:(LotteryPlayOption *)option {
+    [self.datas removeAllObjects];
+    switch (option.type) {
+        case LotteryPlayType5zhi: {
+            [self addNodesWithTitles:@[@"万",@"千",@"百",@"十",@"个"]];
+            break;
+        }
+        case LotteryPlayType5zu120: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType5zu60:
+        case LotteryPlayType5zu30: {
+            [self addNodesWithTitles:@[@"二重",@"单"]];
+            break;
+        }
+        case LotteryPlayType5zu20: {
+            [self addNodesWithTitles:@[@"三重",@"单"]];
+            break;
+        }
+        case LotteryPlayType5zu10: {
+            [self addNodesWithTitles:@[@"三重",@"二重"]];
+            break;
+        }
+        case LotteryPlayType5zu5: {
+            [self addNodesWithTitles:@[@"四重",@"单"]];
+            break;
+        }
+        case LotteryPlayType4zhi: {
+            [self addNodesWithTitles:@[@"千",@"百",@"十",@"个"]];
+            break;
+        }
+        case LotteryPlayType4zu24: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType4zu12: {
+            [self addNodesWithTitles:@[@"二重",@"单"]];
+            break;
+        }
+        case LotteryPlayTypeQ3zhi: {
+            [self addNodesWithTitles:@[@"万",@"千",@"百"]];
+            break;
+        }
+        case LotteryPlayTypeQ3zu3:
+        case LotteryPlayTypeQ3zu6: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+//        case LotteryPlayTypeQ3zuHe: {
+//            <#statement#>
+//            break;
+//        }
+        case LotteryPlayTypeQ3zuBD: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayTypeH3zhiF: {
+            [self addNodesWithTitles:@[@"百",@"十",@"个"]];
+            break;
+        }
+        case LotteryPlayTypeH3zhiK:
+        case LotteryPlayTypeH3zu3:
+        case LotteryPlayTypeH3zu6: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+//        case LotteryPlayTypeH3zuHe: {
+//            <#statement#>
+//            break;
+//        }
+        case LotteryPlayTypeH3zuBD: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType2zhiH2: {
+            [self addNodesWithTitles:@[@"十",@"个"]];
+            break;
+        }
+//        case LotteryPlayType2zhiH2He: {
+//            <#statement#>
+//            break;
+//        }
+        case LotteryPlayType2zhiH2K: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType2zhiQ2: {
+            [self addNodesWithTitles:@[@"万",@"千"]];
+            break;
+        }
+        case LotteryPlayType2zhiQ2K: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType2zuH2: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType2zuQ2: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayTypeDWD: {
+            [self addNodesWithTitles:@[@"万",@"千",@"百",@"十",@"个"]];
+            break;
+        }
+        case LotteryPlayType3BDWH31: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType3BDWH32: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType3BDWQ31: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType3BDWQ32: {
+            [self addNodesWithTitles:@[@"不定位"]];
+            break;
+        }
+        case LotteryPlayType4BDW2: {
+            [self addNodesWithTitles:@[@"不定位"]];
+            break;
+        }
+        case LotteryPlayType5BDW2: {
+            [self addNodesWithTitles:@[@"不定位"]];
+            break;
+        }
+        case LotteryPlayType5BDW3: {
+            [self addNodesWithTitles:@[@"不定位"]];
+            break;
+        }
+        case LotteryPlayTypeT1: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayTypeTH: {
+            [self addNodesWithTitles:@[@"二重"]];
+            break;
+        }
+        case LotteryPlayTypeT3: {
+            [self addNodesWithTitles:@[@"三重"]];
+            break;
+        }
+        case LotteryPlayTypeT4: {
+            [self addNodesWithTitles:@[@"四重"]];
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+}
+
+- (void)addNodesWithTitles:(NSArray *)titles {
+    for (int i = 0; i < titles.count; i++) {
+        NumberCellNode *node = [[NumberCellNode alloc] init];
+        node.title = titles[i];
+        [self.datas addObject:node];
+    }
 }
 
 -(void)randomSelectNumbers
@@ -240,6 +405,11 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     [self dismissDropMenu];
     NSString *title = lotteryPlayTypeString[option.type];
     [self.CurrentSelectMenuList insertTagWithTitle:title atIndex:0 selected:YES];
+    
+    //
+    self.selectedOption = option;
+    [self buildDataWithOption:self.selectedOption];
+    [self.tableView reloadData];
 }
 
 #pragma mark - ARTagListViewDelegate methods

@@ -134,9 +134,6 @@ NSString *const kSelectPlayOptionNotification = @"kSelectPlayOptionNotification"
 - (void)buttonClicked:(UIButton *)button {
     
     NSUInteger index = [self.gridView.items indexOfObject:button];
-    if (index == self.seletedIndex) {
-        return;
-    }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kSelectPlayOptionNotification object:nil];
     
