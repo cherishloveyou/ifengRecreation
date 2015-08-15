@@ -118,7 +118,12 @@
 {
     LogInUserIonfoModel *user = [LogInUserIonfoModel defaultUserInfo];
     
-    self.title = user.userName;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor whiteColor];
+    label.text = user.userName;
+    self.navigationItem.titleView = label;
 }
 
 #pragma mark - event methods

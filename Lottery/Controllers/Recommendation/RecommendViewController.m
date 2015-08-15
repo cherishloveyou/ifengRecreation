@@ -26,12 +26,6 @@
     [self addChildViewController:recmment];
     recmment.view.frame = self.view.bounds;
     [self.view addSubview:recmment.view];
-    
-    [LogInUserIonfoModel userName];
-    
-    [LogInUserIonfoModel userId];
-    
-    [LogInUserIonfoModel userType];
 
 }
 

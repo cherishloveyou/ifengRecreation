@@ -17,8 +17,7 @@
 #import "RechargeViewController.h"
 #import "BuyingViewController.h"
 
-@interface RecommendationVC ()
-{
+@interface RecommendationVC (){
     //显示彩票种类
     __weak IBOutlet UIImageView *firstImage;
     __weak IBOutlet UIImageView *secondImage;
@@ -36,8 +35,9 @@
     UIView *grayBackViewf;
     //广告栏
     FFScrollView *scrollView;
-    
 }
+
+@property (nonatomic,strong) UIImageView *addButtonImage;
 
 @end
 
@@ -54,7 +54,9 @@
     if (!_hotLotteryIds) {
         
         _hotLotteryIds = [NSMutableArray array];
-        [_hotLotteryIds addObjectsFromArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"hotLotteryIds"]];
+//        [_hotLotteryIds addObjectsFromArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"hotLotteryIds"]];
+        [_hotLotteryIds addObject:[UIImage imageNamed:@"IMG_cqssc"]];
+        [_hotLotteryIds addObject:[UIImage imageNamed:@"IMG_sd11-5"]];
     }
     return _hotLotteryIds;
 }
@@ -68,7 +70,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self refreshHotLotteryImages:self.hotLotteryIds];
     // Do any additional setup after loading the view from its nib.
     self.navigationController.navigationBarHidden = YES;
 //    NSLog(@"advertisementView frame == %@",self.advertisementView);
@@ -99,22 +101,12 @@
         
         [weakself getTheLastLotteryNumber];
     };
-    
-//    NSArray *imageUrlArray = [uerdictionary objectForKey:@"adPictures"];
-//    if (scrollView) {
-//        [scrollView removeFromSuperview];
-//    }
-    
-        
-//    [self refreshHotLotteryImages:self.hotLotteryIds];
-//
-//    
-//    //添加广告栏
-//    scrollView = [[FFScrollView alloc] initPageViewWithFrame:self.advertisementView.bounds views:imageUrlArray];
-//    
-//    [self.advertisementView addSubview:scrollView];
-//    
-//    [self refreshHotLotteryImages:self.hotLotteryIds];
+    if ( sCREENWIDTH > 320 && sCREENWIDTH <= 375) {
+        NSLog(@"%f",sCREENWIDTH);
+        self.rightFirstConstraint.constant = -35;
+    }else if(sCREENWIDTH > 375){
+        self.rightFirstConstraint.constant = -55;
+    }
     
 }
 
@@ -183,11 +175,15 @@
         UIImageView *tapImageView = (UIImageView*)tap.view;
         if (!tapImageView.image) {
             return;
-        }else if (![tapImageView.image isEqual:[UIImage imageNamed:@"IMG_1294"]]){
+        }else if (tapImageView != self.addButtonImage){
             //跳转至购买彩票页面
 #warning 跳转至对应彩票购买页
             NSInteger imageTag = tapImageView.tag;
-            NSLog(@"%d",imageTag);
+            if (imageTag == 0) {//到重庆时时彩
+                
+            }else if(imageTag == 1){//山东十一选5
+                
+            }
             
             return;
         }
@@ -204,8 +200,9 @@
         
         [weakSelf refreshHotLotteryImages:weakSelf.hotLotteryIds];
     };
+    [SVProgressHUD showInfoWithStatus:@"更多精彩彩票建设中，敬请期待!"];
     
-    [self presentViewController:chooseLottery animated:YES completion:nil];
+//    [self presentViewController:chooseLottery animated:YES completion:nil];
     
 }
 
@@ -216,10 +213,17 @@
     
     if (hotlottery.count < 6) {
         for (int i = 0; i < hotlottery.count; i++) {
-            
+            UIImageView *imageView = self.lotteryArray[i];
+            [imageView setImage:hotlottery[i]];
         }
-    }else{
-        
+        UIImageView *addImage = self.lotteryArray[hotlottery.count];
+        [addImage setImage:[UIImage imageNamed:@"IMG_1294"]];
+        self.addButtonImage = addImage;
+    }else if(hotlottery.count == 6){
+        for (int i = 0; i < hotlottery.count; i++) {
+            UIImageView *imageView = self.lotteryArray[i];
+            [imageView setImage:hotlottery[i]];
+        }
     }
     
 }

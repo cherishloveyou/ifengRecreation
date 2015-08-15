@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "ModifyPasswordViewController.h"
+#import <SVProgressHUD.h>
 
 NSString *const ModifyLoginPasswordSegue = @"ModifyLoginPassword";
 NSString *const ModifySafePasswordSegue = @"ModifySafePassword";
@@ -113,6 +114,11 @@ NSString *const ModifySafePasswordSegue = @"ModifySafePassword";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 3 && indexPath.row == 0) {
+        
+        [SVProgressHUD showInfoWithStatus:@"当前版本已是最新版本"];
+    }
 }
 
 @end

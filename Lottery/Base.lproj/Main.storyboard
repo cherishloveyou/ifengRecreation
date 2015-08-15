@@ -1625,32 +1625,121 @@
             </objects>
             <point key="canvasLocation" x="-2133" y="815"/>
         </scene>
-        <!--Recharge View Controller-->
+        <!--充值-->
         <scene sceneID="h9i-pn-8Nh">
             <objects>
                 <tableViewController storyboardIdentifier="RechargeViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pKH-f5-xSZ" customClass="RechargeViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WXc-4c-Rsn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WXc-4c-Rsn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="g3P-4m-23k">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3P-4m-23k" id="ksg-x8-Le8">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="xBi-hE-Z9R">
+                            <rect key="frame" x="0.0" y="174" width="320" height="111"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGM-0b-wpS">
+                                    <rect key="frame" x="10" y="36" width="300" height="40"/>
+                                    <color key="backgroundColor" red="0.3920138889" green="0.6297453704" blue="0.70570023150000005" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="wll-8q-7Mw"/>
+                                    </constraints>
+                                    <state key="normal" title="确认充值" backgroundImage="loginButton">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="makeSureToRecharge:" destination="pKH-f5-xSZ" eventType="touchUpInside" id="nCX-6T-1td"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="RGM-0b-wpS" firstAttribute="top" secondItem="xBi-hE-Z9R" secondAttribute="top" constant="36" id="eVp-J5-vSq"/>
+                                <constraint firstItem="RGM-0b-wpS" firstAttribute="leading" secondItem="xBi-hE-Z9R" secondAttribute="leading" constant="10" id="ytX-T8-6DJ"/>
+                            </constraints>
+                        </view>
+                        <sections>
+                            <tableViewSection headerTitle="  " id="2b3-tm-qVP">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="g3P-4m-23k">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3P-4m-23k" id="ksg-x8-Le8">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值方式:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-pm-wbI">
+                                                    <rect key="frame" x="15" y="13" width="60.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择您的充值方式" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tCu-V7-uH2">
+                                                    <rect key="frame" x="83" y="7" width="214" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="KMl-xs-fyk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="pKH-f5-xSZ" id="Nm8-qd-z9q"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tCu-V7-uH2" secondAttribute="trailing" constant="15" id="4Fe-mt-3hv"/>
+                                                <constraint firstAttribute="centerY" secondItem="Vpa-pm-wbI" secondAttribute="centerY" constant="0.25" id="RaP-X3-O6c"/>
+                                                <constraint firstItem="Vpa-pm-wbI" firstAttribute="leading" secondItem="ksg-x8-Le8" secondAttribute="leadingMargin" constant="7" id="a2F-j1-DCS"/>
+                                                <constraint firstItem="tCu-V7-uH2" firstAttribute="centerY" secondItem="Vpa-pm-wbI" secondAttribute="centerY" constant="0.5" id="dtg-8i-vQg"/>
+                                                <constraint firstItem="tCu-V7-uH2" firstAttribute="leading" secondItem="Vpa-pm-wbI" secondAttribute="trailing" constant="7.5" id="zIs-5G-F4Q"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RtP-fS-SRg">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RtP-fS-SRg" id="bOD-Tg-MI4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值金额:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItJ-Yd-yhs">
+                                                    <rect key="frame" x="15" y="13" width="60.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的充值金额" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f5k-iV-jQO">
+                                                    <rect key="frame" x="83" y="7" width="222" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="9xX-d9-0oy"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="f5k-iV-jQO" firstAttribute="leading" secondItem="ItJ-Yd-yhs" secondAttribute="trailing" constant="7.5" id="7pZ-AU-sd1"/>
+                                                <constraint firstAttribute="centerY" secondItem="ItJ-Yd-yhs" secondAttribute="centerY" constant="0.25" id="9Uk-dh-nPG"/>
+                                                <constraint firstItem="ItJ-Yd-yhs" firstAttribute="centerY" secondItem="f5k-iV-jQO" secondAttribute="centerY" constant="-0.5" id="Lnw-aU-nPR"/>
+                                                <constraint firstItem="ItJ-Yd-yhs" firstAttribute="leading" secondItem="bOD-Tg-MI4" secondAttribute="leadingMargin" constant="7" id="uxo-rg-qc8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="f5k-iV-jQO" secondAttribute="trailing" constant="7" id="ygK-5w-xrw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="pKH-f5-xSZ" id="UBk-d5-ZRa"/>
                             <outlet property="delegate" destination="pKH-f5-xSZ" id="fGb-st-uyO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="g4B-Yk-ib5"/>
+                    <navigationItem key="navigationItem" title="充值" id="g4B-Yk-ib5"/>
+                    <connections>
+                        <outlet property="rechargeMoneyTextField" destination="f5k-iV-jQO" id="JyV-LK-4DZ"/>
+                        <outlet property="rechargeTypeTextField" destination="tCu-V7-uH2" id="fs5-gU-3Uu"/>
+                        <outlet property="tableFooterView" destination="xBi-hE-Z9R" id="vGZ-2A-X4G"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8w-lO-6Vt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2553" y="1515"/>
+            <point key="canvasLocation" x="-2638" y="1470"/>
         </scene>
         <!--精彩推荐-->
         <scene sceneID="Fui-Mq-T6K">
