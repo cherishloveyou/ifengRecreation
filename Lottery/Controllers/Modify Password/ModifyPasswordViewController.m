@@ -49,19 +49,101 @@
 #pragma mark -  event methdos
 
 - (IBAction)doneItemClicked:(id)sender {
-    UserHandlerAction action = UserHandlerActionModifySafePassword;
-    if (self.modifyType == PasswordTypeLogin) {
-        action = UserHandlerActionModifyLoginPassword;
+    
+    if (![self.theNewTextField.text isEqualToString:self.confirmTextField.text]) {
+        [SVProgressHUD showErrorWithStatus:@"您前后输入的密码不一致!"];
+        [self.theNewTextField becomeFirstResponder];
+        return;
     }
     
+    UserHandlerAction action = UserHandlerActionModifySafePassword;
+    NSDictionary *parameters = @{@"oldpwd":self.currentTextField.text,
+                                 @"npwd":self.theNewTextField.text};
+    
+    if (self.modifyType == PasswordTypeLogin) {//修改安全码
+        
+        
+        action = UserHandlerActionModifyLoginPassword;
+        
+        parameters = @{@"currentPwd":self.currentTextField.text,
+                       @"newPwd":self.theNewTextField.text,@"confrimPwd":self.confirmTextField.text};
+    }
+    
+    
+    __weak typeof(self) weakself = self;
+    
+    
+    
     [HTTPClient userHandleWithAction:action
-                          paramaters:@{@"currentPwd":self.currentTextField.text,
-                                       @"newPwd":self.theNewTextField.text,@"confrimPwd":self.confirmTextField.text}
+                          paramaters:parameters
                              success:^(id task, id response) {
-                                 [self.navigationController popViewControllerAnimated:YES];
+                                 NSInteger code = [[response valueForKey:@"code"] integerValue];
+                                 [weakself showInfoWithResultCode:code];
+                                 
                              } failed:^(id task, NSError *error) {
+                                 
                                  
                              }];
 }
+
+- (void)showInfoWithResultCode:(NSInteger)code{
+    
+    
+    switch (code) {
+        case 0:{//成功
+            [SVProgressHUD showSuccessWithStatus:@"密码修改成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+            break;
+        case -1:{
+            [SVProgressHUD showInfoWithStatus:@"请输入新密码"];
+            [self.theNewTextField becomeFirstResponder];
+        }
+            break;
+        case -2:{
+            
+            if (self.modifyType == PasswordTypeLogin) {
+                [SVProgressHUD showErrorWithStatus:@"您前后输入的密码不一致!"];
+                [self.theNewTextField becomeFirstResponder];
+            }else{
+                
+            }
+        }
+            break;
+        case -3:{
+            if (self.modifyType == PasswordTypeLogin) {
+                
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"含有非法字符!"];
+                [self.theNewTextField becomeFirstResponder];
+            }
+        }
+            break;
+        case -4:{
+            if (self.modifyType == PasswordTypeLogin) {
+                [SVProgressHUD showErrorWithStatus:@"您输入的密码不合法!"];
+                [self.theNewTextField becomeFirstResponder];
+            }else{
+                [SVProgressHUD showInfoWithStatus:@"数据库操作失败,请稍后再试!"];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }
+            break;
+        case -5:{
+            if (self.modifyType == PasswordTypeLogin) {
+                
+            }else{
+                [SVProgressHUD showInfoWithStatus:@"原始密码和新密码一致!"];
+                [self.theNewTextField becomeFirstResponder];
+            }
+        }
+            break;
+        default:
+            break;
+    }
+    
+    
+}
+
 
 @end

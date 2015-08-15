@@ -62,8 +62,13 @@ NSString *const ModifySafePasswordSegue = @"ModifySafePassword";
 }
 
 - (IBAction)logOutButtonClicked:(id)sender {
+    
 }
 
 #pragma mark - Table view data source
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end

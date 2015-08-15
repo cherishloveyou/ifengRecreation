@@ -213,6 +213,7 @@
                  break;
 
              default:
+                 [SVProgressHUD showErrorWithStatus:nil];
                  break;
          }
      }

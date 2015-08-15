@@ -936,7 +936,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="修改密码" id="Py4-Hk-gIB">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="Rm0-YA-7RD">
+                        <barButtonItem key="rightBarButtonItem" title="完成" style="plain" id="Rm0-YA-7RD">
                             <connections>
                                 <action selector="doneItemClicked:" destination="enm-uH-kV4" id="KnD-pP-mIy"/>
                             </connections>
@@ -1568,6 +1568,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="CX7-Ab-jQI"/>
+        <segue reference="y8L-a8-AAW"/>
     </inferredMetricsTieBreakers>
 </document>
