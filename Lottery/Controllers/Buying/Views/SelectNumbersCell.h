@@ -22,8 +22,6 @@
 
 @property (nonatomic, weak) id<SelectNumbersCellDelegate> delegate;
 
-//-(void)fillCellWithNumbersSet:(NSMutableOrderedSet *)numbersSet title:(NSString *)title;
-
--(void)fillCellWithNode:(NumberCellNode *)node;
+- (void)fillCellWithNode:(NumberCellNode *)node;
 
 @end

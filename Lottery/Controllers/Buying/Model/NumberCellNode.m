@@ -16,6 +16,7 @@
     if (self) {
         self.numbersSet = [NSMutableOrderedSet orderedSet];
         self.segmentSelectIndex = NSNotFound;
+        self.cellType = NumberCellTypeDefault;
     }
     return self;
 }

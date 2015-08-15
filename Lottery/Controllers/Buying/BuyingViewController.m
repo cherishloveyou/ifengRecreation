@@ -17,6 +17,7 @@
 #import "BuyingDropMenuViewController.h"
 #import "MZTimerLabel.h"
 #import "BuyingBottomView.h"
+#import "LotteryPlayOption.h"
 
 static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
 
@@ -36,11 +37,14 @@ static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
 @property (weak, nonatomic) IBOutlet BuyingBottomView *bottomBar;
 @property (nonatomic, assign) BOOL canBuyLottery;
 
+@property (nonatomic, strong) LotteryPlayOption *selectedOption;
+
 @end
 
 @implementation BuyingViewController
 
 static NSString *reuseIdentifier = @"SelectNumbersCell";
+static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 
 #pragma mark - lifecycle methods
 
@@ -55,6 +59,8 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 -(void)baseConfigs
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissDropMenu) name:TouchBackgroundNotification object:nil];
+    
+    self.selectedOption = [LotteryPlayOption optionWithType:LotteryPlayType5zhi];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
@@ -71,14 +77,10 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     [self.navigationItem setRightBarButtonItem:infoItem];
     
     self.datas = [NSMutableArray array];
-    NSArray *titles = @[@"万",@"千",@"百",@"十",@"个"];
-    //5 行
-    for (int i = 0; i < titles.count; i++) {
-        NumberCellNode *node = [[NumberCellNode alloc] init];
-        node.title = titles[i];
-        [self.datas addObject:node];
-    }
+    [self buildDataWithOption:self.selectedOption];
+    
     [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier1];
     
     //
     self.CurrentSelectMenuList = [[ARTagListView alloc] init];
@@ -87,7 +89,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     self.CurrentSelectMenuList.tagListDelegate = self;
     [self.topContainerView addSubview:self.CurrentSelectMenuList];
     //menu button
-    [self.CurrentSelectMenuList insertTagWithTitle:@"复式" atIndex:0 selected:YES];
+    [self.CurrentSelectMenuList insertTagWithTitle:@"五星直选" atIndex:0 selected:YES];
     
     self.topRightArrowMenuButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.topRightArrowMenuButton setImage:[UIImage imageNamed:@"drop_button"] forState:UIControlStateNormal];
@@ -152,6 +154,176 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     }];
 }
 
+- (void)buildDataWithOption:(LotteryPlayOption *)option {
+    [self.datas removeAllObjects];
+    switch (option.type) {
+        case LotteryPlayType5zhi: {
+            [self addNodesWithTitles:@[@"万",@"千",@"百",@"十",@"个"]];
+            break;
+        }
+        case LotteryPlayType5zu120: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType5zu60:
+        case LotteryPlayType5zu30: {
+            [self addNodesWithTitles:@[@"二重",@"单"]];
+            break;
+        }
+        case LotteryPlayType5zu20: {
+            [self addNodesWithTitles:@[@"三重",@"单"]];
+            break;
+        }
+        case LotteryPlayType5zu10: {
+            [self addNodesWithTitles:@[@"三重",@"二重"]];
+            break;
+        }
+        case LotteryPlayType5zu5: {
+            [self addNodesWithTitles:@[@"四重",@"单"]];
+            break;
+        }
+        case LotteryPlayType4zhi: {
+            [self addNodesWithTitles:@[@"千",@"百",@"十",@"个"]];
+            break;
+        }
+        case LotteryPlayType4zu24: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType4zu12: {
+            [self addNodesWithTitles:@[@"二重",@"单"]];
+            break;
+        }
+        case LotteryPlayTypeQ3zhi: {
+            [self addNodesWithTitles:@[@"万",@"千",@"百"]];
+            break;
+        }
+        case LotteryPlayTypeQ3zu3:
+        case LotteryPlayTypeQ3zu6: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayTypeQ3zuHe: {
+            [self addNodesWithTitles:@[@"组选和值"] cellType:NumberCellTypeHeZhi];
+            break;
+        }
+        case LotteryPlayTypeQ3zuBD: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayTypeH3zhiF: {
+            [self addNodesWithTitles:@[@"百",@"十",@"个"]];
+            break;
+        }
+        case LotteryPlayTypeH3zhiK:
+        case LotteryPlayTypeH3zu3:
+        case LotteryPlayTypeH3zu6: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayTypeH3zuHe: {
+        [self addNodesWithTitles:@[@"组选和值"] cellType:NumberCellTypeHeZhi];
+            break;
+        }
+        case LotteryPlayTypeH3zuBD: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType2zhiH2: {
+            [self addNodesWithTitles:@[@"十",@"个"]];
+            break;
+        }
+        case LotteryPlayType2zhiH2He: {
+            [self addNodesWithTitles:@[@"组选和值"] cellType:NumberCellTypeHeZhi];
+            break;
+        }
+        case LotteryPlayType2zhiH2K: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType2zhiQ2: {
+            [self addNodesWithTitles:@[@"万",@"千"]];
+            break;
+        }
+        case LotteryPlayType2zhiQ2K: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType2zuH2: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType2zuQ2: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayTypeDWD: {
+            [self addNodesWithTitles:@[@"万",@"千",@"百",@"十",@"个"]];
+            break;
+        }
+        case LotteryPlayType3BDWH31: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType3BDWH32: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType3BDWQ31: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayType3BDWQ32: {
+            [self addNodesWithTitles:@[@"不定位"]];
+            break;
+        }
+        case LotteryPlayType4BDW2: {
+            [self addNodesWithTitles:@[@"不定位"]];
+            break;
+        }
+        case LotteryPlayType5BDW2: {
+            [self addNodesWithTitles:@[@"不定位"]];
+            break;
+        }
+        case LotteryPlayType5BDW3: {
+            [self addNodesWithTitles:@[@"不定位"]];
+            break;
+        }
+        case LotteryPlayTypeT1: {
+            [self addNodesWithTitles:@[@"选"]];
+            break;
+        }
+        case LotteryPlayTypeTH: {
+            [self addNodesWithTitles:@[@"二重"]];
+            break;
+        }
+        case LotteryPlayTypeT3: {
+            [self addNodesWithTitles:@[@"三重"]];
+            break;
+        }
+        case LotteryPlayTypeT4: {
+            [self addNodesWithTitles:@[@"四重"]];
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+}
+
+- (void)addNodesWithTitles:(NSArray *)titles {
+    [self addNodesWithTitles:titles cellType:NumberCellTypeDefault];
+}
+
+- (void)addNodesWithTitles:(NSArray *)titles cellType:(NumberCellType)cellType {
+    for (int i = 0; i < titles.count; i++) {
+        NumberCellNode *node = [[NumberCellNode alloc] init];
+        node.title = titles[i];
+        node.cellType = cellType;
+        [self.datas addObject:node];
+    }
+}
+
 -(void)randomSelectNumbers
 {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
@@ -174,7 +346,9 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 }
 
 - (void)showDropMenu {
-    CGRect frame = CGRectMake(0, CGRectGetMaxY(self.topContainerView.frame), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)- CGRectGetMaxY(self.topContainerView.frame));
+    CGRect startFrame = [self.topContainerView convertRect:self.topRightArrowMenuButton.frame toView:self.view];
+    
+    CGRect frame = CGRectMake(0, CGRectGetMaxY(startFrame), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)- CGRectGetMaxY(startFrame));
     
     [self.dropMenu showDropMenuInViewController:self frame:frame completion:^{
         self.dropMenuIsShowed = YES;
@@ -234,9 +408,15 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 #pragma mark - BuyingDropMenuViewControllerDelegate methods
 
-- (void)dropMenuController:(BuyingDropMenuViewController *)controller didSelectMenuItemAtIndexPath:(NSIndexPath *)indexPath title:(NSString *)title {
+- (void)dropMenuController:(BuyingDropMenuViewController *)controller didSelectMenuItemAtIndexPath:(NSIndexPath *)indexPath option:(LotteryPlayOption *)option {
     [self dismissDropMenu];
+    NSString *title = lotteryPlayTypeString[option.type];
     [self.CurrentSelectMenuList insertTagWithTitle:title atIndex:0 selected:YES];
+    
+    //
+    self.selectedOption = option;
+    [self buildDataWithOption:self.selectedOption];
+    [self.tableView reloadData];
 }
 
 #pragma mark - ARTagListViewDelegate methods
@@ -247,30 +427,32 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 #pragma mark - UITableViewDataSource methods
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.datas.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SelectNumbersCell *numberCell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     numberCell.delegate = self;
-    [numberCell fillCellWithNode:self.datas[indexPath.row]];
+    NumberCellNode *node = self.datas[indexPath.row];
+    [numberCell fillCellWithNode:node];
 
     return numberCell;
 }
 
 #pragma mark - UITableViewDelegate methods
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 156;
+    NumberCellNode *node = self.datas[indexPath.row];
+    if (node.cellType == NumberCellTypeDefault) {
+        return 126;
+    }
+    return 240;
 }
 
 #pragma mark - SelectNumbersCellDelegate methods

@@ -16,8 +16,7 @@
 
 @implementation NumberButton
 
--(id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self setUp];
@@ -25,11 +24,18 @@
     return self;
 }
 
--(void)setUp
-{
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self setUp];
+    }
+    return self;
+}
+
+- (void)setUp {
     [self setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    self.layer.cornerRadius = CGRectGetHeight(self.bounds)/2.0;
-    
+    self.layer.cornerRadius = 18;
+    self.clipsToBounds = YES;
     self.layer.backgroundColor = [UIColor lightGrayColor].CGColor;
     ;
 }

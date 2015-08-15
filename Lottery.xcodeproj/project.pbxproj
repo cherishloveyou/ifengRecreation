@@ -68,6 +68,7 @@
 		974E85B21B11610E00B57C9E /* LotteryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 974E85B11B11610E00B57C9E /* LotteryTests.m */; };
 		976BF0301B63636C00F18F2C /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BF02F1B63636C00F18F2C /* RechargeViewController.m */; };
 		976BF0331B63638200F18F2C /* WithDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BF0321B63638200F18F2C /* WithDrawViewController.m */; };
+		9771F1DD1B7EEAA9009CA778 /* LotteryPlayOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 9771F1DC1B7EEAA9009CA778 /* LotteryPlayOption.m */; };
 		979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 979BC4EC1B26F6CB00070B0B /* HTTPClient.m */; };
 		97ABF0D41B76F28900E8D87A /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97ABF0D21B76F28900E8D87A /* MZTimerLabel.m */; };
 		97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D03F571B2FDCE9001FB2C4 /* SelectNumbersCell.m */; };
@@ -217,6 +218,8 @@
 		976BF02F1B63636C00F18F2C /* RechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeViewController.m; sourceTree = "<group>"; };
 		976BF0311B63638200F18F2C /* WithDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithDrawViewController.h; sourceTree = "<group>"; };
 		976BF0321B63638200F18F2C /* WithDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithDrawViewController.m; sourceTree = "<group>"; };
+		9771F1DB1B7EEAA9009CA778 /* LotteryPlayOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryPlayOption.h; sourceTree = "<group>"; };
+		9771F1DC1B7EEAA9009CA778 /* LotteryPlayOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryPlayOption.m; sourceTree = "<group>"; };
 		979BC4EB1B26F6CB00070B0B /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		979BC4EC1B26F6CB00070B0B /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		97ABF0D11B76F28900E8D87A /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
@@ -517,6 +520,8 @@
 				971DF4001B3E81D1005CF819 /* NumberCellNode.m */,
 				97DF97E31B75D82F00A6413E /* DropMenuNode.h */,
 				97DF97E41B75D82F00A6413E /* DropMenuNode.m */,
+				9771F1DB1B7EEAA9009CA778 /* LotteryPlayOption.h */,
+				9771F1DC1B7EEAA9009CA778 /* LotteryPlayOption.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1005,6 +1010,7 @@
 				97D9E5231B51152E00048878 /* BankCardManageViewController.m in Sources */,
 				979BC4ED1B26F6CB00070B0B /* HTTPClient.m in Sources */,
 				00929D6A1B50FAE1001CFB4D /* LotteryDetailCell.m in Sources */,
+				9771F1DD1B7EEAA9009CA778 /* LotteryPlayOption.m in Sources */,
 				97D03F591B2FDCE9001FB2C4 /* SelectNumbersCell.m in Sources */,
 				00D277AD1B417B6D0004D35B /* ChooseLotteryCell.m in Sources */,
 				9739E8261B4A91B8007AF273 /* HMSegmentedControl.m in Sources */,
