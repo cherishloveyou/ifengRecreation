@@ -72,8 +72,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationController.navigationBarHidden = YES;
 //    NSLog(@"advertisementView frame == %@",self.advertisementView);
-#warning 暂时屏蔽掉
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeYuanJiao) name:@"yuanjiaoChange" object:nil];
  LoginViewController *login = [LoginViewController showFromController:self];
     __weak typeof(self) weakself = self;
     login.imageBlock = ^(NSArray *imageurls){
@@ -85,7 +84,17 @@
         [weakself.advertisementView addSubview:scrollView];
         
         weakself.userName.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
-        weakself.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
+         NSNumber *userMoney = [uerdictionary objectForKey:@"userMoney"] ;
+        
+        BOOL isdisPlauJiao = [[NSUserDefaults standardUserDefaults] boolForKey:@"isYuanDisplay"];
+        if ( !isdisPlauJiao) {
+            self.balance.text = [NSString stringWithFormat:@"￥%@",userMoney];
+        }else if(isdisPlauJiao){
+            
+            CGFloat jiao = [userMoney floatValue];
+            self.balance.text = [NSString stringWithFormat:@"￥%.0f",jiao*10];
+        }
+//        weakself.balance.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
         weakself.yesterdayMony.text = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"yesterDayRewards"]];
         
         [weakself getTheLastLotteryNumber];
@@ -108,6 +117,24 @@
 //    [self refreshHotLotteryImages:self.hotLotteryIds];
     
 }
+
+- (void)changeYuanJiao{
+    
+    BOOL  isDisPlayYuan = [[NSUserDefaults standardUserDefaults] boolForKey:@"isYuanDisplay"];
+    
+    NSString *new = self.balance.text;
+    NSString *subString = [new substringFromIndex:1];
+    
+    CGFloat money = [subString floatValue];
+    if (isDisPlayYuan) {
+        new = [NSString stringWithFormat:@"￥%.0f",money*10];
+    }else{
+        new = [NSString stringWithFormat:@"￥%.2f",money/10.0];
+    }
+    
+    self.balance.text = new;
+}
+
 /**
  *  获取重庆时时彩 最近一期号码
  */

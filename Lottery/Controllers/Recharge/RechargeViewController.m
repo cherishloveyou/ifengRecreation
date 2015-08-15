@@ -42,7 +42,9 @@ static NSString *reuseIdentifier = @"bandCell";
                           paramaters:@{@"type":@1,
                                        @"ammount":@0}
                              success:^(id task, id response) {
+                                 
                                  NSLog(@"response is %@",response);
+                                 
                              } failed:^(id task, NSError *error) {
                                  
                              }];

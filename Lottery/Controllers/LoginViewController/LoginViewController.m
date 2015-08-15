@@ -187,7 +187,7 @@
                   *
                   *  @return
                   */
-//                 [NSTimer scheduledTimerWithTimeInterval:30. target:weakSelf selector:@selector(startUserHart) userInfo:nil repeats:YES];
+                 [NSTimer scheduledTimerWithTimeInterval:30. target:weakSelf selector:@selector(startUserHart) userInfo:nil repeats:YES];
                  
                  if (!weakSelf.navigationController) {
                      
@@ -213,7 +213,7 @@
                  break;
 
              default:
-                 [SVProgressHUD showErrorWithStatus:nil];
+                 [SVProgressHUD showErrorWithStatus:@"密码错误"];
                  break;
          }
      }
@@ -231,7 +231,6 @@
  */
 
 - (void)startUserHart{
-#warning 接口修改 需要上传loginflag
     [HTTPClient userHandleWithAction:12 paramaters:nil success:^(id task, id response) {
         
     } failed:^(id task, NSError *error) {

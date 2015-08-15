@@ -72,7 +72,7 @@
     
     __weak typeof(self) weakself = self;
     
-    
+    [SVProgressHUD show];
     
     [HTTPClient userHandleWithAction:action
                           paramaters:parameters
@@ -82,6 +82,7 @@
                                  
                              } failed:^(id task, NSError *error) {
                                  
+                                 [SVProgressHUD showErrorWithStatus:@"网络连接失败，请稍后再试！"];
                                  
                              }];
 }
@@ -106,12 +107,13 @@
                 [SVProgressHUD showErrorWithStatus:@"您前后输入的密码不一致!"];
                 [self.theNewTextField becomeFirstResponder];
             }else{
-                
+                [SVProgressHUD showErrorWithStatus:nil];
             }
         }
             break;
         case -3:{
             if (self.modifyType == PasswordTypeLogin) {
+                [SVProgressHUD showErrorWithStatus:nil];
                 
             }else{
                 [SVProgressHUD showErrorWithStatus:@"含有非法字符!"];
@@ -131,7 +133,7 @@
             break;
         case -5:{
             if (self.modifyType == PasswordTypeLogin) {
-                
+                [SVProgressHUD showErrorWithStatus:nil];
             }else{
                 [SVProgressHUD showInfoWithStatus:@"原始密码和新密码一致!"];
                 [self.theNewTextField becomeFirstResponder];
@@ -139,6 +141,7 @@
         }
             break;
         default:
+            [SVProgressHUD showErrorWithStatus:nil];
             break;
     }
     

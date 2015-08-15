@@ -33,10 +33,29 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeYuanJiao) name:@"yuanjiaoChange" object:nil];
     
     [self setUp];
     [self fetchData];
     [self fillSubViews];
+}
+
+
+- (void)changeYuanJiao{
+    
+    BOOL  isDisPlayYuan = [[NSUserDefaults standardUserDefaults] boolForKey:@"isYuanDisplay"];
+    
+    NSString *new = self.remainLabel.text;
+    NSString *subString = [new substringFromIndex:1];
+    
+    CGFloat money = [subString floatValue];
+    if (isDisPlayYuan) {
+        new = [NSString stringWithFormat:@"￥%.0f",money*10];
+    }else{
+        new = [NSString stringWithFormat:@"￥%.2f",money/10.0];
+    }
+    
+    self.remainLabel.text = new;
 }
 
 #pragma mark - private methods
@@ -80,8 +99,14 @@
                              success:^(id task, id response) {
                                  NSUInteger code = [response[@"code"] integerValue];
                                  NSNumber *userMoney = response[@"userMoney"];
-                                 if (code == 0) {
+                                 
+                                 BOOL  isDisPlayYuan = [[NSUserDefaults standardUserDefaults] boolForKey:@"isYuanDisplay"];
+                                 if (code == 0 && !isDisPlayYuan) {
                                      self.remainLabel.text = [NSString stringWithFormat:@"￥%@",userMoney];
+                                 }else if(code == 0 && isDisPlayYuan){
+                                     
+                                     CGFloat jiao = [userMoney floatValue];
+                                     self.remainLabel.text = [NSString stringWithFormat:@"￥%.0f",jiao*10];
                                  }
                                  
                              } failed:^(id task, NSError *error) {

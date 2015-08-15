@@ -43,7 +43,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.tableFooterView = self.tableFooterView;
+    if (!self.isNotAddBankCard) {
+        self.tableView.tableFooterView = self.tableFooterView;
+    }
     
     [HTTPClient userHandleWithAction:27 paramaters:nil success:^(id task, id response) {
         NSInteger code = [[response valueForKey:@"code"] integerValue];
@@ -110,6 +112,13 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BankCardSelectedBlock selectedBlock = self.selectedBankcard;
+    
+    if (selectedBlock) {
+        NSDictionary *bankcard = self.bankCards[indexPath.row];
+        selectedBlock(bankcard);
+    }
+    
 }
 
 @end
