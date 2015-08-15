@@ -44,6 +44,7 @@ static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
 @implementation BuyingViewController
 
 static NSString *reuseIdentifier = @"SelectNumbersCell";
+static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 
 #pragma mark - lifecycle methods
 
@@ -79,6 +80,7 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
     [self buildDataWithOption:self.selectedOption];
     
     [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier1];
     
     //
     self.CurrentSelectMenuList = [[ARTagListView alloc] init];
@@ -201,10 +203,10 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
             [self addNodesWithTitles:@[@"选"]];
             break;
         }
-//        case LotteryPlayTypeQ3zuHe: {
-//            <#statement#>
-//            break;
-//        }
+        case LotteryPlayTypeQ3zuHe: {
+            [self addNodesWithTitles:@[@"组选和值"] cellType:NumberCellTypeHeZhi];
+            break;
+        }
         case LotteryPlayTypeQ3zuBD: {
             [self addNodesWithTitles:@[@"选"]];
             break;
@@ -219,10 +221,10 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
             [self addNodesWithTitles:@[@"选"]];
             break;
         }
-//        case LotteryPlayTypeH3zuHe: {
-//            <#statement#>
-//            break;
-//        }
+        case LotteryPlayTypeH3zuHe: {
+        [self addNodesWithTitles:@[@"组选和值"] cellType:NumberCellTypeHeZhi];
+            break;
+        }
         case LotteryPlayTypeH3zuBD: {
             [self addNodesWithTitles:@[@"选"]];
             break;
@@ -231,10 +233,10 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
             [self addNodesWithTitles:@[@"十",@"个"]];
             break;
         }
-//        case LotteryPlayType2zhiH2He: {
-//            <#statement#>
-//            break;
-//        }
+        case LotteryPlayType2zhiH2He: {
+            [self addNodesWithTitles:@[@"组选和值"] cellType:NumberCellTypeHeZhi];
+            break;
+        }
         case LotteryPlayType2zhiH2K: {
             [self addNodesWithTitles:@[@"选"]];
             break;
@@ -310,9 +312,14 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 }
 
 - (void)addNodesWithTitles:(NSArray *)titles {
+    [self addNodesWithTitles:titles cellType:NumberCellTypeDefault];
+}
+
+- (void)addNodesWithTitles:(NSArray *)titles cellType:(NumberCellType)cellType {
     for (int i = 0; i < titles.count; i++) {
         NumberCellNode *node = [[NumberCellNode alloc] init];
         node.title = titles[i];
+        node.cellType = cellType;
         [self.datas addObject:node];
     }
 }
@@ -420,16 +427,15 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 #pragma mark - UITableViewDataSource methods
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.datas.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SelectNumbersCell *numberCell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     numberCell.delegate = self;
-    [numberCell fillCellWithNode:self.datas[indexPath.row]];
+    NumberCellNode *node = self.datas[indexPath.row];
+    [numberCell fillCellWithNode:node];
 
     return numberCell;
 }
@@ -442,7 +448,11 @@ static NSString *reuseIdentifier = @"SelectNumbersCell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 156;
+    NumberCellNode *node = self.datas[indexPath.row];
+    if (node.cellType == NumberCellTypeDefault) {
+        return 126;
+    }
+    return 240;
 }
 
 #pragma mark - SelectNumbersCellDelegate methods

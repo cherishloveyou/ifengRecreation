@@ -9,22 +9,15 @@
 #import "SelectNumbersCell.h"
 #import "NumberButton.h"
 #import "SegmentButton.h"
+#import "ARGridView.h"
 
 @interface SelectNumbersCell ()
-@property (weak, nonatomic) IBOutlet NumberButton *numberButton0;
-@property (weak, nonatomic) IBOutlet NumberButton *numberButton1;
-@property (weak, nonatomic) IBOutlet NumberButton *numberButton2;
-@property (weak, nonatomic) IBOutlet NumberButton *numberButton3;
-@property (weak, nonatomic) IBOutlet NumberButton *numberButton4;
-@property (weak, nonatomic) IBOutlet NumberButton *numberButton5;
-@property (weak, nonatomic) IBOutlet NumberButton *numberButton6;
-@property (weak, nonatomic) IBOutlet NumberButton *numberButton7;
-@property (weak, nonatomic) IBOutlet NumberButton *numberButton8;
-@property (weak, nonatomic) IBOutlet NumberButton *numberButton9;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (nonatomic, strong) CALayer *backLayer;
 @property (weak, nonatomic) IBOutlet OAStackView *stackView;
+@property (weak, nonatomic) IBOutlet ARGridView *gridView;
 
 @end
 
@@ -40,16 +33,10 @@
     self.backLayer.backgroundColor = [UIColor whiteColor].CGColor;
     [self.layer insertSublayer:self.backLayer atIndex:0];
     
-    self.numberButton0.index = 0;
-    self.numberButton1.index = 1;
-    self.numberButton2.index = 2;
-    self.numberButton3.index = 3;
-    self.numberButton4.index = 4;
-    self.numberButton5.index = 5;
-    self.numberButton6.index = 6;
-    self.numberButton7.index = 7;
-    self.numberButton8.index = 8;
-    self.numberButton9.index = 9;
+    self.gridView.numberOfColumn = 6;
+    self.gridView.itemWidth = 36;
+    self.gridView.itemHeight = 36;
+    self.gridView.itemInset = 10;
     
     self.stackView.distribution = OAStackViewDistributionFillEqually;
 }
@@ -58,16 +45,10 @@
 {
     [super prepareForReuse];
     
-    self.numberButton0.selected = NO;
-    self.numberButton1.selected = NO;
-    self.numberButton2.selected = NO;
-    self.numberButton3.selected = NO;
-    self.numberButton4.selected = NO;
-    self.numberButton5.selected = NO;
-    self.numberButton6.selected = NO;
-    self.numberButton7.selected = NO;
-    self.numberButton8.selected = NO;
-    self.numberButton9.selected = NO;
+    [self.gridView.items enumerateObjectsUsingBlock:^(NumberButton *button, NSUInteger idx, BOOL *stop) {
+        button.selected = NO;
+    }];
+    
     for (SegmentButton *button in self.stackView.subviews) {
         button.selected = NO;
     }
@@ -81,10 +62,33 @@
 
 -(void)fillCellWithNode:(NumberCellNode *)node
 {
+    if (node.cellType == NumberCellTypeDefault) {
+        self.gridView.numberOfItems = 10;
+        self.gridView.configuration = ^UIView *(NSUInteger index){
+            NumberButton *button = [[NumberButton alloc] init];
+            button.index = index;
+            [button setTitle:[NSString stringWithFormat:@"%ld",index] forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+            return button;
+        };
+
+    }else{
+        self.gridView.numberOfItems = 26;
+        self.gridView.configuration = ^UIView *(NSUInteger index){
+            NumberButton *button = [[NumberButton alloc] init];
+            button.index = index;
+            [button setTitle:[NSString stringWithFormat:@"%ld",index+1] forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+            return button;
+        };
+
+    }
+    [self.gridView reloadAllItems];
+    
     self.titleLabel.text = node.title;
     [node.numbersSet enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSString *key = [NSString stringWithFormat:@"numberButton%@",obj];
-        NumberButton *button = [self valueForKey:key];
+        NSUInteger index = [obj integerValue];
+        NumberButton *button = self.gridView.items[index];
         [button setSelected:YES];
     }];
     
@@ -97,7 +101,7 @@
 
 #pragma mark - event methods
 
-- (IBAction)bumberButtonClicked:(NumberButton *)sender {
+- (IBAction)numberButtonClicked:(NumberButton *)sender {
     [sender setSelected:!sender.isSelected];
     if ([self.delegate respondsToSelector:@selector(numbersCell:seletedNumber:isSelected:)]) {
         [self.delegate numbersCell:self seletedNumber:sender.index isSelected:sender.isSelected];
