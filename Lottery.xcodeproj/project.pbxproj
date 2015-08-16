@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0000E7B61B77647F00633075 /* ADDBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0000E7B51B77647F00633075 /* ADDBankCardViewController.m */; };
-		001BD9DF1B7F37C90044DFC0 /* ChooseRechargeTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001BD9DE1B7F37C90044DFC0 /* ChooseRechargeTypeViewController.m */; };
 		005FA6C41B5FCDDC0036AB89 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */; };
 		005FA6C81B67A6F90036AB89 /* AnnouncementDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6C61B67A6F90036AB89 /* AnnouncementDetailVC.m */; };
 		005FA6C91B67A6F90036AB89 /* AnnouncementDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005FA6C71B67A6F90036AB89 /* AnnouncementDetailVC.xib */; };
@@ -107,8 +106,6 @@
 /* Begin PBXFileReference section */
 		0000E7B41B77647F00633075 /* ADDBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDBankCardViewController.h; sourceTree = "<group>"; };
 		0000E7B51B77647F00633075 /* ADDBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDBankCardViewController.m; sourceTree = "<group>"; };
-		001BD9DD1B7F37C90044DFC0 /* ChooseRechargeTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseRechargeTypeViewController.h; sourceTree = "<group>"; };
-		001BD9DE1B7F37C90044DFC0 /* ChooseRechargeTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseRechargeTypeViewController.m; sourceTree = "<group>"; };
 		005FA6C21B5FCDDC0036AB89 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		005FA6C51B67A6F90036AB89 /* AnnouncementDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementDetailVC.h; sourceTree = "<group>"; };
@@ -678,8 +675,6 @@
 			children = (
 				976BF02E1B63636C00F18F2C /* RechargeViewController.h */,
 				976BF02F1B63636C00F18F2C /* RechargeViewController.m */,
-				001BD9DD1B7F37C90044DFC0 /* ChooseRechargeTypeViewController.h */,
-				001BD9DE1B7F37C90044DFC0 /* ChooseRechargeTypeViewController.m */,
 			);
 			path = Recharge;
 			sourceTree = "<group>";
@@ -970,7 +965,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001BD9DF1B7F37C90044DFC0 /* ChooseRechargeTypeViewController.m in Sources */,
 				9739E81E1B4A7EFF007AF273 /* RecordPageViewController.m in Sources */,
 				97D9E51B1B51028500048878 /* ModifyPasswordViewController.m in Sources */,
 				00929D641B50F542001CFB4D /* LotteryDetailVC.m in Sources */,
