@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "OAStackView.h"
 #import "NumberCellNode.h"
+#import "ARGridView.h"
 
 @class SelectNumbersCell;
 @protocol SelectNumbersCellDelegate <NSObject>
@@ -20,6 +21,7 @@
 
 @interface SelectNumbersCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet ARGridView *gridView;
 @property (nonatomic, weak) id<SelectNumbersCellDelegate> delegate;
 
 - (void)fillCellWithNode:(NumberCellNode *)node;

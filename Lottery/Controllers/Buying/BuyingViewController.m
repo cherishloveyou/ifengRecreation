@@ -18,6 +18,7 @@
 #import "MZTimerLabel.h"
 #import "BuyingBottomView.h"
 #import "LotteryPlayOption.h"
+#import "NumberButton.h"
 
 NS_INLINE NSUInteger Permutation(NSUInteger all,NSUInteger count){
     if (all < count) {
@@ -223,7 +224,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
             break;
         }
         case LotteryPlayTypeQ3zuBD: {
-            [self addNodesWithTitles:@[@"选"]];
+            [self addNodesWithTitles:@[@"选"] cellType:NumberCellTypeBaoDan];
             break;
         }
         case LotteryPlayTypeH3zhiF: {
@@ -697,10 +698,12 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 //
 //            break;
 //        }
-//        case LotteryPlayTypeQ3zuBD: {
-//            <#statement#>
-//            break;
-//        }
+        case LotteryPlayTypeQ3zuBD: {
+            NumberCellNode *node = [self.datas firstObject];
+            [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+            selectCount = 54;
+            break;
+        }
         case LotteryPlayTypeH3zhiF: {
             [self.datas enumerateObjectsUsingBlock:^(NumberCellNode *node, NSUInteger idx, BOOL *stop) {
                 [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
@@ -921,7 +924,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NumberCellNode *node = self.datas[indexPath.row];
-    if (node.cellType == NumberCellTypeDefault) {
+    if (node.cellType == NumberCellTypeDefault || node.cellType == NumberCellTypeBaoDan) {
         return 126;
     }
     return 240;
@@ -935,6 +938,9 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
     NSNumber *indexString = @(selectedNumber);
     NumberCellNode *node = self.datas[indexPath.row];
     NSMutableOrderedSet *orderSet = node.numbersSet;
+    if (node.cellType == NumberCellTypeBaoDan) {
+        [orderSet removeAllObjects];
+    }
     if (isSelected) {
         [orderSet addObject:indexString];
     }else{
@@ -944,33 +950,56 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
     [self checkIsCanBuy];
 }
 
--(void)numbersCell:(SelectNumbersCell *)numbersCell segmentTitle:(OAStackView *)segmentTitle selectIndex:(NSUInteger)selectIndex
-{
+-(void)numbersCell:(SelectNumbersCell *)numbersCell segmentTitle:(OAStackView *)segmentTitle selectIndex:(NSUInteger)selectIndex {
+
     NSIndexPath *indexPath = [self.tableView indexPathForCell:numbersCell];
     NSUInteger row = indexPath.row;
+    NumberCellNode *node = self.datas[row];
     NSMutableOrderedSet *numberSet = [NSMutableOrderedSet orderedSet];
     switch (selectIndex) {
         case 0:{
-            [numberSet addObjectsFromArray:@[@(5),@(6),@(7),@(8),@(9)]];
+            NSUInteger count = numbersCell.gridView.items.count/2;
+            NSUInteger start = [numbersCell.gridView.items.lastObject index];
+            for (NSUInteger i = 0; i < count; i++) {
+                [numberSet addObject:@(start - i)];
+            }
             break;
         }
         case 1:{
-            [numberSet addObjectsFromArray:@[@(0),@(1),@(2),@(3),@(4)]];
+            NSUInteger count = numbersCell.gridView.items.count/2;
+            NSUInteger start = [numbersCell.gridView.items.firstObject index];
+            for (NSUInteger i = 0; i < count; i++) {
+                [numberSet addObject:@(start + i)];
+            }
             break;
         }
         case 2:{
-            NSArray *numbers = @[@(0),@(1),@(2),@(3),@(4),@(5),@(6),@(7),@(8),@(9)];
-            [numberSet addObjectsFromArray:numbers];
+            NSUInteger count = numbersCell.gridView.items.count;
+            NSUInteger start = [numbersCell.gridView.items.firstObject index];
+            for (NSUInteger i = 0; i < count; i++) {
+                [numberSet addObject:@(start + i)];
+            }
             break;
         }
         case 3:{
-            NSArray *numbers = @[@(1),@(3),@(5),@(7),@(9)];
-            [numberSet addObjectsFromArray:numbers];
+            NSUInteger count = numbersCell.gridView.items.count;
+            NSUInteger start = node.cellType == NumberCellTypeHeZhi ? 1:0;
+            for (NSUInteger i = 0; i < count; i++) {
+                if (i%2 == 1) {
+                    [numberSet addObject:@(i - start)];
+                }
+            }
             break;
         }
         case 4:{
-            NSArray *numbers = @[@(0),@(2),@(4),@(6),@(8)];
-            [numberSet addObjectsFromArray:numbers];
+            NSUInteger count = numbersCell.gridView.items.count;
+            NSUInteger start = node.cellType == NumberCellTypeHeZhi ? 1:0;
+            for (NSUInteger i = 0; i < count; i++) {
+                if (i%2 == 0) {
+                    [numberSet addObject:@(i + start)];
+                }
+            }
+
 
             break;
         }
@@ -981,7 +1010,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
         default:
             break;
     }
-    NumberCellNode *node = self.datas[row];
+
     node.numbersSet = numberSet;
     node.segmentSelectIndex = selectIndex;
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];

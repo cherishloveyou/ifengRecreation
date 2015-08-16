@@ -122,10 +122,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-        BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
-        buyingViewControlelr.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:buyingViewControlelr animated:YES];
+    NSDictionary *info = self.dataSourceArray[indexPath.row];
+    BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
+    buyingViewControlelr.hidesBottomBarWhenPushed = YES;
+    buyingViewControlelr.title = info[@"_gameName"];
+    [self.navigationController pushViewController:buyingViewControlelr animated:YES];
 }
 
 

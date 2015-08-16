@@ -10,6 +10,7 @@
 #import "NumberButton.h"
 #import "SegmentButton.h"
 #import "ARGridView.h"
+#import <ReactiveCocoa.h>
 
 @interface SelectNumbersCell ()
 
@@ -17,7 +18,8 @@
 
 @property (nonatomic, strong) CALayer *backLayer;
 @property (weak, nonatomic) IBOutlet OAStackView *stackView;
-@property (weak, nonatomic) IBOutlet ARGridView *gridView;
+
+@property (nonatomic, assign) BOOL canMutileSelected;
 
 @end
 
@@ -39,6 +41,12 @@
     self.gridView.itemInset = 10;
     
     self.stackView.distribution = OAStackViewDistributionFillEqually;
+    
+    @weakify(self);
+    [RACObserve(self, canMutileSelected) subscribeNext:^(id x) {
+        @strongify(self);
+        self.stackView.hidden = ![x boolValue];
+    }];
 }
 
 -(void)prepareForReuse
@@ -63,6 +71,7 @@
 -(void)fillCellWithNode:(NumberCellNode *)node
 {
     if (node.cellType == NumberCellTypeDefault) {
+        self.canMutileSelected = YES;
         self.gridView.numberOfItems = 10;
         self.gridView.configuration = ^UIView *(NSUInteger index){
             NumberButton *button = [[NumberButton alloc] init];
@@ -72,12 +81,23 @@
             return button;
         };
 
-    }else{
+    }else if(node.cellType == NumberCellTypeHeZhi){
+        self.canMutileSelected = YES;
         self.gridView.numberOfItems = 26;
         self.gridView.configuration = ^UIView *(NSUInteger index){
             NumberButton *button = [[NumberButton alloc] init];
             button.index = index;
             [button setTitle:[NSString stringWithFormat:@"%ld",index+1] forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+            return button;
+        };
+    }else {
+        self.canMutileSelected = NO;
+        self.gridView.numberOfItems = 10;
+        self.gridView.configuration = ^UIView *(NSUInteger index){
+            NumberButton *button = [[NumberButton alloc] init];
+            button.index = index;
+            [button setTitle:[NSString stringWithFormat:@"%ld",index] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             return button;
         };
@@ -102,6 +122,11 @@
 #pragma mark - event methods
 
 - (IBAction)numberButtonClicked:(NumberButton *)sender {
+    if (self.canMutileSelected == NO) {
+        [self.gridView.items enumerateObjectsUsingBlock:^(NumberButton *button, NSUInteger idx, BOOL *stop) {
+            button.selected = NO;
+        }];
+    }
     [sender setSelected:!sender.isSelected];
     if ([self.delegate respondsToSelector:@selector(numbersCell:seletedNumber:isSelected:)]) {
         [self.delegate numbersCell:self seletedNumber:sender.index isSelected:sender.isSelected];

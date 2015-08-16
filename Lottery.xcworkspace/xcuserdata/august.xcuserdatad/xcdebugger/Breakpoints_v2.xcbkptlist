@@ -25,13 +25,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lottery/Controllers/Buying/BuyingViewController.m"
-            timestampString = "461397236.868303"
+            filePath = "Lottery/Controllers/Buying/Views/SelectNumbersCell.m"
+            timestampString = "461405641.246309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "579"
-            endingLineNumber = "579"
-            landmarkName = "-checkIsCanBuy"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-fillCellWithNode:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lottery/Controllers/Buying/BuyingViewController.m"
+            timestampString = "461406847.451808"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "986"
+            endingLineNumber = "986"
+            landmarkName = "-numbersCell:segmentTitle:selectIndex:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lottery/Controllers/Buying/BuyingViewController.m"
+            timestampString = "461407136.214249"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "992"
+            endingLineNumber = "992"
+            landmarkName = "-numbersCell:segmentTitle:selectIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

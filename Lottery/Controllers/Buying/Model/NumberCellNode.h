@@ -11,6 +11,7 @@
 typedef NS_ENUM(NSUInteger, NumberCellType) {
     NumberCellTypeDefault,
     NumberCellTypeHeZhi,
+    NumberCellTypeBaoDan,
 };
 
 @interface NumberCellNode : NSObject
