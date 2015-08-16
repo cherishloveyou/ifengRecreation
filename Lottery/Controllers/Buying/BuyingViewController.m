@@ -327,13 +327,192 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 -(void)randomSelectNumbers
 {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    [self.datas enumerateObjectsUsingBlock:^(NumberCellNode *node, NSUInteger idx, BOOL *stop) {
-        [node.numbersSet removeAllObjects];
-        NSUInteger randomNumber = arc4random()%10;
-        [node.numbersSet addObject:@(randomNumber)];
-    }];
+    switch (self.selectedOption.type) {
+        case LotteryPlayType5zhi: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayType5zu120: {
+            [self generateRandomNumberWithCount:5];
+            break;
+        }
+        case LotteryPlayType5zu60: {
+            [self generateRandomNumberWithCountArray:@[@1,@3]];
+            break;
+        }
+        case LotteryPlayType5zu30: {
+            [self generateRandomNumberWithCountArray:@[@2,@1]];
+            break;
+        }
+        case LotteryPlayType5zu20: {
+            [self generateRandomNumberWithCountArray:@[@1,@2]];
+            break;
+        }
+        case LotteryPlayType5zu10:
+        case LotteryPlayType5zu5:
+        case LotteryPlayType4zhi: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayType4zu24: {
+            [self generateRandomNumberWithCount:4];
+            break;
+        }
+        case LotteryPlayType4zu12: {
+            [self generateRandomNumberWithCountArray:@[@1,@2]];
+            break;
+        }
+        case LotteryPlayTypeQ3zhi: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayTypeQ3zu3: {
+            [self generateRandomNumberWithCount:2];
+            break;
+        }
+        case LotteryPlayTypeQ3zu6: {
+            [self generateRandomNumberWithCount:3];
+            break;
+        }
+        case LotteryPlayTypeQ3zuHe:
+        case LotteryPlayTypeQ3zuBD: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayTypeH3zhiF: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayTypeH3zhiK: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayTypeH3zu3: {
+            [self generateRandomNumberWithCount:2];
+            break;
+        }
+        case LotteryPlayTypeH3zu6: {
+            [self generateRandomNumberWithCount:3];
+            break;
+        }
+        case LotteryPlayTypeH3zuHe: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayTypeH3zuBD: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayType2zhiH2: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayType2zhiH2He: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayType2zhiH2K: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayType2zhiQ2: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayType2zhiQ2K: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayType2zuH2: {
+            [self generateRandomNumberWithCount:2];
+            break;
+        }
+        case LotteryPlayType2zuQ2: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayTypeDWD: {
+            NSMutableArray *array = [NSMutableArray array];
+            for (int i = 0; i < 4; i++) {
+                [array addObject:@0];
+            }
+            [array insertObject:@1 atIndex:arc4random()%5];
+            [self generateRandomNumberWithCountArray:array];
+            break;
+        }
+        case LotteryPlayType3BDWH31: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayType3BDWH32: {
+            [self generateRandomNumberWithCount:2];
+            break;
+        }
+        case LotteryPlayType3BDWQ31: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayType3BDWQ32: {
+            [self generateRandomNumberWithCount:2];
+            break;
+        }
+        case LotteryPlayType4BDW2: {
+            [self generateRandomNumberWithCount:2];
+            break;
+        }
+        case LotteryPlayType5BDW2: {
+            [self generateRandomNumberWithCount:2];
+            break;
+        }
+        case LotteryPlayType5BDW3: {
+            [self generateRandomNumberWithCount:3];
+            break;
+        }
+        case LotteryPlayTypeT1: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayTypeTH: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayTypeT3: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayTypeT4: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        default: {
+            break;
+        }
+    }
     
     [self.tableView reloadData];
+}
+
+- (void)generateRandomNumberWithCount:(NSUInteger)count {
+    [self.datas enumerateObjectsUsingBlock:^(NumberCellNode *node, NSUInteger idx, BOOL *stop) {
+        [node.numbersSet removeAllObjects];
+        NSUInteger i = 0;
+        while (i < count) {
+            [node.numbersSet addObject:@(arc4random()%10)];
+            i = node.numbersSet.count;
+        }
+    }];
+}
+
+- (void)generateRandomNumberWithCountArray:(NSArray *)countArray {
+    [self.datas enumerateObjectsUsingBlock:^(NumberCellNode *node, NSUInteger idx, BOOL *stop) {
+        [node.numbersSet removeAllObjects];
+        NSUInteger i = 0;
+        NSUInteger count = idx < countArray.count ? [countArray[idx] integerValue]:0;
+        while (i < count) {
+            [node.numbersSet addObject:@(arc4random()%10)];
+            i = node.numbersSet.count;
+        }
+    }];
 }
 
 - (BuyingDropMenuViewController *)dropMenu {
