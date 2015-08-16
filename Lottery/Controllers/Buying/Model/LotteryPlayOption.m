@@ -139,23 +139,23 @@
             break;
         }
         case LotteryPlayType3BDWH31: {
-            option = [[LotteryPlayOption alloc] initWithType:type title:@"前二(复式)"];
-            break;
-        }
-        case LotteryPlayType3BDWH32: {
             option = [[LotteryPlayOption alloc] initWithType:type title:@"后三一码不定位"];
             break;
         }
-        case LotteryPlayType3BDWQ31: {
+        case LotteryPlayType3BDWH32: {
             option = [[LotteryPlayOption alloc] initWithType:type title:@"后三二码不定位"];
             break;
         }
-        case LotteryPlayType3BDWQ32: {
+        case LotteryPlayType3BDWQ31: {
             option = [[LotteryPlayOption alloc] initWithType:type title:@"前三一码不定位"];
             break;
         }
-        case LotteryPlayType4BDW2: {
+        case LotteryPlayType3BDWQ32: {
             option = [[LotteryPlayOption alloc] initWithType:type title:@"前三二码不定位"];
+            break;
+        }
+        case LotteryPlayType4BDW2: {
+            option = [[LotteryPlayOption alloc] initWithType:type title:@"四星二码不定位"];
             break;
         }
         case LotteryPlayType5BDW2: {
