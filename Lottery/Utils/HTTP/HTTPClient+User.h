@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger, LotteryBetType) {
     LotteryBetType2 = 2, //追期
 };
 
+
 @interface HTTPClient (User)
 
 +(void)userHandleWithAction:(UserHandlerAction)action

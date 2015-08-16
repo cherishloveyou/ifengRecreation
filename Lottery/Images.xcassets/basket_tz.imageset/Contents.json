@@ -2,59 +2,50 @@
   "images" : [
     {
       "resizing" : {
-        "mode" : "9-part",
+        "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 1,
-          "height" : 5
+          "width" : 1
         },
         "capInsets" : {
-          "bottom" : 43,
-          "top" : 34,
-          "right" : 123,
-          "left" : 67
+          "right" : 126,
+          "left" : 34
         }
       },
       "idiom" : "universal",
-      "filename" : "numberBox.png",
+      "filename" : "basket_tz.png",
       "scale" : "1x"
     },
     {
       "resizing" : {
-        "mode" : "9-part",
+        "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 1,
-          "height" : 1
+          "width" : 1
         },
         "capInsets" : {
-          "bottom" : 82,
-          "top" : 57,
-          "right" : 193,
-          "left" : 77
+          "right" : 269,
+          "left" : 72
         }
       },
       "idiom" : "universal",
-      "filename" : "numberBox@2x.png",
+      "filename" : "basket_tz@2x.png",
       "scale" : "2x"
     },
     {
       "resizing" : {
-        "mode" : "9-part",
+        "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "width" : 1,
-          "height" : 4
+          "width" : 1
         },
         "capInsets" : {
-          "bottom" : 133,
-          "top" : 91,
-          "right" : 333,
-          "left" : 127
+          "right" : 401,
+          "left" : 128
         }
       },
       "idiom" : "universal",
-      "filename" : "numberBox@3x.png",
+      "filename" : "basket_tz@3x.png",
       "scale" : "3x"
     }
   ],

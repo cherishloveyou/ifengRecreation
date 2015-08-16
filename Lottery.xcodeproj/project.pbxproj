@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0000E7B61B77647F00633075 /* ADDBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0000E7B51B77647F00633075 /* ADDBankCardViewController.m */; };
+		00251F661B80286E007188A9 /* WaitingRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00251F651B80286E007188A9 /* WaitingRechargeViewController.m */; };
+		00251F6A1B807534007188A9 /* NumbersBasketVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00251F681B807534007188A9 /* NumbersBasketVC.m */; };
+		00251F6B1B807534007188A9 /* NumbersBasketVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00251F691B807534007188A9 /* NumbersBasketVC.xib */; };
+		00251F701B809142007188A9 /* NumbersBasketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00251F6E1B809142007188A9 /* NumbersBasketCell.m */; };
+		00251F711B809142007188A9 /* NumbersBasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00251F6F1B809142007188A9 /* NumbersBasketCell.xib */; };
 		005FA6C41B5FCDDC0036AB89 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */; };
 		005FA6C81B67A6F90036AB89 /* AnnouncementDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6C61B67A6F90036AB89 /* AnnouncementDetailVC.m */; };
 		005FA6C91B67A6F90036AB89 /* AnnouncementDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005FA6C71B67A6F90036AB89 /* AnnouncementDetailVC.xib */; };
@@ -106,6 +111,14 @@
 /* Begin PBXFileReference section */
 		0000E7B41B77647F00633075 /* ADDBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDBankCardViewController.h; sourceTree = "<group>"; };
 		0000E7B51B77647F00633075 /* ADDBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDBankCardViewController.m; sourceTree = "<group>"; };
+		00251F641B80286E007188A9 /* WaitingRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitingRechargeViewController.h; sourceTree = "<group>"; };
+		00251F651B80286E007188A9 /* WaitingRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitingRechargeViewController.m; sourceTree = "<group>"; };
+		00251F671B807534007188A9 /* NumbersBasketVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumbersBasketVC.h; sourceTree = "<group>"; };
+		00251F681B807534007188A9 /* NumbersBasketVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumbersBasketVC.m; sourceTree = "<group>"; };
+		00251F691B807534007188A9 /* NumbersBasketVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumbersBasketVC.xib; sourceTree = "<group>"; };
+		00251F6D1B809142007188A9 /* NumbersBasketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumbersBasketCell.h; sourceTree = "<group>"; };
+		00251F6E1B809142007188A9 /* NumbersBasketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumbersBasketCell.m; sourceTree = "<group>"; };
+		00251F6F1B809142007188A9 /* NumbersBasketCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumbersBasketCell.xib; sourceTree = "<group>"; };
 		005FA6C21B5FCDDC0036AB89 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		005FA6C51B67A6F90036AB89 /* AnnouncementDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementDetailVC.h; sourceTree = "<group>"; };
@@ -280,6 +293,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00251F6C1B809106007188A9 /* numbersBasketCell */ = {
+			isa = PBXGroup;
+			children = (
+				00251F6D1B809142007188A9 /* NumbersBasketCell.h */,
+				00251F6E1B809142007188A9 /* NumbersBasketCell.m */,
+				00251F6F1B809142007188A9 /* NumbersBasketCell.xib */,
+			);
+			path = numbersBasketCell;
+			sourceTree = "<group>";
+		};
 		005FA6C11B5FCD4C0036AB89 /* 账户明细 */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +438,7 @@
 		00F579751B2D5A0800C5AD45 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				00251F6C1B809106007188A9 /* numbersBasketCell */,
 				00EDDD7D1B3070CB001F4CB8 /* customDropDownViewCell */,
 				00EDDD6F1B305C57001F4CB8 /* customDropDownView */,
 			);
@@ -675,6 +699,8 @@
 			children = (
 				976BF02E1B63636C00F18F2C /* RechargeViewController.h */,
 				976BF02F1B63636C00F18F2C /* RechargeViewController.m */,
+				00251F641B80286E007188A9 /* WaitingRechargeViewController.h */,
+				00251F651B80286E007188A9 /* WaitingRechargeViewController.m */,
 			);
 			path = Recharge;
 			sourceTree = "<group>";
@@ -729,6 +755,9 @@
 				97DF97E01B75C17300A6413E /* BuyingDropMenuViewController.h */,
 				97DF97DE1B75C16100A6413E /* BuyingDropMenuViewController.m */,
 				97DF97E11B75C7CD00A6413E /* BuyingDropMenuViewController.xib */,
+				00251F671B807534007188A9 /* NumbersBasketVC.h */,
+				00251F681B807534007188A9 /* NumbersBasketVC.m */,
+				00251F691B807534007188A9 /* NumbersBasketVC.xib */,
 			);
 			path = Buying;
 			sourceTree = "<group>";
@@ -899,6 +928,7 @@
 				974E85A11B11610E00B57C9E /* Main.storyboard in Resources */,
 				97D03F5A1B2FDCE9001FB2C4 /* SelectNumbersCell.xib in Resources */,
 				00D5CD451B2F0C4C007D8E81 /* BYLotteryHallCell.xib in Resources */,
+				00251F711B809142007188A9 /* NumbersBasketCell.xib in Resources */,
 				97D03F5F1B2FDE88001FB2C4 /* BuyingViewController.xib in Resources */,
 				00EDDD821B3070CB001F4CB8 /* DropDownViewCell.xib in Resources */,
 				97DF97E21B75C7CD00A6413E /* BuyingDropMenuViewController.xib in Resources */,
@@ -909,6 +939,7 @@
 				00929D6B1B50FAE1001CFB4D /* LotteryDetailCell.xib in Resources */,
 				005FA6C91B67A6F90036AB89 /* AnnouncementDetailVC.xib in Resources */,
 				9739E82B1B4ABA64007AF273 /* RecordViewController.xib in Resources */,
+				00251F6B1B807534007188A9 /* NumbersBasketVC.xib in Resources */,
 				0070B40B1B3C2F6700DF17AC /* RecommendationVC.xib in Resources */,
 				974E85A61B11610E00B57C9E /* LaunchScreen.xib in Resources */,
 				006CE76A1B737D81002F2CA2 /* accountViewCell.xib in Resources */,
@@ -1010,6 +1041,7 @@
 				9739E8261B4A91B8007AF273 /* HMSegmentedControl.m in Sources */,
 				97DF97EE1B76155200A6413E /* ARBasicAnimation.m in Sources */,
 				005FA6C41B5FCDDC0036AB89 /* AccountViewController.m in Sources */,
+				00251F661B80286E007188A9 /* WaitingRechargeViewController.m in Sources */,
 				97EF65091B5B7F760087C2AE /* LotteryRecordCell.m in Sources */,
 				973C15B81B36BD8600BE608E /* Colours.m in Sources */,
 				971DF3F61B3E54BA005CF819 /* OAStackViewAlignmentStrategy.m in Sources */,
@@ -1019,6 +1051,8 @@
 				970E4C501B2BF431004544EA /* HTTPClient+User.m in Sources */,
 				005FA6C81B67A6F90036AB89 /* AnnouncementDetailVC.m in Sources */,
 				971DF3F31B3E54BA005CF819 /* OAStackView+Hiding.m in Sources */,
+				00251F6A1B807534007188A9 /* NumbersBasketVC.m in Sources */,
+				00251F701B809142007188A9 /* NumbersBasketCell.m in Sources */,
 				97D9E52B1B51519400048878 /* DropButton.m in Sources */,
 				97DF97DF1B75C16100A6413E /* BuyingDropMenuViewController.m in Sources */,
 				971DF3F21B3E54BA005CF819 /* OAStackView+Constraint.m in Sources */,

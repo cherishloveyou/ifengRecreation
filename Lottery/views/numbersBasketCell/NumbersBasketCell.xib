@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NumbersBasketCell" rowHeight="60" id="KGk-i7-Jjw" customClass="NumbersBasketCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_xuLine" translatesAutoresizingMaskIntoConstraints="NO" id="f33-u8-cwt">
+                        <rect key="frame" x="0.0" y="58" width="320" height="2"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="g3X-ON-zMo"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0123456789,7,02468,5,6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXX-zK-lLt">
+                        <rect key="frame" x="15" y="10" width="160" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.18431372549019609" green="0.74509803921568629" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="五星直选" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="541-c9-yEJ">
+                        <rect key="frame" x="15" y="32" width="56" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1注x2元=2.00元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWF-Ja-TFa">
+                        <rect key="frame" x="78" y="33" width="102.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="541-c9-yEJ" secondAttribute="bottom" constant="2" id="1xa-qX-8oZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="f33-u8-cwt" secondAttribute="trailing" constant="-8" id="4M4-ib-oHz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="f33-u8-cwt" secondAttribute="bottom" constant="-8.5" id="DGO-jX-m3Z"/>
+                    <constraint firstItem="DXX-zK-lLt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="ENR-cC-ugo"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="AWF-Ja-TFa" secondAttribute="trailing" constant="10" id="SP6-TN-wCe"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="AWF-Ja-TFa" secondAttribute="bottom" constant="2" id="amY-fj-Gse"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="DXX-zK-lLt" secondAttribute="trailing" constant="10" id="cPc-jX-dRs"/>
+                    <constraint firstItem="f33-u8-cwt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="ewF-Rc-Ong"/>
+                    <constraint firstItem="541-c9-yEJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="hFQ-Ey-fZw"/>
+                    <constraint firstItem="AWF-Ja-TFa" firstAttribute="leading" secondItem="541-c9-yEJ" secondAttribute="trailing" constant="7" id="no8-45-QPe"/>
+                    <constraint firstItem="DXX-zK-lLt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="tMO-Lr-y9m"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="calculateFormulaLabel" destination="AWF-Ja-TFa" id="0i4-cH-Yey"/>
+                <outlet property="numbersLabel" destination="DXX-zK-lLt" id="81j-1W-b05"/>
+                <outlet property="playPlanName" destination="541-c9-yEJ" id="Mwd-DW-3n2"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="IMG_xuLine" width="299" height="1"/>
+    </resources>
+</document>
