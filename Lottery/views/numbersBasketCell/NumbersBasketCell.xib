@@ -39,14 +39,29 @@
                         <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of4-QZ-Ldw">
+                        <rect key="frame" x="265" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="5vp-jI-m0W"/>
+                            <constraint firstAttribute="height" constant="40" id="gHp-kZ-xPj"/>
+                        </constraints>
+                        <state key="normal" image="basket_delete">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="deleteCurrentCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wgd-jf-Mfd"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="541-c9-yEJ" secondAttribute="bottom" constant="2" id="1xa-qX-8oZ"/>
                     <constraint firstAttribute="trailingMargin" secondItem="f33-u8-cwt" secondAttribute="trailing" constant="-8" id="4M4-ib-oHz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="of4-QZ-Ldw" secondAttribute="trailing" constant="7" id="55v-DH-w4E"/>
                     <constraint firstAttribute="bottomMargin" secondItem="f33-u8-cwt" secondAttribute="bottom" constant="-8.5" id="DGO-jX-m3Z"/>
                     <constraint firstItem="DXX-zK-lLt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="ENR-cC-ugo"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="AWF-Ja-TFa" secondAttribute="trailing" constant="10" id="SP6-TN-wCe"/>
+                    <constraint firstAttribute="centerY" secondItem="of4-QZ-Ldw" secondAttribute="centerY" constant="-0.25" id="Wui-3u-oar"/>
                     <constraint firstAttribute="bottomMargin" secondItem="AWF-Ja-TFa" secondAttribute="bottom" constant="2" id="amY-fj-Gse"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="DXX-zK-lLt" secondAttribute="trailing" constant="10" id="cPc-jX-dRs"/>
                     <constraint firstItem="f33-u8-cwt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="ewF-Rc-Ong"/>
@@ -57,6 +72,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="calculateFormulaLabel" destination="AWF-Ja-TFa" id="0i4-cH-Yey"/>
+                <outlet property="deleteButton" destination="of4-QZ-Ldw" id="MaY-Ps-pGY"/>
                 <outlet property="numbersLabel" destination="DXX-zK-lLt" id="81j-1W-b05"/>
                 <outlet property="playPlanName" destination="541-c9-yEJ" id="Mwd-DW-3n2"/>
             </connections>
@@ -64,5 +80,6 @@
     </objects>
     <resources>
         <image name="IMG_xuLine" width="299" height="1"/>
+        <image name="basket_delete" width="23" height="23"/>
     </resources>
 </document>

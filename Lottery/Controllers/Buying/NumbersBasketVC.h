@@ -7,15 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NumbersBasketCell.h"
 
-/**
- *  彩票类型
- */
-typedef NS_ENUM(NSInteger, LotteryType){
-    
-    LotteryTypeChongQingShiShiCai = 0,//重庆时时彩
-    LotteryTypeShandongShiYiXuanWu,//山东十一选5
-};
+
 
 @interface NumbersBasketVC : UIViewController
 /**
@@ -31,6 +25,7 @@ typedef NS_ENUM(NSInteger, LotteryType){
 /**
  *  彩票种类
  */
-@property (assign,nonatomic) LotteryType lotteryType;
+@property (assign,nonatomic) lotteryType lotteryType;
+
 
 @end

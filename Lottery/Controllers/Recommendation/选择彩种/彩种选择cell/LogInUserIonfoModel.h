@@ -33,6 +33,8 @@ typedef NS_ENUM(NSInteger, LoginUserType) {
  *  唯一登录标示符
  */
 @property (nonatomic,strong) NSString *loginFlag;
+
+@property (nonatomic,strong) NSString *userMoney;
 /**
  *  用户类型
  */
@@ -56,6 +58,8 @@ typedef NS_ENUM(NSInteger, LoginUserType) {
 + (NSString*)userId;
 
 + (NSString*)loginFlag;
+
++ (NSString*)UserMoney;
 
 + (LoginUserType)userType;
 

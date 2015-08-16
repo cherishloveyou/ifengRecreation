@@ -16,6 +16,7 @@
 #import "WithDrawViewController.h"
 #import "RechargeViewController.h"
 #import "BuyingViewController.h"
+#import "NumbersBasketVC.h"
 
 @interface RecommendationVC (){
     //显示彩票种类
@@ -236,6 +237,9 @@
 - (IBAction)goToBet:(id)sender {
 #warning 跳转至重庆时时彩购买页
     
+    NumbersBasketVC *aVC = [[NumbersBasketVC alloc] initWithNibName:@"NumbersBasketVC" bundle:[NSBundle mainBundle]];
+    aVC.lotteryType = LotteryTypeShandongShiYiXuanWu;
+    [self.navigationController pushViewController:aVC animated:YES];
 }
 
 /**

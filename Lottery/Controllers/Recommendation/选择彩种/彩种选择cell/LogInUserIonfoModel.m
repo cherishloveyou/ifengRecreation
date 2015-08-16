@@ -30,6 +30,7 @@ static LogInUserIonfoModel *sharedAccountManagerInstance;
             sharedAccountManagerInstance.userName = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"userName"]];
             sharedAccountManagerInstance.userId = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"userId"]];
             sharedAccountManagerInstance.loginFlag = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"flag"]];
+            sharedAccountManagerInstance.userMoney = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"userMoney"]];
             NSInteger userType = [[userInfo objectForKey:@"userType"] integerValue];
             switch (userType) {
                 case 1:
@@ -64,6 +65,7 @@ static LogInUserIonfoModel *sharedAccountManagerInstance;
         self.userName = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"userName"]];
         self.userId = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"userId"]];
         self.loginFlag = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"flag"]];
+        self.userMoney = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"userMoney"]];
         NSInteger userType = [[userInfo objectForKey:@"userType"] integerValue];
         switch (userType) {
             case 1:
@@ -84,6 +86,13 @@ static LogInUserIonfoModel *sharedAccountManagerInstance;
         _userName = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userName"]];
     }
     return _userName;
+}
+
+- (NSString*)userMoney{
+    if (!_userMoney) {
+        _userMoney = [NSString stringWithFormat:@"%@",[uerdictionary objectForKey:@"userMoney"]];
+    }
+    return _userMoney;
 }
 
 - (NSString *)userId{
@@ -150,6 +159,11 @@ static LogInUserIonfoModel *sharedAccountManagerInstance;
     return sharedAccountManagerInstance.userType;
 }
 
-
++ (NSString*)UserMoney{
+    if (!sharedAccountManagerInstance) {
+        sharedAccountManagerInstance = [[LogInUserIonfoModel alloc] init];
+    }
+    return sharedAccountManagerInstance.userMoney;
+}
 
 @end

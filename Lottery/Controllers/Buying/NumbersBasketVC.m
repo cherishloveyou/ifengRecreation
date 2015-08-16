@@ -7,9 +7,9 @@
 //
 
 #import "NumbersBasketVC.h"
-#import "NumbersBasketCell.h"
+#import "LogInUserIonfoModel.h"
 
-@interface NumbersBasketVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface NumbersBasketVC ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 /**
  *  包含清空按钮的tablefooter
  */
@@ -55,15 +55,37 @@
  */
 @property (weak, nonatomic) IBOutlet UIButton *cleanButton;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *zhuiQiBackViewBottomConstraint;
+
+@property (nonatomic, assign) CGFloat sumMoney;
+/**
+ *  编辑状态
+ */
+@property (nonatomic,assign) BOOL isEditing;
+
 
 
 @end
 
 @implementation NumbersBasketVC
 
+- (NSMutableArray *)dataSourceArray{
+    if (!_dataSourceArray) {
+        _dataSourceArray = [NSMutableArray array];
+    }
+    return _dataSourceArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keboardwillShow:) name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keboardWillhidden:) name:UIKeyboardWillHideNotification object:nil];
+    
     [self setUpUserInterFace];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,7 +96,16 @@
  *  初始化用户界面
  */
 - (void)setUpUserInterFace{
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStyleDone target:self action:@selector(toEditingCells:)];
+    self.navigationItem.rightBarButtonItem = item;
+    self.navigationController.navigationBar.translucent = NO;
+    
+    self.tableFooterView.frame = CGRectMake(0, 0, self.view.bounds.size.width - 22, 80);
     self.tableView.tableFooterView = self.tableFooterView;
+    
+    self.balanceLabel.text = [NSString stringWithFormat:@"可用余额 %@元",[LogInUserIonfoModel UserMoney]];
+    self.buyMoneyLabel.text = [NSString stringWithFormat:@"0注x0.2元=0.00元"];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"NumbersBasketCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"NumbersBasketCell"];
 }
@@ -86,6 +117,43 @@
  *  @param sender
  */
 - (IBAction)randomOne:(id)sender {
+    NSMutableString *numbersString = nil;
+    
+    if (self.lotteryType == LotteryTypeChongQingShiShiCai) {
+        numbersString = [NSMutableString stringWithFormat:@"%d",rand()%10];
+        for (int i = 0; i < 4; i++) {
+            [numbersString appendFormat:@",%d",rand()%10];
+        }
+    }else{
+        int a = 0;
+        while (a==0) {
+            a = rand()%12;
+        }
+        
+        if (a>9) {
+            numbersString = [NSMutableString stringWithFormat:@"%d",a];
+        }else{
+            numbersString = [NSMutableString stringWithFormat:@"0%d",a];
+        }
+        int b = 0;
+        while (b<4) {
+            int c = rand()%12;
+            if (c>0) {
+                b++;
+                if (c>9) {
+                    [numbersString appendFormat:@",%d",c];
+                }else{
+                    [numbersString appendFormat:@",0%d",c];
+                }
+            }
+        }
+    }
+    
+    NSDictionary *adic = [NSDictionary dictionaryWithObject:numbersString forKey:@"五星直选"];
+    [self.dataSourceArray addObject:adic];
+    [self sumMoneyToBuyLottery];
+    [self.tableView reloadData];
+    
 }
 /**
  *  机选5注
@@ -93,6 +161,44 @@
  *  @param sender
  */
 - (IBAction)randomFive:(id)sender {
+    for (int i = 0; i < 5; i++) {
+        NSMutableString *numbersString = nil;
+        
+        if (self.lotteryType == LotteryTypeChongQingShiShiCai) {
+            numbersString = [NSMutableString stringWithFormat:@"%d",rand()%10];
+            for (int i = 0; i < 4; i++) {
+                [numbersString appendFormat:@",%d",rand()%10];
+            }
+        }else{
+            int a = 0;
+            while (a==0) {
+                a = rand()%12;
+            }
+            
+            if (a>9) {
+                numbersString = [NSMutableString stringWithFormat:@"%d",a];
+            }else{
+                numbersString = [NSMutableString stringWithFormat:@"0%d",a];
+            }
+            int b = 0;
+            while (b<4) {
+                int c = rand()%12;
+                if (c>0) {
+                    b++;
+                    if (c>9) {
+                        [numbersString appendFormat:@",%d",c];
+                    }else{
+                        [numbersString appendFormat:@",0%d",c];
+                    }
+                }
+            }
+        }
+        
+        NSDictionary *adic = [NSDictionary dictionaryWithObject:numbersString forKey:@"五星直选"];
+        [self.dataSourceArray addObject:adic];
+    }
+    [self sumMoneyToBuyLottery];
+    [self.tableView reloadData];
 }
 /**
  *  继续投注
@@ -100,6 +206,8 @@
  *  @param sender
  */
 - (IBAction)goOnToBuy:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 /**
  *  投注
@@ -107,6 +215,8 @@
  *  @param sender
  */
 - (IBAction)toBuyCommitToConnect:(id)sender {
+    
+    
 }
 
 /**
@@ -115,18 +225,36 @@
  *  @param sender
  */
 - (IBAction)cleanAllSelected:(id)sender {
+    [self.dataSourceArray removeAllObjects];
+    
+    [self.tableView reloadData];
+    [self sumMoneyToBuyLottery];
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return self.dataSourceArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NumbersBasketCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NumbersBasketCell"];
+    cell.indexPath = indexPath;
+    cell.lotteryType = self.lotteryType;
+    cell.isEditing = self.isEditing;
+    [cell setUpWithNumebrdic:self.dataSourceArray[indexPath.row]];
+    
+    __weak typeof(self)weakself = self;
+    
+    cell.deleteBlock = ^(NSIndexPath *currentIndexPath){
+        [weakself.dataSourceArray removeObjectAtIndex:currentIndexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[currentIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [weakself sumMoneyToBuyLottery];
+        [tableView reloadData];
+    };
     
     return cell;
 }
@@ -135,6 +263,82 @@
 heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     return 60.;
+}
+
+- (void)keboardwillShow:(NSNotification*)notification{
+    NSDictionary *userInfo = [notification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [aValue CGRectValue];
+    int height = keyboardRect.size.height;
+    self.zhuiQiBackViewBottomConstraint.constant = height - 52;
+    
+}
+
+- (void)keboardWillhidden:(NSNotification*)notitication{
+    self.zhuiQiBackViewBottomConstraint.constant = 0;
+}
+
+/**
+ *  计算购买金额
+ */
+- (void)sumMoneyToBuyLottery{
+    if (self.dataSourceArray.count>0) {
+        
+        NSInteger sum = self.dataSourceArray.count;
+        
+        for (NSDictionary *adic in self.dataSourceArray) {
+            NSString *number = [adic allValues][0];
+            NSArray *array = [number componentsSeparatedByString:@","];
+            for (NSString *subString in array) {
+                if (self.lotteryType == LotteryTypeChongQingShiShiCai) {
+                    sum = sum * subString.length;
+                }else{
+                    sum = sum * (subString.length/2);
+                }
+            }
+        }
+        
+        if (self.zhuiJiaQiShuTextField.text.length > 0) {
+            sum = sum * [self.zhuiJiaQiShuTextField.text integerValue];
+        }
+        
+        if (self.touZhuBeiShuTextField.text.length > 0) {
+            sum = sum * [self.touZhuBeiShuTextField.text integerValue];
+        }
+        
+        self.sumMoney = sum * 0.2;
+        
+        self.buyMoneyLabel.text = [NSString stringWithFormat:@"%ld注x0.2元=%.2f元",sum,sum*0.2];
+    }else{
+        
+        self.buyMoneyLabel.text = [NSString stringWithFormat:@"0注x0.2元=0.00元"];
+    }
+    
+}
+/**
+ *  开启编辑状态
+ */
+- (void)toEditingCells:(id)sender{
+    
+    self.isEditing = !self.isEditing;
+    [self.tableView reloadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    
+    [self sumMoneyToBuyLottery];
+    return YES;
 }
 
 @end
