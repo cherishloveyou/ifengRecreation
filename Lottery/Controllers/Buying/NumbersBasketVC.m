@@ -56,7 +56,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *cleanButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *zhuiQiBackViewBottomConstraint;
-
+/**
+ *  总计购彩金额
+ */
 @property (nonatomic, assign) CGFloat sumMoney;
 /**
  *  编辑状态
