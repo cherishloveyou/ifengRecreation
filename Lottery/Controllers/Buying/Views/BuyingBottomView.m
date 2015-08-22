@@ -43,8 +43,11 @@
     
     self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.leftButton.backgroundColor = ColorRGB(253, 178, 48);
+    [self.leftButton addTarget:self action:@selector(leftButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.leftButton];
+    
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.rightButton addTarget:self action:@selector(rightButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.rightButton];
     
     self.addImageView = [[UIImageView alloc] init];
@@ -123,6 +126,20 @@
     [path addLineToPoint:CGPointMake(0, CGRectGetHeight(self.leftButton.bounds))];
     [path closePath];
     self.maskLayer.path = path.CGPath;
+}
+
+#pragma mark - event methods
+
+- (void)leftButtonClicked:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(bottomBar:leftButtonClicked:)]) {
+        [self.delegate bottomBar:self leftButtonClicked:sender];
+    }
+}
+
+- (void)rightButtonClicked:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(bottomBar:rightButtonClicked:)]) {
+        [self.delegate bottomBar:self rightButtonClicked:sender];
+    }
 }
 
 @end

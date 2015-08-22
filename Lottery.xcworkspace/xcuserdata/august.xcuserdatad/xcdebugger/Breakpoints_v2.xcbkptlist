@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lottery/Controllers/Buying/BuyingViewController.m"
-            timestampString = "461406847.451808"
+            timestampString = "461904068.379019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "986"
-            endingLineNumber = "986"
+            startingLineNumber = "1005"
+            endingLineNumber = "1005"
             landmarkName = "-numbersCell:segmentTitle:selectIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lottery/Controllers/Buying/BuyingViewController.m"
-            timestampString = "461407136.214249"
+            timestampString = "461904068.379019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "992"
-            endingLineNumber = "992"
+            startingLineNumber = "1011"
+            endingLineNumber = "1011"
             landmarkName = "-numbersCell:segmentTitle:selectIndex:"
             landmarkType = "5">
          </BreakpointContent>

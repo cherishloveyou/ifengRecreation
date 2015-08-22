@@ -19,6 +19,7 @@
 #import "BuyingBottomView.h"
 #import "LotteryPlayOption.h"
 #import "NumberButton.h"
+#import "NumbersBasketVC.h"
 
 NS_INLINE NSUInteger Permutation(NSUInteger all,NSUInteger count){
     if (all < count) {
@@ -35,9 +36,25 @@ NS_INLINE NSUInteger Permutation(NSUInteger all,NSUInteger count){
     return m/z;
 }
 
-static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
+NS_INLINE NSUInteger KuaDu2(NSUInteger selectNumber) {
+    if (selectNumber == 0) {
+        return 10;
+    }else {
+        return (10 - selectNumber) * 2;
+    }
+}
 
-@interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate,ARTagListViewDelegate,BuyingDropMenuViewControllerDelegate>
+NS_INLINE NSUInteger KuaDu3(NSUInteger selectNumber) {
+    if (selectNumber == 0) {
+        return 10;
+    }else {
+        return (10 - selectNumber) * 2 * 3 * selectNumber;
+    }
+}
+
+static NSUInteger COUNTDOWN_TIMEINTERVAL = 600;
+
+@interface BuyingViewController ()<UITableViewDelegate,UITableViewDataSource,SelectNumbersCellDelegate,ARTagListViewDelegate,BuyingDropMenuViewControllerDelegate,BuyingBottomViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
@@ -54,6 +71,9 @@ static NSUInteger COUNTDOWN_TIMEINTERVAL = 300;
 @property (nonatomic, assign) BOOL canBuyLottery;
 
 @property (nonatomic, strong) LotteryPlayOption *selectedOption;
+
+@property (nonatomic, copy) NSString *selectNumberString;
+@property (nonatomic, assign) BOOL canBuy;
 
 @end
 
@@ -83,6 +103,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     self.bottomBar.bottomLabel.text = @"每位选一个号码为一注";
+    self.bottomBar.delegate = self;
     
     [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
     [self becomeFirstResponder];
@@ -712,10 +733,15 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 
             break;
         }
-//        case LotteryPlayTypeH3zhiK: {
-//            <#statement#>
-//            break;
-//        }
+        case LotteryPlayTypeH3zhiK: {
+            NumberCellNode *node = [self.datas firstObject];
+            [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+            selectCount = 0;
+            [node.numbersSet enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                selectCount += KuaDu3([obj integerValue]);
+            }];
+            break;
+        }
         case LotteryPlayTypeH3zu3: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
@@ -734,10 +760,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 //            <#statement#>
 //            break;
 //        }
-//        case LotteryPlayTypeH3zuBD: {
-//            <#statement#>
-//            break;
-//        }
+        case LotteryPlayTypeH3zuBD:
         case LotteryPlayType2zhiH2: {
             [self.datas enumerateObjectsUsingBlock:^(NumberCellNode *node, NSUInteger idx, BOOL *stop) {
                 [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
@@ -750,10 +773,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 //            <#statement#>
 //            break;
 //        }
-//        case LotteryPlayType2zhiH2K: {
-//            <#statement#>
-//            break;
-//        }
+        case LotteryPlayType2zhiH2K:
         case LotteryPlayType2zhiQ2: {
             [self.datas enumerateObjectsUsingBlock:^(NumberCellNode *node, NSUInteger idx, BOOL *stop) {
                 [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
@@ -762,10 +782,15 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 
             break;
         }
-//        case LotteryPlayType2zhiQ2K: {
-//            <#statement#>
-//            break;
-//        }
+        case LotteryPlayType2zhiQ2K: {
+            NumberCellNode *node = [self.datas firstObject];
+            [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+            selectCount = 0;
+            [node.numbersSet enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                selectCount += KuaDu2([obj integerValue]);
+            }];
+            break;
+        }
         case LotteryPlayType2zuH2: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
@@ -852,14 +877,14 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
         }
     }
     
-    NSString *selectNumberString = [numbersArray componentsJoinedByString:@","];
+    self.selectNumberString = [numbersArray componentsJoinedByString:@","];
 
-    BOOL canBuy = selectCount > 0? YES:NO;
-    self.canBuyLottery = canBuy;
-    self.bottomBar.canBuyLottery = canBuy;
+    self.canBuy = selectCount > 0? YES:NO;
+    self.canBuyLottery = _canBuy;
+    self.bottomBar.canBuyLottery = _canBuy;
     
-    self.bottomBar.topLabel.text = [NSString stringWithFormat:@"已选%ld注，%.2f元",selectCount,selectCount*0.2];
-    self.bottomBar.bottomLabel.text = selectNumberString;
+    self.bottomBar.topLabel.text = [NSString stringWithFormat:@"已选%ld注，%.2f元",selectCount,selectCount * 0.2];
+    self.bottomBar.bottomLabel.text = _selectNumberString;
 }
 
 #pragma mark - custom event methods
@@ -879,6 +904,21 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 - (void)shakeButtonClicked:(id)sender {
     [self randomSelectNumbers];
     [self checkIsCanBuy];
+}
+
+#pragma mark - BuyingBottomViewDelegate methods
+
+- (void)bottomBar:(BuyingBottomView *)bottomBar leftButtonClicked:(UIButton *)sender {
+    [self bottomBar:bottomBar rightButtonClicked:sender];
+}
+
+- (void)bottomBar:(BuyingBottomView *)bottomBar rightButtonClicked:(UIButton *)sender {
+    if (self.canBuy) {
+        NumbersBasketVC *numberBasketViewController = [[NumbersBasketVC alloc] initWithNibName:@"NumbersBasketVC" bundle:nil];
+        NSDictionary *dict = @{self.selectedOption.title:self.selectNumberString};
+        numberBasketViewController.dataSourceArray = @[dict].mutableCopy;
+        [self.navigationController pushViewController:numberBasketViewController animated:YES];
+    }
 }
 
 #pragma mark - BuyingDropMenuViewControllerDelegate methods
