@@ -53,6 +53,7 @@ NSString *const reuseIdentifier = @"RecordCell";
     self.tableView.header = header;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"LotteryRecordCell" bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+    [self.tableView.header beginRefreshing];
 }
 
 #pragma mark - public methods
@@ -60,15 +61,19 @@ NSString *const reuseIdentifier = @"RecordCell";
 -(void)getLotteryRecords
 {
     [HTTPClient userHandleWithAction:UserHandlerActionLooteryRecord
-                          paramaters:@{@"lotteryType" :@1,
-                                       @"betType":@1} success:^(id task, id response) {
+                          paramaters:@{@"Orderstate" :[NSNumber numberWithInteger:self.winningType],
+                                       @"betType":[NSNumber numberWithInteger:self.betType]} success:^(id task, id response) {
+                                           
                                            NSArray *recordInfos = response[@"betRecordInfos"];
                                            NSArray *records = [LotteryRecord recordWithInfos:recordInfos];
                                            [self.records addObjectsFromArray:records];
                                            [self.tableView reloadData];
+                                           [SVProgressHUD showSuccessWithStatus:nil];
                                            [self.tableView.header endRefreshing];
+                                           
                                        } failed:^(id task, NSError *error) {
                                            [self.tableView.header endRefreshing];
+                                           [SVProgressHUD showErrorWithStatus:error.localizedDescription];
                                        }];
 }
 

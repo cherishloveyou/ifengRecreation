@@ -199,16 +199,16 @@
              }
                  break;
              case -2:
-                 [SVProgressHUD showSuccessWithStatus:@"账号不存在"];
+                 [SVProgressHUD showErrorWithStatus:@"账号不存在"];
                  [self.userNameField becomeFirstResponder];
                  
                  break;
              case -3:
-                 [SVProgressHUD showSuccessWithStatus:@"密码错误"];
+                 [SVProgressHUD showErrorWithStatus:@"密码错误"];
                  [self.passwordField becomeFirstResponder];
                  break;
              case -4:
-                 [SVProgressHUD showSuccessWithStatus:@"该账号被禁用,换一个试试!"];
+                 [SVProgressHUD showErrorWithStatus:@"该账号被禁用,换一个试试!"];
                  
                  break;
 

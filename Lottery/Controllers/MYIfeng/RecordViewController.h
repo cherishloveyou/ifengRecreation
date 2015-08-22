@@ -11,14 +11,17 @@
 
 
 typedef NS_ENUM(NSUInteger, LotteryWinningType) {
-    LotteryWinningTypeWinning = 1, //已中奖
-    LotteryWinningTypeNotWinning = 2, //未中奖
-    LotteryWinningTypeNotOpen = 3,//未开奖
+    LotteryWinningTypeNotOpen = 1,//未开奖
+    LotteryWinningTypeWinning = 2, //已中奖
+    LotteryWinningTypeNotWinning = 3, //未中奖
 };
 
 @interface RecordViewController : UITableViewController
 
 @property (nonatomic, assign) LotteryBetType betType;
+
+@property (nonatomic, assign) LotteryWinningType winningType;
+
 
 - (void)getLotteryRecords;
 

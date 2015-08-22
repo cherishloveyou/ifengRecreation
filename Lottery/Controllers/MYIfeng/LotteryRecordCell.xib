@@ -9,64 +9,86 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" rowHeight="82" id="KGk-i7-Jjw" customClass="LotteryRecordCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQn-dq-YMd">
-                        <rect key="frame" x="11" y="10" width="41" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <rect key="frame" x="54" y="5" width="36.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSE-Du-8l1">
-                        <rect key="frame" x="11" y="55" width="33" height="16"/>
+                        <rect key="frame" x="54" y="37" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARI-3C-3N9">
-                        <rect key="frame" x="272" y="10" width="40" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uds-FD-jqk">
-                        <rect key="frame" x="281" y="57" width="30.5" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <rect key="frame" x="271" y="36" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time_line" translatesAutoresizingMaskIntoConstraints="NO" id="tQL-sH-OaV">
+                        <rect key="frame" x="38" y="0.0" width="13" height="59"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="13" id="Ofq-Gx-SH3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEo-7d-EMH">
+                        <rect key="frame" x="271" y="5" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08月" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRV-FX-Lgf">
+                        <rect key="frame" x="8" y="11" width="28" height="15.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <color key="textColor" red="0.1843137255" green="0.74509803919999995" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McY-20-txE">
+                        <rect key="frame" x="10" y="26" width="23" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
+                        <color key="textColor" red="0.1843137255" green="0.74509803919999995" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ARI-3C-3N9" firstAttribute="trailing" secondItem="uds-FD-jqk" secondAttribute="trailing" id="0eM-8a-VCD"/>
-                    <constraint firstAttribute="bottom" secondItem="DSE-Du-8l1" secondAttribute="bottom" constant="10" id="FKm-Ad-2Nm"/>
-                    <constraint firstItem="uds-FD-jqk" firstAttribute="top" secondItem="ARI-3C-3N9" secondAttribute="bottom" constant="4.5" id="HLV-hd-Kb2"/>
+                    <constraint firstItem="JRV-FX-Lgf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="6Sj-Ui-Zsg"/>
+                    <constraint firstItem="tQL-sH-OaV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="6iz-ju-Tmf"/>
+                    <constraint firstItem="aEo-7d-EMH" firstAttribute="centerY" secondItem="oQn-dq-YMd" secondAttribute="centerY" id="7C1-4H-bHQ"/>
+                    <constraint firstAttribute="bottom" secondItem="DSE-Du-8l1" secondAttribute="bottom" constant="5" id="FKm-Ad-2Nm"/>
                     <constraint firstItem="DSE-Du-8l1" firstAttribute="leading" secondItem="oQn-dq-YMd" secondAttribute="leading" id="Plg-D9-3K7"/>
-                    <constraint firstItem="ARI-3C-3N9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="R9v-Al-duc"/>
-                    <constraint firstItem="ARI-3C-3N9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oQn-dq-YMd" secondAttribute="trailing" constant="5" id="WAw-11-bIi"/>
-                    <constraint firstItem="DSE-Du-8l1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="3" id="YLo-88-Rom"/>
-                    <constraint firstItem="oQn-dq-YMd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Zu5-F1-2zW"/>
-                    <constraint firstItem="ARI-3C-3N9" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="guQ-ds-OpB"/>
-                    <constraint firstItem="DSE-Du-8l1" firstAttribute="top" secondItem="oQn-dq-YMd" secondAttribute="bottom" constant="5" id="pVB-xg-RoV"/>
-                    <constraint firstAttribute="bottom" secondItem="uds-FD-jqk" secondAttribute="bottom" constant="10" id="s4L-xG-oiI"/>
+                    <constraint firstItem="tQL-sH-OaV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="30" id="Pmc-5U-zkb"/>
+                    <constraint firstItem="JRV-FX-Lgf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="UhN-aE-U5L"/>
+                    <constraint firstItem="DSE-Du-8l1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="46" id="YLo-88-Rom"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="uds-FD-jqk" secondAttribute="trailing" constant="5" id="YLq-pV-S2H"/>
+                    <constraint firstItem="McY-20-txE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="ZtP-Wr-iWC"/>
+                    <constraint firstItem="oQn-dq-YMd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Zu5-F1-2zW"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="tQL-sH-OaV" secondAttribute="bottom" constant="-8.5" id="mKu-Ri-Pbf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="aEo-7d-EMH" secondAttribute="trailing" constant="5" id="pFB-Dg-scE"/>
+                    <constraint firstItem="McY-20-txE" firstAttribute="top" secondItem="JRV-FX-Lgf" secondAttribute="bottom" constant="-0.5" id="s1A-EN-G9U"/>
+                    <constraint firstAttribute="bottom" secondItem="uds-FD-jqk" secondAttribute="bottom" constant="5" id="s4L-xG-oiI"/>
+                    <constraint firstItem="aEo-7d-EMH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oQn-dq-YMd" secondAttribute="trailing" constant="10" id="uky-Qq-Mgy"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="pVB-xg-RoV"/>
-                        <exclude reference="HLV-hd-Kb2"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="LotteryName" destination="oQn-dq-YMd" id="Ukn-No-a6i"/>
                 <outlet property="costLabel" destination="DSE-Du-8l1" id="lFR-hT-VBG"/>
+                <outlet property="dateLable" destination="McY-20-txE" id="FOG-QZ-l4z"/>
+                <outlet property="monthLable" destination="JRV-FX-Lgf" id="4to-oJ-con"/>
                 <outlet property="rightBottomLabel" destination="uds-FD-jqk" id="jXJ-6V-eT8"/>
-                <outlet property="statusLabel" destination="ARI-3C-3N9" id="5Po-jr-phr"/>
+                <outlet property="statusLabel" destination="aEo-7d-EMH" id="8XL-Je-iGZ"/>
             </connections>
             <point key="canvasLocation" x="243" y="177"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="time_line" width="13" height="31"/>
+    </resources>
 </document>

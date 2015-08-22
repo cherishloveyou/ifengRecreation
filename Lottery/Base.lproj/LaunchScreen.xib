@@ -24,9 +24,6 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="twQ-S0-MsT">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -36,39 +33,10 @@
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
-                <constraint firstAttribute="bottom" secondItem="twQ-S0-MsT" secondAttribute="bottom" id="if1-FQ-hJz"/>
-                <constraint firstItem="twQ-S0-MsT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ixu-5E-n8d"/>
-                <constraint firstAttribute="trailing" secondItem="twQ-S0-MsT" secondAttribute="trailing" id="pgo-1G-ZMJ"/>
-                <constraint firstItem="twQ-S0-MsT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tZu-sr-nxT"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <variation key="default">
-                <mask key="subviews">
-                    <exclude reference="twQ-S0-MsT"/>
-                </mask>
-                <mask key="constraints">
-                    <exclude reference="if1-FQ-hJz"/>
-                    <exclude reference="ixu-5E-n8d"/>
-                    <exclude reference="pgo-1G-ZMJ"/>
-                    <exclude reference="tZu-sr-nxT"/>
-                </mask>
-            </variation>
-            <variation key="heightClass=regular-widthClass=compact">
-                <mask key="subviews">
-                    <include reference="twQ-S0-MsT"/>
-                </mask>
-                <mask key="constraints">
-                    <include reference="if1-FQ-hJz"/>
-                    <include reference="ixu-5E-n8d"/>
-                    <include reference="pgo-1G-ZMJ"/>
-                    <include reference="tZu-sr-nxT"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
-    <resources>
-        <image name="LaunchImage" width="12" height="7"/>
-    </resources>
 </document>

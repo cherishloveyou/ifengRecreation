@@ -97,18 +97,23 @@
     [all didMoveToParentViewController:self];
     
     RecordViewController *notOpen = [[RecordViewController alloc] initWithNibName:@"RecordViewController" bundle:nil];
+    
+    notOpen.winningType = LotteryWinningTypeNotOpen;
     [notOpen willMoveToParentViewController:self];
     [self addChildViewController:notOpen];
     [self.scrollView addSubview:notOpen.view];
     [notOpen didMoveToParentViewController:self];
 
     RecordViewController *hasGot = [[RecordViewController alloc] initWithNibName:@"RecordViewController" bundle:nil];
+    hasGot.winningType = LotteryWinningTypeWinning;
     [hasGot willMoveToParentViewController:self];
     [self addChildViewController:hasGot];
     [self.scrollView addSubview:hasGot.view];
     [hasGot didMoveToParentViewController:self];
 
     RecordViewController *notGot = [[RecordViewController alloc] initWithNibName:@"RecordViewController" bundle:nil];
+    
+    notGot.winningType = LotteryWinningTypeNotWinning;
     [notGot willMoveToParentViewController:self];
     [self addChildViewController:notGot];
     [self.scrollView addSubview:notGot.view];
