@@ -8,6 +8,7 @@
 
 #import "NumbersBasketVC.h"
 #import "LogInUserIonfoModel.h"
+#import "HTTPClient+User.h"
 
 @interface NumbersBasketVC ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 /**
@@ -65,6 +66,8 @@
  */
 @property (nonatomic,assign) BOOL isEditing;
 
+@property (nonatomic,strong) NSString *terNum;
+
 
 
 @end
@@ -87,7 +90,33 @@
     
     [self setUpUserInterFace];
     
+    [self gettermNum];
+}
+
+
+- (void)gettermNum{
     
+    NSString *lotteryTypeStr = @"1";
+    
+    if (self.lotteryType == LotteryTypeChongQingShiShiCai) {
+        lotteryTypeStr = @"4";
+    }
+    
+    [HTTPClient userHandleWithAction:13 paramaters:@{@"lotteryType":lotteryTypeStr} success:^(id task, id response) {
+        
+        NSInteger code = [[response objectForKey:@"code"] integerValue];
+        
+        if (code == 0) {
+            self.terNum = [response objectForKey:@"terNum"];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"获取期号失败"];
+        }
+        
+    } failed:^(id task, NSError *error) {
+        
+        [SVProgressHUD showErrorWithStatus:@"获取期号失败"];
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -218,7 +247,31 @@
  */
 - (IBAction)toBuyCommitToConnect:(id)sender {
     
+    if (!self.terNum) {
+        [SVProgressHUD showErrorWithStatus:@"获取期号失败！请重新投注"];
+        return;
+    }
     
+    NSString *lotteryTypestr = @"1";
+    
+    if (self.lotteryType == LotteryTypeShandongShiYiXuanWu) {
+        lotteryTypestr = @"4";
+    }
+    
+    [HTTPClient userHandleWithAction:17 paramaters:@{@"lotteryType":lotteryTypestr,@"currentNum":self.terNum,@"numberdata":self.dataSourceArray} success:^(id task, id response) {
+        
+        NSInteger code = [[response objectForKey:@"code"] integerValue];
+        
+        if (code == 0) {
+            [SVProgressHUD showSuccessWithStatus:@"订单创建成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"订单创建失败"];
+        }
+        
+    } failed:^(id task, NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"网络连接错误请稍后再试"];
+    }];
 }
 
 /**
