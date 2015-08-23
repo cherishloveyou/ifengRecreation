@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet OAStackView *stackView;
 
 @property (nonatomic, assign) BOOL canMutileSelected;
+@property (nonatomic, assign) NumberCellType cellType;
 
 @end
 
@@ -68,41 +69,67 @@
     self.backLayer.frame = CGRectMake(10, 5, CGRectGetWidth(self.bounds)-20, CGRectGetHeight(self.bounds)-10);
 }
 
--(void)fillCellWithNode:(NumberCellNode *)node
-{
-    if (node.cellType == NumberCellTypeDefault) {
-        self.canMutileSelected = YES;
-        self.gridView.numberOfItems = 10;
-        self.gridView.configuration = ^UIView *(NSUInteger index){
-            NumberButton *button = [[NumberButton alloc] init];
-            button.index = index;
-            [button setTitle:[NSString stringWithFormat:@"%ld",index] forState:UIControlStateNormal];
-            [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-            return button;
-        };
+- (void)fillCellWithNode:(NumberCellNode *)node {
+    
+    switch (node.cellType) {
+        case NumberCellTypeDefault: {
+            self.canMutileSelected = YES;
+            self.gridView.numberOfItems = 10;
+            self.gridView.configuration = ^UIView *(NSUInteger index){
+                NumberButton *button = [[NumberButton alloc] init];
+                button.index = index;
+                [button setTitle:[NSString stringWithFormat:@"%ld",index] forState:UIControlStateNormal];
+                [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+                return button;
+            };
 
-    }else if(node.cellType == NumberCellTypeHeZhi){
-        self.canMutileSelected = YES;
-        self.gridView.numberOfItems = 26;
-        self.gridView.configuration = ^UIView *(NSUInteger index){
-            NumberButton *button = [[NumberButton alloc] init];
-            button.index = index;
-            [button setTitle:[NSString stringWithFormat:@"%ld",index+1] forState:UIControlStateNormal];
-            [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-            return button;
-        };
-    }else {
-        self.canMutileSelected = NO;
-        self.gridView.numberOfItems = 10;
-        self.gridView.configuration = ^UIView *(NSUInteger index){
-            NumberButton *button = [[NumberButton alloc] init];
-            button.index = index;
-            [button setTitle:[NSString stringWithFormat:@"%ld",index] forState:UIControlStateNormal];
-            [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-            return button;
-        };
+            break;
+        }
+        case NumberCellTypeHeZhi: {
+            self.canMutileSelected = YES;
+            self.gridView.numberOfItems = 26;
+            self.gridView.configuration = ^UIView *(NSUInteger index){
+                NumberButton *button = [[NumberButton alloc] init];
+                button.index = index;
+                [button setTitle:[NSString stringWithFormat:@"%ld",index+1] forState:UIControlStateNormal];
+                [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+                return button;
+            };
 
+            break;
+        }
+        case NumberCellTypeBaoDan: {
+            self.canMutileSelected = NO;
+            self.gridView.numberOfItems = 10;
+            self.gridView.configuration = ^UIView *(NSUInteger index){
+                NumberButton *button = [[NumberButton alloc] init];
+                button.index = index;
+                [button setTitle:[NSString stringWithFormat:@"%ld",index] forState:UIControlStateNormal];
+                [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+                return button;
+            };
+
+            break;
+        }
+        case NumberCellTypeSD11X5: {
+            self.canMutileSelected = YES;
+            self.gridView.numberOfItems = 11;
+            self.stackView.hidden = YES;
+            self.gridView.configuration = ^UIView *(NSUInteger index){
+                NumberButton *button = [[NumberButton alloc] init];
+                button.index = index;
+                [button setTitle:[NSString stringWithFormat:@"%2ld",index+1] forState:UIControlStateNormal];
+                [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+                return button;
+            };
+
+            break;
+        }
+        default: {
+            break;
+        }
     }
+    
     [self.gridView reloadAllItems];
     
     self.titleLabel.text = node.title;
