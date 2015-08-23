@@ -182,6 +182,50 @@
             option = [[LotteryPlayOption alloc] initWithType:type title:@"四季发财"];
             break;
         }
+        case LotteryPlayTypeSDQ3ZF: {
+            option = [[LotteryPlayOption alloc] initWithType:type title:@"前三直选复式"];
+ 
+            break;
+        }
+        case LotteryPlayTypeSDQ3ZuF: {
+            option = [[LotteryPlayOption alloc] initWithType:type title:@"前三组选复式"];
+            break;
+        }
+        case LotteryPlayTypeSDDWD: {
+            option = [[LotteryPlayOption alloc] initWithType:type title:@"定位胆"];
+
+            break;
+        }
+        case LotteryPlayTypeRXF11: {
+            option = [[LotteryPlayOption alloc] initWithType:type title:@"任选一中一"];
+            break;
+        }
+        case LotteryPlayTypeRXF22: {
+            option = [[LotteryPlayOption alloc] initWithType:type title:@"任选二中二"];
+
+            break;
+        }
+        case LotteryPlayTypeRXF33: {
+            option = [[LotteryPlayOption alloc] initWithType:type title:@"任选三中三"];
+
+            break;
+        }
+        case LotteryPlayTypeRXF44: {
+            option = [[LotteryPlayOption alloc] initWithType:type title:@"任选四中四"];
+
+            break;
+        }
+        case LotteryPlayTypeRXF55: {
+            option = [[LotteryPlayOption alloc] initWithType:type title:@"任选五中五"];
+
+            break;
+        }
+        case LotteryPlayTypeDT55: {
+            option = [[LotteryPlayOption alloc] initWithType:type title:@"任选五中五"];
+            
+            break;
+        }
+            
         default: {
             break;
         }

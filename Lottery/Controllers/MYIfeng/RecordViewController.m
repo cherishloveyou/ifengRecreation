@@ -67,6 +67,7 @@ NSString *const reuseIdentifier = @"RecordCell";
                                            
                                            NSArray *recordInfos = response[@"betRecordInfos"];
                                            NSArray *records = [LotteryRecord recordWithInfos:recordInfos];
+                                           [self.records removeAllObjects];
                                            [self.records addObjectsFromArray:records];
                                            if (self.records.count == 0) {
                                                [SVProgressHUD showInfoWithStatus:@"暂无数据"];

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ReactiveCocoa.h>
 #import "LotteryPlayOption.h"
+#import "NumbersBasketCell.h"
 
 extern NSString *const TouchBackgroundNotification;
 
@@ -21,6 +22,7 @@ extern NSString *const TouchBackgroundNotification;
 
 @interface BuyingDropMenuViewController : UIViewController
 
+@property (nonatomic, assign) LotteryType lotteryType;
 @property (nonatomic, weak) id<BuyingDropMenuViewControllerDelegate> delegate;
 
 - (void)showDropMenuInViewController:(UIViewController *)viewController frame:(CGRect)frame completion:(void(^)(void))completion;
