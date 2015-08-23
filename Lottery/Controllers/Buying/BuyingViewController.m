@@ -89,6 +89,14 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 
 #pragma mark - lifecycle methods
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.hidesBottomBarWhenPushed = YES;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -264,7 +272,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
             break;
         }
         case LotteryPlayTypeH3zuHe: {
-        [self addNodesWithTitles:@[@"组选和值"] cellType:NumberCellTypeHeZhi];
+            [self addNodesWithTitles:@[@"组选和值"] cellType:NumberCellTypeHeZhi];
             break;
         }
         case LotteryPlayTypeH3zuBD: {
@@ -347,9 +355,46 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
             [self addNodesWithTitles:@[@"四重"]];
             break;
         }
+        case LotteryPlayTypeSDQ3ZF: {
+            [self addNodesWithTitles:@[@"第一位",@"第二位",@"第三位"] cellType:NumberCellTypeSD11X5];
+            break;
+        }
+        case LotteryPlayTypeSDQ3ZuF: {
+            [self addNodesWithTitles:@[@"选"] cellType:NumberCellTypeSD11X5];
+            break;
+        }
+        case LotteryPlayTypeSDDWD: {
+            [self addNodesWithTitles:@[@"第一位",@"第二位",@"第三位"] cellType:NumberCellTypeSD11X5];
+            break;
+        }
+        case LotteryPlayTypeRXF11: {
+            [self addNodesWithTitles:@[@"选"] cellType:NumberCellTypeSD11X5];
+            break;
+        }
+        case LotteryPlayTypeRXF22: {
+            [self addNodesWithTitles:@[@"选"] cellType:NumberCellTypeSD11X5];
+            break;
+        }
+        case LotteryPlayTypeRXF33: {
+            [self addNodesWithTitles:@[@"选"] cellType:NumberCellTypeSD11X5];
+            break;
+        }
+        case LotteryPlayTypeRXF44: {
+            [self addNodesWithTitles:@[@"选"] cellType:NumberCellTypeSD11X5];
+            break;
+        }
+        case LotteryPlayTypeRXF55: {
+            [self addNodesWithTitles:@[@"选"] cellType:NumberCellTypeSD11X5];
+            break;
+        }
+        case LotteryPlayTypeDT55: {
+            [self addNodesWithTitles:@[@"胆码",@"但拖"] cellType:NumberCellTypeSD11X5];
+            break;
+        }
         default: {
             break;
         }
+
     }
 }
 
@@ -526,6 +571,49 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
             [self generateRandomNumberWithCount:1];
             break;
         }
+        case LotteryPlayTypeSDQ3ZF: {
+            [self generateRandomNumberWithCountArray:@[@1,@1,@1]];
+            break;
+        }
+        case LotteryPlayTypeSDQ3ZuF: {
+            [self generateRandomNumberWithCount:3];
+            break;
+        }
+        case LotteryPlayTypeSDDWD: {
+            NSMutableArray *array = [NSMutableArray array];
+            for (int i = 0; i < 2; i++) {
+                [array addObject:@0];
+            }
+            [array insertObject:@1 atIndex:arc4random()%5];
+            [self generateRandomNumberWithCountArray:array];
+            break;
+        }
+        case LotteryPlayTypeRXF11: {
+            [self generateRandomNumberWithCount:1];
+            break;
+        }
+        case LotteryPlayTypeRXF22: {
+            
+            [self generateRandomNumberWithCount:2];
+            break;
+        }
+        case LotteryPlayTypeRXF33: {
+            [self generateRandomNumberWithCount:3];
+            break;
+        }
+        case LotteryPlayTypeRXF44: {
+            [self generateRandomNumberWithCount:4];
+            break;
+        }
+        case LotteryPlayTypeRXF55: {
+            [self generateRandomNumberWithCount:5];
+            break;
+        }
+        case LotteryPlayTypeDT55: {
+            [self generateRandomNumberWithCountArray:@[@1,@4]];
+            break;
+        }
+            
         default: {
             break;
         }
@@ -593,7 +681,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
                 [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
                 selectCount = selectCount*node.numbersSet.count;
             }];
-           
+            
             break;
         }
         case LotteryPlayType5zu120: {
@@ -662,7 +750,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
                 [set1 intersectOrderedSet:set2];
                 selectCount = count1*count2 - set1.count;
             }
-
+            
             break;
         }
         case LotteryPlayType4zhi: {
@@ -670,14 +758,14 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
                 [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
                 selectCount = selectCount*node.numbersSet.count;
             }];
-
+            
             break;
         }
         case LotteryPlayType4zu24: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 4);
-
+            
             break;
         }
         case LotteryPlayType4zu12: {
@@ -693,7 +781,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
                 NSUInteger count2 = Permutation(set2.count, 2);
                 selectCount = count1*count2;
             }
-
+            
             break;
         }
         case LotteryPlayTypeQ3zhi: {
@@ -701,21 +789,21 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
                 [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
                 selectCount = selectCount*node.numbersSet.count;
             }];
-
+            
             break;
         }
         case LotteryPlayTypeQ3zu3: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 2);
-
+            
             break;
         }
         case LotteryPlayTypeQ3zu6: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 4);
-
+            
             break;
         }
         case LotteryPlayTypeQ3zuHe: {
@@ -725,7 +813,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
             [node.numbersSet enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *stop) {
                 selectCount += kQ3ZXHeZhi[obj.integerValue];
             }];
-
+            
             break;
         }
         case LotteryPlayTypeQ3zuBD: {
@@ -739,7 +827,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
                 [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
                 selectCount = selectCount*node.numbersSet.count;
             }];
-
+            
             break;
         }
         case LotteryPlayTypeH3zhiK: {
@@ -755,14 +843,14 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = 2*Permutation(node.numbersSet.count, 2);
-
+            
             break;
         }
         case LotteryPlayTypeH3zu6: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 3);
-
+            
             break;
         }
         case LotteryPlayTypeH3zuHe: {
@@ -772,7 +860,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
             [node.numbersSet enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *stop) {
                 selectCount += kQ3ZXHeZhi[obj.integerValue];
             }];
-
+            
             break;
         }
         case LotteryPlayTypeH3zuBD:
@@ -781,7 +869,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
                 [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
                 selectCount = selectCount*node.numbersSet.count;
             }];
-
+            
             break;
         }
         case LotteryPlayType2zhiH2He: {
@@ -791,7 +879,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
             [node.numbersSet enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *stop) {
                 selectCount += k2ZH2HeZhi[obj.integerValue];
             }];
-
+            
             break;
         }
         case LotteryPlayType2zhiH2K:
@@ -800,7 +888,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
                 [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
                 selectCount = selectCount*node.numbersSet.count;
             }];
-
+            
             break;
         }
         case LotteryPlayType2zhiQ2K: {
@@ -816,14 +904,14 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 2);
-
+            
             break;
         }
         case LotteryPlayType2zuQ2: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 3);
-
+            
             break;
         }
         case LotteryPlayTypeDWD: {
@@ -832,56 +920,56 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
                 [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
                 selectCount = selectCount + node.numbersSet.count;
             }];
-
+            
             break;
         }
         case LotteryPlayType3BDWH31: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = node.numbersSet.count;
-
+            
             break;
         }
         case LotteryPlayType3BDWH32: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 2);
-
+            
             break;
         }
         case LotteryPlayType3BDWQ31: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = node.numbersSet.count;
-
+            
             break;
         }
         case LotteryPlayType3BDWQ32: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 2);
-
+            
             break;
         }
         case LotteryPlayType4BDW2: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 2);
-
+            
             break;
         }
         case LotteryPlayType5BDW2: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 2);
-
+            
             break;
         }
         case LotteryPlayType5BDW3: {
             NumberCellNode *node = [self.datas firstObject];
             [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
             selectCount = Permutation(node.numbersSet.count, 3);
-
+            
             break;
         }
         case LotteryPlayTypeT1:
@@ -893,9 +981,85 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
             selectCount = node.numbersSet.count;
             break;
         }
+        case LotteryPlayTypeSDQ3ZF: {
+            [self.datas enumerateObjectsUsingBlock:^(NumberCellNode *node, NSUInteger idx, BOOL *stop) {
+                [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+                selectCount = selectCount*node.numbersSet.count;
+            }];
+            break;
+        }
+        case LotteryPlayTypeSDQ3ZuF: {
+            NumberCellNode *node = [self.datas firstObject];
+            [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+            selectCount = Permutation(node.numbersSet.count, 3);
+
+            break;
+        }
+        case LotteryPlayTypeSDDWD: {
+            selectCount = 0;
+            [self.datas enumerateObjectsUsingBlock:^(NumberCellNode *node, NSUInteger idx, BOOL *stop) {
+                [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+                selectCount = selectCount + node.numbersSet.count;
+            }];
+
+            break;
+        }
+        case LotteryPlayTypeRXF11: {
+            NumberCellNode *node = [self.datas firstObject];
+            [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+            selectCount = node.numbersSet.count;
+
+            break;
+        }
+        case LotteryPlayTypeRXF22: {
+            NumberCellNode *node = [self.datas firstObject];
+            [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+            selectCount = Permutation(node.numbersSet.count, 2);
+
+            break;
+        }
+        case LotteryPlayTypeRXF33: {
+            NumberCellNode *node = [self.datas firstObject];
+            [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+            selectCount = Permutation(node.numbersSet.count, 3);
+
+            break;
+        }
+        case LotteryPlayTypeRXF44: {
+            NumberCellNode *node = [self.datas firstObject];
+            [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+            selectCount = Permutation(node.numbersSet.count, 4);
+
+            break;
+        }
+        case LotteryPlayTypeRXF55: {
+            NumberCellNode *node = [self.datas firstObject];
+            [numbersArray addObject:[node.numbersSet.array componentsJoinedByString:@""]];
+            selectCount = Permutation(node.numbersSet.count, 5);
+
+            break;
+        }
+        case LotteryPlayTypeDT55: {
+            if (self.datas.count == 2) {
+//                NumberCellNode *node1 = [self.datas firstObject];
+//                NumberCellNode *node2 = self.datas[1];
+//                NSMutableOrderedSet *set1 = [node1.numbersSet mutableCopy];
+//                NSMutableOrderedSet *set2 = [node2.numbersSet mutableCopy];
+//                [numbersArray addObject:[set1.array componentsJoinedByString:@""]];
+//                [numbersArray addObject:[set2.array componentsJoinedByString:@""]];
+//                [set1 minusOrderedSet:set2];
+//                NSUInteger count1 = set1.count;
+//                NSUInteger count2 = Permutation(set2.count, 2);
+//                selectCount = count1*count2;
+            }
+
+            break;
+        }
+            
         default: {
             break;
         }
+
     }
     
     self.selectNumberString = [numbersArray componentsJoinedByString:@","];
