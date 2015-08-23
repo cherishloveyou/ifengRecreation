@@ -60,6 +60,7 @@ NSString *const reuseIdentifier = @"RecordCell";
 
 -(void)getLotteryRecords
 {
+    
     [HTTPClient userHandleWithAction:UserHandlerActionLooteryRecord
                           paramaters:@{@"Orderstate" :[NSNumber numberWithInteger:self.winningType],
                                        @"betType":[NSNumber numberWithInteger:self.betType]} success:^(id task, id response) {
@@ -67,8 +68,13 @@ NSString *const reuseIdentifier = @"RecordCell";
                                            NSArray *recordInfos = response[@"betRecordInfos"];
                                            NSArray *records = [LotteryRecord recordWithInfos:recordInfos];
                                            [self.records addObjectsFromArray:records];
-                                           [self.tableView reloadData];
-                                           [SVProgressHUD showSuccessWithStatus:nil];
+                                           if (self.records.count == 0) {
+                                               [SVProgressHUD showInfoWithStatus:@"暂无数据"];
+                                           }else{
+                                               [self.tableView reloadData];
+                                               [SVProgressHUD showSuccessWithStatus:nil];
+                                           }
+                                           
                                            [self.tableView.header endRefreshing];
                                            
                                        } failed:^(id task, NSError *error) {
