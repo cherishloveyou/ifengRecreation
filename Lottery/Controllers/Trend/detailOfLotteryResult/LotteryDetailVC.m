@@ -9,6 +9,7 @@
 #import "LotteryDetailVC.h"
 #import "LotteryDetailCell.h"
 #import "BuyingViewController.h"
+#import <SVProgressHUD.h>
 
 @interface LotteryDetailVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -40,10 +41,25 @@
  *  @param sender 
  */
 - (IBAction)goToBuyLottery:(UIButton*)sender{
-#warning 跳转至对应购彩页面
     NSDictionary *adic = [self.dataSourceArray firstObject];
     
     self.lotteryId = [NSString stringWithFormat:@"%@",[adic objectForKey:@"LotteryType"]];
+    BuyingViewController *buyVC = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:[NSBundle mainBundle]];
+    
+    if ([self.lotteryId isEqualToString:@"1"]) {//重庆时时彩
+        
+        buyVC.title = @"重庆时时彩";
+        buyVC.lotteryType = LotteryTypeChongQingShiShiCai;
+        [self.navigationController pushViewController:buyVC animated:YES];
+        
+    }else if([self.lotteryId isEqualToString:@"4"]){
+        
+        buyVC.title = @"重庆时时彩";
+        buyVC.lotteryType = LotteryTypeChongQingShiShiCai;
+        [self.navigationController pushViewController:buyVC animated:YES];
+    }else{
+        [SVProgressHUD showInfoWithStatus:@"该彩票暂时不能购买"];
+    }
 }
 
 #pragma mark - UITableViewDelegate

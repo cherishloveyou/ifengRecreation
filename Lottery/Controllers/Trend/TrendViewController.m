@@ -51,7 +51,6 @@
         }
         switch (code) {
             case 0:{
-                
                 self.dataSourceArray = [NSMutableArray arrayWithArray:[response objectForKey:@"lotteryRatherInfos"]];
                 [self.tableView reloadData];
             }
@@ -61,8 +60,6 @@
             default:
                 break;
         }
-        
-        
     } failed:^(id task, NSError *error) {
         if ([self.tableView.header isRefreshing]) {
             [self.tableView.header endRefreshing];
@@ -93,9 +90,27 @@
         [cell loadDataWithArray:self.dataSourceArray[indexPath.row]];
     }
 //    点击cell的@"立即投注"跳转至相应的购彩页面
-//    __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     cell.buyBlock = ^(NSString *lotteryId){
         NSLog(@"%@",lotteryId);
+        
+        BuyingViewController *buyVC = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:[NSBundle mainBundle]];
+        
+        if ([lotteryId isEqualToString:@"1"]) {//重庆时时彩
+            
+            buyVC.title = @"重庆时时彩";
+            buyVC.lotteryType = LotteryTypeChongQingShiShiCai;
+            [weakSelf.navigationController pushViewController:buyVC animated:YES];
+            
+        }else if([lotteryId isEqualToString:@"4"]){
+            
+            buyVC.title = @"重庆时时彩";
+            buyVC.lotteryType = LotteryTypeChongQingShiShiCai;
+            [weakSelf.navigationController pushViewController:buyVC animated:YES];
+        }else{
+            [SVProgressHUD showInfoWithStatus:@"该彩票暂时不能购买"];
+        }
+        
     };
     
     return cell;

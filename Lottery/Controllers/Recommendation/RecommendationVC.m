@@ -178,14 +178,16 @@
             return;
         }else if (tapImageView != self.addButtonImage){
             //跳转至购买彩票页面
-#warning 跳转至对应彩票购买页
             NSInteger imageTag = tapImageView.tag;
+            BuyingViewController *buyIng = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:[NSBundle mainBundle]];
             if (imageTag == 0) {//到重庆时时彩
-                
+                buyIng.lotteryType = LotteryTypeChongQingShiShiCai;
+                buyIng.title = @"重庆时时彩";
             }else if(imageTag == 1){//山东十一选5
-                
+                buyIng.lotteryType = LotteryTypeShandongShiYiXuanWu;
+                buyIng.title = @"山东十一选5";
             }
-            
+            [self.navigationController pushViewController:buyIng animated:YES];
             return;
         }
     }
@@ -235,11 +237,12 @@
  *  @param sender
  */
 - (IBAction)goToBet:(id)sender {
-#warning 跳转至重庆时时彩购买页
     
-    NumbersBasketVC *aVC = [[NumbersBasketVC alloc] initWithNibName:@"NumbersBasketVC" bundle:[NSBundle mainBundle]];
-    aVC.lotteryType = LotteryTypeShandongShiYiXuanWu;
-    [self.navigationController pushViewController:aVC animated:YES];
+    BuyingViewController *buyIng = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:[NSBundle mainBundle]];
+    buyIng.lotteryType = LotteryTypeChongQingShiShiCai;
+    buyIng.title = @"重庆时时彩";
+    
+    [self.navigationController pushViewController:buyIng animated:YES];
 }
 
 /**
@@ -341,6 +344,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
@@ -350,7 +358,6 @@
 {
     [super viewDidDisappear:YES];
     self.navigationController.navigationBarHidden = NO;
-
 }
 
 
