@@ -100,12 +100,15 @@
             
             buyVC.title = @"重庆时时彩";
             buyVC.lotteryType = LotteryTypeChongQingShiShiCai;
+            buyVC.hidesBottomBarWhenPushed = YES;
+
             [weakSelf.navigationController pushViewController:buyVC animated:YES];
             
         }else if([lotteryId isEqualToString:@"4"]){
             
             buyVC.title = @"重庆时时彩";
             buyVC.lotteryType = LotteryTypeChongQingShiShiCai;
+            buyVC.hidesBottomBarWhenPushed = YES;
             [weakSelf.navigationController pushViewController:buyVC animated:YES];
         }else{
             [SVProgressHUD showInfoWithStatus:@"该彩票暂时不能购买"];
@@ -125,7 +128,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     LotteryDetailVC *detailVC = [[LotteryDetailVC alloc] initWithNibName:@"LotteryDetailVC" bundle:[NSBundle mainBundle]];
+    
     detailVC.dataSourceArray = self.dataSourceArray[indexPath.row];
     
     [self.navigationController pushViewController:detailVC animated:YES];

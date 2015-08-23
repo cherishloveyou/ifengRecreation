@@ -126,7 +126,7 @@
     BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
     buyingViewControlelr.hidesBottomBarWhenPushed = YES;
     buyingViewControlelr.title = info[@"_gameName"];
-#warning 传入彩票类型
+    
     [self.navigationController pushViewController:buyingViewControlelr animated:YES];
 }
 

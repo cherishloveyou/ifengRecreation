@@ -187,6 +187,8 @@
                 buyIng.lotteryType = LotteryTypeShandongShiYiXuanWu;
                 buyIng.title = @"山东十一选5";
             }
+            buyIng.hidesBottomBarWhenPushed = YES;
+
             [self.navigationController pushViewController:buyIng animated:YES];
             return;
         }
@@ -241,7 +243,8 @@
     BuyingViewController *buyIng = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:[NSBundle mainBundle]];
     buyIng.lotteryType = LotteryTypeChongQingShiShiCai;
     buyIng.title = @"重庆时时彩";
-    
+    buyIng.hidesBottomBarWhenPushed = YES;
+
     [self.navigationController pushViewController:buyIng animated:YES];
 }
 
