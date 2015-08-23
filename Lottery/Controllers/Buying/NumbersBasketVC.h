@@ -25,7 +25,7 @@
 /**
  *  彩票种类
  */
-@property (assign,nonatomic) lotteryType lotteryType;
+@property (assign,nonatomic) LotteryType lotteryType;
 
 
 @end

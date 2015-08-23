@@ -49,6 +49,15 @@ typedef NS_ENUM(NSUInteger, LotteryPlayType) {
     LotteryPlayTypeTH,
     LotteryPlayTypeT3,
     LotteryPlayTypeT4,
+    LotteryPlayTypeSDQ3ZF,
+    LotteryPlayTypeSDQ3ZuF,
+    LotteryPlayTypeSDDWD,
+    LotteryPlayTypeRXF11,
+    LotteryPlayTypeRXF22,
+    LotteryPlayTypeRXF33,
+    LotteryPlayTypeRXF44,
+    LotteryPlayTypeRXF55,
+    LotteryPlayTypeDT55
 };
 
 static NSString *const lotteryPlayTypeString[] = {
@@ -92,6 +101,14 @@ static NSString *const lotteryPlayTypeString[] = {
     [LotteryPlayTypeTH] = @"好事成双",
     [LotteryPlayTypeT3] = @"三星报喜",
     [LotteryPlayTypeT4] = @"四季发财",
+    [LotteryPlayTypeSDQ3ZF] = @"前三直选复式",
+    [LotteryPlayTypeSDQ3ZuF] = @"前三组选复式",
+    [LotteryPlayTypeSDDWD] = @"定位胆",
+    [LotteryPlayTypeRXF11] = @"任选一中一",
+    [LotteryPlayTypeRXF22] = @"任选二中二",
+    [LotteryPlayTypeRXF33] = @"任选三中三",
+    [LotteryPlayTypeRXF44] = @"任选四中四",
+    [LotteryPlayTypeRXF55] = @"任选午中五"
 };
 
 @interface LotteryPlayOption : NSObject

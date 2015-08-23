@@ -13,8 +13,7 @@ typedef void(^NumbersBasketDeleteBlock)(NSIndexPath *indexpath);
 /**
  *  彩票类型
  */
-typedef NS_ENUM(NSInteger, lotteryType){
-    
+typedef NS_ENUM(NSInteger, LotteryType){
     LotteryTypeChongQingShiShiCai = 0,//重庆时时彩
     LotteryTypeShandongShiYiXuanWu,//山东十一选5
 };
@@ -43,7 +42,7 @@ typedef NS_ENUM(NSInteger, lotteryType){
 /**
  *  彩票种类
  */
-@property (assign,nonatomic) lotteryType lotteryType;
+@property (assign,nonatomic) LotteryType lotteryType;
 /**
  *  编辑状态下点击删除按钮回调
  */

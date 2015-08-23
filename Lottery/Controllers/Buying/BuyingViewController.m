@@ -561,6 +561,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
     if (!_dropMenu) {
         BuyingDropMenuViewController *dropMenu = [[BuyingDropMenuViewController alloc] initWithNibName:@"BuyingDropMenuViewController" bundle:nil];
         dropMenu.delegate = self;
+        dropMenu.lotteryType = self.lotteryType;
         _dropMenu = dropMenu;
     }
     return _dropMenu;
@@ -992,8 +993,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 
 #pragma mark - SelectNumbersCellDelegate methods
 
--(void)numbersCell:(SelectNumbersCell *)numbersCell seletedNumber:(NSInteger)selectedNumber isSelected:(BOOL)isSelected
-{
+-(void)numbersCell:(SelectNumbersCell *)numbersCell seletedNumber:(NSInteger)selectedNumber isSelected:(BOOL)isSelected {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:numbersCell];
     NSNumber *indexString = @(selectedNumber);
     NumberCellNode *node = self.datas[indexPath.row];

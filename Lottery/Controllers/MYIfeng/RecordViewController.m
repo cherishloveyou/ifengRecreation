@@ -66,6 +66,7 @@ NSString *const reuseIdentifier = @"RecordCell";
                                            
                                            NSArray *recordInfos = response[@"betRecordInfos"];
                                            NSArray *records = [LotteryRecord recordWithInfos:recordInfos];
+                                           [self.records removeAllObjects];
                                            [self.records addObjectsFromArray:records];
                                            [self.tableView reloadData];
                                            [SVProgressHUD showSuccessWithStatus:nil];

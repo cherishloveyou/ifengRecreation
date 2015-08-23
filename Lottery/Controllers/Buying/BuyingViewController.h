@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NumbersBasketCell.h"
 
 @interface BuyingViewController : UIViewController
+
+@property (nonatomic, assign) LotteryType lotteryType;
 
 @end
