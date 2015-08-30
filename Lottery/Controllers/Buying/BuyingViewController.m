@@ -115,7 +115,6 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
     self.selectedOption = [LotteryPlayOption optionWithType:LotteryPlayType5zhi];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     self.bottomBar.bottomLabel.text = @"每位选一个号码为一注";

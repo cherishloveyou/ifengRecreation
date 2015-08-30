@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rFU-RD-M2z">
-                    <rect key="frame" x="0.0" y="86" width="320" height="432"/>
+                    <rect key="frame" x="0.0" y="66" width="320" height="452"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="KcE-gV-O0N"/>
@@ -47,7 +47,7 @@
                 <constraint firstAttribute="bottom" secondItem="ffI-Fy-RbE" secondAttribute="bottom" id="OC9-Ew-4fo"/>
                 <constraint firstItem="FXP-Bo-44I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YIx-Wd-62V"/>
                 <constraint firstItem="ffI-Fy-RbE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jIr-4x-f3I"/>
-                <constraint firstItem="rFU-RD-M2z" firstAttribute="top" secondItem="FXP-Bo-44I" secondAttribute="bottom" constant="20" id="pNR-IM-aLh"/>
+                <constraint firstItem="rFU-RD-M2z" firstAttribute="top" secondItem="FXP-Bo-44I" secondAttribute="bottom" id="pNR-IM-aLh"/>
                 <constraint firstItem="rFU-RD-M2z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tJt-yZ-qGF"/>
                 <constraint firstAttribute="trailing" secondItem="FXP-Bo-44I" secondAttribute="trailing" id="uB6-Fu-Nai"/>
                 <constraint firstAttribute="trailing" secondItem="ffI-Fy-RbE" secondAttribute="trailing" id="zKZ-Xh-fZr"/>
