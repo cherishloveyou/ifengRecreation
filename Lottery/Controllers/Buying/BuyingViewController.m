@@ -99,6 +99,9 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    self.hidesBottomBarWhenPushed = YES;
     
     [self baseConfigs];
 }
