@@ -265,17 +265,27 @@
         grayBackViewf.backgroundColor = [UIColor grayColor];
         grayBackViewf.alpha = 0.000001;
         [self.backScrollView insertSubview:grayBackViewf belowSubview:self.usetinfoView];
+        [self.usetinfoView setNeedsLayout];
         [UIView animateWithDuration:.5 animations:^{
             self.infoViewConstraint.constant = 0;
             grayBackViewf.alpha = 0.8;
+            [self.usetinfoView layoutIfNeeded];
         }];
         
         
     }else{
         sender.selected = NO;
-        [grayBackViewf removeFromSuperview];
-        self.infoViewConstraint.constant = -190;
-        self.usetinfoView.hidden = YES;
+//        self.infoViewConstraint.constant = -190;
+        [UIView animateWithDuration:.5 animations:^{
+            grayBackViewf.alpha = 0.01;
+            self.infoViewConstraint.constant = -190;
+            [self.usetinfoView layoutIfNeeded];
+        }completion:^(BOOL finished) {
+            self.usetinfoView.hidden = YES;
+            [grayBackViewf removeFromSuperview];
+            grayBackViewf = nil;
+        }];
+        
         grayBackViewf = nil;
     }
 }
@@ -288,9 +298,18 @@
  */
 - (IBAction)topupMoney:(id)sender{
     self.dropDownButton.selected = NO;
-    [grayBackViewf removeFromSuperview];
-    self.infoViewConstraint.constant = -190;
-    self.usetinfoView.hidden = YES;
+//    self.infoViewConstraint.constant = -190;
+//    self.usetinfoView.hidden = YES;
+    [self.usetinfoView setNeedsLayout];
+    [UIView animateWithDuration:.5 animations:^{
+        grayBackViewf.alpha = 0.01;
+        self.infoViewConstraint.constant = -190;
+        [self.usetinfoView layoutIfNeeded];
+    }completion:^(BOOL finished) {
+        self.usetinfoView.hidden = YES;
+        [grayBackViewf removeFromSuperview];
+        grayBackViewf = nil;
+    }];
     grayBackViewf = nil;
     
     RechargeViewController *rechargeVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"RechargeViewController"];
@@ -304,9 +323,19 @@
  */
 - (IBAction)toWithdrawMoney:(id)sender{
     self.dropDownButton.selected = NO;
-    [grayBackViewf removeFromSuperview];
-    self.infoViewConstraint.constant = -190;
-    self.usetinfoView.hidden = YES;
+//    self.infoViewConstraint.constant = -190;
+    
+    [self.usetinfoView setNeedsLayout];
+    [UIView animateWithDuration:.5 animations:^{
+        grayBackViewf.alpha = 0.01;
+        self.infoViewConstraint.constant = -190;
+        [self.usetinfoView layoutIfNeeded];
+    }completion:^(BOOL finished) {
+        self.usetinfoView.hidden = YES;
+        [grayBackViewf removeFromSuperview];
+        grayBackViewf = nil;
+    }];
+//    self.usetinfoView.hidden = YES;
     grayBackViewf = nil;
     WithDrawViewController *drawVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WithDrawViewController"];
     [self.navigationController pushViewController:drawVC animated:YES];
@@ -320,8 +349,19 @@
 - (IBAction)recordOfBuy:(id)sender{
     self.dropDownButton.selected = NO;
     [grayBackViewf removeFromSuperview];
-    self.infoViewConstraint.constant = -190;
-    self.usetinfoView.hidden = YES;
+//    self.usetinfoView.hidden = YES;
+    
+    [self.usetinfoView setNeedsLayout];
+    [UIView animateWithDuration:.5 animations:^{
+        grayBackViewf.alpha = 0.01;
+        self.infoViewConstraint.constant = -190;
+        [self.usetinfoView layoutIfNeeded];
+    }completion:^(BOOL finished) {
+        self.usetinfoView.hidden = YES;
+        [grayBackViewf removeFromSuperview];
+        grayBackViewf = nil;
+    }];
+    
     grayBackViewf = nil;
     
     [self.tabBarController setSelectedIndex:3];
@@ -333,10 +373,20 @@
  */
 - (IBAction)myMessage:(id)sender{
     self.dropDownButton.selected = NO;
-    [grayBackViewf removeFromSuperview];
-    self.infoViewConstraint.constant = -190;
-    self.usetinfoView.hidden = YES;
-    grayBackViewf = nil;
+//    self.infoViewConstraint.constant = -190;
+//    self.usetinfoView.hidden = YES;
+    
+    [self.usetinfoView setNeedsLayout];
+    [UIView animateWithDuration:.5 animations:^{
+        grayBackViewf.alpha = 0.01;
+        self.infoViewConstraint.constant = -190;
+        [self.usetinfoView layoutIfNeeded];
+    }completion:^(BOOL finished) {
+        self.usetinfoView.hidden = YES;
+        [grayBackViewf removeFromSuperview];
+        grayBackViewf = nil;
+    }];
+    
     AnnouncementVC *announcementVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AnnouncementVC"];
     [self.navigationController pushViewController:announcementVC animated:YES];
 }
