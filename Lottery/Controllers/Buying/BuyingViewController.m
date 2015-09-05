@@ -1249,6 +1249,7 @@ static NSString *reuseIdentifier1 = @"SelectNumbersCell1";
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     [self randomSelectNumbers];
+    [self checkIsCanBuy];
 }
 
 -(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
