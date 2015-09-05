@@ -92,7 +92,6 @@
 //    点击cell的@"立即投注"跳转至相应的购彩页面
     __weak typeof(self) weakSelf = self;
     cell.buyBlock = ^(NSString *lotteryId){
-        NSLog(@"%@",lotteryId);
         
         BuyingViewController *buyVC = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:[NSBundle mainBundle]];
         
@@ -106,7 +105,7 @@
             
         }else if([lotteryId isEqualToString:@"4"]){
             
-            buyVC.title = @"重庆时时彩";
+            buyVC.title = @"山东11选5";
             buyVC.lotteryType = LotteryTypeChongQingShiShiCai;
             buyVC.hidesBottomBarWhenPushed = YES;
             [weakSelf.navigationController pushViewController:buyVC animated:YES];

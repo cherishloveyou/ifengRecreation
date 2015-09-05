@@ -124,10 +124,27 @@
 {
     NSDictionary *info = self.dataSourceArray[indexPath.row];
     BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
-    buyingViewControlelr.hidesBottomBarWhenPushed = YES;
-    buyingViewControlelr.title = info[@"_gameName"];
+    NSString *lotteryId = info[@"_id"];
     
-    [self.navigationController pushViewController:buyingViewControlelr animated:YES];
+    if ([lotteryId isEqualToString:@"1"]) {//重庆时时彩
+        
+        buyingViewControlelr.title = @"重庆时时彩";
+        buyingViewControlelr.lotteryType = LotteryTypeChongQingShiShiCai;
+        buyingViewControlelr.hidesBottomBarWhenPushed = YES;
+        
+        [self.navigationController pushViewController:buyingViewControlelr animated:YES];
+        
+    }else if([lotteryId isEqualToString:@"4"]){
+        
+        buyingViewControlelr.title = @"山东11选5";
+        buyingViewControlelr.lotteryType = LotteryTypeChongQingShiShiCai;
+        buyingViewControlelr.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:buyingViewControlelr animated:YES];
+    }else{
+        [SVProgressHUD showInfoWithStatus:@"该彩票暂时不能购买"];
+    }
+
+
 }
 
 

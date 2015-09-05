@@ -185,7 +185,7 @@
                 buyIng.title = @"重庆时时彩";
             }else if(imageTag == 1){//山东十一选5
                 buyIng.lotteryType = LotteryTypeShandongShiYiXuanWu;
-                buyIng.title = @"山东十一选5";
+                buyIng.title = @"山东11选5";
             }
             buyIng.hidesBottomBarWhenPushed = YES;
 
