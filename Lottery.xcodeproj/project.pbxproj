@@ -13,6 +13,7 @@
 		00251F6B1B807534007188A9 /* NumbersBasketVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00251F691B807534007188A9 /* NumbersBasketVC.xib */; };
 		00251F701B809142007188A9 /* NumbersBasketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00251F6E1B809142007188A9 /* NumbersBasketCell.m */; };
 		00251F711B809142007188A9 /* NumbersBasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00251F6F1B809142007188A9 /* NumbersBasketCell.xib */; };
+		003AF57D1B9AA13E0002A12A /* ReordDetailTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 003AF57C1B9AA13E0002A12A /* ReordDetailTableVC.m */; };
 		005FA6C41B5FCDDC0036AB89 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */; };
 		005FA6C81B67A6F90036AB89 /* AnnouncementDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 005FA6C61B67A6F90036AB89 /* AnnouncementDetailVC.m */; };
 		005FA6C91B67A6F90036AB89 /* AnnouncementDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005FA6C71B67A6F90036AB89 /* AnnouncementDetailVC.xib */; };
@@ -119,6 +120,8 @@
 		00251F6D1B809142007188A9 /* NumbersBasketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumbersBasketCell.h; sourceTree = "<group>"; };
 		00251F6E1B809142007188A9 /* NumbersBasketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumbersBasketCell.m; sourceTree = "<group>"; };
 		00251F6F1B809142007188A9 /* NumbersBasketCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumbersBasketCell.xib; sourceTree = "<group>"; };
+		003AF57B1B9AA13E0002A12A /* ReordDetailTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReordDetailTableVC.h; sourceTree = "<group>"; };
+		003AF57C1B9AA13E0002A12A /* ReordDetailTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReordDetailTableVC.m; sourceTree = "<group>"; };
 		005FA6C21B5FCDDC0036AB89 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		005FA6C31B5FCDDC0036AB89 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		005FA6C51B67A6F90036AB89 /* AnnouncementDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementDetailVC.h; sourceTree = "<group>"; };
@@ -303,6 +306,15 @@
 			path = numbersBasketCell;
 			sourceTree = "<group>";
 		};
+		003AF57A1B9AA0810002A12A /* 充值详细 */ = {
+			isa = PBXGroup;
+			children = (
+				003AF57B1B9AA13E0002A12A /* ReordDetailTableVC.h */,
+				003AF57C1B9AA13E0002A12A /* ReordDetailTableVC.m */,
+			);
+			path = "充值详细";
+			sourceTree = "<group>";
+		};
 		005FA6C11B5FCD4C0036AB89 /* 账户明细 */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +470,7 @@
 		00F5797E1B2D608A00C5AD45 /* MYIfeng */ = {
 			isa = PBXGroup;
 			children = (
+				003AF57A1B9AA0810002A12A /* 充值详细 */,
 				005FA6C11B5FCD4C0036AB89 /* 账户明细 */,
 				00929D6C1B53EE12001CFB4D /* 系统公告 */,
 				97D9E5281B51514D00048878 /* Views */,
@@ -1010,6 +1023,7 @@
 				006CE7691B737D81002F2CA2 /* accountViewCell.m in Sources */,
 				974E859E1B11610E00B57C9E /* RootViewController.m in Sources */,
 				971DF3FD1B3E735C005CF819 /* SegmentButton.m in Sources */,
+				003AF57D1B9AA13E0002A12A /* ReordDetailTableVC.m in Sources */,
 				00D5CD441B2F0C4C007D8E81 /* BYLotteryHallCell.m in Sources */,
 				00EDDD6E1B304ED1001F4CB8 /* UIAlertView+DisMiss.m in Sources */,
 				00F5798A1B2D608A00C5AD45 /* TrendViewController.m in Sources */,

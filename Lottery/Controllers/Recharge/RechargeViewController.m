@@ -9,6 +9,7 @@
 #import "RechargeViewController.h"
 #import "HTTPClient+User.h"
 #import <MJRefresh.h>
+#import "ReordDetailTableVC.h"
 
 @interface RechargeViewController ()
 /**
@@ -74,6 +75,11 @@
     [HTTPClient userHandleWithAction:20 paramaters:parameters success:^(id task, id response) {
         NSInteger code = [[response valueForKey:@"code"] integerValue];
         [weakself showInfoWithResultCode:code];
+        if (code == 0) {
+            ReordDetailTableVC *diVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ReordDetailTableVC"];
+            diVC.dataDic = response;
+            [self.navigationController pushViewController:diVC animated:YES];
+        }
         
     } failed:^(id task, NSError *error) {
         

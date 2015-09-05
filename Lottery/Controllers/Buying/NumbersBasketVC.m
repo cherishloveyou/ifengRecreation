@@ -83,6 +83,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"号码篮";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keboardwillShow:) name:UIKeyboardDidShowNotification object:nil];
     
