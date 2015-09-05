@@ -124,9 +124,9 @@
 {
     NSDictionary *info = self.dataSourceArray[indexPath.row];
     BuyingViewController *buyingViewControlelr = [[BuyingViewController alloc] initWithNibName:@"BuyingViewController" bundle:nil];
-    NSString *lotteryId = info[@"_id"];
+    NSNumber *lotteryId = info[@"_id"];
     
-    if ([lotteryId isEqualToString:@"1"]) {//重庆时时彩
+    if ([lotteryId integerValue] == 1 ) {//重庆时时彩
         
         buyingViewControlelr.title = @"重庆时时彩";
         buyingViewControlelr.lotteryType = LotteryTypeChongQingShiShiCai;
@@ -134,7 +134,7 @@
         
         [self.navigationController pushViewController:buyingViewControlelr animated:YES];
         
-    }else if([lotteryId isEqualToString:@"4"]){
+    }else if([lotteryId integerValue] == 4 ){
         
         buyingViewControlelr.title = @"山东11选5";
         buyingViewControlelr.lotteryType = LotteryTypeChongQingShiShiCai;
