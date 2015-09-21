@@ -11,6 +11,8 @@
 #import "LotteryGlobal.h"
 #import <ReactiveCocoa.h>
 
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+
 @interface BuyingBottomView ()
 
 @property (nonatomic, strong) UIButton *leftButton;
@@ -35,6 +37,8 @@
 
 - (void)setUp {
     
+    
+    self.clipsToBounds = YES;
     self.canBuyLottery = NO;
     self.backImageView = [[UIImageView alloc] init];
     self.backImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -67,13 +71,20 @@
     [self addSubview:self.bottomLabel];
     
     [self.backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
+//        make.edges.equalTo(self);
+        make.left.and.top.and.bottom.and.right.equalTo(@0);
     }];
-    
+    NSLog(@"%.2f",SCREENWIDTH);
     [self.leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.bottom.equalTo(@0);
-        make.top.equalTo(@-1);
-        make.right.equalTo(@-90);
+        make.top.equalTo(@0);
+        if (SCREENWIDTH==320) {
+            make.right.equalTo(@-90);
+        }else if(SCREENWIDTH == 375){
+            make.right.equalTo(@-105);
+        }else {
+            make.right.equalTo(@-115);
+        }
     }];
     
     [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {

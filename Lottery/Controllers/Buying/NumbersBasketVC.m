@@ -10,7 +10,9 @@
 #import "LogInUserIonfoModel.h"
 #import "HTTPClient+User.h"
 
-@interface NumbersBasketVC ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
+@interface NumbersBasketVC ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>{
+    UIBarButtonItem *item;
+}
 /**
  *  包含清空按钮的tablefooter
  */
@@ -92,6 +94,7 @@
     [self setUpUserInterFace];
     
     [self gettermNum];
+    [self sumMoneyToBuyLottery];
 }
 
 
@@ -108,7 +111,7 @@
         NSInteger code = [[response objectForKey:@"code"] integerValue];
         
         if (code == 0) {
-            self.terNum = [response objectForKey:@"terNum"];
+            self.terNum = [NSString stringWithFormat:@"%@",[response objectForKey:@"terNum"]];
         }else{
             [SVProgressHUD showErrorWithStatus:@"获取期号失败"];
         }
@@ -129,7 +132,7 @@
  */
 - (void)setUpUserInterFace{
     
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStyleDone target:self action:@selector(toEditingCells:)];
+    item = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStyleDone target:self action:@selector(toEditingCells:)];
     self.navigationItem.rightBarButtonItem = item;
     self.navigationController.navigationBar.translucent = NO;
     
@@ -247,7 +250,7 @@
  *  @param sender
  */
 - (IBAction)toBuyCommitToConnect:(id)sender {
-    
+    [self gettermNum];
     if (!self.terNum) {
         [SVProgressHUD showErrorWithStatus:@"获取期号失败！请重新投注"];
         return;
@@ -374,10 +377,24 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 /**
  *  开启编辑状态
  */
-- (void)toEditingCells:(id)sender{
+- (void)toEditingCells:(UIBarButtonItem*)sender{
     
-    self.isEditing = !self.isEditing;
-    [self.tableView reloadData];
+    if ([sender.title isEqualToString:@"完成"]) {
+        self.isEditing = NO;
+        [self.tableView reloadData];
+
+        sender.title = @"编辑";
+        if (!self.isEditing) {
+            [self.zhuiJiaQiShuTextField endEditing:YES];
+            [self.touZhuBeiShuTextField endEditing:YES];
+        }
+        
+    }else{
+        self.isEditing = YES;
+        [self.tableView reloadData];
+        sender.title = @"完成";
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -389,9 +406,26 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     [super viewWillDisappear:animated];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.touZhuBeiShuTextField resignFirstResponder];
+    [self.zhuiJiaQiShuTextField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    
+    item.title = @"完成";
+    return YES;
+}
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
     
+    [self sumMoneyToBuyLottery];
+    return YES;
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
     [self sumMoneyToBuyLottery];
     return YES;
 }
